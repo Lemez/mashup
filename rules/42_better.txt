@@ -1,0 +1,78 @@
+
+Row,Lyric,Sentence,Right answer,Distractor,Test
+0,believer,I'm just a believer that things will get better,better,beter,I'm just a believer that things will get __,3730.0
+1,girl on fire,Hotter than a fantasy, lonely like a highway,Hotter,Hoter,__ than a fantasy, lonely like a highway,5780.0
+2,Under the sea,'Life under the sea is better than anything they got up there',better,beter,'Life under the sea is __ than anything they got up there',10990.0
+3,believer,I'm just a believer that things will get better,better,beter,I'm just a believer that things will get __,11860.0
+4,on top of the world,Better tell them why they're here because,Better,Beter,__ tell them why they're here because,18740.0
+5,maps,We drew a map to a better place,better,beter,We drew a map to a __ place,19590.0
+6,all the right moves,They've got it better than when anyone's told ya,,better,beter,They've got it __ than when anyone's told ya,,28390.0
+7,survivor,I'm so much better,better,beter,I'm so much __,28820.0
+8,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you __, know you better,29890.0
+9,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you better, know you __,29890.0
+10,one in a million,Nothing better,better,beter,Nothing __,32070.0
+11,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you __, know you better,36030.0
+12,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you better, know you __,36030.0
+13,sweeter than fiction,Wish I could make it better,better,beter,Wish I could make it __,39770.0
+14,Under the sea,Darling it's better,better,beter,Darling it's __,40340.0
+15,Today is gonna be a great day,And the forecast says that tomorrow will likely be a million and six times better,better,beter,And the forecast says that tomorrow will likely be a million and six times __,41500.0
+16,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you __, know you better,42250.0
+17,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you better, know you __,42250.0
+18,believer,I'm just a believer that things will get better,better,beter,I'm just a believer that things will get __,59380.0
+19,believer,I'm just a believer that things will get better,better,beter,I'm just a believer that things will get __,67930.0
+20,girl on fire,Better look the other way,Better,Beter,__ look the other way,72650.0
+21,we will rock you,Somebody better put you back into your place,better,beter,Somebody __ put you back into your place,73600.0
+22,video games,It's better than I ever even knew,better,beter,It's __ than I ever even knew,78910.0
+23,man in the mirror,If you want to make the world a better place,better,beter,If you want to make the world a __ place,80530.0
+24,Today is gonna be a great day,And the forecast says that tomorrow will likely be a million and six times better,better,beter,And the forecast says that tomorrow will likely be a million and six times __,90160.0
+25,you belong with me,I know you better then that,better,beter,I know you __ then that,94170.0
+26,skyscraper,Would it make you, feel better,better,beter,Would it make you, feel __,95460.0
+27,one in a million,There ain't nothing better,better,beter,There ain't nothing __,97710.0
+28,A whole new world,A hundred thousand things to see (Hold your breath, it gets better),better,beter,A hundred thousand things to see (Hold your breath, it gets __),98290.0
+29,believer,I'm just a believer that things will get better,better,beter,I'm just a believer that things will get __,99630.0
+30,one in a million,No there ain't nothing better than this,better,beter,No there ain't nothing __ than this,100010.0
+31,believer,I'm just a believer that things will get better,better,beter,I'm just a believer that things will get __,107670.0
+32,thinking of you,How do I get better,better,beter,How do I get __,107830.0
+33,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you __, know you better,108010.0
+34,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you better, know you __,108010.0
+35,show me,Security better get with the program,better,beter,Security __ get with the program,110050.0
+36,problem,Smart money bettin', I'll be better off without you,better,beter,Smart money bettin', I'll be __ off without you,112670.0
+37,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you __, know you better,114110.0
+38,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you better, know you __,114110.0
+39,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you __, know you better,120150.0
+40,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you better, know you __,120150.0
+41,survivor,(I'm better than that),better,beter,(I'm __ than that),128620.0
+42,survivor,(I'm better than that),better,beter,(I'm __ than that),131660.0
+43,survivor,(I'm better than that),better,beter,(I'm __ than that),134640.0
+44,survivor,('m better than that),better,beter,('m __ than that),137880.0
+45,All for one,Fun and sun, what could be better?,better,beter,Fun and sun, what could be __?,137990.0
+46,believer,I'm just a believer that things will get better,better,beter,I'm just a believer that things will get __,139440.0
+47,survivor,(I'm better than that),better,beter,(I'm __ than that),140730.0
+48,survivor,Because my mama taught me better than that,better,beter,Because my mama taught me __ than that,144080.0
+49,Today is gonna be a great day,And the forecast says that tomorrow will likely be a million and six times better,better,beter,And the forecast says that tomorrow will likely be a million and six times __,147480.0
+50,man in the mirror,If you want to make the world a better place,better,beter,If you want to make the world a __ place,147560.0
+51,believer,I'm just a believer that things will get better,better,beter,I'm just a believer that things will get __,148170.0
+52,one in a million,There ain't nothing better,better,beter,There ain't nothing __,155490.0
+53,believer,I'm just a believer that things will get better,better,beter,I'm just a believer that things will get __,155540.0
+54,one in a million,No there ain't nothing better than this,better,beter,No there ain't nothing __ than this,157410.0
+55,royals,We're bigger than we ever dreamed, and I'm in love with being queen,bigger,biger,We're __ than we ever dreamed, and I'm in love with being queen,158590.0
+56,gotta be you,I’ll make it better,better,beter,I’ll make it __,160600.0
+57,video games,It's better than I ever even knew,better,beter,It's __ than I ever even knew,164610.0
+58,man in the mirror,If you want to make the world a better place,better,beter,If you want to make the world a __ place,166670.0
+59,one in a million,There ain't nothing better,better,beter,There ain't nothing __,174750.0
+60,one in a million,No there ain't nothing better than this,better,beter,No there ain't nothing __ than this,176750.0
+61,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you __, know you better,179490.0
+62,everything has changed,I just wanna know you better, know you better,better,beter,I just wanna know you better, know you __,179490.0
+63,summertime sadness,Late is better than never,better,beter,Late is __ than never,180030.0
+64,the best of both worlds,It's so much better,better,beter,It's so much __,180790.0
+65,man in the mirror,(Better change!),Better,Beter,(__ change!),181030.0
+66,this is love,Love for computer beats, hotter than metal,hotter,hoter,Love for computer beats, __ than metal,184880.0
+67,Under the sea,That's why it's hotter,hotter,hoter,That's why it's __,185850.0
+68,man in the mirror,If you want to make the world a better place,better,beter,If you want to make the world a __ place,185890.0
+69,man in the mirror,(Better change!),Better,Beter,(__ change!),204950.0
+70,man in the mirror,If you want to make the world a better place,better,beter,If you want to make the world a __ place,209730.0
+71,one in a million,There ain't nothing better,better,beter,There ain't nothing __,222670.0
+72,video games,It's better than I ever even knew,better,beter,It's __ than I ever even knew,223610.0
+73,one in a million,No there ain't nothing better than this,better,beter,No there ain't nothing __ than this,224740.0
+74,one in a million,There ain't nothing better,better,beter,There ain't nothing __,241870.0
+75,one in a million,No there ain't nothing better than this,better,beter,No there ain't nothing __ than this,243990.0

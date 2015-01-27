@@ -1,0 +1,11 @@
+notes
+
+1. Search videos on our site for specific language elements. return YT ID and timecodes each side
+2. add videos to playlist (via youtube-it) 	# https://github.com/kylejginavan/youtube_it
+3. download those videos with viddl 		# https://github.com/rb2k/viddl-rb
+4. Cut the video using timecodes(RMov)		# https://github.com/ryanb/rmov/tree/master
+5. Paste together							# https://github.com/ryanb/rmov/tree/master
+6. Upload to YT (via youtube-it)			# https://github.com/kylejginavan/youtube_it
+
+
+

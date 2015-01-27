@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+gem 'viddl-rb'
+# gem 'streamio-ffmpeg'
+# gem 'rmov', '~> 0.1.6'
+# gem 'gstreamer'
+gem 'awesome_print'
+gem 'gemcutter', '~> 0.7.1'
+gem 'vimeo'

@@ -1,0 +1,7 @@
+file '/Users/JW/Dropbox/T10/SBRI/_code/kids_videos/vids/shorts/s_Aladdin-World_cut.mp4'
+file '/Users/JW/Dropbox/T10/SBRI/_code/kids_videos/vids/shorts/s_Celine-Music_cut.mp4'
+file '/Users/JW/Dropbox/T10/SBRI/_code/kids_videos/vids/shorts/s_Disneys-High_cut.mp4'
+file '/Users/JW/Dropbox/T10/SBRI/_code/kids_videos/vids/shorts/s_High-Music_cut.mp4'
+file '/Users/JW/Dropbox/T10/SBRI/_code/kids_videos/vids/shorts/s_High-This_cut.mp4'
+file '/Users/JW/Dropbox/T10/SBRI/_code/kids_videos/vids/shorts/s_Jonas-Video_cut.mp4'
+file '/Users/JW/Dropbox/T10/SBRI/_code/kids_videos/vids/shorts/s_On--_cut.mp4'

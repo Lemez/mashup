@@ -1,0 +1,6 @@
+keys.rb
+videos/vids/*
+videos/vids/*/*
+videos/vids/**/*
+videos/vids/*/*/*
+videos/vids/**/**/*
