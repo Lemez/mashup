@@ -1,51 +1,51 @@
-YT id,Artist,Song,Exercise,Distractor,Sentence with gap,Initial time (ms),End time (ms),Line duration (ms)
-RBumgq5yVrA,Passenger,let her go,comes,coms,Cause love __ slow and it goes so fast,121530,128830,7300
-rT10BHHqYUc,Bruno Mars,young girls,makes,maks,"Boy meets girl, __ her his wife",122100,125430,3330
-DYj40-cZ5vI,American authors,believer,fades,fads,Time __,91740,93270,1530
-,,,fades,fads,Because time __,131030,133210,2180
-mqFLXayD6e8,Shania Twain,that don't impress me much,likes,liks,You're one of those guys who __ to shine his machine,131920,135880,3960
-EHkozMIXZ8w,eminem featuring rihanna,the monster,relates,relats,Who are going through a struggle feels and then __ that's great,176760,179670,2910
-hLQl3WQQoQ0,Adele,someone like you,compares,compars,Nothing __ no worries or cares,184900,188410,3510
-,,,cares,cars,Nothing compares no worries or __,184900,188410,3510
-Wmc8bQoL-J0,destiny's child,survivor,comes,coms,Soon __ happiness,186850,189330,2480
-VuNIsY6JdUw,Taylor Swift,you belong with me,makes,maks,I'm the one who __ you laugh,162510,167270,4760
-Zlot0i3Zykw,Taylor Swift,red,comes,coms,Remembering him __ in flashbacks and echoes,136930,141690,4760
-,,,Comes,Coms,"__ back to me, burning red",204110,214310,10200
-D1Xr-JFLxik,Taylor Swift,white horse,Comes,Coms,__ out just when you need it to,25240,30550,5310
+YT id,Artist,Song,Exercise,Distractor,Sentence with gap,Initial time (ms),End time (ms),Line duration (ms),,
+RBumgq5yVrA,Passenger,let her go,comes,coms,Cause love __ slow and it goes so fast,121530,128830,7300,,
+rT10BHHqYUc,Bruno Mars,young girls,makes,maks,"Boy meets girl, __ her his wife",122100,125430,3330,
+DYj40-cZ5vI,American authors,believer,fades,fads,Time __,91740,93270,1530,,
+,,,fades,fads,Because time __,131030,133210,2180,,
+mqFLXayD6e8,Shania Twain,that don't impress me much,likes,liks,You're one of those guys who __ to shine his machine,131920,135880,3960,,
+EHkozMIXZ8w,eminem,the monster,relates,relats,Who are going through a struggle feels and then __ that's great,176760,179670,2910,,
+hLQl3WQQoQ0,Adele,someone like you,compares,compars,Nothing __ no worries or cares,184900,188410,3510,,
+,,,cares,cars,Nothing compares no worries or __,184900,188410,3510,,
+Wmc8bQoL-J0,destiny's child,survivor,comes,coms,Soon __ happiness,186850,189330,2480,,
+VuNIsY6JdUw,Taylor Swift,you belong with me,makes,maks,I'm the one who __ you laugh,162510,167270,4760,,
+Zlot0i3Zykw,Taylor Swift,red,comes,coms,Remembering him __ in flashbacks and echoes,136930,141690,4760,,
+,,,Comes,Coms,"__ back to me, burning red",204110,214310,10200,
+D1Xr-JFLxik,Taylor Swift,white horse,Comes,Coms,__ out just when you need it to,25240,30550,5310,,
 vNoKguSdy4Y,Taylor Swift,i knew you were trouble,comes,coms,"I think, I think when it's all over it just __ back and flashes, you know?",29650,34940,5290
-,,,comes,coms,It just all __ back,37820,41030,3210
-,,,smiles,smils,So much like an angel when he __ at you?,94500,103790,9290
-,,,comes,coms,When the saddest fear __ creeping in,275280,281020,5740
-nfWlot6h_JM,Taylor Swift,shake it off,moves,movs,I'll make the __ up as I go (moves up as I go),79210,82680,3470
-gwKEdFoUB0o,U2,walk on,aches,achs,And I know it __,170420,173050,2630
-,,,aches,achs,And I know it __,230140,233050,2910
-IxxstCcJlsc,Zedd,clarity,comes,coms,High dive into frozen waves where the past __ back to life,9000,16510,7510
-,,,makes,maks,It cuts deep through our ground and __ us forget all common sense,128880,136250,7370
-78-bUVSiJMA,Phineas and Pherb,Today is gonna be a great day,comes,coms,Till school __ along just to end it,3310,6080,2770
-vLkp_Dx6VdI,Mary Poppins,A spoonful of sugar,Becomes,Becoms,__ a piece of cake,12010,14410,2400
-o3mP3mJDL2k,Shakira,can't remember to forget you,comes,coms,When it __ to you,15600,160200,144600
-UXTlczyWJ-Y,Echosmith,Cool kids,sees,ses,She __ them walking in a straight line,17700,20660,2960
-,,,sees,ses,He __ them talking with a big smile,76810,79570,2760
-XgFiWGIVP6s,Sevyn Streeter,it won't stop,comes,coms,But when it __ to my heart,26170,28420,2250
-hEhutIEUq8k,Mika,we are golden,gives,givs,Who __ a damn about the family you come from?,26590,30560,3970
-,,,gives,givs,Who __ a damn about the family you come from?,81260,85280,4020
-,,,gives,givs,Who __ a damn about the family you come from?,143650,147670,4020
-,,,gives,givs,Who __ a damn about the family you come from?,190570,194330,3760
--ScjucUV8v0,Christina Aguilera,candyman,makes,maks,"He's a one stop shop, __ the panties drop",27340,29900,2560
-,,,makes,maks,"He's a one stop shop, __ my cherry pop",52380,54890,2510
-,,,makes,maks,"He's a one stop shop, __ my cherry pop",77240,79810,2570
-g3o2TfrULck,one direction,i would,drives,drivs,He __ to school every morning,23440,27200,3760
-nvfejaHz-o0,one direction,gotta be you,deserves,deservs,And no woman in the world __ this,25330,27610,2280
-xGPeNN9S0Fg,One Direction,little things,makes,maks,And it all __ sense to me,29790,34600,4810
-,,,makes,maks,Though it __ no sense to me,90990,95400,4410
-Gqm873UWUdw,one direction,moments,escapes,escaps,Time __ me,32689,36200,3511
-,,,makes,maks,It __ this harder,39920,46870,6950
-,,,makes,maks,It __ this harder,129669,135880,6211
-QJO3ROT-A4E,One Direction,what makes you beautiful,makes,maks,That's what __ you beautiful,67040,72160,5120
-,,,makes,maks,That's what __ you beautiful,128620,144810,16190
-,,,makes,maks,That's what __ you beautiful,197500,207500,10000
-nvfejaHz-o0,One Direction,gotta be you,trembles,trembls,Now girl I hear it in your voice and how it __,83720,87180,3460
-A3jzMyYgPQs,Lady gaga,do what u want,makes,maks,But then you print some **** that __ me want to scream,34200,38160,3960
-qMxX-QOV9tI,Jessie j. featuring b.o.b,price tag,comes,coms,When the sale __ first,35430,36960,1530
-,,,comes,coms,And the truth __ second,36960,38370,1410
-,,,shades,shads,Got __ on your eyes,46490,47770,1280
+,,,comes,coms,It just all __ back,37820,41030,3210,,
+,,,smiles,smils,So much like an angel when he __ at you?,94500,103790,9290,,
+,,,comes,coms,When the saddest fear __ creeping in,275280,281020,5740,,
+nfWlot6h_JM,Taylor Swift,shake it off,moves,movs,I'll make the __ up as I go (moves up as I go),79210,82680,3470,,
+gwKEdFoUB0o,U2,walk on,aches,achs,And I know it __,170420,173050,2630,,
+,,,aches,achs,And I know it __,230140,233050,2910,,
+IxxstCcJlsc,Zedd,clarity,comes,coms,High dive into frozen waves where the past __ back to life,9000,16510,7510,,
+,,,makes,maks,It cuts deep through our ground and __ us forget all common sense,128880,136250,7370,,
+78-bUVSiJMA,Phineas and Pherb,Today is gonna be a great day,comes,coms,Till school __ along just to end it,3310,6080,2770,,
+vLkp_Dx6VdI,Mary Poppins,A spoonful of sugar,Becomes,Becoms,__ a piece of cake,12010,14410,2400,,
+o3mP3mJDL2k,Shakira,can't remember to forget you,comes,coms,When it __ to you,15600,160200,144600,,
+UXTlczyWJ-Y,Echosmith,Cool kids,sees,ses,She __ them walking in a straight line,17700,20660,2960,,
+,,,sees,ses,He __ them talking with a big smile,76810,79570,2760,,
+XgFiWGIVP6s,Sevyn Streeter,it won't stop,comes,coms,But when it __ to my heart,26170,28420,2250,,
+hEhutIEUq8k,Mika,we are golden,gives,givs,Who __ a damn about the family you come from?,26590,30560,3970,,
+,,,gives,givs,Who __ a damn about the family you come from?,81260,85280,4020,,
+,,,gives,givs,Who __ a damn about the family you come from?,143650,147670,4020,,
+,,,gives,givs,Who __ a damn about the family you come from?,190570,194330,3760,,
+-ScjucUV8v0,Christina Aguilera,candyman,makes,maks,"He's a one stop shop, __ the panties drop",27340,29900,2560,
+,,,makes,maks,"He's a one stop shop, __ my cherry pop",52380,54890,2510,
+,,,makes,maks,"He's a one stop shop, __ my cherry pop",77240,79810,2570,
+g3o2TfrULck,one direction,i would,drives,drivs,He __ to school every morning,23440,27200,3760,,
+nvfejaHz-o0,one direction,gotta be you,deserves,deservs,And no woman in the world __ this,25330,27610,2280,,
+xGPeNN9S0Fg,One Direction,little things,makes,maks,And it all __ sense to me,29790,34600,4810,,
+,,,makes,maks,Though it __ no sense to me,90990,95400,4410,,
+Gqm873UWUdw,one direction,moments,escapes,escaps,Time __ me,32689,36200,3511,,
+,,,makes,maks,It __ this harder,39920,46870,6950,,
+,,,makes,maks,It __ this harder,129669,135880,6211,,
+QJO3ROT-A4E,One Direction,what makes you beautiful,makes,maks,That's what __ you beautiful,67040,72160,5120,,
+,,,makes,maks,That's what __ you beautiful,128620,144810,16190,,
+,,,makes,maks,That's what __ you beautiful,197500,207500,10000,,
+nvfejaHz-o0,One Direction,gotta be you,trembles,trembls,Now girl I hear it in your voice and how it __,83720,87180,3460,,
+A3jzMyYgPQs,Lady gaga,do what u want,makes,maks,But then you print some **** that __ me want to scream,34200,38160,3960,,
+qMxX-QOV9tI,Jessie j,price tag,comes,coms,When the sale __ first,35430,36960,1530,,
+,,,comes,coms,And the truth __ second,36960,38370,1410,,
+,,,shades,shads,Got __ on your eyes,46490,47770,1280,,

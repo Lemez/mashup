@@ -1,6 +1,4 @@
 keys.rb
-videos/vids/*
-videos/vids/*/*
-videos/vids/**/*
-videos/vids/*/*/*
-videos/vids/**/**/*
+videos/*
+videos_other/*
+videos_other/**/*

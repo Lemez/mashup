@@ -1,8 +1,0 @@
-file 'edits/Celine-Music_cut.mp4'
-file 'edits/High-Music_cut.mp4'
-file 'edits/High-This_cut.mp4'
-file 'edits/Jonas-Video_cut.mp4'
-file 'edits/On--_cut.mp4'
-file 'edits/Spirit-I_cut.mp4'
-file 'edits/The-King_cut.mp4'
-file 'edits/We-Toy_cut.mp4'

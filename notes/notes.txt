@@ -1,0 +1,39 @@
+notes
+
+1. Search videos on our site for specific language elements. return YT ID and timecodes each side
+2. add videos to playlist (via youtube-it) 	# https://github.com/kylejginavan/youtube_it
+3. download those videos with viddl 		# https://github.com/rb2k/viddl-rb
+4. Cut the video using timecodes(RMov)		# https://github.com/ryanb/rmov/tree/master
+5. Paste together							# https://github.com/ryanb/rmov/tree/master
+6. Upload to YT (via youtube-it)			# https://github.com/kylejginavan/youtube_it
+
+Hash for sentence and video stuff
+
+Rule name: 303
+Data: {
+		1 : {
+			artist:
+			title:
+			yt_id:
+			focus_word:
+			full_sentence:
+			sentence_with_gap:
+			start_time:
+			end_time:
+			duration:
+			},
+		2 : {
+			artist:
+			title:
+			yt_id:
+			focus_word:
+			full_sentence:
+			sentence_with_gap:
+			start_time:
+			end_time:
+			duration:
+			}
+
+
+}
+

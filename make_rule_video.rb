@@ -1,97 +1,114 @@
-# usage: ruby ../make_rule_video.rb '3rd person present tense (303).csv'
+# usage: ruby make_rule_video.rb '3rd person present tense (303).csv'
+raise "Please specify a local csv file, eg >> $ ruby make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
 
-require_relative "./extract.rb"
-require_relative './sentence.rb'
+require 'streamio-ffmpeg'
+require 'viddl-rb'
+require 'open-uri'
+require 'csv'
+require 'youtube_it'
+require 'open3'
+require 'pp'
+require 'awesome_print'
+require 'fileutils'
+require 'vimeo'
+require 'httparty'
+require 'cgi'
+require 'watir-webdriver'
+require 'nokogiri'
+require 'fuzzystringmatch'
 
-raise "Please specify a local csv file, eg >> $ ruby ../make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
-
-###### functions ######
-
-def get_files_from_specific_rule rule
-	list = CSV.read("../csv/#{rule}", {:headers => true})
-
-	@sentence_data = []
-	@last = ''
-
-	list.each do |line|
-		s = {}
-		@line_id = line[0] unless line[0].nil?
-		@line_artist = line[1].split(/ |\_/).map(&:capitalize).join(" ") unless line[1].nil?
-		@line_title = line[2] unless line[2].nil?
-		keyword = line[3]
-		sentence_w_gap = line[5]
-		time_at = line[6]
-		time_until = line[7]
-		dur_ms = line[8]
-
-		sentence_no_gap = ''
-		sentence_words = []
-
-		words = sentence_w_gap.split(" ")
-		words.each do |w|
-			w = keyword if w=="__"
-			sentence_words << w
-		end
-
-		sentence_no_gap = sentence_words.join(" ")
-
-		s['video_id'],s['artist'], s['title'],s['keyword'],s['sentence_w_gap'],s['full_sentence'],s['start'],s['end'],s['dur'] = @line_id,@line_artist,@line_title,keyword, sentence_w_gap, sentence_no_gap, time_at,time_until,dur_ms
-		
-		@sentence_data << s unless @last['video_id']==s['video_id']
-		@last = s
-	end
-end
+Dir["./*.rb"].each {|file| next if file == "./make_rule_video.rb"; require file }
+# Dir["./methods/*.rb"].each(&method(:require_relative)) put all files into methods (but then clean up the direcgtory issues)
 
 
-###### code ######
-@playlist_name = ARGV[0]
+###### variables #########################
+@videodir = Dir.pwd + '/videos/'
+@dir = Dir.pwd + '/videos/vids/'
+
+@playlist_name = ARGV[0][0...ARGV[0].index(".")]
 @mydir = "#{@dir}#{@playlist_name}"
 
-# # get the info from the named csv
-p "getting csv data"
+# @time = Time.now.usec.to_s
+#######
+
+# get the info from the named csv
 get_files_from_specific_rule ARGV[0] #returns Sentence objects with video_ids
 
-p "getting ids"
-rule_video_ids = @sentence_data.each.map{|e| e['video_id']}
-rule_titles = @sentence_data.each.map{|e| e['title']}
-rule_starttimes = @sentence_data.each.map{|e| e['start']}
-rule_durations = @sentence_data.each.map{|e| e['dur']}
+# p "getting ids"
+# @rule_video_ids = @sentence_data.each.map{|e| e['video_id']}
+# @rule_titles = @sentence_data.each.map{|e| e['title']}
+# @rule_artists = @sentence_data.each.map{|e| e['artist']}
+# @rule_starttimes = @sentence_data.each.map{|e| e['start']}
+# @rule_durations = @sentence_data.each.map{|e| e['dur']}
 
-p "logging in"
-@client,@user = yt_login
+# map to hashes
 
-p "checking if pl exists"
-pl_exists,pl_id = check_if_playlist_exists(@playlist_name)
+@data_hash = map_details_to_hashes @sentence_data
+@data_array = @data_hash["data"]
 
-p "seeing what's on the playlist"
-# # #see what is on the playlist
-get_vids_on_playlist (@playlist_name)
+# p "logging in"
+# @client,@user = yt_login
 
-p "adding to pl"
-@new_pl_id = add_to_playlist_if_not_already_there @playlist_name, rule_video_ids, pl_exists, pl_id, rule_titles
+# p "checking if pl exists"
+# pl_exists,pl_id = check_if_playlist_exists(@playlist_name)
 
-p "making dir if none"
-make_dir_if_none(@dir,@playlist_name)
+# p "seeing what's on the playlist"
+# # # #see what is on the playlist
+# get_vids_on_playlist (@playlist_name)
 
-get_all_titles_from_dir @mydir
+# p "adding to pl"
+# @new_pl_id = add_to_playlist_if_not_already_there @playlist_name, @rule_video_ids, pl_exists, pl_id, @rule_titles
 
-p "download_all_videos_from_pl"
-download_all_videos_from_pl @new_pl_id, @playlist_name
+# p "making dir if none"
+# make_dir_if_none(@dir,@playlist_name)
 
-p "clean up video names"
-clean_up_video_names (@mydir)
+# get_all_titles_from_dir @mydir
 
-p "checking for webm"
-check_for_webm_videos (@mydir)
+# p "download_all_videos_from_pl"
+# download_all_videos_from_pl @new_pl_id, @playlist_name
 
-# p"editing videos"
-#this needs to be a loop depending on which videos got dl
-# edit_videos (@mydir,rule_starttimes,rule_durations)
+# p "clean up video names"
+# clean_up_video_names (@mydir)
+
+# p "checking for webm"
+# check_for_webm_videos (@mydir)
 
 # filename = add_files_to_text_doc (name,directory)
 # make_intermediate_files(filename,directory,name)
 # work_the_av_magic
 # vimeo_login
-# try_vimeo "Passenger - Let Her Go [Official Video]",@mydir,"vimeo"
+# try_vimeo "American Authors - Believer",@mydir,"vimeo"
+
+# artist_match_results = match_best "Jessie J Price Tag", @rule_artists
+# @song_artist = artist_match_results[0]
+# remaining_words = artist_match_results[1]
+# song_match_results = match_best remaining_words, @rule_titles
+# @song_title = song_match_results[0]
+	
+# p @song_artist
+# p @song_title
+
+# get_vimeo_manually @song_artist,@song_title,@mydir,"vimeo"
+
+# download_a_video 82217180,@mydir,"vimeo"
+
+#### TO DOOOO
+# MAKE SURE THAT FILES ARE SAVED IN A FORMAT WE RECOGNIZE ON LOCAL MACHINE
+# ie rename the videos to match our artist and title name
+
+make_video_names_identifiable @videodir
+
+#check video sizes and if over 100MB, reduce file size
+reduce_video_size file
+
+
+#  @data_array :))
+
+
+# p"editing videos"
+#this needs to be a loop depending on which videos got dl
+
+
+# edit_videos (@mydir,@rule_starttimes,@rule_durations)
 
 

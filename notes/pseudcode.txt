@@ -1,0 +1,11 @@
+Pseudocode for turning Spreadsheet into a mashup
+
+
+1. Get data from spreadsheet and save it into some kind of format.
+2. Search for videos on local drive with the same names.
+
+if enough videos are on hard drive:
+3. If we can find 10 videos on the hard drive, make a video from them.
+
+if not enough videos are on hard drive:
+
