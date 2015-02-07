@@ -26,8 +26,7 @@ require_relative './environment.rb'
 
 
 ###### variables #########################
-@videodir = Dir.pwd + '/videos/'
-@dir = Dir.pwd + '/videos/vids/'
+@videodir = Dir.pwd + '/videos'
 
 @playlist_name = ARGV[0][0...ARGV[0].index(".")]
 @mydir = "#{@dir}#{@playlist_name}"
@@ -35,9 +34,13 @@ require_relative './environment.rb'
 # @time = Time.now.usec.to_s
 #######
 
-# get the info from the named csv
+# get the info from the named csv and create Sentences and Videos
 get_files_from_specific_rule ARGV[0] #returns Sentence objects with video_ids
 
+# get the info from the saved videos folder and create SavedVideos
+get_all_titles_from_dir
+
+Sentence.all.each {|v| v_id = v.video_id; video = Video.find_by("id=#{v_id}"); p "#{v.full_sentence} is from #{video.title} by #{video.artist}"}
 # p "getting ids"
 # @rule_video_ids = @sentence_data.each.map{|e| e['video_id']}
 # @rule_titles = @sentence_data.each.map{|e| e['title']}
@@ -47,8 +50,8 @@ get_files_from_specific_rule ARGV[0] #returns Sentence objects with video_ids
 
 # map to hashes
 
-@data_hash = map_details_to_hashes @sentence_data
-@data_array = @data_hash["data"]
+# @data_hash = map_details_to_hashes @sentence_data
+# @data_array = @data_hash["data"]
 
 # p "logging in"
 # @client,@user = yt_login

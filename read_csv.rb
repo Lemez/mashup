@@ -32,8 +32,10 @@ def get_files_from_specific_rule rule
 	list.each do |line|
 		s = {}
 		@line_id = line[0] unless line[0].nil?
-		@line_artist = line[1].split(/ |\_/).map(&:capitalize).join(" ") unless line[1].nil?
-		@line_title = line[2] unless line[2].nil?
+		@original_artist = line[1] unless line[1].nil?
+		@original_title = line[2] unless line[2].nil?
+		@line_artist = line[1].split(/ |\_/).map(&:downcase).join(" ").gsub("'","") unless line[1].nil?
+		@line_title = line[2].split(/ |\_/).map(&:downcase).join(" ").gsub("'","") unless line[2].nil?
 
 		
 		keyword = line[3]
@@ -60,10 +62,16 @@ def get_files_from_specific_rule rule
 		@last = s
 
 		@video = Video.where(:yt_id => @line_id).first_or_create
+		@video.title = @line_title
+		@video.artist = @line_artist
+		@video.artist_original = @original_artist
+		@video.title_original = @original_title
+
+		p "saved" if @video.save!
 		@sss = Sentence.where(:video_id => @video.id, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms).first_or_create
 
-		p @video_id
-		p @sss
+		# p @video_id
+		# p @sss
 	end
 end
 

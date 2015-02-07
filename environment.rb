@@ -17,10 +17,14 @@ ActiveRecord::Schema.define do
     create_table :saved_videos do |table|
         table.column :filename, :string
         table.column :extension, :string
+        table.column :artist, :string
+        table.column :title, :string
     end
  
     create_table :videos do |table|
+    	table.column :artist_original, :string
         table.column :artist, :string
+        table.column :title_original, :string
         table.column :title, :string
         table.column :yt_id, :string
         table.column :vimeo_id, :string
@@ -46,13 +50,54 @@ class Video < ActiveRecord::Base
     def self.id
     	@id
     end
+
+    def self.artist
+    	self.artist
+    end
+
+    def self.title
+    	@title
+    end
+
+    # def self.all
+    #     ObjectSpace.each_object(self).to_a
+    # end
 end
 
 class Sentence < ActiveRecord::Base
     belongs_to :video
+
+    def self.video_id
+    	@video_id
+    end
+
+    def self.full_sentence
+    	@full_sentence
+    end
+
+    def self.sentence_gap
+    	@sentence_gap
+    end
+
+    def self.keyword
+    	@keyword
+    end
+
+    def self.start_at
+    	@start_at
+	end
+
+    def self.end_at
+    	@end_at
+    end
+
+    def self.duration
+    	@duration
+    end
+
 end
 
-class VideoSaved < ActiveRecord::Base
+class SavedVideo < ActiveRecord::Base
 
     def self.filename
     	@filename
@@ -60,6 +105,18 @@ class VideoSaved < ActiveRecord::Base
 
     def self.extension
     	@extension
+    end
+
+    def self.id
+    	@id
+    end
+
+    def self.artist
+    	@artist
+    end
+
+    def self.title
+    	@title
     end
 end
  
