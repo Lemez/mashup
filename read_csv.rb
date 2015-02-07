@@ -20,6 +20,7 @@ def getfiles
 end
 
 def get_files_from_specific_rule rule
+	@videos_saved = {}
 	p "Getting data from #{rule}"
 
 	list = CSV.read("./csv/#{rule}", {:headers => true})
@@ -27,11 +28,14 @@ def get_files_from_specific_rule rule
 	@sentence_data = []
 	@last = ''
 
+
 	list.each do |line|
 		s = {}
 		@line_id = line[0] unless line[0].nil?
 		@line_artist = line[1].split(/ |\_/).map(&:capitalize).join(" ") unless line[1].nil?
 		@line_title = line[2] unless line[2].nil?
+
+		
 		keyword = line[3]
 		sentence_w_gap = line[5]
 		time_at = line[6]
@@ -51,8 +55,15 @@ def get_files_from_specific_rule rule
 
 		s['video_id'],s['artist'], s['title'],s['keyword'],s['sentence_w_gap'],s['full_sentence'],s['start'],s['end'],s['dur'] = @line_id,@line_artist,@line_title,keyword, sentence_w_gap, sentence_no_gap, time_at,time_until,dur_ms
 		
+
 		@sentence_data << s unless @last['video_id']==s['video_id']
 		@last = s
+
+		@video = Video.where(:yt_id => @line_id).first_or_create
+		@sss = Sentence.where(:video_id => @video.id, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms).first_or_create
+
+		p @video_id
+		p @sss
 	end
 end
 

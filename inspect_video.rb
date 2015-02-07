@@ -1,4 +1,4 @@
-def inspect intermediate_file_array
+def inspect_videos intermediate_file_array
 
 	@inter = intermediate_file_array
 	@info = {}

@@ -1,3 +1,5 @@
+
+
 # usage: ruby make_rule_video.rb '3rd person present tense (303).csv'
 raise "Please specify a local csv file, eg >> $ ruby make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
 
@@ -16,9 +18,11 @@ require 'cgi'
 require 'watir-webdriver'
 require 'nokogiri'
 require 'fuzzystringmatch'
+# require 'active_record'
+# require 'mysql2'
+require_relative './environment.rb'
 
-Dir["./*.rb"].each {|file| next if file == "./make_rule_video.rb"; require file }
-# Dir["./methods/*.rb"].each(&method(:require_relative)) put all files into methods (but then clean up the direcgtory issues)
+
 
 
 ###### variables #########################
@@ -96,11 +100,9 @@ get_files_from_specific_rule ARGV[0] #returns Sentence objects with video_ids
 # MAKE SURE THAT FILES ARE SAVED IN A FORMAT WE RECOGNIZE ON LOCAL MACHINE
 # ie rename the videos to match our artist and title name
 
-make_video_names_identifiable @videodir
+# make_video_names_identifiable @videodir
 
-#check video sizes and if over 100MB, reduce file size
-reduce_video_size file
-
+# @videos_saved.each {|v| p v}
 
 #  @data_array :))
 
