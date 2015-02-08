@@ -57,7 +57,6 @@ def get_files_from_specific_rule rule
 
 		s['video_id'],s['artist'], s['title'],s['keyword'],s['sentence_w_gap'],s['full_sentence'],s['start'],s['end'],s['dur'] = @line_id,@line_artist,@line_title,keyword, sentence_w_gap, sentence_no_gap, time_at,time_until,dur_ms
 		
-
 		@sentence_data << s unless @last['video_id']==s['video_id']
 		@last = s
 
@@ -68,7 +67,7 @@ def get_files_from_specific_rule rule
 		@video.title_original = @original_title
 
 		p "saved" if @video.save!
-		@sss = Sentence.where(:video_id => @video.id, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms).first_or_create
+		@sss = Sentence.where(:video_id => @video.id, :rule_name => @playlist_name,:full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms).first_or_create
 
 		# p @video_id
 		# p @sss

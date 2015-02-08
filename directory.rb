@@ -12,6 +12,15 @@
 # 	# FileUtils::mkdir_p 'foo/bar'
 # end
 
+def get_sentences_with_saved_videos
+	@sentences_to_extract = []
+	Sentence.all.obeys_rule.each do |sentence|
+		svid = sentence.video_id
+		v = Video.find_by("id=#{svid}")
+		@sentences_to_extract << sentence if v.saved
+	end
+end
+
 def get_all_titles_from_dir 
 	# p dir
 	# all_currently_saved_videos = []
@@ -24,6 +33,7 @@ def get_all_titles_from_dir
 		@saved_video.extension = extension
 		@saved_video.artist = artist
 		@saved_video.title = title
+		@saved_video.location = item
 		@saved_video.save!
 
 		# current_vids = all_currently_saved_videos.map{|e| e[0]}

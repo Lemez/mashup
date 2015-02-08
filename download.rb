@@ -1,18 +1,52 @@
-def try_vimeo title,dir,source
-	vimeo_login
+def download_undownloaded_vids array
 
-	p "Trying to download #{title} from Vimeo"
-	p VIMEO_ACCESS_TOKEN
-	escaped_title = CGI::escape(title)
-	api_url = "https://api.vimeo.com/videos?query=#{escaped_title}&sort=relevant&access_token=#{VIMEO_ACCESS_TOKEN}"
-	vimeo_response = JSON.parse(HTTParty.get api_url)
-	p vimeo_response
-	id = vimeo_response["data"][0]["uri"].gsub(/[^\d]/, '')  #"/videos/58786867"
-	
-	download_a_video id,dir,source
+	array.each do |record|
+		@song_artist = record.artist
+		@song_title = record.title
+		@vid = record.yt_id
+
+		video_string = "http://www.youtube.com/watch?v=#{@vid}"
+		download_video = "viddl-rb #{video_string} -d 'aria2c' -s #{@videodir}"
+
+		shell_command = `#{download_video}`
+		
+		aborted = shell_command.include? "Download aborted"
+
+		sleep 3 #wait 3 secs
+
+		# go to Vimeo to download if it doesnt work
+		if aborted
+
+			p "FAILED: #{shell_command}"
+			sleep 3 #wait 3 secs
+
+			get_vimeo_manually @song_artist,@song_title,'vimeo'
+
+		else
+			p "SUCCESS: #{shell_command}"
+			sleep 3 #wait 3 secs
+			
+			# if successful save vimeo id and saved=true and location
+		end
+	end
 end
 
-def get_vimeo_manually artist,title,dir,source
+
+def try_vimeo artist,title,source
+	vimeo_login
+
+	p "Trying to download #{artist} #{title} from Vimeo"
+	p VIMEO_ACCESS_TOKEN
+	escaped_title = CGI::escape("#{artist} #{title}")
+	api_url = "https://api.vimeo.com/videos?query=#{escaped_title}&sort=relevant&access_token=#{VIMEO_ACCESS_TOKEN}"
+	vimeo_response = JSON.parse(HTTParty.get api_url)
+	# p vimeo_response
+	id = vimeo_response["data"][0]["uri"].gsub(/[^\d]/, '')  #"/videos/58786867"
+	
+	download_a_video id,source
+end
+
+def get_vimeo_manually artist,title,source
 	@title_to_check = " #{artist} #{title}"
 	p "Trying to download #{title} from Vimeo manually"
 	
@@ -47,16 +81,18 @@ def get_vimeo_manually artist,title,dir,source
 
     p "Searching for #{@title_to_check}, #{@best_title} has Vimeo ID #{@vimeo_id} with distance #{@highest_match}"
 
-	download_a_video @vimeo_id,dir,source
+	download_a_video @vimeo_id,source
 
 end
 
-def download_a_video (video_id,my_directory,source)
+def download_a_video (video_id,source)
 	baseurl = "http://www.youtube.com/watch?v=" if source=='youtube'
 	baseurl = "http://vimeo.com/videos/" if source=='vimeo'
 
-	download_video = "viddl-rb #{baseurl}#{video_id} -d 'aria2c' -s '#{my_directory}'"
+	download_video = "viddl-rb #{baseurl}#{video_id} -d 'aria2c' -s '#{@videodir}'"
 	system (download_video)
+
+	# if successful save vimeo id and saved=true and location
 end
 
 # Download the videos not on the HD already from this playlist

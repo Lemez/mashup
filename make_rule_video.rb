@@ -23,13 +23,12 @@ require 'fuzzystringmatch'
 require_relative './environment.rb'
 
 
-
-
 ###### variables #########################
 @videodir = Dir.pwd + '/videos'
 
 @playlist_name = ARGV[0][0...ARGV[0].index(".")]
-@mydir = "#{@dir}#{@playlist_name}"
+PLAYLISTNAME = @playlist_name
+# @mydir = "#{@dir}#{@playlist_name}"
 
 # @time = Time.now.usec.to_s
 #######
@@ -40,7 +39,33 @@ get_files_from_specific_rule ARGV[0] #returns Sentence objects with video_ids
 # get the info from the saved videos folder and create SavedVideos
 get_all_titles_from_dir
 
-Sentence.all.each {|v| v_id = v.video_id; video = Video.find_by("id=#{v_id}"); p "#{v.full_sentence} is from #{video.title} by #{video.artist}"}
+# match videos on csv with saved videos on hard drive
+match_videos_with_saved_videos
+
+									# create array of videos still needing to be downloaded, where location = ''
+									# @list_to_dl = create_list_of_videos_to_download
+
+									# try to download those videos (currently some issues here on the plugins end)
+									# download_undownloaded_vids @list_to_dl 
+
+# get the sentences and timings from the sentences that have videos with saved files
+get_sentences_with_saved_videos
+
+# create snippets from those sentences and save their locations and rule numbers
+p @sentences_to_extract
+rule_keywords = @sentences_to_extract.map(&:keyword)
+
+# rule_keywords.each {|word| p @sentences_to_extract.find_by("keyword=#{word}")}
+
+# MyModel.where(id: arr.map(&:id))
+
+# glue them together
+
+
+
+					
+
+
 # p "getting ids"
 # @rule_video_ids = @sentence_data.each.map{|e| e['video_id']}
 # @rule_titles = @sentence_data.each.map{|e| e['title']}
@@ -74,7 +99,7 @@ Sentence.all.each {|v| v_id = v.video_id; video = Video.find_by("id=#{v_id}"); p
 # p "download_all_videos_from_pl"
 # download_all_videos_from_pl @new_pl_id, @playlist_name
 
-# p "clean up video names"
+# p "clean up video names" # not working Feb 15
 # clean_up_video_names (@mydir)
 
 # p "checking for webm"
