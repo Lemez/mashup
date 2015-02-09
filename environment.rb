@@ -51,7 +51,7 @@ ActiveRecord::Schema.define do
         table.column :video_id, :integer
         table.column :sentence_id, :string
         table.column :sentence_duration, :integer
-        table.column :clip_duration, :string
+        table.column :clip_duration, :decimal
         table.column :rule_name, :string
         table.column :full_video_location, :string
         table.column :location, :string

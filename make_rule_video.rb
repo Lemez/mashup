@@ -59,16 +59,9 @@ match_videos_with_saved_videos
 # create snippets from those sentences and save their locations and rule numbers
 create_snippets_from_sentences
 
-@snippets = Snippet.all
+#print out snippets created, file, duration and lyric data
+show_current_snippets
 
-@snippets.each do |s|
-	id = s.sentence_id
-	sentence = Sentence.find_by("id=#{id}")
-	p "#{sentence.full_sentence}"
-	p "#{s.location}"
-	p "#{s.sentence_duration}"
-	p "#{s.clip_duration}"
-end
 
 #create srt file from sentences
 

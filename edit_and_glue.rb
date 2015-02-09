@@ -14,20 +14,19 @@ def create_snippets_from_sentences
 
 		artist =v.artist
 		title = v.title
-		offset = v.offset
+		offset_in_ms = v.offset
 		full_sentence = sentence.full_sentence
-
 
 		full_video_location = "'#{@videodir}/#{v.location}'"
 
-		s_start = sentence.start_at+offset.to_i
+		s = sentence.start_at + offset_in_ms.to_i
+		d = sentence.duration + 1000 
+		d += 1000 if d < 4000
 
-		# dur_offset = sentence.duration.modulo(1000)
+		start_secs = convert_to_seconds_and_ms(s)
+		duration_secs = convert_to_seconds_and_ms(d)
 
-		s_dur = sentence.duration + 1000
-
-		starttime = convert_to_start_time(s_start)
-		duration = convert_to_duration(s_dur)
+		duration_secs = 4 if artist=='shakira' and title=='cant remember to forget you'
 
 		location_string = "#{@editsdir}/#{rule_name}/#{artist}-#{title}-#{sentence_id.to_s}.mp4"
 
@@ -36,16 +35,28 @@ def create_snippets_from_sentences
 		next if sentence.full_sentence.split(" ").length < 4
 		next if @full_sentence==full_sentence
 
-		s = Snippet.create(:video_id => video_id, :sentence_duration => sentence.duration, :clip_duration => duration.to_s,:sentence_id => sentence_id, :full_video_location => full_video_location, :location => location_string, :rule_name => rule_name )	
+		s = Snippet.create(:video_id => video_id, :sentence_duration => d, :clip_duration => duration_secs, :sentence_id => sentence_id, :full_video_location => full_video_location, :location => location_string, :rule_name => rule_name )	
 
 		# save cut of each video to rule edits folder
-		command = "ffmpeg -i #{full_video_location} -ss #{starttime} -t #{duration} -async 1 '#{location_string}'"
+		command = "ffmpeg -i #{full_video_location} -ss #{start_secs} -t #{duration_secs} -async 1 '#{location_string}'"
 
-		# system (command)
+		system (command) unless File.exists?(location_string) 
 
 		@full_sentence=full_sentence
 	end
 	
+end
+
+def show_current_snippets
+	@snippets = Snippet.all
+	@snippets.each do |s|
+		id = s.sentence_id
+		sentence = Sentence.find_by("id=#{id}")
+		p "#{sentence.full_sentence}"
+		p "#{s.location}"
+		p "#{s.sentence_duration}"
+		p "#{s.clip_duration}"
+	end
 end
 
 

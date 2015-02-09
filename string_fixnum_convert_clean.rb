@@ -22,6 +22,14 @@ def convert_to_duration(d)
 	if whole_units < 60
 		return format("00:00:%02d",whole_units ) 
 	else
-		return sprintf("00:%02d:%02d",whole_units/60, whole_units%60 ) 
+		# return sprintf("00:%02d:%02d",whole_units/60, whole_units%60 ) 
+		raise "Houston, we have a sentence duration problem from the csv"
 	end
+end
+
+def convert_to_seconds_and_ms(ms)
+	ms=ms/1.0
+	return ms/1000
+		# 	‘23.189’
+		# 23.189 seconds
 end
