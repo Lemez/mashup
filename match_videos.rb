@@ -1,7 +1,7 @@
 
 def match_videos_with_saved_videos
 
-	Video.all.each do |video|
+	Video.all.each  do |video|
 
 		 @assumed_filename = "#{video.artist} ~ #{video.title}";
 						
@@ -18,5 +18,5 @@ def match_videos_with_saved_videos
 end
 
 def create_list_of_videos_to_download
-	Video.all.to_download
+	Video.where("location=nil")
 end

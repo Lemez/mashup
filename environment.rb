@@ -52,15 +52,18 @@ ActiveRecord::Schema.define do
         table.column :location, :string
         table.column :sentence_id, :string
         table.column :duration, :integer
+        table.column :rule_id, :string
     end
 end
 
 class Video < ActiveRecord::Base
-    has_many :sentences 
+    has_many :sentences
+    has_many :snippets, through: :sentences  
     after_initialize :init
 
     def init
     	self.location  ||= ''
+    	self.saved  ||= false
     end
 
     def self.id
@@ -82,12 +85,25 @@ class Video < ActiveRecord::Base
     def self.location
         @location
     end
+
+    # def self.saved
+    # 	@saved
+    # end
+
+    def self.is_saved
+    	self.where("saved= ?",true)
+    end
+
+ #    def self.all_sentences
+ #  		Sentence.obeys_rule
+	# end
 end
 
 class Sentence < ActiveRecord::Base
     belongs_to :video
+    has_one :snippet
 
-    scope :obeys_rule,  ->  { where(rule_name: "#{PLAYLISTNAME}") }
+    scope :obeys_rule,  ->  { where(rule_name: '"#{PLAYLISTNAME}"') }
 
     def self.video_id
     	@video_id
@@ -125,8 +141,6 @@ end
 
 class SavedVideo < ActiveRecord::Base
 
-	has_many :snippets
-
     def self.filename
     	@filename
     end
@@ -150,7 +164,7 @@ end
 
 
 class Snippet < ActiveRecord::Base
-	belongs_to :saved_video
+	belongs_to :sentence
 
 	def self.saved_video_id
 		@saved_video_id

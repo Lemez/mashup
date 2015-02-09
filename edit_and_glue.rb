@@ -1,3 +1,12 @@
+# def create_snippets_from_sentences
+
+# 	s = Snippet.new	
+# end
+
+
+
+
+
 def edit_videos (directory,start,dur)
  	Dir.glob("#{directory}/*.mp4").each do |item|
 

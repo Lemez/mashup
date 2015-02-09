@@ -49,11 +49,18 @@ match_videos_with_saved_videos
 									# download_undownloaded_vids @list_to_dl 
 
 # get the sentences and timings from the sentences that have videos with saved files
-get_sentences_with_saved_videos
+# get_sentences_with_saved_videos
+@saved_videos = Video.all.is_saved
+@saved_videos.each {|v| v.sentences.each{|s| p v.location; p s.full_sentence }} # list of sentences to be saved as snippets
+
+@sentences_to_extract =  @saved_videos.map(&:sentences).flatten # list of sentences to be saved as snippets
 
 # create snippets from those sentences and save their locations and rule numbers
-p @sentences_to_extract
-rule_keywords = @sentences_to_extract.map(&:keyword)
+# @sentences_to_extract
+
+# create_snippets_from_sentences
+
+# rule_keywords = @sentences_to_extract.map(&:keyword)
 
 # rule_keywords.each {|word| p @sentences_to_extract.find_by("keyword=#{word}")}
 
