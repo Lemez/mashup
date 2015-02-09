@@ -99,6 +99,42 @@ def create_intermediate_files_from_snippets
 	end
 end
 
+def glue_intermediate_files_and_normal_audio
+
+
+	# #2D concatenate the files creatd using the below format 
+	# 	# ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
+		
+	# #VIDEO, no audio
+	# str = ''
+	# @inter_files.each{|name| str+=name+'|'}
+	# str.chop! # remove last pipe
+	# str = '"concat:' + str + '"'
+	# video_s = "ffmpeg -i #{str} -c copy '#{directory}/video.mp4'"
+
+	# # concatenate the video files 
+	# p video_s
+	# system(video_s)
+
+
+	# #AUDIO, no video
+	# str = ''
+	# @inter_files.each{|name| str+=name+'|'}
+	# str.chop! # remove last pipe
+	# str = '"concat:' + str + '"'
+	# audio_s = "ffmpeg -i #{str} -vn -acodec 'copy' '#{directory}/audio.mp2'"
+
+	# # concatenate the video files 
+	# p audio_s
+	# system(audio_s)
+
+	# #mashem together
+	# total_s = "ffmpeg -i '#{directory}/video.mp4' -i '#{directory}/audio.mp2' '#{directory}/output.mp4'"
+	# p total_s
+	# system(total_s)		
+
+end
+
 
 
 

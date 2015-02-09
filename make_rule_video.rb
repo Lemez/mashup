@@ -72,10 +72,14 @@ create_snippets_from_sentences
 # create_snippets_text_file 
 
 # create intermediate files together
-create_intermediate_files_from_snippets
+# create_intermediate_files_from_snippets
 
-# glue intermediate files together
-# glue_intermediate_files
+# normalize audio
+# normalize_audio
+#???????  TO DO - make AUDIO Class which has artist and title and sentence id in order to allow for safe glueing
+
+# glue intermediate video files and normalized audio together
+# glue_intermediate_files_and_normal_audio
 
 # add SRT file to final output file
 # http://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/subtitle_options
