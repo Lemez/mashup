@@ -50,11 +50,9 @@ end
 
 def get_file_attributes item
 	extension = File.extname(item)
-	p extension
 	name_with_ext = File.basename(item)
-	p name_with_ext
 	name = name_with_ext[0...name_with_ext.index(extension)]
-	p name
+
 	# newname = get_clean_name_alphanum(oldname)
 	# rootpath = item[0..item.rindex('/')]
 
@@ -63,9 +61,9 @@ end
 
 def make_video_names_identifiable directory
 	Dir.glob("#{directory}/*").each do |item|
-		rootpath,newname,name,extension = get_file_attributes item
+		name,extension = get_file_attributes item
 
-		csv_name = get_best_match @data_array, newname.downcase
+		csv_name = get_best_match @data_array, name.downcase
 		# p "Changing filename from #{name} to #{csv_name}"
 		
 		# File.rename(rootpath+name, rootpath+csv_name+extension) #if name != csv_name+extension

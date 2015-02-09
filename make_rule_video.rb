@@ -66,11 +66,24 @@ create_snippets_from_sentences
 # show_current_snippets
 
 #create srt file from snippets
-create_srt_from_snippets
+# create_srt_from_snippets
 
-#create a text file and intermediate files 
+#create a text file and intermediate files from snippets
+# create_snippets_text_file 
 
-# glue intermediate files  together
+# create intermediate files together
+create_intermediate_files_from_snippets
+
+# glue intermediate files together
+# glue_intermediate_files
+
+# add SRT file to final output file
+# http://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/subtitle_options
+# To make the subtitles stream from sub.srt appear in transparent green DejaVu Serif, use:
+
+# subtitles=sub.srt:force_style='FontName=DejaVu Serif,PrimaryColour=&HAA00FF00'
+
+
 
 
 

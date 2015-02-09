@@ -1,3 +1,15 @@
+def create_snippets_text_file 
+
+		file = open("#{@editsdir}/#{PLAYLISTNAME}/snippets_file.txt",'w')
+		Snippet.all.each do |item|
+
+			s = "file '#{item.location}'"
+			file.puts(s)
+		end
+		file.close
+end
+
+
 def create_snippets_from_sentences
 
 	make_dir_if_none @editsdir, @sentences_to_extract.first.rule_name
@@ -56,6 +68,34 @@ def show_current_snippets
 		p "#{s.location}"
 		p "#{s.sentence_duration}"
 		p "#{s.clip_duration}"
+	end
+end
+
+def create_intermediate_files_from_snippets
+	directory = "#{@editsdir}/#{PLAYLISTNAME}"
+	myfile = "#{directory}/snippets_file.txt"
+
+	make_dir_if_none directory,"tmp"
+		
+	File.readlines(myfile).each do |url|
+
+		name, extension = get_file_attributes url
+		snippet_url = url[5..-2]
+		snippet_s_id = Snippet.find_by("location=#{snippet_url}").sentence_id
+		sentence = Sentence.find_by("id=#{snippet_s_id}")
+		video = Video.find_by("id=#{sentence.video_id}")
+		artist = video.artist
+		title = video.title
+
+		inter_name = "'#{@editsdir}/#{PLAYLISTNAME}/tmp/#{artist}-#{title}-#{snippet_s_id}.ts'"
+
+	# Make sure that all files have same aspect ratio
+	# http://video.stackexchange.com/questions/9947/how-do-i-change-frame-size-preserving-width-using-ffmpeg
+
+		file_with_ar = "ffmpeg -i #{snippet_url} -vf scale=720x406,setdar=16:9 -c:v libx264 -preset slow -profile:v main -crf 20 #{inter_name}"
+		p file_with_ar
+		system(file_with_ar)
+
 	end
 end
 
