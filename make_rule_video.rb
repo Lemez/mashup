@@ -34,6 +34,9 @@ PLAYLISTNAME = @playlist_name
 # @time = Time.now.usec.to_s
 #######
 
+### TO DO ..... create ADULT or CLEAN parameter for sentence / Video
+
+
 # get the info from the named csv and create Sentences and Videos
 get_files_from_specific_rule ARGV[0] #returns Sentence objects with video_ids
 
@@ -60,10 +63,10 @@ match_videos_with_saved_videos
 create_snippets_from_sentences
 
 #print out snippets created, file, duration and lyric data
-show_current_snippets
+# show_current_snippets
 
-
-#create srt file from sentences
+#create srt file from snippets
+create_srt_from_snippets
 
 #create a text file and intermediate files 
 

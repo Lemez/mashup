@@ -33,3 +33,14 @@ def convert_to_seconds_and_ms(ms)
 		# 	‘23.189’
 		# 23.189 seconds
 end
+
+def convert_ms_to_srt(s)
+	ss, ms = s.to_i.divmod(1000)         
+	mm, ss = ss.divmod(60)            
+	      
+	time = format("00:%02d:%02d,%03d", mm, ss,ms)
+	
+	return time
+		# 	‘23.189’
+		# 23.189 seconds
+end
