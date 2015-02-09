@@ -1,16 +1,16 @@
-# def make_dir_if_none (dir,name)
+def make_dir_if_none (dir,name)
 
-# 	d = "#{dir}#{name}"
-# 	dir_exists = Dir.exists?(d) 
+	d = "#{dir}/#{name}"
+	dir_exists = Dir.exists?(d) 
 
-# 	unless dir_exists
-# 		p "making dir #{name}"
-# 		FileUtils::mkdir_p d	
-# 	else
-# 		p "dir #{name} exists"
-# 	end
-# 	# FileUtils::mkdir_p 'foo/bar'
-# end
+	unless dir_exists
+		p "making dir #{name}"
+		FileUtils::mkdir_p d	
+	else
+		p "dir #{name} exists"
+	end
+	# FileUtils::mkdir_p 'foo/bar'
+end
 
 def get_sentences_with_saved_videos
 	@sentences_to_extract = []

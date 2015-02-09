@@ -1,7 +1,52 @@
-# def create_snippets_from_sentences
+def create_snippets_from_sentences
 
-# 	s = Snippet.new	
-# end
+	make_dir_if_none @editsdir, @sentences_to_extract.first.rule_name
+
+	@full_sentence = ''
+
+	@sentences_to_extract.each do |sentence|
+		
+		video_id = sentence.video_id
+		sentence_id = sentence.id
+		rule_name = sentence.rule_name
+
+		v = @saved_videos.find_by("id=#{video_id}")
+
+		artist =v.artist
+		title = v.title
+		offset = v.offset
+		full_sentence = sentence.full_sentence
+
+
+		full_video_location = "'#{@videodir}/#{v.location}'"
+
+		s_start = sentence.start_at+offset.to_i
+
+		# dur_offset = sentence.duration.modulo(1000)
+
+		s_dur = sentence.duration + 1000
+
+		starttime = convert_to_start_time(s_start)
+		duration = convert_to_duration(s_dur)
+
+		location_string = "#{@editsdir}/#{rule_name}/#{artist}-#{title}-#{sentence_id.to_s}.mp4"
+
+		# define skipping conditions
+		next if artist=='u2' or artist=='U2' or artist=="destinys child" or artist=="eminem"
+		next if sentence.full_sentence.split(" ").length < 4
+		next if @full_sentence==full_sentence
+
+		s = Snippet.create(:video_id => video_id, :sentence_duration => sentence.duration, :clip_duration => duration.to_s,:sentence_id => sentence_id, :full_video_location => full_video_location, :location => location_string, :rule_name => rule_name )	
+
+		# save cut of each video to rule edits folder
+		command = "ffmpeg -i #{full_video_location} -ss #{starttime} -t #{duration} -async 1 '#{location_string}'"
+
+		# system (command)
+
+		@full_sentence=full_sentence
+	end
+	
+end
 
 
 

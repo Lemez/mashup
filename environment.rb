@@ -48,11 +48,13 @@ ActiveRecord::Schema.define do
     end
 
     create_table :snippets do |table|
-        table.column :saved_video_id, :integer
-        table.column :location, :string
+        table.column :video_id, :integer
         table.column :sentence_id, :string
-        table.column :duration, :integer
-        table.column :rule_id, :string
+        table.column :sentence_duration, :integer
+        table.column :clip_duration, :string
+        table.column :rule_name, :string
+        table.column :full_video_location, :string
+        table.column :location, :string
     end
 end
 
@@ -166,12 +168,16 @@ end
 class Snippet < ActiveRecord::Base
 	belongs_to :sentence
 
-	def self.saved_video_id
-		@saved_video_id
+	def self.video_id
+		@video_id
 	end
 
 	def self.location
 		@location
+	end
+
+	def self.full_video_location
+		@full_video_location
 	end
 	
 	def self.sentence_id
@@ -180,6 +186,10 @@ class Snippet < ActiveRecord::Base
 	
 	def self.duration
 		@duration
+	end
+
+	def self.rule_name
+		@rule_name
 	end
 end
 

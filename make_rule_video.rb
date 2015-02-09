@@ -25,6 +25,7 @@ require_relative './environment.rb'
 
 ###### variables #########################
 @videodir = Dir.pwd + '/videos'
+@editsdir = Dir.pwd + '/video_edits'
 
 @playlist_name = ARGV[0][0...ARGV[0].index(".")]
 PLAYLISTNAME = @playlist_name
@@ -50,23 +51,38 @@ match_videos_with_saved_videos
 
 # get the sentences and timings from the sentences that have videos with saved files
 # get_sentences_with_saved_videos
-@saved_videos = Video.all.is_saved
-@saved_videos.each {|v| v.sentences.each{|s| p v.location; p s.full_sentence }} # list of sentences to be saved as snippets
 
-@sentences_to_extract =  @saved_videos.map(&:sentences).flatten # list of sentences to be saved as snippets
+@saved_videos = Video.all.is_saved
+@sentences_to_extract = @saved_videos.map(&:sentences).flatten
+						# @saved_videos.each {|v| v.sentences.each{|s| p v.location; p s.full_sentence }} # list of sentences to be saved as snippets
 
 # create snippets from those sentences and save their locations and rule numbers
-# @sentences_to_extract
+create_snippets_from_sentences
 
-# create_snippets_from_sentences
+@snippets = Snippet.all
 
-# rule_keywords = @sentences_to_extract.map(&:keyword)
+@snippets.each do |s|
+	id = s.sentence_id
+	sentence = Sentence.find_by("id=#{id}")
+	p "#{sentence.full_sentence}"
+	p "#{s.location}"
+	p "#{s.sentence_duration}"
+	p "#{s.clip_duration}"
+end
 
-# rule_keywords.each {|word| p @sentences_to_extract.find_by("keyword=#{word}")}
+#create srt file from sentences
 
-# MyModel.where(id: arr.map(&:id))
+#create a text file and intermediate files 
 
-# glue them together
+# glue intermediate files  together
+
+
+
+												# rule_keywords = @sentences_to_extract.map(&:keyword)
+
+												# MyModel.where(id: arr.map(&:id))
+
+
 
 
 
