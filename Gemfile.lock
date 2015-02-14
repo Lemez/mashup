@@ -19,6 +19,9 @@ GEM
     builder (3.1.4)
     childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
+    echonest-ruby-api (0.7.0)
+      httparty
+      multi_json
     ffi (1.9.6)
     gemcutter (0.7.1)
     httparty (0.13.3)
@@ -74,6 +77,7 @@ DEPENDENCIES
   activerecord
   awesome_print
   builder (~> 3.1.0)
+  echonest-ruby-api
   gemcutter (~> 0.7.1)
   mysql2
   nokogiri

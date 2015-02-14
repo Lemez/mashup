@@ -45,16 +45,20 @@ ActiveRecord::Schema.define do
         table.column :end_at, :integer
         table.column :duration, :integer
         table.column :rule_name, :string
+        table.column :adult, :boolean
     end
 
     create_table :snippets do |table|
         table.column :video_id, :integer
         table.column :sentence_id, :string
         table.column :sentence_duration, :integer
-        table.column :clip_duration, :decimal
+        table.column :clip_duration, :float
         table.column :rule_name, :string
         table.column :full_video_location, :string
         table.column :location, :string
+        table.column :temp_file_location, :string
+        table.column :normal_audio_file_location, :string
+
     end
 end
 
@@ -109,6 +113,10 @@ class Sentence < ActiveRecord::Base
 
     def self.video_id
     	@video_id
+    end
+
+    def self.adult
+    	@adult
     end
 
     def self.rule_name
@@ -190,6 +198,14 @@ class Snippet < ActiveRecord::Base
 
 	def self.rule_name
 		@rule_name
+	end
+
+	def self.temp_file_location
+		@temp_file_location
+	end
+
+	def self.normal_audio_file_location
+		@normal_audio_file_location
 	end
 end
 

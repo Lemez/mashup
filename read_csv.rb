@@ -30,6 +30,7 @@ def get_files_from_specific_rule rule
 
 
 	list.each do |line|
+
 		s = {}
 		@line_id = line[0] unless line[0].nil?
 		@original_artist = line[1] unless line[1].nil?
@@ -37,7 +38,6 @@ def get_files_from_specific_rule rule
 		@line_artist = line[1].split(/ |\_/).map(&:downcase).join(" ").gsub("'","") unless line[1].nil?
 		@line_title = line[2].split(/ |\_/).map(&:downcase).join(" ").gsub("'","") unless line[2].nil?
 
-		
 		keyword = line[3]
 		sentence_w_gap = line[5]
 		time_at = line[6]
@@ -54,6 +54,7 @@ def get_files_from_specific_rule rule
 		end
 
 		sentence_no_gap = sentence_words.join(" ")
+		use = !line[9].nil?
 
 		s['video_id'],s['artist'], s['title'],s['keyword'],s['sentence_w_gap'],s['full_sentence'],s['start'],s['end'],s['dur'] = @line_id,@line_artist,@line_title,keyword, sentence_w_gap, sentence_no_gap, time_at,time_until,dur_ms
 		
@@ -67,7 +68,7 @@ def get_files_from_specific_rule rule
 		@video.title_original = @original_title
 
 		p "saved" if @video.save!
-		@sss = Sentence.where(:video_id => @video.id, :rule_name => @playlist_name,:full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms).first_or_create
+		@sss = Sentence.where(:video_id => @video.id, :rule_name => @playlist_name,:full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => use).first_or_create
 
 		# p @video_id
 		# p @sss

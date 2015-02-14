@@ -1,9 +1,11 @@
 
 def normalize_audio
-	
+
 	make_dir_if_none "#{@editsdir}/#{PLAYLISTNAME}","normalized"
 
-	Dir.glob("#{@editsdir}/#{PLAYLISTNAME}/tmp/*.ts").each do |temp_file|
+	Snippet.all.each do |snippet|
+
+		temp_file = snippet.temp_file_location
 
 		normal_dir = "#{@editsdir}/#{PLAYLISTNAME}/normalized"
 
@@ -12,12 +14,20 @@ def normalize_audio
 		namestring = temp_file[i_start...i_end]
 
 		audio_file = "'#{normal_dir}/#{namestring}-clean.wav'"
-		normal_file = "'#{normal_dir}/#{namestring}-normal.wav'"
+		normal_file = "#{normal_dir}/#{namestring}-normal.wav"
+		# normal_ts = "#{normal_dir}/#{namestring}-normal.ts"
 	
-		`ffmpeg -i '#{temp_file}' -ac 2 -y #{audio_file}` unless File.exists?(audio_file)
-		`sox --show-progress #{audio_file} #{normal_file} norm -0.2` unless File.exists?(normal_file)
+		`ffmpeg -i '#{temp_file}' -ac 2 -y #{audio_file}` 
+		`sox --show-progress #{audio_file} '#{normal_file}' rate 44100 norm` 
+		# `ffmpeg -i '#{normal_file}' -ac 2 -y '#{normal_ts}'` unless File.exists?(normal_ts)
 
-		`rm #{audio_file}` if File.exists?(audio_file)
+		snippet.normal_audio_file_location = normal_file
+		p snippet.normal_audio_file_location
+
+		snippet.save!
+
+		`rm "#{audio_file}"` if File.exists?("#{audio_file}")
+		# `rm "#{normal_file}"` if File.exists?("#{normal_file}")
 
 		# final_file = "'#{normal_dir}/#{namestring}-normal.mp4'"
 		# video_file = "'#{normal_dir}/#{namestring}-clean.mp4'"
