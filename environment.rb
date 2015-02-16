@@ -33,7 +33,6 @@ ActiveRecord::Schema.define do
         table.column :offset, :integer
         table.column :saved, :boolean
         table.column :location, :string
-
     end
 
     create_table :sentences do |table|
@@ -58,11 +57,48 @@ ActiveRecord::Schema.define do
         table.column :location, :string
         table.column :temp_file_location, :string
         table.column :normal_audio_file_location, :string
+    end
 
+      create_table :rules do |table|
+        table.column :rule_name, :string
+        table.column :xfade_audio, :string
+        table.column :xfade_ts, :string
+        table.column :xfade_mp4, :string
+        table.column :normal_audio, :string
+        table.column :final_mp4, :string
+    end
+end
+
+class Rule < ActiveRecord::Base
+    has_many :videos
+
+    def self.rule_name
+        @rule_name
+    end
+
+    def self.xfade_ts
+        @xfade_ts
+    end
+
+    def self.xfade_mp4
+        @xfade_mp4
+    end
+
+    def self.xfade_audio
+        @xfade_audio
+    end
+
+    def self.normal_audio
+        @normal_audio
+    end
+
+    def self.final_mp4
+        @final_mp4
     end
 end
 
 class Video < ActiveRecord::Base
+    belongs_to :rule
     has_many :sentences
     has_many :snippets, through: :sentences  
     after_initialize :init
@@ -106,7 +142,7 @@ class Video < ActiveRecord::Base
 end
 
 class Sentence < ActiveRecord::Base
-    belongs_to :video
+    belongs_to :rule
     has_one :snippet
 
     scope :obeys_rule,  ->  { where(rule_name: '"#{PLAYLISTNAME}"') }

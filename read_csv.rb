@@ -22,6 +22,8 @@ end
 def get_files_from_specific_rule rule
 	@videos_saved = {}
 	p "Getting data from #{rule}"
+	
+	Rule.create(:rule_name => @playlist_name)
 
 	list = CSV.read("./csv/#{rule}", {:headers => true})
 

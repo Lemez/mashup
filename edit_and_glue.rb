@@ -28,7 +28,47 @@ def glue_intermediate_files_and_normal_audio
 
 end
 
+
+def process_xfaded_ts_to_mp4
+	infile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video.ts"
+	final_xfaded_mp4 = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video.mp4"
+
+	make_dir_if_none "#{Dir.pwd}/videos_final", "#{PLAYLISTNAME}" #make dir
+	
+	rule = Rule.find_by("xfade_ts='#{infile}'")
+	rule.xfade_mp4 = final_xfaded_mp4
+	rule.save!
+
+	`ffmpeg -i '#{infile}' -acodec copy -vcodec copy '#{final_xfaded_mp4}'`
+end
+
 def glue_crossfaded_video_and_normal_audio
+
+	mp4_file = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video.mp4"
+	final_video_and_audio_file = "#{Dir.pwd}/videos_final/#{PLAYLISTNAME}/final_xfaded_video_and_audio.mp4"
+
+	dir = "#{@editsdir}/#{PLAYLISTNAME}/tmp"
+
+	@normal_audio_files_wav = "'" + Snippet.all.map(&:normal_audio_file_location).join("' '") + "'"
+
+	`sox #{@normal_audio_files_wav} '#{dir}/_audio.wav'` 
+
+	
+
+	# glue them together ORDER IMPORTANT::: AUDIO then VIDEO
+	message = "ffmpeg -i '#{dir}/_audio.wav' -i '#{mp4_file}' -y '#{final_video_and_audio_file}'"
+
+	p message
+	system(message)
+
+	rule = Rule.find_by("xfade_mp4='#{mp4_file}'")
+	rule.final_mp4 = final_video_and_audio_file
+	rule.save!
+
+
+	# clean up
+	# `rm '#{dir}/_video.mp4'`
+	# `rm '#{dir}/_audio.wav'`
 end
 
 def test_gluing

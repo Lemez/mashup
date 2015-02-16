@@ -3,9 +3,6 @@ def crossfade_snippets_to_mp4
 	@items = Snippet.all.map(&:temp_file_location)
 	@durations = Snippet.all.map(&:clip_duration)
 
-	p @items
-	p @durations
-
 	@number = @items.length - 1
 
 	make_dir_if_none "#{Dir.pwd}/videos_other","test"
@@ -16,42 +13,41 @@ def crossfade_snippets_to_mp4
 
 	@number.times do |t|
 
+		p "items length = #{@items.length}"
+		p "dur length = #{@durations.length}"
+		p "number = #{@number}"
+		duration = @durations[0].to_s
+
 		if @first
 			@vid1 = @items[t]
 			@vid2 = @items[t+1]
-			@outfile = "#{Dir.pwd}/videos_other/test/temp-#{t}.mp4"
+			@outfile = "#{Dir.pwd}/videos/test/temp-#{t}.ts"
 			
-
 				#nb need to adjust all timings to reflect the fade length overlap
 				# ie timecodes are -1 second from the 2nd video onwards
 				# use an extra buffer?
 
 			@dur = @durations[0] + @durations[1] - @fadelength
-
-			@fadeout_start = @durations[0] - @fadelength # set fade out start point
-
-
-		elsif @items.length==1
-
-			@last = true
-
-			@vid1 = @outfile
-			@vid2 = @items[0][0]
-			@outfile = "#{Dir.pwd}/videos_other/test/#{PLAYLISTNAME}-final.mp4"
-
-			@fadeout_start = @dur - @fadelength # set fade out start point
-			@dur += @durations[0] 
+			@fadeout_start = @durations[0] - @fadelength # set fade out start point 
 			
-
 		else
 			@vid1 = @outfile
 			@vid2 = @items[0]
-			@time = Time.now.usec.to_s
 			@outfile = "#{Dir.pwd}/videos_other/test/temp-#{t}.ts"
 
 			@fadeout_start = @dur - @fadelength # set fade out start point
 			@dur += @durations[0]
 		end
+
+
+		if @items.length==1
+			@last = true
+			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video.ts"
+			rule = Rule.find_by("rule_name='#{PLAYLISTNAME}'")
+			rule.xfade_ts = @outfile
+			rule.save!
+		end
+
 
 		index1 = @vid1.rindex("/")+1
 		@vid1name = @vid1[index1..-1]
@@ -90,7 +86,7 @@ def crossfade_snippets_to_mp4
 		`ffmpeg -i '#{@vid1}' -i '#{@vid2}' -f lavfi -i color=black -filter_complex \
 		"[0:v]format=pix_fmts=yuva420p,fade=t=out:st=#{@fadeout_start}:d=#{@fadelength}:alpha=1,setpts=PTS-STARTPTS[va0];\
 		[1:v]format=pix_fmts=yuva420p,fade=t=in:st=0:d=#{@fadelength}:alpha=1,setpts=PTS-STARTPTS+#{@fadeout_start}/TB[va1];\
-		[2:v]scale=1280x720,trim=duration=#{@dur}[over];\
+		[2:v]scale=720x406,trim=duration=#{@dur}[over];\
 		[over][va0]overlay[over1];\
 		[over1][va1]overlay=format=yuv420[outv]" \
 		 -vcodec libx264 -y -map [outv] '#{@outfile}' -loglevel quiet`

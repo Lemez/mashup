@@ -34,16 +34,19 @@ def make_new_video downloading=false
 	create_intermediate_files_from_snippets
 
 		# normalize audio
-	# normalize_audio
+	normalize_audio
 
 		# crossfade intermediate files
 	crossfade_snippets_to_mp4
+
+		# make ts output into mp4
+	process_xfaded_ts_to_mp4
 
 		# glue intermediate video files and normalized audio together
 	# glue_intermediate_files_and_normal_audio
 
 		# glue crossfaded video files and normalized audio together
-	# glue_crossfaded_video_and_normal_audio
+	glue_crossfaded_video_and_normal_audio
 end
 
 def do_downloading
