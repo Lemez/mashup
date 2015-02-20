@@ -30,6 +30,7 @@ BLACK_PIC = Dir.pwd + '/images/black.png'
 
 @playlist_name = ARGV[0][0...ARGV[0].index(".")]
 PLAYLISTNAME = @playlist_name
+
 # @mydir = "#{@dir}#{@playlist_name}"
 
 # # @time = Time.now.usec.to_s
@@ -43,6 +44,9 @@ make_new_video downloading=false
 
 #############################
 
+# a = "4.806531\n"
+# c =  a[0..-2].to_f
+# p (c/0.001)
 
 ####### TESTING #######
 # test_gluing

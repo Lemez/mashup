@@ -9,3 +9,10 @@ if enough videos are on hard drive:
 
 if not enough videos are on hard drive:
 
+
+
+
+
+VIDEO aaabbbcccdddeee 
+XFADE aaxbbxccxddxee
+AUDIO

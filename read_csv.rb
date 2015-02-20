@@ -68,8 +68,9 @@ def get_files_from_specific_rule rule
 		@video.artist = @line_artist
 		@video.artist_original = @original_artist
 		@video.title_original = @original_title
-
-		p "saved" if @video.save!
+		@video.save!
+		
+		# p "saved" if @video.save!
 		@sss = Sentence.where(:video_id => @video.id, :rule_name => @playlist_name,:full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => use).first_or_create
 
 		# p @video_id

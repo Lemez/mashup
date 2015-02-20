@@ -1,0 +1,3 @@
+Simply installing Quiet Assets will suppress the log messages automatically. However, if you wish to temporarily re-enable the logging of the asset pipeline messages, place the following in your config/application.rb file:
+
+config.quiet_assets = false

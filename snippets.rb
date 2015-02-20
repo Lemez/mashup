@@ -1,8 +1,11 @@
 def create_snippets_text_file 
 
+	p "******"
+	p "create_snippets_text_file"
+	p "******"
+
 		file = open("#{@editsdir}/#{PLAYLISTNAME}/snippets_file.txt",'w')
 		Snippet.all.each do |item|
-
 			s = "file '#{item.location}'"
 			file.puts(s)
 		end
@@ -12,9 +15,14 @@ end
 
 def create_snippets_from_sentences
 
+	p "******"
+	p "create_snippets_from_sentences"
+	p "******"
+
 	make_dir_if_none @editsdir, @sentences_to_extract.first.rule_name
 
 	@full_sentence = ''
+	@title = ''
 
 	@sentences_to_extract.each do |sentence|
 		
@@ -40,7 +48,7 @@ def create_snippets_from_sentences
 		start_secs = convert_to_seconds_and_ms(s)
 		duration_secs = convert_to_seconds_and_ms(d)
 
-		duration_secs = 4 if artist=='shakira' and title=='cant remember to forget you'
+		# duration_secs = 4 if artist=='shakira' and title=='cant remember to forget you'
 
 		location_string = "#{@editsdir}/#{rule_name}/#{artist}-#{title}-#{sentence_id.to_s}.mp4"
 
@@ -48,20 +56,26 @@ def create_snippets_from_sentences
 		next if artist=='u2' or artist=='U2' or artist=="destinys child" or artist=="eminem"
 		next if sentence.full_sentence.split(" ").length < 4
 		next if @full_sentence==full_sentence
+		next if @title==title
 
 		s = Snippet.create(:video_id => video_id, :sentence_duration => d, :clip_duration => duration_secs, :sentence_id => sentence_id, :full_video_location => full_video_location, :location => location_string, :rule_name => rule_name )	
 
 		# save cut of each video to rule edits folder
-		command = "ffmpeg -i #{full_video_location} -ss #{start_secs} -t #{duration_secs} -async 1 '#{location_string}'"
+		command = "ffmpeg -i #{full_video_location} -ss #{start_secs} -t #{duration_secs} -async 1 '#{location_string}' -y -loglevel quiet"
 
-		system (command) unless File.exists?(location_string) 
+		system (command)
 
 		@full_sentence=full_sentence
+		@title=title
 	end
 	
 end
 
 def show_current_snippets
+
+	p "******"
+	p "show_current_snippets"
+	p "******"
 	@snippets = Snippet.all
 	@snippets.each do |s|
 		id = s.sentence_id
@@ -74,6 +88,11 @@ def show_current_snippets
 end
 
 def create_intermediate_files_from_snippets
+
+	p "******"
+	p "create_intermediate_files_from_snippets"
+	p "******"
+
 	directory = "#{@editsdir}/#{PLAYLISTNAME}"
 	myfile = "#{directory}/snippets_file.txt"
 
@@ -87,22 +106,23 @@ def create_intermediate_files_from_snippets
 		snippet_s_id = @snip.sentence_id
 		sentence = Sentence.find_by("id=#{snippet_s_id}")
 		video = Video.find_by("id=#{sentence.video_id}")
+		words = sentence.full_sentence.gsub(/[^0-9a-z ]/i, '')
 		artist = video.artist
 		title = video.title
 
-		inter_name = "#{@editsdir}/#{PLAYLISTNAME}/tmp/#{artist}-#{title}-#{snippet_s_id}.ts"
+		inter_name = "#{@editsdir}/#{PLAYLISTNAME}/tmp/#{artist}-#{title}-#{snippet_s_id}-#{words}.ts"
 
 	# Make sure that all files have same aspect ratio
 	# http://video.stackexchange.com/questions/9947/how-do-i-change-frame-size-preserving-width-using-ffmpeg
 
-		file_with_ar = "ffmpeg -i #{snippet_url} -vf scale=720x406,setdar=16:9 -c:v libx264 -preset slow -profile:v main -crf 20 -y '#{inter_name}'"
+		file_with_ar = "ffmpeg -i #{snippet_url} -vf scale=720x406,setdar=16:9 -c:v libx264 -preset slow -profile:v main -crf 20 -y '#{inter_name}' -loglevel quiet"
 		
 		# save temp file location to Snippet
 		@snip.temp_file_location = inter_name
 		@snip.save!
 
-		p @snip.temp_file_location
-		system(file_with_ar)
+		# p @snip.temp_file_location
+		system(file_with_ar) unless File.exists?(inter_name)
 
 	end
 end

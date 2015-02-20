@@ -8,6 +8,9 @@ Dir["./*.rb"].each {|file| next if file == "./make_rule_video.rb"; require file 
 
 ActiveRecord::Base.logger = Logger.new(STDERR)
 # ActiveRecord::Base.colorize_logging = false
+
+# turn off noisy logging
+ActiveRecord::Base.logger.level = 1
  
 ActiveRecord::Base.establish_connection(
     :adapter => "sqlite3",
@@ -42,7 +45,7 @@ ActiveRecord::Schema.define do
         table.column :keyword, :string
         table.column :start_at, :integer
         table.column :end_at, :integer
-        table.column :duration, :integer
+        table.column :duration, :float
         table.column :rule_name, :string
         table.column :adult, :boolean
     end
@@ -50,13 +53,18 @@ ActiveRecord::Schema.define do
     create_table :snippets do |table|
         table.column :video_id, :integer
         table.column :sentence_id, :string
-        table.column :sentence_duration, :integer
+        table.column :sentence_duration, :float
         table.column :clip_duration, :float
         table.column :rule_name, :string
         table.column :full_video_location, :string
         table.column :location, :string
         table.column :temp_file_location, :string
         table.column :normal_audio_file_location, :string
+        table.column :normal_audio_duration, :float
+        table.column :xfaded_audio_file_location, :string
+        table.column :trimmed_audio, :string
+         table.column :trimmed_file_duration, :float
+
     end
 
       create_table :rules do |table|
@@ -243,6 +251,24 @@ class Snippet < ActiveRecord::Base
 	def self.normal_audio_file_location
 		@normal_audio_file_location
 	end
+
+    def self.trimmed_audio
+        @trimmed_audio
+    end
+
+      def self.trimmed_file_duration
+        @trimmed_file_duration
+    end
+
+
+    
+    def self.normal_audio_duration
+        @normal_audio_duration
+    end
+
+    def self.xfaded_audio_file_location
+        @xfaded_audio_file_location
+    end
 end
 
  
