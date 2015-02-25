@@ -1,3 +1,142 @@
+def crossfade_snippets_with_normal_audio_together
+
+	p "******"
+	p "crossfade_snippets_with_normal_audio_together"
+	p "******"
+
+	@items = Snippet.all.map(&:normal_snippet_file_location)
+	@durations = Snippet.all.map(&:clip_duration)
+
+	@number = @items.length - 1
+
+	make_dir_if_none "#{Dir.pwd}/videos_other","test"
+	
+	@first = true
+	@last = false
+	@fadelength = FADELENGTH # in s
+	@audiofadelength = @fadelength/2
+
+	# dir,filename = File.split(ts_file)
+	# location,extension = filename.split(".")
+	# outfile = "#{dir}/xfaded-" + location + ".ts"
+
+	1.times do |t|
+
+		# p "items length = #{@items.length}"
+		# p "dur length = #{@durations.length}"
+		# p "number = #{@number}"
+		duration = @durations[0].to_s
+
+		if @first
+			@vid1 = @items[t]
+			@vid2 = @items[t+1]
+		
+			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/tmp/temp-av-#{t}.ts"
+
+			@dur = @durations[0] + @durations[1] - @fadelength
+			@fadeout_start = @durations[0] - @fadelength # set fade out start point 
+			
+		else
+			@vid1 = @outfile
+			@vid2 = @items[0]
+
+			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/tmp/temp-av-#{t}.ts"
+
+			@fadeout_start = @dur - @fadelength # set fade out start point
+			@dur += @durations[0]
+		end
+
+
+		if @items.length==1
+			@last = true
+			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video_with_audio.ts"
+
+		end
+
+
+		index1 = @vid1.rindex("/")+1
+		@vid1name = @vid1[index1..-1]
+
+		index2 = @vid2.rindex("/")+1
+		@vid2name = @vid2[index2..-1]
+
+		index3 = @outfile.rindex("/")+1
+		@outname = @outfile[index3..-1]
+
+
+		# `ffprobe -v verbose -show_format -of json '#{@items[0][0]}'`
+
+		# p "first" if @first
+		# p "last" if @last
+
+		# p "1: name= #{@vid1name}"
+
+		# p "1: length = #{@items[0][1].to_f}" if @first
+		# p "1: length = #{@dur - @durations[0]}" unless @first
+
+		# p "fadeout starts: #{@fadeout_start}"
+		# p ""
+
+		# p "2: name= #{@vid2name}"
+
+		# p "2: length = #{@durations[1]}" if @first
+		# p "2: length = #{@durations[0]}" unless @first or @last
+
+		# p "----------------------"
+		# p "out= #{@dur}"
+		# p "*********************"
+
+
+# ffmpeg -i input.mp3 -af "afade=enable='between(t,0,3)':t=in:ss=0:d=3,afade=enable='between(t,7,10)':t=out:st=7:d=3,afade=enable='between(t,10,13)':t=in:st=10:d=3,afade=enable='between(t,13,16)':t=out:st=13:d=3" -t 16 output.mp3
+
+	`ffmpeg -i '#{@vid1}' -i '#{@vid2}' -f lavfi -i color=black -filter_complex \
+		"[0:v]format=pix_fmts=yuva420p,\
+		fade=t=out:st=#{@fadeout_start}:d=#{@fadelength}:alpha=1,setpts=PTS-STARTPTS[v0];\
+		[0:a]\
+		afade=t=out:st=#{@fadeout_start}:d=#{@fadelength}, asetpts=PTS-STARTPTS[a0];\
+		[1:v]format=pix_fmts=yuva420p,\
+		fade=t=in:st=0:d=#{@fadelength}:alpha=1,setpts=PTS-STARTPTS+#{@fadeout_start}/TB[v1];\
+		[1:a]\
+		afade=t=in:st=0:d=#{@fadelength},asetpts=PTS-STARTPTS+#{@fadeout_start}/TB[a1];\
+		[2:v]scale=720x406,trim=duration=#{@dur}[over];\
+		[over][v0]overlay[over1];\
+		[over1][v1]overlay=format=yuv420[outv]" -vcodec libx264 -y -map [outv] '#{@outfile}'`
+
+
+
+		# `ffmpeg -i '#{@vid1}' -i '#{@vid2}' -f lavfi -i color=black -filter_complex \
+		# "[0:v]format=pix_fmts=yuva420p,fade=t=out:st=#{@fadeout_start}:d=#{@fadelength}:alpha=1,setpts=PTS-STARTPTS[v0];\
+		# [1:v]format=pix_fmts=yuva420p,fade=t=in:st=0:d=#{@fadelength}:alpha=1,setpts=PTS-STARTPTS+#{@fadeout_start}/TB[v1];\
+		# [2:v]scale=720x406,trim=duration=#{@dur}[over];\
+		# [0:a]afade=t=out:st=#{@fadeout_start}:d=#{@fadelength},[a1];\
+		# [1:a]afade=t=in:ss=0:d=#{@fadelength}[a2];\
+		# [a1][a2]amix=inputs=2;\
+		# [over][v0]overlay[over1];\
+		# [over1][v1]overlay=format=yuv420[outv]" \
+		#  -vcodec libx264 -y -map [outv] '#{@outfile}'` # unless File.exists?(@outfile)
+
+
+		@items.shift
+		@items.shift if @first
+		@durations.shift
+		@durations.shift if @first
+
+		
+		@first = false
+
+		if @last
+			rule = Rule.find_by("rule_name='#{PLAYLISTNAME}'")
+			rule.normal_xfaded_ts = @outfile
+			rule.save!
+		end
+
+
+	end
+
+end
+
+
+
 def crossfade_snippets_to_xfaded_ts 
 
 	@items = Snippet.all.map(&:temp_file_location)
@@ -218,6 +357,9 @@ def crossfade_snippets_to_ts_and_audio_to_wav
 		"[0:v]format=pix_fmts=yuva420p,fade=t=out:st=#{@fadeout_start}:d=#{@fadelength}:alpha=1,setpts=PTS-STARTPTS[va0];\
 		[1:v]format=pix_fmts=yuva420p,fade=t=in:st=0:d=#{@fadelength}:alpha=1,setpts=PTS-STARTPTS+#{@fadeout_start}/TB[va1];\
 		[2:v]scale=720x406,trim=duration=#{@dur}[over];\
+		[0:a]afade=out:d=#{FADELENGTH}[a1];\
+		[1:a]afade=in:d=#{FADELENGTH}[a2];\
+		[a1][a2]amix=inputs=2;\
 		[over][va0]overlay[over1];\
 		[over1][va1]overlay=format=yuv420[outv]" \
 		 -vcodec libx264 -y -map [outv] '#{@outfile}' -loglevel quiet` # unless File.exists?(@outfile)

@@ -24,6 +24,9 @@ def make_new_video downloading=false
 		#print out snippets created, file, duration and lyric data
 	show_current_snippets
 
+		# normalize audio with fades
+	normalize_audio
+
 		#create srt file from snippets
 	create_srt_from_snippets
 
@@ -33,27 +36,35 @@ def make_new_video downloading=false
 		# create intermediate files together
 	create_intermediate_files_from_snippets
 
-		# normalize audio with fades
-	normalize_audio
+	## NO XFADES
+		# glue intermediate video files and normalized audio together
+	@@xfade = false 
+	glue_intermediate_files_and_normal_audio
+
+	## XFADES
+	@@xfade = true 
+
+	# create normalized snippets.ts
+	# create_normalized_snippets
+
+	# crossfade snippets that already have normalised audio
+	# crossfade_snippets_with_normal_audio_together
 
 		# trim audio to adapt to crossfades
-	trim_audio
+	# trim_audio
 
 	#create silence
 	# create_silence
 
 		# crossfade intermediate files
-	crossfade_snippets_to_xfaded_ts
+	# crossfade_snippets_to_xfaded_ts
 	# crossfade_snippets_to_ts_and_audio_to_wav
 
 		# make ts output into mp4
-	process_xfaded_ts_to_mp4
-
-		# glue intermediate video files and normalized audio together
-	# glue_intermediate_files_and_normal_audio
+	# process_xfaded_ts_to_mp4
 
 		# glue crossfaded video files and normalized audio together
-	glue_crossfaded_video_and_normal_audio
+	# glue_crossfaded_video_and_normal_audio
 
 	# test gluing
 	# test_gluing
@@ -69,7 +80,9 @@ def do_downloading
 end
 
 def add_subs
-
 		# add SRT file to final output file
- 	add_srt_to_final_mp4
+ 	# add_srt_to_final_mp4
+
+ 	srt_to_ass
+ 	add_subs_ass_to_final_mp4
 end

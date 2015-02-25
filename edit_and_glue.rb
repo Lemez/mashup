@@ -25,7 +25,11 @@ def glue_intermediate_files_and_normal_audio
 	make_dir_if_none Dir.pwd, "videos_final" #make dir
 
 	# glue them together ORDER IMPORTANT::: AUDIO then VIDEO
-	`ffmpeg -i '#{dir}/_audio.wav' -i '#{dir}/_video.mp4' -y '#{Dir.pwd}/videos_final/xfaded_#{PLAYLISTNAME}.mp4' -loglevel quiet` 
+	command_xfaded = "ffmpeg -i '#{dir}/_audio.wav' -i '#{dir}/_video.mp4' -y '#{Dir.pwd}/videos_final/xfaded_#{PLAYLISTNAME}.mp4' -loglevel quiet" 
+	command = "ffmpeg -i '#{dir}/_audio.wav' -i '#{dir}/_video.mp4' -y '#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mp4' -loglevel quiet"
+	
+	command = command_xfaded if @@xfade
+	system(command)
 
 	# clean up
 	# `rm '#{dir}/_video.mp4'`

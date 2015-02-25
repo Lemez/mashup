@@ -19,7 +19,8 @@ def create_snippets_from_sentences
 	p "create_snippets_from_sentences"
 	p "******"
 
-	make_dir_if_none @editsdir, @sentences_to_extract.first.rule_name
+	make_dir_if_none @editsdir, PLAYLISTNAME
+	make_dir_if_none "#{@editsdir}/#{PLAYLISTNAME}", "snippets"
 
 	@full_sentence = ''
 	@title = ''
@@ -50,7 +51,7 @@ def create_snippets_from_sentences
 
 		# duration_secs = 4 if artist=='shakira' and title=='cant remember to forget you'
 
-		location_string = "#{@editsdir}/#{rule_name}/#{artist}-#{title}-#{sentence_id.to_s}.mp4"
+		location_string = "#{@editsdir}/#{rule_name}/snippets/#{artist}-#{title}-#{sentence_id.to_s}-#{d.to_i.to_s}.mp4"
 
 		# define skipping conditions
 		next if artist=='u2' or artist=='U2' or artist=="destinys child" or artist=="eminem"
@@ -63,7 +64,7 @@ def create_snippets_from_sentences
 		# save cut of each video to rule edits folder
 		command = "ffmpeg -i #{full_video_location} -ss #{start_secs} -t #{duration_secs} -async 1 '#{location_string}' -y -loglevel quiet"
 
-		system (command)
+		system (command) unless File.exists?(location_string)
 
 		@full_sentence=full_sentence
 		@title=title

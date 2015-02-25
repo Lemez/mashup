@@ -4,9 +4,27 @@ def add_srt_to_final_mp4
 	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.mp4'"
 
 	# `ffmpeg -i #{inputfile} -i #{srt_file} -c:s mov_text -c:v copy -c:a copy #{outputfile}`
-	`ffmpeg -i #{inputfile} -i #{srt_file} -vcodec copy -acodec copy -scodec mov_text -filter_complex "[0:v][0:s]overlay" #{outputfile}`
+	# `ffmpeg -i #{inputfile} -i #{srt_file} -vcodec copy -acodec copy -scodec mov_text -filter_complex "[0:v][0:s]overlay" #{outputfile}`
+
+	`ffmpeg -i #{inputfile} -f srt -i #{srt_file} -c:v copy -c:a copy -c:s mov_text #{outputfile}`
+
+	# ffmpeg -i infile.mp4 -f srt -i infile.srt -c:v copy -c:a copy \
+ #  -c:s mov_text outfile.mp4
+end
+
+
+def add_subs_ass_to_final_mp4
+	ass_file = "'#{@editsdir}/#{PLAYLISTNAME}/srt_file.ass'"
+	inputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mp4'"
+	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.mp4'"
+
+	`ffmpeg --enable-libass -i #{inputfile} -vf ass=#{ass_file} #{outputfile}`
 
 end
+
+
+
+
 
 # def test_srt
 # 	[*1..2000].each do |i|
@@ -53,6 +71,14 @@ def create_srt_from_snippets
 	end
 
 	@srt_file.close
+end
+
+def srt_to_ass
+
+	srt_file = "'#{@editsdir}/#{PLAYLISTNAME}/srt_file.srt'"
+	ass_file = "'#{@editsdir}/#{PLAYLISTNAME}/srt_file.ass'"
+	
+	`ffmpeg -i #{srt_file} #{ass_file}`
 end
 
 

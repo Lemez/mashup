@@ -37,8 +37,8 @@ PLAYLISTNAME = @playlist_name
 # #######
 
 #######  PROGRAMME CODE ######
-make_new_video downloading=false
-# add_subs
+# make_new_video downloading=false
+add_subs
 
 # NB BEST WAY TO MAKE SUBS HERE "http://ffmpeg.org/ffmpeg-filters.html#drawtext-1"
 

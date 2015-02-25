@@ -63,7 +63,8 @@ ActiveRecord::Schema.define do
         table.column :normal_audio_duration, :float
         table.column :xfaded_audio_file_location, :string
         table.column :trimmed_audio, :string
-         table.column :trimmed_file_duration, :float
+        table.column :trimmed_file_duration, :float
+        table.column :normal_snippet_file_location, :string
 
     end
 
@@ -74,12 +75,18 @@ ActiveRecord::Schema.define do
         table.column :xfade_mp4, :string
         table.column :normal_audio, :string
         table.column :final_mp4, :string
+        table.column :normal_xfaded_ts, :string
+       
     end
 end
 
 class Rule < ActiveRecord::Base
     has_many :videos
 
+    def self.normal_xfaded_ts
+        @normal_xfaded_ts
+    end
+    
     def self.rule_name
         @rule_name
     end
@@ -256,11 +263,13 @@ class Snippet < ActiveRecord::Base
         @trimmed_audio
     end
 
-      def self.trimmed_file_duration
+    def self.trimmed_file_duration
         @trimmed_file_duration
     end
 
-
+    def self.normal_snippet_file_location
+        @normal_snippet_file_location
+    end
     
     def self.normal_audio_duration
         @normal_audio_duration
