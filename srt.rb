@@ -1,45 +1,95 @@
+def test_srt
+	p "********"
+	p "test_srt"
+	p "********"
+
+	srt_file = "#{@subsdir}/srt_ex.srt"
+
+	inputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mp4'"
+	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_srt_test.mp4'"
+
+	`ffmpeg -i #{inputfile} -vf subtitles=#{srt_file} -y #{outputfile} -loglevel error`
+end
+
 def add_srt_to_final_mp4
 	p "********"
 	p "add_srt_to_final_mp4"
 	p "********"
 
-	srt_file = "#{@subsdir}/#{PLAYLISTNAME}/srt_file.srt"
-	
-	# srt_file = "." + srt_file[srt_file.index("/video_edits")..-1]
-
-	# srt_file = "srt_file.srt"
-	p srt_file
-	p File.exists?("#{srt_file}")
+	srt_file = "'#{@subsdir}/#{PLAYLISTNAME}/srt_file.srt'"
 
 	inputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mp4'"
 	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.mp4'"
 
-	mkvinputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mkv'"
-	mkvoutputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.mkv'"
+	`ffmpeg -i #{inputfile} -vf subtitles=#{srt_file} -y #{outputfile} -loglevel error`
 
-	aviinputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.avi'"
-	avioutputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.avi'"
-
-	# `ffmpeg -i #{inputfile} -vf subtitles='#{srt_file}' -codec:v libx264 -crf 23 -preset medium -codec:a copy -c:s mov_text #{mkvoutputfile}`
-
-	# `ffmpeg -i #{inputfile} -i #{srt_file} -vcodec copy -acodec copy -scodec mov_text -filter_complex "[0:v][0:s]overlay" #{outputfile}`
-
-	# `ffmpeg -i #{inputfile} -f srt -i #{srt_file} -c:v copy -c:a copy -c:s mov_text #{outputfile}  -loglevel error`
-
-	# `ffmpeg -i #{inputfile} -i '#{srt_file}' -c:v copy -c:a copy -c:s mov_text #{outputfile}  -loglevel error`
-
-	# `ffmpeg -i #{inputfile} -i '#{srt_file}' -c:v copy -c:a copy -c:s ass #{mkvoutputfile}  -loglevel error`
-
-	# `ffmpeg -i #{inputfile} -c:v copy -c:a copy #{mkvinputfile}`
-	# `mkvmerge -o #{mkvoutputfile} #{mkvinputfile} '#{srt_file}'`
-
-	# `ffmpeg -i #{inputfile} -c:v copy -c:a copy #{aviinputfile}`
-	# `ffmpeg -i #{aviinputfile} -vf subtitles='#{srt_file}' #{avioutputfile}`
-	
-
-	# ffmpeg -i infile.mp4 -f srt -i infile.srt -c:v copy -c:a copy \
- #  -c:s mov_text outfile.mp4
 end
+
+
+def create_srt_from_snippets
+
+	p "********"
+	p "create_srt_from_snippets"
+	p "********"
+
+	make_dir_if_none "#{@subsdir}", "#{PLAYLISTNAME}"
+
+	@snippets = Snippet.all
+	
+	@srt_file = open("#{@subsdir}/#{PLAYLISTNAME}/srt_file.srt", "w")
+
+	# @start_ms = 0
+	# @counter = 1
+
+	emptyline =	'''1
+00:00:00,000 --> 00:00:00,001
+
+'''
+	@srt_file.puts(emptyline)
+	@start_ms = 1
+	@counter = 2
+
+	@snippets.each do |snippet|
+		sentence = Sentence.find_by("id=#{snippet.sentence_id}")
+		
+		duration = snippet.sentence_duration
+
+		@start_srt = convert_ms_to_srt(@start_ms)
+		@end_srt = convert_ms_to_srt(@start_ms+duration )
+
+		# 1
+		@srt_file.puts(@counter.to_s)
+
+		# 00:00:14,000 –> 00:00:20,500
+		time_string = "#{@start_srt} --> #{@end_srt}"
+		@srt_file.puts(time_string)
+
+		# Process text and fonts
+		text_array = sentence.full_sentence.split(" ")
+		keyword = sentence.keyword
+		kw_index = text_array.index(keyword)
+		first_half = text_array[0...kw_index].join(" ")
+		second_half = text_array[kw_index+1..-1].join(" ")
+		colour = "#ffff00"
+		highlighted_word = "<font color=#{colour}><b> #{keyword} </b></font>"
+		text = first_half + highlighted_word + second_half
+
+
+		# Lost Corners consists of charcoal paintings.
+		@srt_file.puts(text)
+
+		# new line
+		@srt_file.puts("")
+
+		@start_ms += duration
+		@start_srt = @end_srt
+		@counter += 1
+	end
+
+	@srt_file.close
+end
+
+
 
 def srt_to_ass
 
@@ -63,7 +113,6 @@ def add_subs_ass_to_final_mp4
 	p "********"
 
 	ass_file = "'#{@subsdir}/#{PLAYLISTNAME}/srt_file.ass'"
-	srt_file = "'#{@subsdir}/#{PLAYLISTNAME}/srt_file.srt'"
 
 	inputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mp4'"
 	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.mp4'"
@@ -72,16 +121,6 @@ def add_subs_ass_to_final_mp4
 	avioutputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.avi'"
 
 	`ffmpeg -i #{inputfile} -vf subtitles=#{srt_file} #{outputfile} -y -loglevel error`
-	# `ffmpeg -i #{inputfile} -vf subtitles=#{ass_file} #{mkvoutputfile}`
-
-	# `ffmpeg -i #{inputfile} -filter:v subtitles=#{srt_file} #{outputfile} -y`
-	
-
-# 	`ffmpeg -i #{inputfile} -i #{srt_file} \
-# -c:v libx264 -preset ultrafast \
-# -c:s mov_text -map 0 -map 1 \
-# #{outputfile}`
-
 
 end
 
@@ -97,59 +136,34 @@ end
 # end
 
 
-def create_srt_from_snippets
+# old commands
+# `ffmpeg -i #{inputfile} -i #{srt_file} -vcodec copy -acodec copy -scodec mov_text -filter_complex "[0:v][0:s]overlay" #{outputfile}`
 
-	p "********"
-	p "create_srt_from_snippets"
-	p "********"
+	# `ffmpeg -i #{inputfile} -f srt -i #{srt_file} -c:v copy -c:a copy -c:s mov_text #{outputfile}  -loglevel error`
 
-	make_dir_if_none "#{@subsdir}", "#{PLAYLISTNAME}"
+	# `ffmpeg -i #{inputfile} -i '#{srt_file}' -c:v copy -c:a copy -c:s mov_text #{outputfile}  -loglevel error`
 
-	@snippets = Snippet.all
+	# `ffmpeg -i #{inputfile} -i '#{srt_file}' -c:v copy -c:a copy -c:s ass #{mkvoutputfile}  -loglevel error`
+
+	# `ffmpeg -i #{inputfile} -c:v copy -c:a copy #{mkvinputfile}`
+	# `mkvmerge -o #{mkvoutputfile} #{mkvinputfile} '#{srt_file}'`
+
+	# `ffmpeg -i #{inputfile} -c:v copy -c:a copy #{aviinputfile}`
+	# `ffmpeg -i #{aviinputfile} -vf subtitles='#{srt_file}' #{avioutputfile}`
 	
-	@srt_file = open("#{@subsdir}/#{PLAYLISTNAME}/srt_file.srt", "w")
 
-	# @start_ms = 0
-	# @counter = 1
+	# ffmpeg -i infile.mp4 -f srt -i infile.srt -c:v copy -c:a copy \
+ #  -c:s mov_text outfile.mp4
 
-	emptyline =	'''1
-00:00:00,000 --> 00:00:00,001
-	'''
-	@srt_file.puts(emptyline)
-	@start_ms = 1
-	@counter = 2
+	# `ffmpeg -i #{inputfile} -vf subtitles=#{ass_file} #{mkvoutputfile}`
 
-	@snippets.each do |snippet|
-		sentence = Sentence.find_by("id=#{snippet.sentence_id}")
-		text = sentence.full_sentence
-		duration = snippet.sentence_duration
+	# `ffmpeg -i #{inputfile} -filter:v subtitles=#{srt_file} #{outputfile} -y`
+	
 
-		@start_srt = convert_ms_to_srt(@start_ms)
-		@end_srt = convert_ms_to_srt(@start_ms+duration )
-
-		# 1
-		@srt_file.puts(@counter.to_s)
-
-		# 00:00:14,000 –> 00:00:20,500
-		time_string = "#{@start_srt} –-> #{@end_srt}"
-		@srt_file.puts(time_string)
-
-		p time_string
-
-		# Lost Corners consists of charcoal paintings.
-		@srt_file.puts(text)
-
-		# new line
-		@srt_file.puts("")
-
-		@start_ms += duration
-		@start_srt = @end_srt
-		@counter += 1
-	end
-
-	@srt_file.close
-end
-
+# 	`ffmpeg -i #{inputfile} -i #{srt_file} \
+# -c:v libx264 -preset ultrafast \
+# -c:s mov_text -map 0 -map 1 \
+# #{outputfile}`
 
 
 

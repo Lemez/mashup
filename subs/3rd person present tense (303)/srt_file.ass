@@ -10,4 +10,10 @@ Style: Default,Arial,16,&Hffffff,&Hffffff,&H0,&H0,0,0,0,0,100,100,0,0,1,1,0,2,10
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:00.00,Default,,0,0,0,,	\N2\N00:00:00,001 –-> 00:00:04,761\NHe drives to school every morning
+Dialogue: 0,0:00:00.00,0:00:04.76,Default,,0,0,0,,He drives to school every morning
+Dialogue: 0,0:00:04.76,0:00:13.06,Default,,0,0,0,,Cause love comes slow and it goes so fast
+Dialogue: 0,0:00:13.06,0:00:17.39,Default,,0,0,0,,Boy meets girl makes her his wife
+Dialogue: 0,0:00:17.39,0:00:23.15,Default,,0,0,0,,Remembering him comes in flashbacks and echoes
+Dialogue: 0,0:00:23.15,0:00:29.44,Default,,0,0,0,,I think when it's all over it just comes back and flashes you know?
+Dialogue: 0,0:00:29.44,0:00:37.95,Default,,0,0,0,,High dive into frozen waves where the past comes back to life
+Dialogue: 0,0:00:37.95,0:00:42.91,Default,,0,0,0,,She sees them walking in a straight line

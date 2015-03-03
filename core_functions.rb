@@ -81,8 +81,9 @@ end
 
 def add_subs
 		# add SRT file to final output file
- 	# add_srt_to_final_mp4
+		# test_srt
+ 	add_srt_to_final_mp4
 
- 	srt_to_ass
- 	add_subs_ass_to_final_mp4
+ 	# srt_to_ass
+ 	# add_subs_ass_to_final_mp4
 end

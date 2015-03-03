@@ -1,31 +1,31 @@
 1
 00:00:00,000 --> 00:00:00,001
-	
+
 2
-00:00:00,001 –-> 00:00:04,761
-He drives to school every morning
+00:00:00,001 --> 00:00:04,761
+He<font color=#ffff00><b> drives </b></font>to school every morning
 
 3
-00:00:04,761 –-> 00:00:13,061
-Cause love comes slow and it goes so fast
+00:00:04,761 --> 00:00:13,061
+Cause love<font color=#ffff00><b> comes </b></font>slow and it goes so fast
 
 4
-00:00:13,061 –-> 00:00:17,391
-Boy meets girl makes her his wife
+00:00:13,061 --> 00:00:17,391
+Boy meets girl<font color=#ffff00><b> makes </b></font>her his wife
 
 5
-00:00:17,391 –-> 00:00:23,151
-Remembering him comes in flashbacks and echoes
+00:00:17,391 --> 00:00:23,151
+Remembering him<font color=#ffff00><b> comes </b></font>in flashbacks and echoes
 
 6
-00:00:23,151 –-> 00:00:29,441
-I think when it's all over it just comes back and flashes you know?
+00:00:23,151 --> 00:00:29,441
+I think when it's all over it just<font color=#ffff00><b> comes </b></font>back and flashes you know?
 
 7
-00:00:29,441 –-> 00:00:37,951
-High dive into frozen waves where the past comes back to life
+00:00:29,441 --> 00:00:37,951
+High dive into frozen waves where the past<font color=#ffff00><b> comes </b></font>back to life
 
 8
-00:00:37,951 –-> 00:00:42,911
-She sees them walking in a straight line
+00:00:37,951 --> 00:00:42,911
+She<font color=#ffff00><b> sees </b></font>them walking in a straight line
 
