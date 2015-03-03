@@ -76,14 +76,15 @@ def create_srt_from_snippets
 		highlight_colour = "#ffff00"
 		
 		highlighted_word = "<font color=#{highlight_colour} size=#{highlight_size}><b> #{keyword} </b></font>"
-		text = first_half + highlighted_word + second_half
-
+		text = first_half + highlighted_word + second_half # + " X1:117 X2:619 Y1:042 Y2:428"
 
 		# Lost Corners consists of charcoal paintings.
 		@srt_file.puts(text)
 
 		# new line
 		@srt_file.puts("")
+
+
 
 		@start_ms += duration
 		@start_srt = @end_srt

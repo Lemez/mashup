@@ -20,7 +20,7 @@ def glue_intermediate_files_and_normal_audio
 	`ffmpeg -i #{@temp_video_files} -c copy -y '#{dir}/_video.mp4'` #glue video 
 	# # `ffmpeg -i #{@normal_audio_files} -vn -acodec 'copy' -y '#{dir}/_audio.mp2'`  #glue audio
 
-	`sox #{@normal_audio_files_wav} '#{dir}/_audio.wav'` 
+	`sox #{@normal_audio_files_wav} '#{dir}/_audio.wav'`
 
 	make_dir_if_none Dir.pwd, "videos_final" #make dir
 
