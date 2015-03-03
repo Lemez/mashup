@@ -22,24 +22,24 @@ def make_new_video downloading=false
 	create_snippets_from_sentences
 
 		#print out snippets created, file, duration and lyric data
-	show_current_snippets
+	# show_current_snippets
 
 		# normalize audio with fades
-	normalize_audio
+	# normalize_audio
 
 		#create srt file from snippets
 	create_srt_from_snippets
 
 		#create a text file and intermediate files from snippets
-	create_snippets_text_file 
+	# create_snippets_text_file 
 
 		# create intermediate files together
-	create_intermediate_files_from_snippets
+	# create_intermediate_files_from_snippets
 
 	## NO XFADES
 		# glue intermediate video files and normalized audio together
 	@@xfade = false 
-	glue_intermediate_files_and_normal_audio
+	# glue_intermediate_files_and_normal_audio
 
 	## XFADES
 	@@xfade = true 

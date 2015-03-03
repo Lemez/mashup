@@ -26,6 +26,7 @@ require_relative './environment.rb'
 # ###### variables #########################
 @videodir = Dir.pwd + '/videos'
 @editsdir = Dir.pwd + '/video_edits'
+@subsdir = Dir.pwd + '/subs'
 BLACK_PIC = Dir.pwd + '/images/black.png'
 
 @playlist_name = ARGV[0][0...ARGV[0].index(".")]
@@ -37,7 +38,7 @@ PLAYLISTNAME = @playlist_name
 # #######
 
 #######  PROGRAMME CODE ######
-# make_new_video downloading=false
+make_new_video downloading=false
 add_subs
 
 # NB BEST WAY TO MAKE SUBS HERE "http://ffmpeg.org/ffmpeg-filters.html#drawtext-1"
