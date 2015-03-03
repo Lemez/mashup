@@ -25,7 +25,7 @@ def make_new_video downloading=false
 	# show_current_snippets
 
 		# normalize audio with fades
-	# normalize_audio
+	normalize_audio
 
 		#create srt file from snippets
 	create_srt_from_snippets
@@ -39,7 +39,7 @@ def make_new_video downloading=false
 	## NO XFADES
 		# glue intermediate video files and normalized audio together
 	@@xfade = false 
-	# glue_intermediate_files_and_normal_audio
+	glue_intermediate_files_and_normal_audio
 
 	## XFADES
 	@@xfade = true 
@@ -68,6 +68,8 @@ def make_new_video downloading=false
 
 	# test gluing
 	# test_gluing
+
+	add_subs
 end
 
 def do_downloading

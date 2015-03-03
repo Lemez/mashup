@@ -39,7 +39,6 @@ PLAYLISTNAME = @playlist_name
 
 #######  PROGRAMME CODE ######
 make_new_video downloading=false
-add_subs
 
 # NB BEST WAY TO MAKE SUBS HERE "http://ffmpeg.org/ffmpeg-filters.html#drawtext-1"
 
@@ -51,17 +50,17 @@ add_subs
 
 ####### TESTING #######
 # test_gluing
-items =  [
-["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
-["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
-["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
-["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
-["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
-["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
-["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
-["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
-["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"]
-]
+# items =  [
+# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
+# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
+# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
+# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
+# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
+# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
+# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
+# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
+# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"]
+# ]
 # crossfade_snippets_to_mp4
 
 # # http://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/subtitle_options
