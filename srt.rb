@@ -68,13 +68,14 @@ def create_srt_from_snippets
 		text_array = sentence.full_sentence.split(" ")
 		keyword = sentence.keyword
 		kw_index = text_array.index(keyword)
-		size = "16px"
+		size = "24px"
+		highlight_size = "24px"
 		first_half = "<font size=#{size}>" + text_array[0...kw_index].join(" ") + "</font>"
 		second_half = "<font size=#{size}>" + text_array[kw_index+1..-1].join(" ") + "</font>"
 
 		highlight_colour = "#ffff00"
-		highlize_size = "16px"
-		highlighted_word = "<font color=#{highlight_colour} size=#{highlize_size}><b> #{keyword} </b></font>"
+		
+		highlighted_word = "<font color=#{highlight_colour} size=#{highlight_size}><b> #{keyword} </b></font>"
 		text = first_half + highlighted_word + second_half
 
 
@@ -102,8 +103,6 @@ def srt_to_ass
 
 	srt_file = "#{@subsdir}/#{PLAYLISTNAME}/srt_file.srt"
 	ass_file = "#{@subsdir}/#{PLAYLISTNAME}/srt_file.ass"
-
-	p srt_file
 	
 	`ffmpeg -i '#{srt_file}' '#{ass_file}' -loglevel error -y`
 end
@@ -118,12 +117,12 @@ def add_subs_ass_to_final_mp4
 	ass_file = "'#{@subsdir}/#{PLAYLISTNAME}/srt_file.ass'"
 
 	inputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mp4'"
-	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.mp4'"
+	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs_ass.mp4'"
 	mkvinputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mkv'"
 	mkvoutputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.mkv'"
 	avioutputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.avi'"
 
-	`ffmpeg -i #{inputfile} -vf subtitles=#{srt_file} #{outputfile} -y -loglevel error`
+	`ffmpeg -i #{inputfile} -vf subtitles=#{ass_file} #{outputfile} -y -loglevel error`
 
 end
 

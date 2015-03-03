@@ -3,29 +3,29 @@
 
 2
 00:00:00,001 --> 00:00:04,761
-<font size=16px>He</font><font color=#ffff00 size=16px><b> drives </b></font><font size=16px>to school every morning</font>
+<font size=24px>He</font><font color=#ffff00 size=24px><b> drives </b></font><font size=24px>to school every morning</font>
 
 3
 00:00:04,761 --> 00:00:13,061
-<font size=16px>Cause love</font><font color=#ffff00 size=16px><b> comes </b></font><font size=16px>slow and it goes so fast</font>
+<font size=24px>Cause love</font><font color=#ffff00 size=24px><b> comes </b></font><font size=24px>slow and it goes so fast</font>
 
 4
 00:00:13,061 --> 00:00:17,391
-<font size=16px>Boy meets girl</font><font color=#ffff00 size=16px><b> makes </b></font><font size=16px>her his wife</font>
+<font size=24px>Boy meets girl</font><font color=#ffff00 size=24px><b> makes </b></font><font size=24px>her his wife</font>
 
 5
 00:00:17,391 --> 00:00:23,151
-<font size=16px>Remembering him</font><font color=#ffff00 size=16px><b> comes </b></font><font size=16px>in flashbacks and echoes</font>
+<font size=24px>Remembering him</font><font color=#ffff00 size=24px><b> comes </b></font><font size=24px>in flashbacks and echoes</font>
 
 6
 00:00:23,151 --> 00:00:29,441
-<font size=16px>I think when it's all over it just</font><font color=#ffff00 size=16px><b> comes </b></font><font size=16px>back and flashes you know?</font>
+<font size=24px>I think when it's all over it just</font><font color=#ffff00 size=24px><b> comes </b></font><font size=24px>back and flashes you know?</font>
 
 7
 00:00:29,441 --> 00:00:37,951
-<font size=16px>High dive into frozen waves where the past</font><font color=#ffff00 size=16px><b> comes </b></font><font size=16px>back to life</font>
+<font size=24px>High dive into frozen waves where the past</font><font color=#ffff00 size=24px><b> comes </b></font><font size=24px>back to life</font>
 
 8
 00:00:37,951 --> 00:00:42,911
-<font size=16px>She</font><font color=#ffff00 size=16px><b> sees </b></font><font size=16px>them walking in a straight line</font>
+<font size=24px>She</font><font color=#ffff00 size=24px><b> sees </b></font><font size=24px>them walking in a straight line</font>
 
