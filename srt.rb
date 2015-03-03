@@ -68,10 +68,13 @@ def create_srt_from_snippets
 		text_array = sentence.full_sentence.split(" ")
 		keyword = sentence.keyword
 		kw_index = text_array.index(keyword)
-		first_half = text_array[0...kw_index].join(" ")
-		second_half = text_array[kw_index+1..-1].join(" ")
-		colour = "#ffff00"
-		highlighted_word = "<font color=#{colour}><b> #{keyword} </b></font>"
+		size = "16px"
+		first_half = "<font size=#{size}>" + text_array[0...kw_index].join(" ") + "</font>"
+		second_half = "<font size=#{size}>" + text_array[kw_index+1..-1].join(" ") + "</font>"
+
+		highlight_colour = "#ffff00"
+		highlize_size = "16px"
+		highlighted_word = "<font color=#{highlight_colour} size=#{highlize_size}><b> #{keyword} </b></font>"
 		text = first_half + highlighted_word + second_half
 
 
