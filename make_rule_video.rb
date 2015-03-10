@@ -29,8 +29,8 @@ require_relative './environment.rb'
 @subsdir = Dir.pwd + '/subs'
 BLACK_PIC = Dir.pwd + '/images/black.png'
 
-@playlist_name = ARGV[0][0...ARGV[0].index(".")]
-PLAYLISTNAME = @playlist_name
+@playlist_name = ARGV[0][0...ARGV[0].index(".")] unless ARGV[0].nil?
+PLAYLISTNAME = @playlist_name unless ARGV[0].nil?
 
 # @mydir = "#{@dir}#{@playlist_name}"
 
@@ -38,7 +38,7 @@ PLAYLISTNAME = @playlist_name
 # #######
 
 #######  PROGRAMME CODE ######
-make_new_video downloading=false
+# make_new_video downloading=false
 
 # NB BEST WAY TO MAKE SUBS HERE "http://ffmpeg.org/ffmpeg-filters.html#drawtext-1"
 

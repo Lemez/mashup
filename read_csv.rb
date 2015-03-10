@@ -1,3 +1,70 @@
+def get_files_from_db_csv
+
+	p "**************"
+	p "get_files_from_db_csv"
+	p "**************"
+
+	# @videos_saved = {}
+	# Rule.create(:rule_name => @playlist_name)
+
+	list = CSV.read("./csv/maria_10_03_2015_working.csv",{:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => "\t"})
+
+	p "read"
+	@sentence_data = []
+	@last = ''
+
+	list.each do |line|
+
+		s = {}
+		@line_id = line[2] 
+		@original_artist = line[4]
+		@original_title = line[6]
+		@line_artist = @original_artist.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
+		@line_title = @original_title.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
+
+		keyword = line[7]
+		sentence_w_gap = line[9]
+		time_at = line[13]
+		time_until = line[14]
+		dur_ms = line[15]
+
+		sentence_no_gap = ''
+		sentence_words = []
+
+		words = sentence_w_gap.split(" ")
+		words.each do |w|
+			w = keyword if w=="__"
+			sentence_words << w
+		end
+
+		sentence_no_gap = sentence_words.join(" ")
+		use = line[16].to_i.zero?
+
+		node = line[10]
+		group = line[11]
+		game = line[12]
+
+		p game
+
+		# s['video_id'],s['artist'], s['title'],s['keyword'],s['sentence_w_gap'],s['full_sentence'],s['start'],s['end'],s['dur'] = @line_id,@line_artist,@line_title,keyword, sentence_w_gap, sentence_no_gap, time_at,time_until,dur_ms
+		
+		# @sentence_data << s unless @last['video_id']==s['video_id']
+		# @last = s
+
+		# @video = Video.where(:yt_id => @line_id).first_or_create
+		# @video.title = @line_title
+		# @video.artist = @line_artist
+		# @video.artist_original = @original_artist
+		# @video.title_original = @original_title
+		# @video.save!
+		
+		# # p "saved" if @video.save!
+		# @sss = Sentence.where(:video_id => @video.id, :rule_name => @playlist_name,:full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => use).first_or_create
+
+	end
+
+end
+
 
 def getfiles 
 	list = CSV.read("./csv/songlist.csv") 
