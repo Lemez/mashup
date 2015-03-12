@@ -12,56 +12,54 @@ def get_files_from_db_csv
 	p "read"
 	@sentence_data = []
 	@last = ''
+	@profanecounter = 0
+	@linecounter = 0
 
 	list.each do |line|
 
+		@linecounter += 1
+
+		# adult
+
+		@profane = !line[16].to_i.zero?
+
 		s = {}
-		@line_id = line[2] 
-		@original_artist = line[4]
-		@original_title = line[6]
+		@line_id,@original_artist,@original_title  = line[2],line[4],line[6] 
 		@line_artist = @original_artist.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
 		@line_title = @original_title.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
 
-		keyword = line[7]
-		sentence_w_gap = line[9]
-		time_at = line[13]
-		time_until = line[14]
-		dur_ms = line[15]
+		keyword,sentence_w_gap  = line[7], line[9]
 
-		sentence_no_gap = ''
 		sentence_words = []
+		sentence_w_gap.split(" ").each {|w| w = keyword + w[-1] if w.include?("__") and w!="__"; w = keyword if w==("__"); @profane = true if w.include?("*"); word = w.gsub(/[^\p{Alnum} ']/, ''); sentence_words << word}
+		sentence_no_gap = sentence_words.join(" ")
 
-		words = sentence_w_gap.split(" ")
-		words.each do |w|
-			w = keyword if w=="__"
-			sentence_words << w
+		node, group, game = line[10], line[11], line[12]
+
+		time_at,time_until,dur_ms = line[13], line[14],line[15]
+		
+		@profanecounter += 1 if @profane
+
+		newvideo = Video.where(:yt_id => @line_id).first
+
+		if newvideo.nil?
+			@video = Video.where(:yt_id => @line_id).first_or_create
+			@video.title = @line_title
+			@video.artist = @line_artist
+			@video.artist_original = @original_artist
+			@video.title_original = @original_title
+			@video.save!
+
+			# p "Video #{@line_id} saved" if @video.save!
 		end
 
-		sentence_no_gap = sentence_words.join(" ")
-		use = line[16].to_i.zero?
+		@video= Video.where(:yt_id => @line_id).first
 
-		node = line[10]
-		group = line[11]
-		game = line[12]
-
-		p game
-
-		# s['video_id'],s['artist'], s['title'],s['keyword'],s['sentence_w_gap'],s['full_sentence'],s['start'],s['end'],s['dur'] = @line_id,@line_artist,@line_title,keyword, sentence_w_gap, sentence_no_gap, time_at,time_until,dur_ms
-		
-		# @sentence_data << s unless @last['video_id']==s['video_id']
-		# @last = s
-
-		# @video = Video.where(:yt_id => @line_id).first_or_create
-		# @video.title = @line_title
-		# @video.artist = @line_artist
-		# @video.artist_original = @original_artist
-		# @video.title_original = @original_title
-		# @video.save!
-		
-		# # p "saved" if @video.save!
-		# @sss = Sentence.where(:video_id => @video.id, :rule_name => @playlist_name,:full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => use).first_or_create
-
+		sentence = Sentence.where(:video_id => @video.id, :l_node => node, :l_group => group, :l_game => game, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => @profane).first_or_create
+		p "#{@linecounter}. Node: #{sentence.l_node}, Group: #{sentence.l_group}, Game: #{sentence.l_game}" if @linecounter>1000 and @linecounter>2000 
 	end
+
+	p "Profane: #{@profanecounter} out of a total #{@linecounter}"
 
 end
 

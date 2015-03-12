@@ -50,6 +50,10 @@ ActiveRecord::Schema.define do
         table.column :duration, :float
         table.column :rule_name, :string
         table.column :adult, :boolean
+        table.column :l_node, :string
+        table.column :l_group, :string
+        table.column :l_game, :string
+
     end
 
     create_table :snippets do |table|
@@ -72,6 +76,7 @@ ActiveRecord::Schema.define do
 
       create_table :rules do |table|
         table.column :rule_name, :string
+        table.column :game_id, :integer
         table.column :xfade_audio, :string
         table.column :xfade_ts, :string
         table.column :xfade_mp4, :string
@@ -80,6 +85,20 @@ ActiveRecord::Schema.define do
         table.column :normal_xfaded_ts, :string
        
     end
+
+    create_table :games do |table|
+        table.column :group_id, :integer
+        table.column :game_name, :string
+    end
+
+    create_table :groups do |table|
+        table.column :node_id, :integer
+        table.column :group_name, :string
+    end
+
+    create_table :nodes do |table|
+        table.column :node_name, :string
+    end
 end
 
 class Rule < ActiveRecord::Base
@@ -87,6 +106,10 @@ class Rule < ActiveRecord::Base
 
     def self.normal_xfaded_ts
         @normal_xfaded_ts
+    end
+
+    def self.game_id
+        @game_id
     end
     
     def self.rule_name
@@ -168,12 +191,20 @@ class Sentence < ActiveRecord::Base
     	@video_id
     end
 
-    def self.adult
-    	@adult
+    def self.clean
+    	!@adult
     end
 
-    def self.rule_name
-    	@rule_name
+    def self.l_node
+    	@l_node
+    end
+
+     def self.l_group
+        @l_group
+    end
+
+     def self.l_game
+        @l_game
     end
 
     def self.full_sentence
