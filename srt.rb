@@ -18,8 +18,8 @@ def add_srt_to_final_mp4
 
 	srt_file = "'#{@subsdir}/#{PLAYLISTNAME}/srt_file.srt'"
 
-	inputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mp4'"
-	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.mp4'"
+	inputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}/#{PLAYLISTNAME}.mp4'"
+	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}/#{PLAYLISTNAME}_subs.mp4'"
 
 	`ffmpeg -i #{inputfile} -vf subtitles=#{srt_file} -y #{outputfile} -loglevel error`
 

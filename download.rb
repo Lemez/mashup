@@ -1,5 +1,9 @@
 def download_undownloaded_vids array
 
+	p "*****"
+	p "download_undownloaded_vids"
+	p "*****"
+
 	array.each do |record|
 		@song_artist = record.artist
 		@song_title = record.title
@@ -12,7 +16,7 @@ def download_undownloaded_vids array
 		
 		aborted = shell_command.include? "Download aborted"
 
-		sleep 3 #wait 3 secs
+		sleep 1 #wait 1 sec
 
 		# go to Vimeo to download if it doesnt work
 		if aborted

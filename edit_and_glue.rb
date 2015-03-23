@@ -9,13 +9,14 @@ def glue_intermediate_files_and_normal_audio
 
 	# #2D concatenate the files creatd using the below format 
 		# ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
+	make_dir_if_none "#{@editsdir}/#{PLAYLISTNAME}", "tmp"
 	dir = "#{@editsdir}/#{PLAYLISTNAME}/tmp"
 
 	@temp_video_files = '"' + "concat:" + Snippet.all.map(&:temp_file_location).join("|") + '"'
 	# @normal_audio_files_ts = '"' + "concat:" + Snippet.all.map(&:normal_audio_file_location).join("|") + '"'
 	@normal_audio_files_wav = "'" + Snippet.all.map(&:normal_audio_file_location).join("' '") + "'"
 
-	# p @normal_audio_files_wav
+	p @temp_video_files
 
 	`ffmpeg -i #{@temp_video_files} -c copy -y '#{dir}/_video.mp4'` #glue video 
 	# # `ffmpeg -i #{@normal_audio_files} -vn -acodec 'copy' -y '#{dir}/_audio.mp2'`  #glue audio
@@ -23,10 +24,11 @@ def glue_intermediate_files_and_normal_audio
 	`sox #{@normal_audio_files_wav} '#{dir}/_audio.wav'`
 
 	make_dir_if_none Dir.pwd, "videos_final" #make dir
+	make_dir_if_none @finaldir, PLAYLISTNAME #make dir
 
 	# glue them together ORDER IMPORTANT::: AUDIO then VIDEO
 	command_xfaded = "ffmpeg -i '#{dir}/_audio.wav' -i '#{dir}/_video.mp4' -y '#{Dir.pwd}/videos_final/xfaded_#{PLAYLISTNAME}.mp4' -loglevel quiet" 
-	command = "ffmpeg -i '#{dir}/_audio.wav' -i '#{dir}/_video.mp4' -y '#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mp4' -loglevel quiet"
+	command = "ffmpeg -i '#{dir}/_audio.wav' -i '#{dir}/_video.mp4' -y '#{Dir.pwd}/videos_final/#{PLAYLISTNAME}/#{PLAYLISTNAME}.mp4' -loglevel quiet"
 	
 	command = command_xfaded if @@xfade
 	system(command)

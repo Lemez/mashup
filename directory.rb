@@ -22,8 +22,9 @@ def get_sentences_with_saved_videos
 end
 
 def get_all_titles_from_dir 
-	# p dir
-	# all_currently_saved_videos = []
+	p "*********"
+	p "get_all_titles_from_dir"
+	p "*********"
 
 	Dir.glob("#{@videodir}/*.mp4").each do |item|
 		size = File.size(item)

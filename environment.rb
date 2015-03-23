@@ -11,8 +11,8 @@ Dir["./*.rb"].each {|file| next if file == "./make_rule_video.rb";
 ActiveRecord::Base.logger = Logger.new(STDERR)
 # ActiveRecord::Base.colorize_logging = false
 
-# turn off noisy logging
-ActiveRecord::Base.logger.level = 1
+# turn off/on (1/0) noisy logging
+ActiveRecord::Base.logger.level = 0
  
 ActiveRecord::Base.establish_connection(
     :adapter => "sqlite3",
@@ -76,7 +76,6 @@ ActiveRecord::Schema.define do
 
       create_table :rules do |table|
         table.column :rule_name, :string
-        table.column :game_id, :integer
         table.column :xfade_audio, :string
         table.column :xfade_ts, :string
         table.column :xfade_mp4, :string
@@ -86,23 +85,84 @@ ActiveRecord::Schema.define do
        
     end
 
+    create_table :nodes do |table|
+        table.column :rule_id, :integer
+        table.column :name, :string
+        table.column :total_instances, :integer
+        table.column :total_profane, :integer
+        table.column :keyword, :string
+        table.column :xfade_audio, :string
+        table.column :xfade_ts, :string
+        table.column :xfade_mp4, :string
+        table.column :normal_audio, :string
+        table.column :final_mp4, :string
+        table.column :normal_xfaded_ts, :string
+    end
+
+     create_table :groups do |table|
+        table.column :node_id, :integer
+        table.column :group_name, :string
+    end
+
     create_table :games do |table|
         table.column :group_id, :integer
         table.column :game_name, :string
     end
 
-    create_table :groups do |table|
-        table.column :node_id, :integer
-        table.column :group_name, :string
-    end
 
-    create_table :nodes do |table|
-        table.column :node_name, :string
-    end
+
+   
+
+    
 end
 
 class Rule < ActiveRecord::Base
-    has_many :videos
+    has_many :videos, through: :nodes  
+    has_one :node
+
+    def self.normal_xfaded_ts
+        @normal_xfaded_ts
+    end
+
+    def self.game_id
+        @game_id
+    end
+    
+    def self.rule_name
+        @rule_name
+    end
+
+    def self.xfade_ts
+        @xfade_ts
+    end
+
+    def self.xfade_mp4
+        @xfade_mp4
+    end
+
+    def self.xfade_audio
+        @xfade_audio
+    end
+
+    def self.normal_audio
+        @normal_audio
+    end
+
+    def self.final_mp4
+        @final_mp4
+    end
+end
+
+class Node < ActiveRecord::Base
+    has_many :videos 
+
+    def self.total_instances
+        @total_instances
+    end
+
+    def self.total_profane
+        @total_profane
+    end
 
     def self.normal_xfaded_ts
         @normal_xfaded_ts

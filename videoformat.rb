@@ -1,8 +1,9 @@
 # Change any webm to mp4
 def check_for_webm_videos (directory)
-		p directory
-	Dir.glob("#{directory}/*.webm").each do |item|
-		
+
+		p "check_for_webm_videos"
+
+	Dir.glob("#{@videodir}/*.webm").each do |item|
 
 		item = "'" + item + "'"
 		r_item = item[0..item.rindex('/')] +item[item.rindex('/')+1..-7]

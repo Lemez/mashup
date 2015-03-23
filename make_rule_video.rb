@@ -1,7 +1,9 @@
 
 
 # # usage: ruby make_rule_video.rb '3rd person present tense (303).csv'
-# raise "Please specify a local csv file, eg >> $ ruby make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
+# # usage: ruby make_rule_video.rb 'double_cons_before_ing_ed_er.csv' true
+
+raise "Please specify a local csv file, eg >> $ ruby make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
 
 require 'streamio-ffmpeg'
 require 'viddl-rb'
@@ -22,15 +24,20 @@ require 'fuzzystringmatch'
 # require 'mysql2'
 require_relative './environment.rb'
 
+ViddlRb.io = $stdout
+
 
 # ###### variables #########################
+@csvdir = Dir.pwd + '/csv/nodes'
 @videodir = Dir.pwd + '/videos'
 @editsdir = Dir.pwd + '/video_edits'
 @subsdir = Dir.pwd + '/subs'
+@finaldir = Dir.pwd + '/videos_final'
 BLACK_PIC = Dir.pwd + '/images/black.png'
 
-@playlist_name = ARGV[0][0...ARGV[0].index(".")] unless ARGV[0].nil?
+@playlist_name = ARGV[0][0...ARGV[0].rindex(".")] unless ARGV[0].nil?
 PLAYLISTNAME = @playlist_name unless ARGV[0].nil?
+DOWNLOADING = ARGV[1] unless ARGV[1].nil?
 
 # @mydir = "#{@dir}#{@playlist_name}"
 
@@ -38,7 +45,7 @@ PLAYLISTNAME = @playlist_name unless ARGV[0].nil?
 # #######
 
 #######  PROGRAMME CODE ######
-# make_new_video downloading=false
+make_new_video downloading=DOWNLOADING
 
 # NB BEST WAY TO MAKE SUBS HERE "http://ffmpeg.org/ffmpeg-filters.html#drawtext-1"
 

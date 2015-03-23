@@ -6,6 +6,10 @@ def get_clean_name_alphanum (s)
 	return s.gsub(/[^0-9a-z ~]/i, '').gsub("  "," ")
 end
 
+def get_clean_name_alphanum_dash (s)
+	return s.gsub(/[^0-9a-z ~-]/i, '').gsub("  "," ")
+end
+
 def convert_to_start_time(s)
 	# ms to 00:02:00
 

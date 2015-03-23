@@ -1,3 +1,38 @@
+def db_files_to_csv
+	p "**************"
+	p "db_files_to_csv"
+	p "**************"
+
+	@linecounter = 0
+
+	list = CSV.read("./csv/master/maria_10_03_2015_working.csv",{:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => "\t"})
+	list.each do |line|
+
+		line = line.gsub("\"","") if line.include?("\"")#remove illegal quoting Malformed CSV Error if 
+		
+		node = line[10]
+
+		next if node == "dances round the room" || node == " there's demons closing in on"
+
+		if @linecounter == 0
+			@csv = File.open("./csv/nodes/#{node}.csv", "w")
+
+		elsif @node != node
+			@csv.close
+			@csv = File.open("./csv/nodes/#{node}.csv", "w")
+
+			@csv.puts(line)
+		else
+			@csv.puts(line)
+		end
+
+		@linecounter += 1
+		@node = node
+	end
+	@csv.close
+end
+
+
 def get_files_from_db_csv
 
 	p "**************"
@@ -7,59 +42,77 @@ def get_files_from_db_csv
 	# @videos_saved = {}
 	# Rule.create(:rule_name => @playlist_name)
 
-	list = CSV.read("./csv/maria_10_03_2015_working.csv",{:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => "\t"})
+	files = Dir.glob("./csv/nodes/*.csv")[-4..-3]
+	
+	options = {:headers => true, :encoding => 'windows-1251:utf-8'}
 
-	p "read"
-	@sentence_data = []
-	@last = ''
-	@profanecounter = 0
-	@linecounter = 0
+	summaryfile = CSV.open("./csv/summary/summary_maria_10_03_2015_working.csv","w") do |csv|
+		csv << ["Node", "Example","Total","Profane"]
 
-	list.each do |line|
+		files.each do |file|
 
-		@linecounter += 1
+			p "Reading: #{file}"
+			@profanecounter = 0
+			@linecounter = 0
+			@current_node = Node.new
+			
+			CSV.foreach(file,options) do |line|
 
-		# adult
+				@linecounter+=1
 
-		@profane = !line[16].to_i.zero?
+				@profane = !line[16].to_i.zero?
 
-		s = {}
-		@line_id,@original_artist,@original_title  = line[2],line[4],line[6] 
-		@line_artist = @original_artist.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
-		@line_title = @original_title.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
+				@line_id,@original_artist,@original_title  = line[2],line[4],line[6] 
+				@line_artist = @original_artist.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
+				@line_title = @original_title.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
 
-		keyword,sentence_w_gap  = line[7], line[9]
+				@keyword,sentence_w_gap  = line[7], line[9]
 
-		sentence_words = []
-		sentence_w_gap.split(" ").each {|w| w = keyword + w[-1] if w.include?("__") and w!="__"; w = keyword if w==("__"); @profane = true if w.include?("*"); word = w.gsub(/[^\p{Alnum} ']/, ''); sentence_words << word}
-		sentence_no_gap = sentence_words.join(" ")
+				sentence_words = []
+				sentence_w_gap.split(" ").each {|w| w = @keyword + w[-1] if w.include?("__") and w!="__"; w = @keyword if w==("__"); @profane = true if w.include?("*"); word = w.gsub(/[^\p{Alnum} ']/, ''); sentence_words << word}
+				sentence_no_gap = sentence_words.join(" ")
 
-		node, group, game = line[10], line[11], line[12]
+				@node, @group, @game = line[10], line[11], line[12]
 
-		time_at,time_until,dur_ms = line[13], line[14],line[15]
-		
-		@profanecounter += 1 if @profane
+				time_at,time_until,dur_ms = line[13], line[14],line[15]
+				
+				@profanecounter += 1 if @profane
 
-		newvideo = Video.where(:yt_id => @line_id).first
+				newvideo = Video.where(:yt_id => @line_id).first
 
-		if newvideo.nil?
-			@video = Video.where(:yt_id => @line_id).first_or_create
-			@video.title = @line_title
-			@video.artist = @line_artist
-			@video.artist_original = @original_artist
-			@video.title_original = @original_title
-			@video.save!
+				if newvideo.nil?
+					@video = Video.where(:yt_id => @line_id).first_or_create
+					@video.title = @line_title
+					@video.artist = @line_artist
+					@video.artist_original = @original_artist
+					@video.title_original = @original_title
+					@video.save!
 
-			# p "Video #{@line_id} saved" if @video.save!
+					# p "Video #{@line_id} saved" if @video.save!
+				end
+
+				@video= Video.where(:yt_id => @line_id).first
+
+				sentence = Sentence.where(:rule_name => @node, :video_id => @video.id, :l_node => @node, :l_group => @group, :l_game => @game, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => @keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => @profane).first_or_create
+
+				# p  "#{@linecounter}. Node: #{sentence.l_node}, Group: #{sentence.l_group}, Game: #{sentence.l_game}" if @linecounter==1
+			end
+
+			@current_node.total_instances = @linecounter
+			@current_node.total_profane = @profanecounter
+			@current_node.name = @node
+			@current_node.keyword = @keyword
+			@current_node.save!
+
+			p @current_node if @current_node.save!
+
+
+
+			csv << [@node,@keyword,@linecounter,@profanecounter]
+			# p "Profane: #{@profanecounter} out of a total #{@linecounter}"
 		end
 
-		@video= Video.where(:yt_id => @line_id).first
-
-		sentence = Sentence.where(:video_id => @video.id, :l_node => node, :l_group => group, :l_game => game, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => @profane).first_or_create
-		p "#{@linecounter}. Node: #{sentence.l_node}, Group: #{sentence.l_group}, Game: #{sentence.l_game}" if @linecounter>1000 and @linecounter>2000 
 	end
-
-	p "Profane: #{@profanecounter} out of a total #{@linecounter}"
 
 end
 
@@ -84,13 +137,82 @@ def getfiles
 	return allsongs
 end
 
-def get_files_from_specific_rule rule
+def get_files_from_db_specific_csv rule
+	p "**************"
+	p "get_files_from_db_specific_csv"
+	p "**************"
+
 	@videos_saved = {}
 	p "Getting data from #{rule}"
 	
 	Rule.create(:rule_name => @playlist_name)
 
-	list = CSV.read("./csv/#{rule}", {:headers => true})
+	
+	list = CSV.read("#{@csvdir}/#{rule}", {:headers => true, :encoding => 'windows-1251:utf-8'})
+
+	# p "rule=#{rule}"
+	# p "list=#{list.class}"
+
+	@sentence_data = []
+	@last = ''
+
+	# p "Reading: #{list}"
+	
+	list.each do |line|
+
+		@profane = !line[16].to_i.zero?
+
+		@line_id,@original_artist,@original_title  = line[2],line[4],line[6] 
+		@line_artist = @original_artist.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
+		@line_title = @original_title.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
+
+		@keyword,sentence_w_gap  = line[7], line[9]
+
+		sentence_words = []
+		sentence_w_gap.split(" ").each {|w| w = @keyword + w[-1] if w.include?("__") and w!="__"; w = @keyword if w==("__"); @profane = true if w.include?("*"); word = w.gsub(/[^\p{Alnum} ']/, ''); sentence_words << word}
+		sentence_no_gap = sentence_words.join(" ")
+
+		@node, @group, @game = line[10], line[11], line[12]
+
+		time_at,time_until,dur_ms = line[13], line[14],line[15]
+
+		newvideo = Video.where(:yt_id => @line_id).first
+
+		if newvideo.nil?
+			@video = Video.where(:yt_id => @line_id).first_or_create
+			@video.title = @line_title
+			@video.artist = @line_artist
+			@video.artist_original = @original_artist
+			@video.title_original = @original_title
+			@video.save!
+
+			# p "Video #{@line_id} saved" if @video.save!
+		end
+
+		@video= Video.where(:yt_id => @line_id).first
+
+		p @video.location
+
+		sentence = Sentence.where(:rule_name => @node, :video_id => @video.id, :l_node => @node, :l_group => @group, :l_game => @game, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => @keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => @profane).first_or_create
+
+	end
+
+
+end
+
+
+
+def get_files_from_specific_rule rule
+	p "*****"
+	p "get_files_from_specific_rule"
+	p "*****"
+
+	@videos_saved = {}
+	p "Getting data from #{rule}"
+	
+	Rule.create(:rule_name => @playlist_name)
+
+	list = CSV.read("#{rule}", {:headers => true})
 
 	@sentence_data = []
 	@last = ''
@@ -139,7 +261,7 @@ def get_files_from_specific_rule rule
 		@sss = Sentence.where(:video_id => @video.id, :rule_name => @playlist_name,:full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => use).first_or_create
 
 		# p @video_id
-		# p @sss
+		p @sss
 	end
 end
 

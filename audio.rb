@@ -66,6 +66,7 @@ def normalize_audio
 	p "normalize_audio"
 	p "******"
 
+	make_dir_if_none "#{@editsdir}","#{PLAYLISTNAME}"
 	make_dir_if_none "#{@editsdir}/#{PLAYLISTNAME}","normalized"
 
 	@count = 0
@@ -110,8 +111,8 @@ def normalize_audio
 
 		snippet.save!
 
-		`rm '#{audio_file}'`
-		`rm '#{normal_file}'`
+		`rm '#{audio_file}'` if File.exists?("#{audio_file}")
+		`rm '#{normal_file}'` if File.exists?("#{normal_file}")
 		# `rm "#{normal_file}"` if File.exists?("#{normal_file}")
 
 		# final_file = "'#{normal_dir}/#{namestring}-normal.mp4'"

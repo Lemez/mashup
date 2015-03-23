@@ -1,3 +1,34 @@
+def format_downloaded_video_filenames
+	p "*******"
+	p "format_downloaded_video_filenames"
+	p "*******"
+	
+
+	Dir.glob("#{@videodir}/*").each do |vid|
+
+
+		extension = File.extname(vid)
+		name_with_ext = File.basename(vid)
+		name = name_with_ext[0...name_with_ext.index(extension)]
+
+		newname = get_clean_name_alphanum_dash(name)
+		newname = newname.downcase.split(" - ").join(" ~ ")
+
+		if !name.include?("~")
+			
+			p "video renamed: #{newname+extension}"
+
+			File.rename(vid, "#{@videodir}/#{newname}#{extension}")
+		else
+			p "video already named: #{name_with_ext}"
+			p "#{@videodir}/#{newname}#{extension}"
+
+		end
+		
+	end
+end
+
+
 
 def match_videos_with_saved_videos
 
@@ -18,5 +49,5 @@ def match_videos_with_saved_videos
 end
 
 def create_list_of_videos_to_download
-	Video.where("location=nil")
+	Video.all.where("location=''")
 end
