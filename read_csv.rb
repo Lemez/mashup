@@ -5,21 +5,23 @@ def db_files_to_csv
 
 	@linecounter = 0
 
-	list = CSV.read("./csv/master/maria_10_03_2015_working.csv",{:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => "\t"})
+	# list = CSV.read("./csv/master/maria_10_03_2015_working.csv",{:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => "\t"})
+	list = CSV.read("./csv/master/for_medleys_CHECKED(Edited) (1).csv",{:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"})
+
 	list.each do |line|
 
 		line = line.gsub("\"","") if line.include?("\"")#remove illegal quoting Malformed CSV Error if 
 		
 		node = line[10]
 
-		next if node == "dances round the room" || node == " there's demons closing in on"
+		# next if node == "dances round the room" || node == " there's demons closing in on"
 
 		if @linecounter == 0
-			@csv = File.open("./csv/nodes/#{node}.csv", "w")
+			@csv = File.open("./csv/nodes_diego/#{node}.csv", "w")
 
 		elsif @node != node
 			@csv.close
-			@csv = File.open("./csv/nodes/#{node}.csv", "w")
+			@csv = File.open("./csv/nodes_diego/#{node}.csv", "w")
 
 			@csv.puts(line)
 		else

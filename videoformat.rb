@@ -14,6 +14,13 @@ def check_for_webm_videos (directory)
 		webmtomp4 = "ffmpeg -fflags +genpts -i #{item} -r 24 #{r_item}.mp4'" 
 		system (webmtomp4)
 
+		video = SavedVideo.where("location=#{item}")
+
+		p "video location - #{item} >> #{r_item}.mp4"
+
+		video.location = "#{r_item}.mp4"
+		video.save!
+
 	end
 end
 

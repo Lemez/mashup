@@ -6,8 +6,6 @@ def make_new_video downloading=false
 
 	get_files_from_db_specific_csv ARGV[0] #returns Sentence objects with video_ids
 
-	reformat_videos_if_required
-
 		# get the info from the saved videos folder and create SavedVideos
 	get_all_titles_from_dir
 
@@ -15,9 +13,12 @@ def make_new_video downloading=false
 	match_videos_with_saved_videos
 
 	do_downloading if DOWNLOADING==true
+	reformat_videos_if_required if DOWNLOADING==true
 
 		# get the sentences and timings from the sentences that have videos with saved files
 	get_sentences_with_saved_videos
+
+	p SavedVideo.all.each {|v| p v.location}
 
 	@saved_videos = Video.all.is_saved
 	@sentences_to_extract = @saved_videos.map(&:sentences).flatten
@@ -42,12 +43,12 @@ def make_new_video downloading=false
 		# create intermediate files together
 	create_intermediate_files_from_snippets
 
-	## NO XFADES
+						## NO XFADES
 		# glue intermediate video files and normalized audio together
 	@@xfade = false 
 	glue_intermediate_files_and_normal_audio
 
-	## XFADES
+						## XFADES
 	# @@xfade = true 
 
 						# create normalized snippets.ts

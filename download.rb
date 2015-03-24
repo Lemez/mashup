@@ -14,24 +14,26 @@ def download_undownloaded_vids array
 
 		shell_command = `#{download_video}`
 		
-		aborted = shell_command.include? "Download aborted"
+		# aborted = shell_command.include? "Download aborted"
 
-		sleep 1 #wait 1 sec
+		# sleep 1 #wait 1 sec
 
-		# go to Vimeo to download if it doesnt work
-		if aborted
+		# # go to Vimeo to download if it doesnt work
+		# if aborted
 
-			p "FAILED: #{shell_command}"
-			sleep 3 #wait 3 secs
+			# p "FAILED: #{shell_command}"
+			# sleep 3 #wait 3 secs
+
+			p "Not trying YT due to broken YT dl"
 
 			get_vimeo_manually @song_artist,@song_title,'vimeo'
 
-		else
-			p "SUCCESS: #{shell_command}"
-			sleep 3 #wait 3 secs
+	# 	else
+	# 		p "SUCCESS: #{shell_command}"
+	# 		sleep 3 #wait 3 secs
 			
-			# if successful save vimeo id and saved=true and location
-		end
+	# 		# if successful save vimeo id and saved=true and location
+	# 	end
 	end
 end
 
@@ -58,35 +60,38 @@ def get_vimeo_manually artist,title,source
 	url = "https://vimeo.com/search?q=#{escaped_title}"
 	jarow = FuzzyStringMatch::JaroWinkler.create( :native )
 
-    browser = Watir::Browser.new 
-    browser.driver.manage.timeouts.implicit_wait = 3 #3 seconds
-    browser.goto url
-    p "URL is #{browser.url}"
+    begin
+    	browser = Watir::Browser.new 
+	    browser.driver.manage.timeouts.implicit_wait = 3 #3 seconds
+	    browser.goto url
 
-    results = browser.ol :class => 'js-browse_list clearfix browse browse_videos browse_videos_thumbnails kane'
+	    p "Searching for #{@title_to_check} at url #{browser.url}"
 
-    results.wait_until_present # wait until the url changes
-
-    # TO DO!!!! CHECK TO MAKE SURE THAT FIRST X ELEMENTS OF SEARCH QUERY MATCH LI TEXT, IN ORDER TO STOP FALSE DOWNLOADS
-    @highest_match = 0
-    @vimeo_id = ""
-    @best_title = ""
-   	results.lis.each do |li|
-    	@vimeo_title = li.a.title.downcase
-    	unless @vimeo_title.include?("live") or @vimeo_title.include?("cover") or @vimeo_title.include?("explicit") or @vimeo_title.include?("remix") or @vimeo_title.include?("lyrics") or @vimeo_title.include?("tour")
-    		distance = jarow.getDistance( @vimeo_title, @title_to_check)
-    		if distance > @highest_match
-    			@highest_match = distance 
-    			@vimeo_id = li.id.gsub(/[^\d]/, '')
-    			@best_title = @vimeo_title
-    		end
-		end
-    end
+	    results = browser.ol :class => 'js-browse_list clearfix browse browse_videos browse_videos_thumbnails kane'
+    	results.wait_until_present # wait until the url changes
+    	 # TO DO!!!! CHECK TO MAKE SURE THAT FIRST X ELEMENTS OF SEARCH QUERY MATCH LI TEXT, IN ORDER TO STOP FALSE DOWNLOADS
+	    @highest_match = 0
+	    @vimeo_id = ""
+	    @best_title = ""
+	   	results.lis.each do |li|
+	    	@vimeo_title = li.a.title.downcase
+	    	unless @vimeo_title.include?("live") or @vimeo_title.include?("cover") or @vimeo_title.include?("explicit") or @vimeo_title.include?("remix") or @vimeo_title.include?("lyrics") or @vimeo_title.include?("tour")
+	    		distance = jarow.getDistance( @vimeo_title, @title_to_check)
+	    		if distance > @highest_match
+	    			@highest_match = distance 
+	    			@vimeo_id = li.id.gsub(/[^\d]/, '')
+	    			@best_title = @vimeo_title
+	    		end
+			end
+	    end
 
     p "Searching for #{@title_to_check}, #{@best_title} has Vimeo ID #{@vimeo_id} with distance #{@highest_match}"
 
 	download_a_video @vimeo_id,source
 
+    rescue Timeout::Error => e
+    	puts "Vimeo search for #{@title_to_check} page did not load: #{e}" 
+    end
 end
 
 def download_a_video (video_id,source)
