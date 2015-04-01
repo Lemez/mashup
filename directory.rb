@@ -12,19 +12,6 @@ def make_dir_if_none (dir,name)
 	# FileUtils::mkdir_p 'foo/bar'
 end
 
-def get_sentences_with_saved_videos
-	p "*******"
-	p "get_sentences_with_saved_videos"
-	p "*******"
-	
-	@sentences_to_extract = []
-	Sentence.all.obeys_rule.each do |sentence|
-		svid = sentence.video_id
-		v = Video.find_by("id=#{svid}")
-		@sentences_to_extract << sentence if v.saved
-	end
-end
-
 def get_all_titles_from_dir 
 	p "*********"
 	p "get_all_titles_from_dir"

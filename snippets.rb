@@ -24,6 +24,7 @@ def create_snippets_from_sentences
 
 	@full_sentence = ''
 	@title = ''
+	@saved_videos = Video.all.is_saved
 
 	@sentences_to_extract.each do |sentence|
 		
@@ -37,6 +38,12 @@ def create_snippets_from_sentences
 
 		artist =v.artist
 		title = v.title
+
+		if title=='red' 
+			p "skipping #{title}"
+			next
+		end
+
 		offset_in_ms = v.offset
 		full_sentence = sentence.full_sentence
 

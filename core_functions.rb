@@ -11,77 +11,69 @@ def make_new_video downloading=false
 	if DOWNLOADING && @number_of_relevant_videos_in_db <5
 		do_downloading 
 		reformat_videos_if_required
+		create_and_match_saved_videos #run it again to update the list of videos
 	end
 
-	create_and_match_saved_videos #run it again to update the list of videos
-
 		# get the sentences and timings from the sentences that have videos with saved files
-	get_sentences_with_saved_videos
+	# get_sentences_with_saved_videos
 
-	# p SavedVideo.all.each {|v| p v.location}
+		# get sentences with unique keywords / # choose_sentences
+	@sentences_to_extract = Video.all.is_saved.flat_map(&:sentences).uniq{|s| s.keyword.downcase}.shuffle
 
-	@saved_videos = Video.all.is_saved
-	sentences = []
-	@sentences_to_extract = @saved_videos.map(&:sentences).flatten.uniq{|s| s.keyword.downcase}#.map{|v| v.uniq}.uniq#.first#.uniq(&:keyword)#first.select(:keyword)#.uniq #.flatten.shuffle
-	# p sentences
-	@sentences_to_extract.each{|s| p s.keyword}
+	p @sentences_to_extract.count
 
-	# # artists = []
-	# # @sentences_to_extract.each {|v| video = @saved_videos.find_by("id=#{v.video_id}"); artists << video unless artists.include?(video) }
-	# # artists.uniq.each {|a| p Sentence.where("video_id=#{a.id}")} 
+		# create snippets from those sentences and save their locations and rule numbers
+	create_snippets_from_sentences
 
-	# 	# create snippets from those sentences and save their locations and rule numbers
-	# create_snippets_from_sentences
+		#print out snippets created, file, duration and lyric data
+	show_current_snippets
 
-	# 	#print out snippets created, file, duration and lyric data
-	# show_current_snippets
+		# normalize audio with fades
+	normalize_audio
 
-	# 	# normalize audio with fades
-	# normalize_audio
+		#create srt file from snippets
+	create_srt_from_snippets
 
-	# 	#create srt file from snippets
-	# create_srt_from_snippets
+		#create a text file and intermediate files from snippets
+	create_snippets_text_file 
 
-	# 	#create a text file and intermediate files from snippets
-	# create_snippets_text_file 
+		# create intermediate files together
+	create_intermediate_files_from_snippets
 
-	# 	# create intermediate files together
-	# create_intermediate_files_from_snippets
+						## NO XFADES
+		# glue intermediate video files and normalized audio together
+	@@xfade = false 
+	glue_intermediate_files_and_normal_audio
 
-	# 					## NO XFADES
-	# 	# glue intermediate video files and normalized audio together
-	# @@xfade = false 
-	# glue_intermediate_files_and_normal_audio
+	# 					## XFADES
+	# # @@xfade = true 
 
-	# # 					## XFADES
-	# # # @@xfade = true 
+	# 					# create normalized snippets.ts
+	# 					# create_normalized_snippets
 
-	# # 					# create normalized snippets.ts
-	# # 					# create_normalized_snippets
+	# 					# crossfade snippets that already have normalised audio
+	# 					# crossfade_snippets_with_normal_audio_together
 
-	# # 					# crossfade snippets that already have normalised audio
-	# # 					# crossfade_snippets_with_normal_audio_together
+	# 						# trim audio to adapt to crossfades
+	# 					# trim_audio
 
-	# # 						# trim audio to adapt to crossfades
-	# # 					# trim_audio
+	# 					#create silence
+	# 					# create_silence
 
-	# # 					#create silence
-	# # 					# create_silence
+	# 						# crossfade intermediate files
+	# 					# crossfade_snippets_to_xfaded_ts
+	# 					# crossfade_snippets_to_ts_and_audio_to_wav
 
-	# # 						# crossfade intermediate files
-	# # 					# crossfade_snippets_to_xfaded_ts
-	# # 					# crossfade_snippets_to_ts_and_audio_to_wav
+	# 						# make ts output into mp4
+	# 					# process_xfaded_ts_to_mp4
 
-	# # 						# make ts output into mp4
-	# # 					# process_xfaded_ts_to_mp4
+	# 						# glue crossfaded video files and normalized audio together
+	# 					# glue_crossfaded_video_and_normal_audio
 
-	# # 						# glue crossfaded video files and normalized audio together
-	# # 					# glue_crossfaded_video_and_normal_audio
+	# 					# test gluing
+	# 					# test_gluing
 
-	# # 					# test gluing
-	# # 					# test_gluing
-
-	# add_subs
+	add_subs
 
 
 end
