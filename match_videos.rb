@@ -32,7 +32,13 @@ end
 
 def match_videos_with_saved_videos
 
-	Video.all.each  do |video|
+	p"********"
+	p "match_videos_with_saved_videos"
+	p"********"
+
+	@number_of_relevant_videos_in_db=0
+
+	Video.all.each do |video|
 
 		 @assumed_filename = "#{video.artist} ~ #{video.title}";
 						
@@ -43,9 +49,13 @@ def match_videos_with_saved_videos
 				video.saved = true
 				video.location = "#{@f}#{sv.extension}"
 				video.save!
+				@number_of_relevant_videos_in_db +=1
+
+				p "#{@assumed_filename} found"
 			end
 		end
 	end
+
 end
 
 def create_list_of_videos_to_download

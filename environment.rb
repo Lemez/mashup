@@ -12,7 +12,7 @@ ActiveRecord::Base.logger = Logger.new(STDERR)
 # ActiveRecord::Base.colorize_logging = false
 
 # turn off/on (1/0) noisy logging
-ActiveRecord::Base.logger.level = 0
+ActiveRecord::Base.logger.level = 1
  
 ActiveRecord::Base.establish_connection(
     :adapter => "sqlite3",

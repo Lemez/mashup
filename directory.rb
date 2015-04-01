@@ -19,7 +19,6 @@ def get_sentences_with_saved_videos
 	
 	@sentences_to_extract = []
 	Sentence.all.obeys_rule.each do |sentence|
-		p sentence
 		svid = sentence.video_id
 		v = Video.find_by("id=#{svid}")
 		@sentences_to_extract << sentence if v.saved

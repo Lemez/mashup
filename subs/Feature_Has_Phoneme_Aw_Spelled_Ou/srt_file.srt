@@ -1,0 +1,173 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:04,171
+<font size=24px>When no one's</font><font color=#ffff00 size=24px><b> out </b></font><font size=24px></font>
+
+3
+00:00:04,171 --> 00:00:08,191
+<font size=24px>Sneaking</font><font color=#ffff00 size=24px><b> out </b></font><font size=24px>late tapping on your window</font>
+
+4
+00:00:08,191 --> 00:00:11,701
+<font size=24px>We don't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+
+5
+00:00:11,701 --> 00:00:18,711
+<font size=24px>They're invincible and she's just in the</font><font color=#ffff00 size=24px><b> background </b></font><font size=24px></font>
+
+6
+00:00:18,711 --> 00:00:22,541
+<font size=24px>We don't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+
+7
+00:00:22,541 --> 00:02:44,931
+<font size=24px>Wishing you never found</font><font color=#ffff00 size=24px><b> out </b></font><font size=24px>that love could be that strong</font>
+
+8
+00:02:44,931 --> 00:02:53,341
+<font size=24px>If</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>love is tragedy why are you my remedy</font>
+
+9
+00:02:53,341 --> 00:02:58,021
+<font size=24px>Lately I</font><font color=#ffff00 size=24px><b> found </b></font><font size=24px>myself thinking</font>
+
+10
+00:02:58,021 --> 00:03:06,381
+<font size=24px>If</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>love is tragedy why are you my remedy</font>
+
+11
+00:03:06,381 --> 00:03:11,401
+<font size=24px>Who gives a damn</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>the family you come from</font>
+
+12
+00:03:11,401 --> 00:03:15,411
+<font size=24px>That was as good as</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>song</font>
+
+13
+00:03:15,411 --> 00:03:20,851
+<font size=24px>I cannot find the way</font><font color=#ffff00 size=24px><b> out </b></font><font size=24px>of here</font>
+
+14
+00:03:20,851 --> 00:03:26,021
+<font size=24px>It doesn't matter what is</font><font color=#ffff00 size=24px><b> out </b></font><font size=24px>there</font>
+
+15
+00:03:26,021 --> 00:03:29,901
+<font size=24px>We don't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+
+16
+00:03:29,901 --> 00:03:34,151
+<font size=24px></font><font color=#ffff00 size=24px><b> Our </b></font><font size=24px>song is the way you laugh</font>
+
+17
+00:03:34,151 --> 00:03:38,861
+<font size=24px>Running</font><font color=#ffff00 size=24px><b> around </b></font><font size=24px>like a clown on purpose</font>
+
+18
+00:03:38,861 --> 00:03:44,381
+<font size=24px>Stoned in paradise shouldn't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+
+19
+00:03:44,381 --> 00:03:48,701
+<font size=24px></font><font color=#ffff00 size=24px><b> Our </b></font><font size=24px>song is the way you laugh</font>
+
+20
+00:03:48,701 --> 00:03:52,811
+<font size=24px>And I'm in the</font><font color=#ffff00 size=24px><b> ground </b></font><font size=24px></font>
+
+21
+00:03:52,811 --> 00:03:57,571
+<font size=24px>Running</font><font color=#ffff00 size=24px><b> around </b></font><font size=24px>like a clown on purpose</font>
+
+22
+00:03:57,571 --> 00:04:03,391
+<font size=24px>Stoned in paradise shouldn't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+
+23
+00:04:03,391 --> 00:04:38,941
+<font size=24px>If</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>love's insanity why are you my clarity</font>
+
+24
+00:04:38,941 --> 00:04:43,951
+<font size=24px>Running</font><font color=#ffff00 size=24px><b> around </b></font><font size=24px>like a clown on purpose</font>
+
+25
+00:04:43,951 --> 00:04:48,171
+<font size=24px></font><font color=#ffff00 size=24px><b> Our </b></font><font size=24px>song is the way he laughs</font>
+
+26
+00:04:48,171 --> 00:04:53,731
+<font size=24px>And that's why he's spinning</font><font color=#ffff00 size=24px><b> round </b></font><font size=24px>in my head</font>
+
+27
+00:04:53,731 --> 00:04:57,351
+<font size=24px>We don't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+
+28
+00:04:57,351 --> 00:05:05,711
+<font size=24px>If</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>love is tragedy why are you my remedy</font>
+
+29
+00:05:05,711 --> 00:05:11,001
+<font size=24px>As life breaks new</font><font color=#ffff00 size=24px><b> ground </b></font><font size=24px></font>
+
+30
+00:05:11,001 --> 00:05:15,321
+<font size=24px>Sneaking</font><font color=#ffff00 size=24px><b> out </b></font><font size=24px>late tapping on his window</font>
+
+31
+00:05:15,321 --> 00:05:20,341
+<font size=24px>Who gives a damn</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>the family you come from</font>
+
+32
+00:05:20,341 --> 00:05:25,441
+<font size=24px>My head is spinning and I won't bail</font><font color=#ffff00 size=24px><b> out </b></font><font size=24px></font>
+
+33
+00:05:25,441 --> 00:04:23,781
+<font size=24px></font><font color=#ffff00 size=24px><b> Our </b></font><font size=24px>song is a slamming screen door</font>
+
+34
+00:04:23,781 --> 00:04:32,151
+<font size=24px>It cuts deep through our</font><font color=#ffff00 size=24px><b> ground </b></font><font size=24px>and makes us forget all common sense</font>
+
+35
+00:04:32,151 --> 00:04:36,941
+<font size=24px>Running</font><font color=#ffff00 size=24px><b> around </b></font><font size=24px>like a clown on purpose</font>
+
+36
+00:04:36,941 --> 00:05:04,971
+<font size=24px>If</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>love's insanity why are you my clarity</font>
+
+37
+00:05:04,971 --> 00:05:26,651
+<font size=24px>Shouldn't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+
+38
+00:05:26,651 --> 00:05:42,291
+<font size=24px>If</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>love's insanity why are you my clarity</font>
+
+39
+00:05:42,291 --> 00:05:47,751
+<font size=24px>As life breaks new</font><font color=#ffff00 size=24px><b> ground </b></font><font size=24px></font>
+
+40
+00:05:47,751 --> 00:05:51,871
+<font size=24px>I'm finally looking</font><font color=#ffff00 size=24px><b> around </b></font><font size=24px></font>
+
+41
+00:05:51,871 --> 00:06:00,191
+<font size=24px>If</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>love is tragedy why are you my remedy</font>
+
+42
+00:06:00,191 --> 00:07:11,251
+<font size=24px>Shouldn't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+
+43
+00:07:11,251 --> 00:07:19,621
+<font size=24px>It cuts deep through</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>ground and makes us forget all common sense</font>
+
+44
+00:07:19,621 --> 00:07:24,081

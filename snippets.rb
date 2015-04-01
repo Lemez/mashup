@@ -54,7 +54,7 @@ def create_snippets_from_sentences
 		location_string = "#{@editsdir}/#{rule_name}/snippets/#{artist}-#{title}-#{sentence_id.to_s}-#{d.to_i.to_s}.mp4"
 
 		# define skipping conditions
-		next if artist=='u2' or artist=='U2' or artist=="destinys child" or artist=="eminem"
+		next if artist=='u2' or artist=='U2' or artist=="destinys child" or artist=="eminem" or title=="man in the mirror"
 		next if sentence.full_sentence.split(" ").length < 4
 		next if @full_sentence==full_sentence
 		next if @title==title

@@ -6,7 +6,7 @@ def db_files_to_csv
 	@linecounter = 0
 
 	# list = CSV.read("./csv/master/maria_10_03_2015_working.csv",{:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => "\t"})
-	list = CSV.read("./csv/master/for_medleys_CHECKED(Edited) (1).csv",{:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"})
+	list = CSV.read("./csv/master/for_medleys_FINAL.csv",{:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"})
 
 	list.each do |line|
 
@@ -17,11 +17,11 @@ def db_files_to_csv
 		# next if node == "dances round the room" || node == " there's demons closing in on"
 
 		if @linecounter == 0
-			@csv = File.open("./csv/nodes_diego/#{node}.csv", "w")
+			@csv = File.open("./csv/nodes_final/#{node}.csv", "w")
 
 		elsif @node != node
 			@csv.close
-			@csv = File.open("./csv/nodes_diego/#{node}.csv", "w")
+			@csv = File.open("./csv/nodes_final/#{node}.csv", "w")
 
 			@csv.puts(line)
 		else
@@ -63,6 +63,7 @@ def get_files_from_db_csv
 				@linecounter+=1
 
 				@profane = !line[16].to_i.zero?
+				offset = line[17].to_i
 
 				@line_id,@original_artist,@original_title  = line[2],line[4],line[6] 
 				@line_artist = @original_artist.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
@@ -95,7 +96,21 @@ def get_files_from_db_csv
 
 				@video= Video.where(:yt_id => @line_id).first
 
-				sentence = Sentence.where(:rule_name => @node, :video_id => @video.id, :l_node => @node, :l_group => @group, :l_game => @game, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => @keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => @profane).first_or_create
+				@video.offset = offset
+				@video.save!
+
+				sentence = Sentence.where(:rule_name => @node,
+										  :video_id => @video.id,
+										  :l_node => @node,
+										  :l_group => @group,
+										  :l_game => @game,
+										  :full_sentence =>sentence_no_gap, 
+										  :sentence_gap => sentence_w_gap, 
+										  :keyword => @keyword, 
+										  :start_at => time_at, 
+										  :end_at => time_until, 
+										  :duration => dur_ms, 
+										  :adult => @profane).first_or_create
 
 				# p  "#{@linecounter}. Node: #{sentence.l_node}, Group: #{sentence.l_group}, Game: #{sentence.l_game}" if @linecounter==1
 			end
@@ -107,8 +122,6 @@ def get_files_from_db_csv
 			@current_node.save!
 
 			p @current_node if @current_node.save!
-
-
 
 			csv << [@node,@keyword,@linecounter,@profanecounter]
 			# p "Profane: #{@profanecounter} out of a total #{@linecounter}"
@@ -145,24 +158,28 @@ def get_files_from_db_specific_csv rule
 	p "**************"
 
 	@videos_saved = {}
+	listarray = []
+
 	p "Getting data from #{rule}"
 	
 	Rule.create(:rule_name => @playlist_name)
 
-	
 	list = CSV.read("#{@csvdir}/#{rule}", {:headers => true, :encoding => 'windows-1251:utf-8'})
 
-	# p "rule=#{rule}"
-	# p "list=#{list.class}"
+	list.each {|row| listarray << row}
+
+	p "rule=#{rule}"
+	p "list=#{list.class}"
 
 	@sentence_data = []
 	@last = ''
 
 	# p "Reading: #{list}"
 	
-	list.each do |line|
+	listarray.shuffle.each do |line|
 
 		@profane = !line[16].to_i.zero?
+		offset = line[17].to_i
 
 		@line_id,@original_artist,@original_title  = line[2],line[4],line[6] 
 		@line_artist = @original_artist.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
@@ -188,12 +205,12 @@ def get_files_from_db_specific_csv rule
 			@video.title_original = @original_title
 			@video.save!
 
-			# p "Video #{@line_id} saved" if @video.save!
 		end
 
 		@video= Video.where(:yt_id => @line_id).first
 
-		p @video.location
+		@video.offset = offset
+		@video.save!
 
 		sentence = Sentence.where(:rule_name => @node, :video_id => @video.id, :l_node => @node, :l_group => @group, :l_game => @game, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => @keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => @profane).first_or_create
 

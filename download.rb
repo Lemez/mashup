@@ -12,7 +12,7 @@ def download_undownloaded_vids array
 		video_string = "http://www.youtube.com/watch?v=#{@vid}"
 		download_video = "viddl-rb #{video_string} -d 'aria2c' -s #{@videodir}"
 
-		shell_command = `#{download_video}`
+		# shell_command = `#{download_video}`
 		
 		# aborted = shell_command.include? "Download aborted"
 
@@ -71,18 +71,23 @@ def get_vimeo_manually artist,title,source
     	results.wait_until_present # wait until the url changes
     	 # TO DO!!!! CHECK TO MAKE SURE THAT FIRST X ELEMENTS OF SEARCH QUERY MATCH LI TEXT, IN ORDER TO STOP FALSE DOWNLOADS
 	    @highest_match = 0
+	    @distance = 0
 	    @vimeo_id = ""
 	    @best_title = ""
 	   	results.lis.each do |li|
 	    	@vimeo_title = li.a.title.downcase
-	    	unless @vimeo_title.include?("live") or @vimeo_title.include?("cover") or @vimeo_title.include?("explicit") or @vimeo_title.include?("remix") or @vimeo_title.include?("lyrics") or @vimeo_title.include?("tour")
-	    		distance = jarow.getDistance( @vimeo_title, @title_to_check)
-	    		if distance > @highest_match
-	    			@highest_match = distance 
+	    	unless @vimeo_title.include?("live") or @vimeo_title.include?("cover") or @vimeo_title.include?("explicit") or @vimeo_title.include?("remix") or @vimeo_title.include?("lyrics") or @vimeo_title.include?("tour") or @vimeo_title.include?("unofficial")
+	    		@distance = jarow.getDistance( @vimeo_title, @title_to_check)
+
+	    		@distance += 0.2 if @vimeo_title.include?("official") || @vimeo_title.include?("album")
+	    		if @distance > @highest_match
+	    			@highest_match = @distance 
 	    			@vimeo_id = li.id.gsub(/[^\d]/, '')
 	    			@best_title = @vimeo_title
+
+	    			p "#{@best_title} is the best match so far"
 	    		end
-			end
+			end 
 	    end
 
     p "Searching for #{@title_to_check}, #{@best_title} has Vimeo ID #{@vimeo_id} with distance #{@highest_match}"
@@ -91,7 +96,10 @@ def get_vimeo_manually artist,title,source
 
     rescue Timeout::Error => e
     	puts "Vimeo search for #{@title_to_check} page did not load: #{e}" 
+    	puts $!, $@
     end
+
+    at_exit { browser.close  } # close browser on exit
 end
 
 def download_a_video (video_id,source)

@@ -6,77 +6,82 @@ def make_new_video downloading=false
 
 	get_files_from_db_specific_csv ARGV[0] #returns Sentence objects with video_ids
 
-		# get the info from the saved videos folder and create SavedVideos
-	get_all_titles_from_dir
+	create_and_match_saved_videos
 
-		# match videos on csv with saved videos on hard drive
-	match_videos_with_saved_videos
+	if DOWNLOADING && @number_of_relevant_videos_in_db <5
+		do_downloading 
+		reformat_videos_if_required
+	end
 
-	do_downloading if DOWNLOADING==true
-	reformat_videos_if_required if DOWNLOADING==true
+	create_and_match_saved_videos #run it again to update the list of videos
 
 		# get the sentences and timings from the sentences that have videos with saved files
 	get_sentences_with_saved_videos
 
-	p SavedVideo.all.each {|v| p v.location}
+	# p SavedVideo.all.each {|v| p v.location}
 
 	@saved_videos = Video.all.is_saved
-	@sentences_to_extract = @saved_videos.map(&:sentences).flatten
-	
-	p @sentences_to_extract
+	sentences = []
+	@sentences_to_extract = @saved_videos.map(&:sentences).flatten.uniq{|s| s.keyword.downcase}#.map{|v| v.uniq}.uniq#.first#.uniq(&:keyword)#first.select(:keyword)#.uniq #.flatten.shuffle
+	# p sentences
+	@sentences_to_extract.each{|s| p s.keyword}
 
-		# create snippets from those sentences and save their locations and rule numbers
-	create_snippets_from_sentences
+	# # artists = []
+	# # @sentences_to_extract.each {|v| video = @saved_videos.find_by("id=#{v.video_id}"); artists << video unless artists.include?(video) }
+	# # artists.uniq.each {|a| p Sentence.where("video_id=#{a.id}")} 
 
-		#print out snippets created, file, duration and lyric data
-	show_current_snippets
+	# 	# create snippets from those sentences and save their locations and rule numbers
+	# create_snippets_from_sentences
 
-		# normalize audio with fades
-	normalize_audio
+	# 	#print out snippets created, file, duration and lyric data
+	# show_current_snippets
 
-		#create srt file from snippets
-	create_srt_from_snippets
+	# 	# normalize audio with fades
+	# normalize_audio
 
-		#create a text file and intermediate files from snippets
-	create_snippets_text_file 
+	# 	#create srt file from snippets
+	# create_srt_from_snippets
 
-		# create intermediate files together
-	create_intermediate_files_from_snippets
+	# 	#create a text file and intermediate files from snippets
+	# create_snippets_text_file 
 
-						## NO XFADES
-		# glue intermediate video files and normalized audio together
-	@@xfade = false 
-	glue_intermediate_files_and_normal_audio
+	# 	# create intermediate files together
+	# create_intermediate_files_from_snippets
 
-						## XFADES
-	# @@xfade = true 
+	# 					## NO XFADES
+	# 	# glue intermediate video files and normalized audio together
+	# @@xfade = false 
+	# glue_intermediate_files_and_normal_audio
 
-						# create normalized snippets.ts
-						# create_normalized_snippets
+	# # 					## XFADES
+	# # # @@xfade = true 
 
-						# crossfade snippets that already have normalised audio
-						# crossfade_snippets_with_normal_audio_together
+	# # 					# create normalized snippets.ts
+	# # 					# create_normalized_snippets
 
-							# trim audio to adapt to crossfades
-						# trim_audio
+	# # 					# crossfade snippets that already have normalised audio
+	# # 					# crossfade_snippets_with_normal_audio_together
 
-						#create silence
-						# create_silence
+	# # 						# trim audio to adapt to crossfades
+	# # 					# trim_audio
 
-							# crossfade intermediate files
-						# crossfade_snippets_to_xfaded_ts
-						# crossfade_snippets_to_ts_and_audio_to_wav
+	# # 					#create silence
+	# # 					# create_silence
 
-							# make ts output into mp4
-						# process_xfaded_ts_to_mp4
+	# # 						# crossfade intermediate files
+	# # 					# crossfade_snippets_to_xfaded_ts
+	# # 					# crossfade_snippets_to_ts_and_audio_to_wav
 
-							# glue crossfaded video files and normalized audio together
-						# glue_crossfaded_video_and_normal_audio
+	# # 						# make ts output into mp4
+	# # 					# process_xfaded_ts_to_mp4
 
-						# test gluing
-						# test_gluing
+	# # 						# glue crossfaded video files and normalized audio together
+	# # 					# glue_crossfaded_video_and_normal_audio
 
-	add_subs
+	# # 					# test gluing
+	# # 					# test_gluing
+
+	# add_subs
 
 
 end
@@ -95,6 +100,15 @@ def do_downloading
 		# try to download those videos (currently some issues here on the plugins end)
 	download_undownloaded_vids @list_to_dl 
 end
+
+def create_and_match_saved_videos
+		# get the info from the saved videos folder and create SavedVideos
+	get_all_titles_from_dir
+
+		# match videos on csv with saved videos on hard drive
+	match_videos_with_saved_videos
+end
+
 
 def reformat_videos_if_required
 	format_downloaded_video_filenames

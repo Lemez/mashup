@@ -2,9 +2,10 @@
 
 # # usage: ruby make_rule_video.rb '3rd person present tense (303).csv'
 # # usage: ruby make_rule_video.rb 'double_cons_before_ing_ed_er.csv' true 'maria'
-# # usage: ruby make_rule_video.rb 'double_cons.csv' false 'diego' DIEGO needs to reformat
+# # usage: ruby make_rule_video.rb 'double_cons.csv' false 
 
 raise "Please specify a local csv file, eg >> $ ruby make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
+raise "Please specify true or false for DOWNLOADING " if ARGV[1].nil?
 
 require 'streamio-ffmpeg'
 require 'viddl-rb'
@@ -27,66 +28,35 @@ require_relative './environment.rb'
 
 ViddlRb.io = $stdout
 
-
 # ###### variables #########################
 
 @playlist_name = ARGV[0][0...ARGV[0].rindex(".")] unless ARGV[0].nil?
 PLAYLISTNAME = @playlist_name unless ARGV[0].nil?
-DOWNLOADING = 'test'
 DOWNLOADING = ARGV[1] unless ARGV[1].nil?
-FOLDER = ARGV[2] unless ARGV[2].nil?
 
-@csvdir = Dir.pwd + '/csv/nodes' if FOLDER =='maria'
-@csvdir = Dir.pwd + '/csv/nodes_diego' if FOLDER =='diego'
+@csvdir = Dir.pwd + '/csv/nodes_final' 
 @videodir = Dir.pwd + '/videos'
 @editsdir = Dir.pwd + '/video_edits'
 @subsdir = Dir.pwd + '/subs'
 @finaldir = Dir.pwd + '/videos_final'
 BLACK_PIC = Dir.pwd + '/images/black.png'
 
-
-
-# @mydir = "#{@dir}#{@playlist_name}"
-
-# # @time = Time.now.usec.to_s
-# #######
+######## CONVERT CSV TO NODES #######
+# db_files_to_csv
 
 #######  PROGRAMME CODE ######
 make_new_video downloading=DOWNLOADING
 
-# NB BEST WAY TO MAKE SUBS HERE "http://ffmpeg.org/ffmpeg-filters.html#drawtext-1"
-
 #############################
-
-# a = "4.806531\n"
-# c =  a[0..-2].to_f
-# p (c/0.001)
-
-####### TESTING #######
-# test_gluing
-# items =  [
-# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
-# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
-# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
-# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
-# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
-# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
-# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"], 
-# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/echosmith-cool kids-27.mp4","4.80"],
-# ["/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/bruno mars-young girls-3.mp4","4.37"]
-# ]
-# crossfade_snippets_to_mp4
+# NB BEST WAY TO MAKE SUBS HERE "http://ffmpeg.org/ffmpeg-filters.html#drawtext-1"
 
 # # http://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/subtitle_options
 # # To make the subtitles stream from sub.srt appear in transparent green DejaVu Serif, use:
 
-
-
-
 # # subtitles=sub.srt:force_style='FontName=DejaVu Serif,PrimaryColour=&HAA00FF00'
 # # How to speed up and slow down audio / video !!!
 # # https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video
-
+#############################
 
 
 

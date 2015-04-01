@@ -2,30 +2,26 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,501
-<font size=24px></font><font color=#ffff00 size=24px><b> Stripped </b></font><font size=24px>to the waist</font>
+00:00:00,001 --> 00:00:04,021
+<font size=24px>I</font><font color=#ffff00 size=24px><b> grabbed </b></font><font size=24px>a pen and an old napkin</font>
 
 3
-00:00:04,501 --> 00:00:08,121
-<font size=24px></font><font color=#ffff00 size=24px><b> Ripped </b></font><font size=24px>jeans skin was showin'</font>
+00:00:04,021 --> 00:00:12,051
+<font size=24px></font><font color=#ffff00 size=24px><b> Forgetting </b></font><font size=24px>him was like trying to know somebody you've never met</font>
 
 4
-00:00:08,121 --> 00:00:12,931
-<font size=24px>Got you</font><font color=#ffff00 size=24px><b> wrapped </b></font><font size=24px>around my finger babe</font>
+00:00:12,051 --> 00:00:15,961
+<font size=24px></font><font color=#ffff00 size=24px><b> Ripped </b></font><font size=24px>jeans skin was showin'</font>
 
 5
-00:00:12,931 --> 00:00:17,071
-<font size=24px></font><font color=#ffff00 size=24px><b> Strapped </b></font><font size=24px>in the chair of the city's gas chamber</font>
+00:00:15,961 --> 00:00:24,381
+<font size=24px></font><font color=#ffff00 size=24px><b> Forgetting </b></font><font size=24px>him was like trying to know somebody you've never met</font>
 
 6
-00:00:17,071 --> 00:00:21,101
-<font size=24px>But then a strange fear</font><font color=#ffff00 size=24px><b> gripped </b></font><font size=24px>me and I</font>
+00:00:24,381 --> 00:00:29,721
+<font size=24px>Suspense is</font><font color=#ffff00 size=24px><b> controlling </b></font><font size=24px>my mind</font>
 
 7
-00:00:21,101 --> 00:00:25,501
-<font size=24px></font><font color=#ffff00 size=24px><b> Trapped </b></font><font size=24px>in a prism in a prism of light</font>
-
-8
-00:00:25,501 --> 00:00:33,921
-<font size=24px></font><font color=#ffff00 size=24px><b> Forgetting </b></font><font size=24px>him was like trying to know somebody you've never met</font>
+00:00:29,721 --> 00:00:39,201
+<font size=24px></font><font color=#ffff00 size=24px><b> Regretting </b></font><font size=24px>him was like</font>
 
