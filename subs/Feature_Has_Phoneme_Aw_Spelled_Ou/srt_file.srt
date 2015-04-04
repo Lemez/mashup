@@ -2,30 +2,26 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:03,751
-<font size=24px>We don't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+00:00:00,001 --> 00:00:05,521
+<font size=24px>Stoned in paradise shouldn't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
 
 3
-00:00:03,751 --> 00:00:10,761
+00:00:05,521 --> 00:00:12,531
 <font size=24px>They're invincible and she's just in the</font><font color=#ffff00 size=24px><b> background </b></font><font size=24px></font>
 
 4
-00:00:10,761 --> 00:00:14,871
-<font size=24px>And I'm in the</font><font color=#ffff00 size=24px><b> ground </b></font><font size=24px></font>
+00:00:12,531 --> 00:00:20,851
+<font size=24px>If</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>love is tragedy why are you my remedy</font>
 
 5
-00:00:14,871 --> 00:00:19,691
-<font size=24px>He'd kill me</font><font color=#ffff00 size=24px><b> without </b></font><font size=24px>any warning</font>
+00:00:20,851 --> 00:00:29,221
+<font size=24px>It cuts deep through</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>ground and makes us forget all common sense</font>
 
 6
-00:00:19,691 --> 00:00:24,341
-<font size=24px>Cause</font><font color=#ffff00 size=24px><b> our </b></font><font size=24px>song is a slamming screen door</font>
+00:00:29,221 --> 00:00:34,661
+<font size=24px>I cannot find the way</font><font color=#ffff00 size=24px><b> out </b></font><font size=24px>of here</font>
 
 7
-00:00:24,341 --> 00:00:29,021
-<font size=24px>Lately I</font><font color=#ffff00 size=24px><b> found </b></font><font size=24px>myself thinking</font>
-
-8
-00:00:29,021 --> 00:00:39,651
-<font size=24px>I look</font><font color=#ffff00 size=24px><b> around </b></font><font size=24px>turn the radio down</font>
+00:00:34,661 --> 00:00:40,221
+<font size=24px>And that's why he's spinning</font><font color=#ffff00 size=24px><b> round </b></font><font size=24px>in my head</font>
 

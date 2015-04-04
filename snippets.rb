@@ -38,45 +38,57 @@ def create_snippets_from_sentences
 
 		artist =v.artist
 		title = v.title
-
-		if title=='red' 
-			p "skipping #{title}"
-			next
-		end
-
 		offset_in_ms = v.offset
 		full_sentence = sentence.full_sentence
 
 		full_video_location = "'#{@videodir}/#{v.location}'"
 
 		s = sentence.start_at + offset_in_ms.to_i
+		e = sentence.end_at
 		d = sentence.duration + 1000 
 		d += 1000 if d < 4000
 
 		start_secs = convert_to_seconds_and_ms(s)
+		end_secs = convert_to_seconds_and_ms(e)
 		duration_secs = convert_to_seconds_and_ms(d)
 
-		# duration_secs = 4 if artist=='shakira' and title=='cant remember to forget you'
-
-		location_string = "#{@editsdir}/#{rule_name}/snippets/#{artist}-#{title}-#{sentence_id.to_s}-#{d.to_i.to_s}.mp4"
+		location_string = "#{@editsdir}/#{rule_name}/snippets/#{artist}-#{title}-#{s.to_s}-#{d.to_i.to_s}.mp4"
 
 		# define skipping conditions
-		next if artist=='u2' or artist=='U2' or artist=="destinys child" or artist=="eminem" or title=="man in the mirror"
 		next if sentence.full_sentence.split(" ").length < 4
 		next if @full_sentence==full_sentence
-		next if @title==title
+
+		if EXCLUDED.include?(title) || d < MIN_DUR or d > MAX_DUR
+
+			p "Skipping #{artist} #{title} with duration #{d.to_s} "
+			next
+		end
+
 
 		s = Snippet.create(:video_id => video_id, :sentence_duration => d, :clip_duration => duration_secs, :sentence_id => sentence_id, :full_video_location => full_video_location, :location => location_string, :rule_name => rule_name )	
 
-		# save cut of each video to rule edits folder
-		command = "ffmpeg -i #{full_video_location} -ss #{start_secs} -t #{duration_secs} -async 1 '#{location_string}' -y -loglevel quiet"
+		sync_offset = 0.01 # 10ms, correcting sync error
 
-		system (command) unless File.exists?(location_string)
+		# save cut of each video to rule edits folder
+		command = "ffmpeg -i #{full_video_location}  -ss #{start_secs} -t #{duration_secs} -async 1 -threads 0 '#{location_string}' -y -loglevel quiet"
+		
+		# unless File.exists?(location_string)
+			
+			p "Processing #{artist} #{title} with duration #{d.to_s} and clip=#{start_secs}:#{duration_secs} "
+			system (command) 
+		# else
+		# 	p "Existing: #{artist} #{title} with duration #{d.to_s} "
+		# end
 
 		@full_sentence=full_sentence
 		@title=title
 	end
 	
+end
+
+def correct_sync_for_snippet
+
+
 end
 
 def show_current_snippets
@@ -112,13 +124,14 @@ def create_intermediate_files_from_snippets
 		snippet_url = url[5..-2]
 		@snip = Snippet.find_by("location=#{snippet_url}")
 		snippet_s_id = @snip.sentence_id
+		duration = @snip.sentence_duration
 		sentence = Sentence.find_by("id=#{snippet_s_id}")
 		video = Video.find_by("id=#{sentence.video_id}")
-		words = sentence.full_sentence.gsub(/[^0-9a-z ]/i, '')
-		artist = video.artist
-		title = video.title
+		words = sentence.full_sentence.gsub(/[^0-9a-z ]/i, '').gsub(" ","_")
+		artist = video.artist.gsub(" ","_")
+		title = video.title.gsub(" ","_")
 
-		inter_name = "#{@editsdir}/#{PLAYLISTNAME}/tmp/#{artist}-#{title}-#{snippet_s_id}-#{words}.ts"
+		inter_name = "#{@editsdir}/#{PLAYLISTNAME}/tmp/#{artist}-#{title}-#{words}-#{duration.to_i}.ts"
 
 	# Make sure that all files have same aspect ratio
 	# http://video.stackexchange.com/questions/9947/how-do-i-change-frame-size-preserving-width-using-ffmpeg

@@ -1,7 +1,5 @@
 def db_files_to_csv
-	p "**************"
-	p "db_files_to_csv"
-	p "**************"
+	p "**************";p "db_files_to_csv";p "**************"
 
 	@linecounter = 0
 
@@ -19,7 +17,7 @@ def db_files_to_csv
 		if @linecounter == 0
 			@csv = File.open("./csv/nodes_final/#{node}.csv", "w")
 
-		elsif @node != node
+		elsif @node != node 
 			@csv.close
 			@csv = File.open("./csv/nodes_final/#{node}.csv", "w")
 
@@ -34,21 +32,127 @@ def db_files_to_csv
 	@csv.close
 end
 
+def query_saved_videos_per_node destroy=false
+
+	options = {:headers => true, :encoding => 'windows-1251:utf-8'}
+	reading_file = "./csv/summary/summary_medleys_FINAL.csv"
+
+	CSV.open("./csv/videos/hits_medleys_FINAL.csv","w") do |csv|
+		csv << ["Node", "Example","Total","Profane","Relevant Videos","Sentence Hits", "Completed"]
+
+		CSV.foreach(reading_file,options) do |row|
+
+			@playlist_name = row[0]
+			next if row[0] == @lastrow
+
+			p "*** Processing #{@playlist_name} *****"
+
+			get_files_from_db_specific_csv "#{@playlist_name}.csv"
+			create_and_match_saved_videos
+			sentences = choose_sentences_from_saved_videos
+
+			relevant_videos = sentences.flat_map(&:video_id).uniq
+
+			current_hits = sentences.count
+
+			contents = row
+
+			completed = COMPLETED.include?(@playlist_name)
+			
+			results = [contents[0], # name
+					contents[1], # example
+					contents[2], # total sentences
+					contents[3].to_i.to_s, #profane
+					relevant_videos.count,
+					current_hits,
+					completed.to_s]
+
+
+			csv << results
+
+			Sentence.destroy_all if destroy
+
+			@lastrow = row[0]
+
+		end
+	end
+end
+
+def get_files_from_db_specific_csv rule
+	p "**************";p "get_files_from_db_specific_csv";p "**************"
+
+	@videos_saved = {}
+	listarray = []
+
+	p "Getting data from #{rule}"
+	
+	Rule.create(:rule_name => @playlist_name)
+
+	list = CSV.read("#{@csvdir}/#{rule}", {:headers => true, :encoding => 'windows-1251:utf-8'})
+
+	list.each {|row| listarray << row}
+
+	p "rule=#{rule}"
+	p "list=#{list.class}"
+
+	@sentence_data = []
+	@last = ''
+
+	# p "Reading: #{list}"
+	
+	listarray.shuffle.each do |line|
+
+		@profane = !line[16].to_i.zero?
+		offset = line[17].to_i
+
+		@line_id,@original_artist,@original_title  = line[2],line[4],line[6] 
+		@line_artist = @original_artist.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
+		@line_title = @original_title.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
+
+		@keyword,sentence_w_gap  = line[7], line[9]
+
+		sentence_words = []
+		sentence_w_gap.split(" ").each {|w| w = @keyword + w[-1] if w.include?("__") and w!="__"; w = @keyword if w==("__"); @profane = true if w.include?("*"); word = w.gsub(/[^\p{Alnum} ']/, ''); sentence_words << word}
+		sentence_no_gap = sentence_words.join(" ")
+
+		@node, @group, @game = line[10], line[11], line[12]
+
+		time_at,time_until,dur_ms = line[13], line[14],line[15]
+
+		newvideo = Video.where(:yt_id => @line_id).first
+
+		if newvideo.nil?
+			@video = Video.where(:yt_id => @line_id).first_or_create
+			@video.title = @line_title
+			@video.artist = @line_artist
+			@video.artist_original = @original_artist
+			@video.title_original = @original_title
+			@video.save!
+
+		end
+
+		@video= Video.where(:yt_id => @line_id).first
+
+		@video.offset = offset
+		@video.save!
+
+		sentence = Sentence.where(:rule_name => @node, :video_id => @video.id, :l_node => @node, :l_group => @group, :l_game => @game, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => @keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => @profane).first_or_create
+
+	end
+
+
+end
+
 
 def get_files_from_db_csv
 
-	p "**************"
-	p "get_files_from_db_csv"
-	p "**************"
+	p "**************";p "get_files_from_db_csv";p "**************"
 
-	# @videos_saved = {}
-	# Rule.create(:rule_name => @playlist_name)
-
-	files = Dir.glob("./csv/nodes/*.csv")[-4..-3]
+	files = Dir.glob("./csv/nodes_final/*.csv")
 	
 	options = {:headers => true, :encoding => 'windows-1251:utf-8'}
 
-	summaryfile = CSV.open("./csv/summary/summary_maria_10_03_2015_working.csv","w") do |csv|
+	summaryfile = CSV.open("./csv/summary/summary_medleys_FINAL.csv","w") do |csv|
 		csv << ["Node", "Example","Total","Profane"]
 
 		files.each do |file|
@@ -121,7 +225,7 @@ def get_files_from_db_csv
 			@current_node.keyword = @keyword
 			@current_node.save!
 
-			p @current_node if @current_node.save!
+			p "#{@current_node.name} saved!" if @current_node.save!
 
 			csv << [@node,@keyword,@linecounter,@profanecounter]
 			# p "Profane: #{@profanecounter} out of a total #{@linecounter}"
@@ -130,6 +234,9 @@ def get_files_from_db_csv
 	end
 
 end
+
+##### OLD
+
 
 
 def getfiles 
@@ -152,79 +259,12 @@ def getfiles
 	return allsongs
 end
 
-def get_files_from_db_specific_csv rule
-	p "**************"
-	p "get_files_from_db_specific_csv"
-	p "**************"
 
-	@videos_saved = {}
-	listarray = []
-
-	p "Getting data from #{rule}"
-	
-	Rule.create(:rule_name => @playlist_name)
-
-	list = CSV.read("#{@csvdir}/#{rule}", {:headers => true, :encoding => 'windows-1251:utf-8'})
-
-	list.each {|row| listarray << row}
-
-	p "rule=#{rule}"
-	p "list=#{list.class}"
-
-	@sentence_data = []
-	@last = ''
-
-	# p "Reading: #{list}"
-	
-	listarray.shuffle.each do |line|
-
-		@profane = !line[16].to_i.zero?
-		offset = line[17].to_i
-
-		@line_id,@original_artist,@original_title  = line[2],line[4],line[6] 
-		@line_artist = @original_artist.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
-		@line_title = @original_title.split(/ |\_/).map(&:downcase).join(" ").gsub("'","")
-
-		@keyword,sentence_w_gap  = line[7], line[9]
-
-		sentence_words = []
-		sentence_w_gap.split(" ").each {|w| w = @keyword + w[-1] if w.include?("__") and w!="__"; w = @keyword if w==("__"); @profane = true if w.include?("*"); word = w.gsub(/[^\p{Alnum} ']/, ''); sentence_words << word}
-		sentence_no_gap = sentence_words.join(" ")
-
-		@node, @group, @game = line[10], line[11], line[12]
-
-		time_at,time_until,dur_ms = line[13], line[14],line[15]
-
-		newvideo = Video.where(:yt_id => @line_id).first
-
-		if newvideo.nil?
-			@video = Video.where(:yt_id => @line_id).first_or_create
-			@video.title = @line_title
-			@video.artist = @line_artist
-			@video.artist_original = @original_artist
-			@video.title_original = @original_title
-			@video.save!
-
-		end
-
-		@video= Video.where(:yt_id => @line_id).first
-
-		@video.offset = offset
-		@video.save!
-
-		sentence = Sentence.where(:rule_name => @node, :video_id => @video.id, :l_node => @node, :l_group => @group, :l_game => @game, :full_sentence =>sentence_no_gap, :sentence_gap => sentence_w_gap, :keyword => @keyword, :start_at => time_at, :end_at => time_until, :duration => dur_ms, :adult => @profane).first_or_create
-
-	end
-
-
-end
 
 
 
 def get_files_from_specific_rule rule
-	p "*****"
-	p "get_files_from_specific_rule"
-	p "*****"
+	p "*****";p "get_files_from_specific_rule";p "*****"
 
 	@videos_saved = {}
 	p "Getting data from #{rule}"
@@ -285,7 +325,8 @@ def get_files_from_specific_rule rule
 end
 
 def map_details_to_hashes details
-	p " \n mapping details to hashes \n"
+	p "******\nmapping details to hashes\n*******"
+
 	@hash = Hash.new
 	@hash["rule"] = @playlist_name
 	@data_array = Array.new

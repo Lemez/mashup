@@ -41,11 +41,21 @@ DOWNLOADING = ARGV[1] unless ARGV[1].nil?
 @finaldir = Dir.pwd + '/videos_final'
 BLACK_PIC = Dir.pwd + '/images/black.png'
 
+EXCLUDED = ["believer"]
+MIN_DUR = 5000
+MAX_DUR = 10000
+
+COMPLETED = Dir.glob("./videos_final/*").map{|f| File.basename(f)}
+p COMPLETED
+
 ######## CONVERT CSV TO NODES #######
 # db_files_to_csv
+# get_files_from_db_csv
+# query_saved_videos_per_node true #ARGV - destroy all Sentence records each time
 
 #######  PROGRAMME CODE ######
-make_new_video downloading=DOWNLOADING
+# make_new_video downloading=DOWNLOADING
+# create_mashups_with_enough_videos
 
 #############################
 # NB BEST WAY TO MAKE SUBS HERE "http://ffmpeg.org/ffmpeg-filters.html#drawtext-1"

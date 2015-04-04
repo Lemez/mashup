@@ -7,7 +7,7 @@ def make_dir_if_none (dir,name)
 		p "making dir #{name}"
 		FileUtils::mkdir_p d	
 	else
-		p "dir #{name} exists"
+		p "dir #{d} exists"
 	end
 	# FileUtils::mkdir_p 'foo/bar'
 end

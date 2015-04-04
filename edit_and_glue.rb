@@ -18,6 +18,7 @@ def glue_intermediate_files_and_normal_audio
 
 	p @temp_video_files
 
+
 	`ffmpeg -i #{@temp_video_files} -c copy -y '#{dir}/_video.mp4'` #glue video 
 	# # `ffmpeg -i #{@normal_audio_files} -vn -acodec 'copy' -y '#{dir}/_audio.mp2'`  #glue audio
 
