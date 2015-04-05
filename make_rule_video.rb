@@ -39,7 +39,10 @@ DOWNLOADING = ARGV[1] unless ARGV[1].nil?
 @editsdir = Dir.pwd + '/video_edits'
 @subsdir = Dir.pwd + '/subs'
 @finaldir = Dir.pwd + '/videos_final'
-BLACK_PIC = Dir.pwd + '/images/black.png'
+@imgdir = Dir.pwd + '/images'
+@fontdir = '/Library/Fonts'
+@testdir = Dir.pwd + '/_test'
+BLACK_PIC = "#{@imgdir}/black.png"
 
 EXCLUDED = ["believer"]
 MIN_DUR = 5000
@@ -52,6 +55,13 @@ p COMPLETED
 # db_files_to_csv
 # get_files_from_db_csv
 # query_saved_videos_per_node true #ARGV - destroy all Sentence records each time
+
+### IMAGES PREPEND WORKING AS TEST
+make_image
+add_logo
+turn_img_to_video
+add_img_video_and_pic_video
+
 
 #######  PROGRAMME CODE ######
 # make_new_video downloading=DOWNLOADING
@@ -67,13 +77,6 @@ p COMPLETED
 # # How to speed up and slow down audio / video !!!
 # # https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video
 #############################
-
-
-
-
-
-					
-
 
 # # p "getting ids"
 # # @rule_video_ids = @sentence_data.each.map{|e| e['video_id']}
