@@ -9,12 +9,12 @@ def glue_intermediate_files_and_normal_audio
 
 	# #2D concatenate the files creatd using the below format 
 		# ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
-	make_dir_if_none "#{@editsdir}/#{PLAYLISTNAME}", "tmp"
-	dir = "#{@editsdir}/#{PLAYLISTNAME}/tmp"
+	make_dir_if_none "#{@editsdir}/#{@playlist_name}", "tmp"
+	dir = "#{@editsdir}/#{@playlist_name}/tmp"
 
-	@temp_video_files = '"' + "concat:" + Snippet.all.map(&:temp_file_location).join("|") + '"'
-	# @normal_audio_files_ts = '"' + "concat:" + Snippet.all.map(&:normal_audio_file_location).join("|") + '"'
-	@normal_audio_files_wav = "'" + Snippet.all.map(&:normal_audio_file_location).join("' '") + "'"
+	@temp_video_files = '"' + "concat:" + @selectedsnippets.map(&:temp_file_location).join("|") + '"'
+	# @normal_audio_files_ts = '"' + "concat:" + @selectedsnippets.map(&:normal_audio_file_location).join("|") + '"'
+	@normal_audio_files_wav = "'" + @selectedsnippets.map(&:normal_audio_file_location).join("' '") + "'"
 
 	p @temp_video_files
 
@@ -25,11 +25,11 @@ def glue_intermediate_files_and_normal_audio
 	`sox #{@normal_audio_files_wav} '#{dir}/_audio.wav'`
 
 	make_dir_if_none Dir.pwd, "videos_final" #make dir
-	make_dir_if_none @finaldir, PLAYLISTNAME #make dir
+	make_dir_if_none @finaldir, @playlist_name #make dir
 
 	# glue them together ORDER IMPORTANT::: AUDIO then VIDEO
-	command_xfaded = "ffmpeg -i '#{dir}/_audio.wav' -i '#{dir}/_video.mp4' -y '#{Dir.pwd}/videos_final/xfaded_#{PLAYLISTNAME}.mp4' -loglevel quiet" 
-	command = "ffmpeg -i '#{dir}/_audio.wav' -i '#{dir}/_video.mp4' -y '#{Dir.pwd}/videos_final/#{PLAYLISTNAME}/#{PLAYLISTNAME}.mp4' -loglevel quiet"
+	command_xfaded = "ffmpeg -i '#{dir}/_audio.wav' -i '#{dir}/_video.mp4' -y '#{Dir.pwd}/videos_final/xfaded_#{@playlist_name}.mp4' -loglevel quiet" 
+	command = "ffmpeg -i '#{dir}/_audio.wav' -i '#{dir}/_video.mp4' -y '#{Dir.pwd}/videos_final/#{@playlist_name}/#{@playlist_name}.mp4' -loglevel quiet"
 	
 	command = command_xfaded if @@xfade
 	system(command)
@@ -47,10 +47,10 @@ def process_xfaded_ts_to_mp4
 	p "process_xfaded_ts_to_mp4"
 	p "******"
 
-	infile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video.ts"
-	final_xfaded_mp4 = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video.mp4"
+	infile = "#{Dir.pwd}/video_edits/#{@playlist_name}/xfaded_video.ts"
+	final_xfaded_mp4 = "#{Dir.pwd}/video_edits/#{@playlist_name}/xfaded_video.mp4"
 
-	make_dir_if_none "#{Dir.pwd}/videos_final", "#{PLAYLISTNAME}" #make dir
+	make_dir_if_none "#{Dir.pwd}/videos_final", "#{@playlist_name}" #make dir
 	
 	rule = Rule.find_by("xfade_ts='#{infile}'")
 	rule.xfade_mp4 = final_xfaded_mp4
@@ -65,15 +65,15 @@ def glue_crossfaded_video_and_normal_audio
 	p "glue_crossfaded_video_and_normal_audio"
 	p "******"
 
-	mp4_file = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video.mp4"
-	final_video_and_audio_file = "#{Dir.pwd}/videos_final/#{PLAYLISTNAME}/final_xfaded_video_and_audio.mp4"
+	mp4_file = "#{Dir.pwd}/video_edits/#{@playlist_name}/xfaded_video.mp4"
+	final_video_and_audio_file = "#{Dir.pwd}/videos_final/#{@playlist_name}/final_xfaded_video_and_audio.mp4"
 
-	dir = "#{@editsdir}/#{PLAYLISTNAME}/tmp"
+	dir = "#{@editsdir}/#{@playlist_name}/tmp"
 
-	# @normal_audio_files_wav = "'" + Snippet.all.map(&:normal_audio_file_location).join("' '") + "'"
+	# @normal_audio_files_wav = "'" + @selectedsnippets.map(&:normal_audio_file_location).join("' '") + "'"
 	# `sox #{@normal_audio_files_wav} '#{dir}/_audio.wav'` 
 	
-	@trimmed_audio_files_wav = "'" + Snippet.all.map(&:trimmed_audio).join("' '") + "'"
+	@trimmed_audio_files_wav = "'" + @selectedsnippets.map(&:trimmed_audio).join("' '") + "'"
 	`sox --no-show-progress #{@trimmed_audio_files_wav} '#{dir}/_audio.wav'`
 
 	# glue them together ORDER IMPORTANT::: AUDIO then VIDEO

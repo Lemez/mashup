@@ -1,10 +1,37 @@
-def make_new_video downloading=false
+def create_mashups_with_enough_videos
+	# rebuild current list of completed final videos
+	# read csv 
+	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
+	reading_file = "./csv/videos/hits_medleys_FINAL.csv"
 
-	get_files_from_db_specific_csv ARGV[0] #returns Sentence objects with video_ids
+	CSV.foreach(reading_file,options) do |row|
+
+		next if row[6] == "true" # if completed already
+
+		# execute each one
+		if row[4].to_i > 4 
+			@playlist = "#{row[0]}.csv"
+			full_file = "#{@csvdir}/#{@playlist}"
+			p "EXECUTING #{@playlist}"
+			@playlist_name = @playlist[0..-5]
+			make_new_video @playlist_name, downloading=false
+		end
+	end
+end
+
+
+def make_new_video playlist, downloading=false
+
+	@playlist = "#{playlist}.csv"
+	@playlist_name = playlist
+
+	DIRECTORIES.each{|d| make_dir_if_none d,@playlist_name}
+
+	get_files_from_db_specific_csv @playlist #returns Sentence objects with video_ids
 
 	number_of_relevant_videos_in_db = create_and_match_saved_videos
 
-	if DOWNLOADING && number_of_relevant_videos_in_db <5
+	if downloading && number_of_relevant_videos_in_db <5
 		do_downloading; reformat_videos_if_required; create_and_match_saved_videos #run it again to update the list of videos
 	end
 
@@ -21,6 +48,11 @@ def make_new_video downloading=false
 	glue_intermediate_files_and_normal_audio	# glue intermediate video files and normalized audio together
 	add_subs	# add subtitles with highlighted keyword
 	
+	# add image
+	make_image
+	add_logo
+	turn_img_to_video
+	add_img_video_and_pic_video
 	# ÷ Xfade options see below
 
 end

@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:06,281
+<font size=24px>Then showed a photo my baby</font><font color=#ffff00 size=24px><b> cried </b></font><font size=24px>his eyes were like mine</font>
+
+3
+00:00:06,281 --> 00:00:12,941
+<font size=24px>Everything you touch all it</font><font color=#ffff00 size=24px><b> dies </b></font><font size=24px></font>
+
+4
+00:00:12,941 --> 00:00:20,171
+<font size=24px>You know how the time</font><font color=#ffff00 size=24px><b> flies </b></font><font size=24px></font>
+
+5
+00:00:20,171 --> 00:00:26,371
+<font size=24px>And the clothes you left they</font><font color=#ffff00 size=24px><b> lie </b></font><font size=24px>on the floor</font>
+
+6
+00:00:26,371 --> 00:00:32,011
+<font size=24px>And be careful of what you do 'cause the</font><font color=#ffff00 size=24px><b> lie </b></font><font size=24px>becomes the truth</font>
+
+7
+00:00:32,011 --> 00:00:39,531
+<font size=24px>Heads on a</font><font color=#ffff00 size=24px><b> science </b></font><font size=24px>apart</font>
+
+8
+00:00:39,531 --> 00:00:47,291
+<font size=24px>Questions of</font><font color=#ffff00 size=24px><b> science </b></font><font size=24px>science and progress</font>
+
+9
+00:00:47,291 --> 00:00:52,781
+<font size=24px></font><font color=#ffff00 size=24px><b> Skies </b></font><font size=24px>are crying I am watching</font>
+

@@ -4,8 +4,8 @@ def create_snippets_text_file
 	p "create_snippets_text_file"
 	p "******"
 
-		file = open("#{@editsdir}/#{PLAYLISTNAME}/snippets_file.txt",'w')
-		Snippet.all.each do |item|
+		file = open("#{@editsdir}/#{@playlist_name}/snippets_file.txt",'w')
+		@selectedsnippets.each do |item|
 			s = "file '#{item.location}'"
 			file.puts(s)
 		end
@@ -19,8 +19,8 @@ def create_snippets_from_sentences
 	p "create_snippets_from_sentences"
 	p "******"
 
-	make_dir_if_none @editsdir, PLAYLISTNAME
-	make_dir_if_none "#{@editsdir}/#{PLAYLISTNAME}", "snippets"
+	make_dir_if_none @editsdir, @playlist_name
+	make_dir_if_none "#{@editsdir}/#{@playlist_name}", "snippets"
 
 	@full_sentence = ''
 	@title = ''
@@ -72,13 +72,13 @@ def create_snippets_from_sentences
 		# save cut of each video to rule edits folder
 		command = "ffmpeg -i #{full_video_location}  -ss #{start_secs} -t #{duration_secs} -async 1 -threads 0 '#{location_string}' -y -loglevel quiet"
 		
-		# unless File.exists?(location_string)
+		unless File.exists?(location_string)
 			
 			p "Processing #{artist} #{title} with duration #{d.to_s} and clip=#{start_secs}:#{duration_secs} "
 			system (command) 
-		# else
-		# 	p "Existing: #{artist} #{title} with duration #{d.to_s} "
-		# end
+		else
+			p "Existing: #{artist} #{title} with duration #{d.to_s} "
+		end
 
 		@full_sentence=full_sentence
 		@title=title
@@ -96,7 +96,7 @@ def show_current_snippets
 	p "******"
 	p "show_current_snippets"
 	p "******"
-	@snippets = Snippet.all
+	@snippets = @selectedsnippets
 	@snippets.each do |s|
 		id = s.sentence_id
 		sentence = Sentence.find_by("id=#{id}")
@@ -113,7 +113,7 @@ def create_intermediate_files_from_snippets
 	p "create_intermediate_files_from_snippets"
 	p "******"
 
-	directory = "#{@editsdir}/#{PLAYLISTNAME}"
+	directory = "#{@editsdir}/#{@playlist_name}"
 	myfile = "#{directory}/snippets_file.txt"
 
 	make_dir_if_none directory,"tmp"
@@ -131,7 +131,7 @@ def create_intermediate_files_from_snippets
 		artist = video.artist.gsub(" ","_")
 		title = video.title.gsub(" ","_")
 
-		inter_name = "#{@editsdir}/#{PLAYLISTNAME}/tmp/#{artist}-#{title}-#{words}-#{duration.to_i}.ts"
+		inter_name = "#{@editsdir}/#{@playlist_name}/tmp/#{artist}-#{title}-#{words}-#{duration.to_i}.ts"
 
 	# Make sure that all files have same aspect ratio
 	# http://video.stackexchange.com/questions/9947/how-do-i-change-frame-size-preserving-width-using-ffmpeg

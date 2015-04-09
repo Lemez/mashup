@@ -5,8 +5,8 @@ def test_srt
 
 	srt_file = "#{@subsdir}/srt_ex.srt"
 
-	inputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mp4'"
-	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_srt_test.mp4'"
+	inputfile = "'#{Dir.pwd}/videos_final/#{@playlist_name}.mp4'"
+	outputfile = "'#{Dir.pwd}/videos_final/#{@playlist_name}_srt_test.mp4'"
 
 	`ffmpeg -i #{inputfile} -vf subtitles=#{srt_file} -y #{outputfile} -loglevel error`
 end
@@ -16,12 +16,12 @@ def add_srt_to_final_mp4
 	p "add_srt_to_final_mp4"
 	p "********"
 
-	srt_file = "'#{@subsdir}/#{PLAYLISTNAME}/srt_file.srt'"
+	srt_file = "'#{@subsdir}/#{@playlist_name}/srt_file.srt'"
 
-	inputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}/#{PLAYLISTNAME}.mp4'"
-	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}/#{PLAYLISTNAME}_subs.mp4'"
+	inputfile = "'#{Dir.pwd}/videos_final/#{@playlist_name}/#{@playlist_name}.mp4'"
+	outputfile = "'#{Dir.pwd}/videos_final/#{@playlist_name}/#{@playlist_name}_subs.mp4'"
 
-	`ffmpeg -i #{inputfile} -vf subtitles=#{srt_file} -y #{outputfile} -loglevel error`
+	`ffmpeg -i #{inputfile} -vf subtitles=#{srt_file} -y #{outputfile} -loglevel error` 
 
 end
 
@@ -32,11 +32,9 @@ def create_srt_from_snippets
 	p "create_srt_from_snippets"
 	p "********"
 
-	make_dir_if_none "#{@subsdir}", "#{PLAYLISTNAME}"
-
-	@snippets = Snippet.all
+	make_dir_if_none "#{@subsdir}", "#{@playlist_name}"
 	
-	@srt_file = open("#{@subsdir}/#{PLAYLISTNAME}/srt_file.srt", "w")
+	@srt_file = open("#{@subsdir}/#{@playlist_name}/srt_file.srt", "w")
 
 	# @start_ms = 0
 	# @counter = 1
@@ -49,7 +47,7 @@ def create_srt_from_snippets
 	@start_ms = 1
 	@counter = 2
 
-	@snippets.each do |snippet|
+	@selectedsnippets.each do |snippet|
 		sentence = Sentence.find_by("id=#{snippet.sentence_id}")
 		
 		duration = snippet.sentence_duration
@@ -66,10 +64,24 @@ def create_srt_from_snippets
 
 		# Process text and fonts
 		text_array = sentence.full_sentence.split(" ")
+
+		text_array.each do |s|
+			p "#{s}"
+			p s.gsub!("'", '').class==NilClass
+			if s.gsub!("'", '').class!=NilClass
+				if s.gsub!("'", '').length == s.length-1
+					s.gsub!("'", '') 
+				end	
+			end
+		end
+
 		keyword = sentence.keyword
 		kw_index = text_array.index(keyword)
 		size = "24px"
 		highlight_size = "24px"
+		p kw_index
+		p text_array
+		p keyword
 		first_half = "<font size=#{size}>" + text_array[0...kw_index].join(" ") + "</font>"
 		second_half = "<font size=#{size}>" + text_array[kw_index+1..-1].join(" ") + "</font>"
 
@@ -102,8 +114,8 @@ def srt_to_ass
 	p "srt_to_ass"
 	p "********"
 
-	srt_file = "#{@subsdir}/#{PLAYLISTNAME}/srt_file.srt"
-	ass_file = "#{@subsdir}/#{PLAYLISTNAME}/srt_file.ass"
+	srt_file = "#{@subsdir}/#{@playlist_name}/srt_file.srt"
+	ass_file = "#{@subsdir}/#{@playlist_name}/srt_file.ass"
 	
 	`ffmpeg -i '#{srt_file}' '#{ass_file}' -loglevel error -y`
 end
@@ -115,13 +127,13 @@ def add_subs_ass_to_final_mp4
 	p "add_subs_ass_to_final_mp4"
 	p "********"
 
-	ass_file = "'#{@subsdir}/#{PLAYLISTNAME}/srt_file.ass'"
+	ass_file = "'#{@subsdir}/#{@playlist_name}/srt_file.ass'"
 
-	inputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mp4'"
-	outputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs_ass.mp4'"
-	mkvinputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}.mkv'"
-	mkvoutputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.mkv'"
-	avioutputfile = "'#{Dir.pwd}/videos_final/#{PLAYLISTNAME}_subs.avi'"
+	inputfile = "'#{Dir.pwd}/videos_final/#{@playlist_name}.mp4'"
+	outputfile = "'#{Dir.pwd}/videos_final/#{@playlist_name}_subs_ass.mp4'"
+	mkvinputfile = "'#{Dir.pwd}/videos_final/#{@playlist_name}.mkv'"
+	mkvoutputfile = "'#{Dir.pwd}/videos_final/#{@playlist_name}_subs.mkv'"
+	avioutputfile = "'#{Dir.pwd}/videos_final/#{@playlist_name}_subs.avi'"
 
 	`ffmpeg -i #{inputfile} -vf subtitles=#{ass_file} #{outputfile} -y -loglevel error`
 

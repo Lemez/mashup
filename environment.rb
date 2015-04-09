@@ -245,7 +245,7 @@ class Sentence < ActiveRecord::Base
     belongs_to :rule
     has_one :snippet
 
-    scope :obeys_rule,  ->  { where(rule_name: '"#{PLAYLISTNAME}"') }
+    scope :obeys_rule,  ->  { where(rule_name: '"#{@playlist_name}"') }
 
     def self.video_id
     	@video_id
@@ -323,6 +323,10 @@ class Snippet < ActiveRecord::Base
 	def self.video_id
 		@video_id
 	end
+
+    def self.selected
+        Snippet.all.limit(5)
+    end
 
 	def self.location
 		@location

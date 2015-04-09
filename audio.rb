@@ -2,12 +2,12 @@ def normalize_audio
 
 	p "******";p "normalize_audio";p "******"
 
-	make_dir_if_none "#{@editsdir}","#{PLAYLISTNAME}"
-	make_dir_if_none "#{@editsdir}/#{PLAYLISTNAME}","normalized"
+	make_dir_if_none "#{@editsdir}","#{@playlist_name}"
+	make_dir_if_none "#{@editsdir}/#{@playlist_name}","normalized"
 
 	@count = 0
 
-	Snippet.all.each do |snippet|
+	@selectedsnippets.each do |snippet|
 
 		temp_file = snippet.location
 		i_start = temp_file.rindex("/")+1
@@ -21,7 +21,7 @@ def normalize_audio
 
 		duration = snippet.clip_duration
 
-		normal_dir = "#{@editsdir}/#{PLAYLISTNAME}/normalized"
+		normal_dir = "#{@editsdir}/#{@playlist_name}/normalized"
 		
 		outfile = "#{normal_dir}/#{namestring}-sync_offset.mp4"
 		audio_file = "#{normal_dir}/#{namestring}-clean.aiff"
@@ -57,7 +57,7 @@ def normalize_audio
 
 	end
 
-	p Snippet.all.map(&:normal_audio_duration)
+	p @selectedsnippets.map(&:normal_audio_duration)
 end
 
 
@@ -66,8 +66,8 @@ end
 
 def create_silence
 
-	make_dir_if_none "#{@editsdir}/#{PLAYLISTNAME}","silence"
-	shhh = "'#{@editsdir}/#{PLAYLISTNAME}/silence/silence.wav'"
+	make_dir_if_none "#{@editsdir}/#{@playlist_name}","silence"
+	shhh = "'#{@editsdir}/#{@playlist_name}/silence/silence.wav'"
 
 	`sox -n -r 44100 -c 2 shhh trim 0.0 0.001`
 
@@ -75,9 +75,9 @@ end
 
 def trim_audio
 
-	snippets=Snippet.all
+	snippets=@selectedsnippets
 
-	normal_dir = "#{@editsdir}/#{PLAYLISTNAME}/normalized"
+	normal_dir = "#{@editsdir}/#{@playlist_name}/normalized"
 	
 	snippets.each do |snip|
 
@@ -106,7 +106,7 @@ def create_normalized_snippets
  #    -vcodec copy -acodec copy output.mkv
 
 
- 	snippets=Snippet.all
+ 	snippets=@selectedsnippets
 
  	snippets.each do |snip|
  		ts_file = snip.temp_file_location

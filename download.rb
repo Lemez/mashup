@@ -76,7 +76,15 @@ def get_vimeo_manually artist,title,source
 	    @best_title = ""
 	   	results.lis.each do |li|
 	    	@vimeo_title = li.a.title.downcase
-	    	unless @vimeo_title.include?("live") or @vimeo_title.include?("cover") or @vimeo_title.include?("explicit") or @vimeo_title.include?("remix") or @vimeo_title.include?("lyrics") or @vimeo_title.include?("tour") or @vimeo_title.include?("unofficial")
+	    	unless @vimeo_title.include?("live") or
+	    	 @vimeo_title.include?("cover") or
+	    	 @vimeo_title.include?("explicit") or
+	    	 @vimeo_title.include?("remix") or
+	    	 @vimeo_title.include?("lyric") or
+	    	 @vimeo_title.include?("tour") or
+	    	 @vimeo_title.include?("unofficial")or
+	    	 @vimeo_title.include?("dj")
+
 	    		@distance = jarow.getDistance( @vimeo_title, @title_to_check)
 
 	    		@distance += 0.2 if @vimeo_title.include?("official") || @vimeo_title.include?("album")

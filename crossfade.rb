@@ -4,8 +4,8 @@ def crossfade_snippets_with_normal_audio_together
 	p "crossfade_snippets_with_normal_audio_together"
 	p "******"
 
-	@items = Snippet.all.map(&:normal_snippet_file_location)
-	@durations = Snippet.all.map(&:clip_duration)
+	@items = @selectedsnippets.map(&:normal_snippet_file_location)
+	@durations = @selectedsnippets.map(&:clip_duration)
 
 	@number = @items.length - 1
 
@@ -31,7 +31,7 @@ def crossfade_snippets_with_normal_audio_together
 			@vid1 = @items[t]
 			@vid2 = @items[t+1]
 		
-			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/tmp/temp-av-#{t}.ts"
+			@outfile = "#{Dir.pwd}/video_edits/#{@playlist_name}/tmp/temp-av-#{t}.ts"
 
 			@dur = @durations[0] + @durations[1] - @fadelength
 			@fadeout_start = @durations[0] - @fadelength # set fade out start point 
@@ -40,7 +40,7 @@ def crossfade_snippets_with_normal_audio_together
 			@vid1 = @outfile
 			@vid2 = @items[0]
 
-			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/tmp/temp-av-#{t}.ts"
+			@outfile = "#{Dir.pwd}/video_edits/#{@playlist_name}/tmp/temp-av-#{t}.ts"
 
 			@fadeout_start = @dur - @fadelength # set fade out start point
 			@dur += @durations[0]
@@ -49,7 +49,7 @@ def crossfade_snippets_with_normal_audio_together
 
 		if @items.length==1
 			@last = true
-			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video_with_audio.ts"
+			@outfile = "#{Dir.pwd}/video_edits/#{@playlist_name}/xfaded_video_with_audio.ts"
 
 		end
 
@@ -125,7 +125,7 @@ def crossfade_snippets_with_normal_audio_together
 		@first = false
 
 		if @last
-			rule = Rule.find_by("rule_name='#{PLAYLISTNAME}'")
+			rule = Rule.find_by("rule_name='#{@playlist_name}'")
 			rule.normal_xfaded_ts = @outfile
 			rule.save!
 		end
@@ -139,8 +139,8 @@ end
 
 def crossfade_snippets_to_xfaded_ts 
 
-	@items = Snippet.all.map(&:temp_file_location)
-	@durations = Snippet.all.map(&:clip_duration)
+	@items = @selectedsnippets.map(&:temp_file_location)
+	@durations = @selectedsnippets.map(&:clip_duration)
 	
 	@number = @items.length - 1
 
@@ -183,9 +183,9 @@ def crossfade_snippets_to_xfaded_ts
 
 		if @items.length==1
 			@last = true
-			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video.ts"
+			@outfile = "#{Dir.pwd}/video_edits/#{@playlist_name}/xfaded_video.ts"
 	
-			rule = Rule.find_by("rule_name='#{PLAYLISTNAME}'")
+			rule = Rule.find_by("rule_name='#{@playlist_name}'")
 			rule.xfade_ts = @outfile
 			rule.save!
 		end
@@ -256,10 +256,10 @@ def crossfade_snippets_to_ts_and_audio_to_wav
 	p "crossfade_snippets_to_ts_and_audio_to_wav"
 	p "******"
 
-	@items = Snippet.all.map(&:temp_file_location)
-	@durations = Snippet.all.map(&:clip_duration)
-	@audiofiles = Snippet.all.map(&:normal_audio_file_location)
-	@audio_durations = Snippet.all.map(&:normal_audio_duration)
+	@items = @selectedsnippets.map(&:temp_file_location)
+	@durations = @selectedsnippets.map(&:clip_duration)
+	@audiofiles = @selectedsnippets.map(&:normal_audio_file_location)
+	@audio_durations = @selectedsnippets.map(&:normal_audio_duration)
 	
 	@number = @items.length - 1
 
@@ -281,12 +281,12 @@ def crossfade_snippets_to_ts_and_audio_to_wav
 			@vid1 = @items[t]
 			@vid2 = @items[t+1]
 		
-			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/tmp/temp-#{t}.ts"
+			@outfile = "#{Dir.pwd}/video_edits/#{@playlist_name}/tmp/temp-#{t}.ts"
 
 			@audio1 = @audiofiles[t]
 			@audio2 = @audiofiles[t+1]
 
-			@audio_outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/tmp/audio-#{t}.wav"
+			@audio_outfile = "#{Dir.pwd}/video_edits/#{@playlist_name}/tmp/audio-#{t}.wav"
 				
 				#nb need to adjust all timings to reflect the fade length overlap
 				# ie timecodes are -1 second from the 2nd video onwards
@@ -299,12 +299,12 @@ def crossfade_snippets_to_ts_and_audio_to_wav
 			@vid1 = @outfile
 			@vid2 = @items[0]
 
-			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/tmp/temp-#{t}.ts"
+			@outfile = "#{Dir.pwd}/video_edits/#{@playlist_name}/tmp/temp-#{t}.ts"
 
 			@audio1 = @audio_outfile
 			@audio2 = @audiofiles[0]
 
-			@audio_outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/tmp/audio-#{t}.wav"
+			@audio_outfile = "#{Dir.pwd}/video_edits/#{@playlist_name}/tmp/audio-#{t}.wav"
 
 			@fadeout_start = @dur - @fadelength # set fade out start point
 			@dur += @durations[0]
@@ -313,8 +313,8 @@ def crossfade_snippets_to_ts_and_audio_to_wav
 
 		if @items.length==1
 			@last = true
-			@outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_video.ts"
-			@audio_outfile = "#{Dir.pwd}/video_edits/#{PLAYLISTNAME}/xfaded_audio.wav"
+			@outfile = "#{Dir.pwd}/video_edits/#{@playlist_name}/xfaded_video.ts"
+			@audio_outfile = "#{Dir.pwd}/video_edits/#{@playlist_name}/xfaded_audio.wav"
 
 		end
 
@@ -403,7 +403,7 @@ def crossfade_snippets_to_ts_and_audio_to_wav
 		@first = false
 
 		if @last
-			rule = Rule.find_by("rule_name='#{PLAYLISTNAME}'")
+			rule = Rule.find_by("rule_name='#{@playlist_name}'")
 			rule.xfade_ts = @outfile
 			rule.xfade_audio = @audio_outfile
 			rule.save!
@@ -422,7 +422,7 @@ end
 
 # 	p "making audio fades"
 
-# 	@snippets = Snippet.all
+# 	@snippets = @selectedsnippets
 
 # 	@snippets.each do |snip|
 
@@ -453,6 +453,6 @@ end
 # end
 
 # def crossfade_audio_with_fades
-# 	@audiofiles = Snippet.all.map(&:xfaded_audio_file_location)
+# 	@audiofiles = @selectedsnippets.map(&:xfaded_audio_file_location)
 
 # end

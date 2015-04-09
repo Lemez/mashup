@@ -1,0 +1,9 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:05,561
+<font size=24px>Tell the devil I said</font><font color=#ffff00 size=24px><b> hey </b></font><font size=24px>when you get back to where youre from</font>
+
+3
+00:00:05,561 --> 00:00:12,601

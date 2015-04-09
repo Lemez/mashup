@@ -4,8 +4,8 @@
 # # usage: ruby make_rule_video.rb 'double_cons_before_ing_ed_er.csv' true 'maria'
 # # usage: ruby make_rule_video.rb 'double_cons.csv' false 
 
-raise "Please specify a local csv file, eg >> $ ruby make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
-raise "Please specify true or false for DOWNLOADING " if ARGV[1].nil?
+# raise "Please specify a local csv file, eg >> $ ruby make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
+# raise "Please specify true or false for DOWNLOADING " if ARGV[1].nil?
 
 require 'streamio-ffmpeg'
 require 'viddl-rb'
@@ -30,9 +30,8 @@ ViddlRb.io = $stdout
 
 # ###### variables #########################
 
-@playlist_name = ARGV[0][0...ARGV[0].rindex(".")] unless ARGV[0].nil?
-PLAYLISTNAME = @playlist_name unless ARGV[0].nil?
-DOWNLOADING = ARGV[1] unless ARGV[1].nil?
+
+DOWNLOADING = ARGV[0] unless ARGV[0].nil?
 
 @csvdir = Dir.pwd + '/csv/nodes_final' 
 @videodir = Dir.pwd + '/videos'
@@ -43,13 +42,21 @@ DOWNLOADING = ARGV[1] unless ARGV[1].nil?
 @fontdir = '/Library/Fonts'
 @testdir = Dir.pwd + '/_test'
 BLACK_PIC = "#{@imgdir}/black.png"
+DIRECTORIES = [@imgdir,@finaldir,@subsdir,@editsdir]
 
 EXCLUDED = ["believer"]
 MIN_DUR = 5000
 MAX_DUR = 10000
 
-COMPLETED = Dir.glob("./videos_final/*").map{|f| File.basename(f)}
-p COMPLETED
+@selectedsnippets = Snippet.all.selected
+
+# @playlist_name = ARGV[0][0...ARGV[0].rindex(".")] unless ARGV[0].nil?
+
+#######  PROGRAMME CODE ######
+
+# make_new_video downloading=DOWNLOADING
+# calculate_completed_videos
+# create_mashups_with_enough_videos
 
 ######## CONVERT CSV TO NODES #######
 # db_files_to_csv
@@ -57,15 +64,14 @@ p COMPLETED
 # query_saved_videos_per_node true #ARGV - destroy all Sentence records each time
 
 ### IMAGES PREPEND WORKING AS TEST
-make_image
-add_logo
-turn_img_to_video
-add_img_video_and_pic_video
 
 
-#######  PROGRAMME CODE ######
-# make_new_video downloading=DOWNLOADING
-# create_mashups_with_enough_videos
+
+	
+
+	
+
+
 
 #############################
 # NB BEST WAY TO MAKE SUBS HERE "http://ffmpeg.org/ffmpeg-filters.html#drawtext-1"

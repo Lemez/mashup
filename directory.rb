@@ -1,3 +1,7 @@
+def calculate_completed_videos
+	@completed = Dir.glob("./videos_final/*").map{|f| File.basename(f)}
+end
+
 def make_dir_if_none (dir,name)
 
 	d = "#{dir}/#{name}"
