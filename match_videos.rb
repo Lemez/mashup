@@ -1,3 +1,11 @@
+def create_and_match_saved_videos
+		# get the info from the saved videos folder and create SavedVideos
+	get_all_titles_from_dir
+
+		# match videos on csv with saved videos on hard drive
+	return match_videos_with_saved_videos
+end
+
 def format_downloaded_video_filenames
 	p "*******"
 	p "format_downloaded_video_filenames"
@@ -51,7 +59,7 @@ def match_videos_with_saved_videos
 				video.save!
 				number_of_relevant_videos_in_db +=1
 
-				p "#{@assumed_filename} found"
+				# p "#{@assumed_filename} found"
 			end
 		end
 	end

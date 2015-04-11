@@ -2,12 +2,9 @@ def normalize_audio
 
 	p "******";p "normalize_audio";p "******"
 
-	make_dir_if_none "#{@editsdir}","#{@playlist_name}"
-	make_dir_if_none "#{@editsdir}/#{@playlist_name}","normalized"
-
 	@count = 0
 
-	@selectedsnippets.each do |snippet|
+	Snippet.selected.each do |snippet|
 
 		temp_file = snippet.location
 		i_start = temp_file.rindex("/")+1
@@ -21,7 +18,7 @@ def normalize_audio
 
 		duration = snippet.clip_duration
 
-		normal_dir = "#{@editsdir}/#{@playlist_name}/normalized"
+		normal_dir = "#{@editsdir}/normalized"
 		
 		outfile = "#{normal_dir}/#{namestring}-sync_offset.mp4"
 		audio_file = "#{normal_dir}/#{namestring}-clean.aiff"
@@ -31,33 +28,27 @@ def normalize_audio
 
 			# use count to determine first file or later ones
 		# `sox --no-show-progress #{audio_file} '#{normal_file}' rate 44100 norm fade 0.5 #{duration} 0.5` 
-
-		unless File.exists?(mp2_file)
-			`ffmpeg -i '#{temp_file}' -itsoffset #{sync_offset} -i '#{temp_file}' -map 0:0 -map 1:1 -c:v copy -c:a copy '#{outfile}' -y`
-			`ffmpeg -i '#{outfile}' -ac 2 -y '#{audio_file}' -loglevel quiet`  #unless File.exists?("'#{audio_file}'")
-			`sox --no-show-progress '#{audio_file}' '#{normal_file}' rate 44100 norm` #unless File.exists?("'#{normal_file}'")
-			`ffmpeg -i '#{normal_file}' -ac 2 -y '#{mp2_file}' -loglevel quiet` 
-		else
-			p "'#{mp2_file}' exists" 
+		unless File.exists?("mp2_file")
+			`ffmpeg -i '#{temp_file}' -itsoffset #{sync_offset} -i '#{temp_file}' -map 0:0 -map 1:1 -c:v copy -c:a copy '#{outfile}' -loglevel quiet` unless File.exists?("#{outfile}")
+			`ffmpeg -i '#{outfile}' -ac 2 -y '#{audio_file}' -loglevel quiet`  unless File.exists?("#{audio_file}")
+			`sox --no-show-progress '#{audio_file}' '#{normal_file}' rate 44100 norm` unless File.exists?("#{normal_file}")
+			`ffmpeg -i '#{normal_file}' -ac 2 -y '#{mp2_file}' -loglevel quiet` unless File.exists?("#{mp2_file}")
 		end
 
 		# `ffmpeg -i '#{normal_file}' -ac 2 -y '#{normal_ts}'` unless File.exists?(normal_ts)
-
-		
-		p "#{temp_file}: #{duration}, with clip: #{snippet.clip_duration} and sentence: #{snippet.sentence_duration}"
+		# p "#{temp_file}: #{duration}, with clip: #{snippet.clip_duration} and sentence: #{snippet.sentence_duration}"
 
 		snippet.normal_audio_file_location = mp2_file
 		snippet.normal_audio_duration = duration
 		snippet.save!
 
+		`rm '#{outfile}'` if File.exists?("#{outfile}")
 		`rm '#{audio_file}'` if File.exists?("#{audio_file}")
 		`rm '#{normal_file}'` if File.exists?("#{normal_file}")
 
 		@count +=1
 
 	end
-
-	p @selectedsnippets.map(&:normal_audio_duration)
 end
 
 
@@ -75,7 +66,7 @@ end
 
 def trim_audio
 
-	snippets=@selectedsnippets
+	snippets=Snippet.selected
 
 	normal_dir = "#{@editsdir}/#{@playlist_name}/normalized"
 	
@@ -106,7 +97,7 @@ def create_normalized_snippets
  #    -vcodec copy -acodec copy output.mkv
 
 
- 	snippets=@selectedsnippets
+ 	snippets=Snippet.selected
 
  	snippets.each do |snip|
  		ts_file = snip.temp_file_location

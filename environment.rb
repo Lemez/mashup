@@ -67,21 +67,19 @@ ActiveRecord::Schema.define do
         table.column :temp_file_location, :string
         table.column :normal_audio_file_location, :string
         table.column :normal_audio_duration, :float
-        table.column :xfaded_audio_file_location, :string
-        table.column :trimmed_audio, :string
-        table.column :trimmed_file_duration, :float
-        table.column :normal_snippet_file_location, :string
-
+       
     end
 
       create_table :rules do |table|
         table.column :rule_name, :string
-        table.column :xfade_audio, :string
-        table.column :xfade_ts, :string
-        table.column :xfade_mp4, :string
         table.column :normal_audio, :string
         table.column :final_mp4, :string
-        table.column :normal_xfaded_ts, :string
+        table.column :final_subs_logo, :text
+        table.column :example, :string
+        # table.column :normal_xfaded_ts, :string
+        # table.column :xfade_audio, :string
+        # table.column :xfade_ts, :string
+        # table.column :xfade_mp4, :string
        
     end
 
@@ -124,25 +122,33 @@ class Rule < ActiveRecord::Base
         @normal_xfaded_ts
     end
 
-    def self.game_id
-        @game_id
-    end
+    # def self.game_id
+    #     @game_id
+    # end
     
+    def self.example
+        @example
+    end
+
     def self.rule_name
         @rule_name
     end
 
-    def self.xfade_ts
-        @xfade_ts
+    def self.final_subs_logo
+        @final_subs_logo
     end
 
-    def self.xfade_mp4
-        @xfade_mp4
-    end
+    # def self.xfade_ts
+    #     @xfade_ts
+    # end
 
-    def self.xfade_audio
-        @xfade_audio
-    end
+    # def self.xfade_mp4
+    #     @xfade_mp4
+    # end
+
+    # def self.xfade_audio
+    #     @xfade_audio
+    # end
 
     def self.normal_audio
         @normal_audio
@@ -241,6 +247,12 @@ class Video < ActiveRecord::Base
 	# end
 end
 
+class String
+    def behaves_nicely(string)
+        self.split(" ").include?(string)
+    end
+end
+
 class Sentence < ActiveRecord::Base
     belongs_to :rule
     has_one :snippet
@@ -325,7 +337,7 @@ class Snippet < ActiveRecord::Base
 	end
 
     def self.selected
-        Snippet.all.limit(5)
+        Snippet.all.limit(LIMIT)
     end
 
 	def self.location
@@ -356,25 +368,25 @@ class Snippet < ActiveRecord::Base
 		@normal_audio_file_location
 	end
 
-    def self.trimmed_audio
-        @trimmed_audio
-    end
+    # def self.trimmed_audio
+    #     @trimmed_audio
+    # end
 
-    def self.trimmed_file_duration
-        @trimmed_file_duration
-    end
+    # def self.trimmed_file_duration
+    #     @trimmed_file_duration
+    # end
 
-    def self.normal_snippet_file_location
-        @normal_snippet_file_location
-    end
+    # def self.normal_snippet_file_location
+    #     @normal_snippet_file_location
+    # end
     
     def self.normal_audio_duration
         @normal_audio_duration
     end
 
-    def self.xfaded_audio_file_location
-        @xfaded_audio_file_location
-    end
+    # def self.xfaded_audio_file_location
+    #     @xfaded_audio_file_location
+    # end
 end
 
  

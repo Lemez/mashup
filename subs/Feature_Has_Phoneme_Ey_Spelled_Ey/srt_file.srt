@@ -2,8 +2,26 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,561
-<font size=24px>Tell the devil I said</font><font color=#ffff00 size=24px><b> hey </b></font><font size=24px>when you get back to where youre from</font>
+00:00:00,001 --> 00:00:04,271
+<font size=24px>Missing him was dark</font><font color=#ffff00 size=24px><b> grey </b></font><font size=24px>all alone</font>
 
 3
-00:00:05,561 --> 00:00:12,601
+00:00:04,271 --> 00:00:08,841
+<font size=24px></font><font color=#ffff00 size=24px><b> Hey </b></font><font size=24px>I just met you and this is crazy</font>
+
+4
+00:00:08,841 --> 00:00:17,491
+<font size=24px></font><font color=#ffff00 size=24px><b> They </b></font><font size=24px>have stolen from us</font>
+
+5
+00:00:17,491 --> 00:00:26,161
+<font size=24px>And</font><font color=#ffff00 size=24px><b> they </b></font><font size=24px>all got the same heartbeat</font>
+
+6
+00:00:26,161 --> 00:00:30,111
+<font size=24px>'Cause all the cool kids,</font><font color=#ffff00 size=24px><b> they </b></font><font size=24px>seem to fit in</font>
+
+7
+00:00:30,111 --> 00:00:38,051
+<font size=24px>But</font><font color=#ffff00 size=24px><b> they </b></font><font size=24px>haven't got a clue</font>
+

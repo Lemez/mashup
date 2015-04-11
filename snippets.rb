@@ -1,32 +1,13 @@
-def create_snippets_text_file 
-
-	p "******"
-	p "create_snippets_text_file"
-	p "******"
-
-		file = open("#{@editsdir}/#{@playlist_name}/snippets_file.txt",'w')
-		@selectedsnippets.each do |item|
-			s = "file '#{item.location}'"
-			file.puts(s)
-		end
-		file.close
-end
-
-
 def create_snippets_from_sentences
 
-	p "******"
-	p "create_snippets_from_sentences"
-	p "******"
+	p "****** create_snippets_from_sentences ******"
 
-	make_dir_if_none @editsdir, @playlist_name
-	make_dir_if_none "#{@editsdir}/#{@playlist_name}", "snippets"
 
 	@full_sentence = ''
 	@title = ''
 	@saved_videos = Video.all.is_saved
 
-	@sentences_to_extract.each do |sentence|
+	@sentences_to_extract[0..LIMIT-1].each do |sentence|
 		
 		next if sentence.adult==true
 		
@@ -45,14 +26,14 @@ def create_snippets_from_sentences
 
 		s = sentence.start_at + offset_in_ms.to_i
 		e = sentence.end_at
-		d = sentence.duration + 1000 
-		d += 1000 if d < 4000
+		d = sentence.duration + 500 
+		# d += 500 if d < 4000
 
 		start_secs = convert_to_seconds_and_ms(s)
 		end_secs = convert_to_seconds_and_ms(e)
 		duration_secs = convert_to_seconds_and_ms(d)
 
-		location_string = "#{@editsdir}/#{rule_name}/snippets/#{artist}-#{title}-#{s.to_s}-#{d.to_i.to_s}.mp4"
+		location_string = "#{@editsdir}/snippets/#{artist}-#{title}-#{s.to_s}-#{d.to_i.to_s}.mp4"
 
 		# define skipping conditions
 		next if sentence.full_sentence.split(" ").length < 4
@@ -86,18 +67,13 @@ def create_snippets_from_sentences
 	
 end
 
-def correct_sync_for_snippet
-
-
-end
 
 def show_current_snippets
 
-	p "******"
-	p "show_current_snippets"
-	p "******"
-	@snippets = @selectedsnippets
-	@snippets.each do |s|
+	p "****** show_current_snippets ******"
+	# p "#{Snippet.selected.count} selected snippets"
+
+	Snippet.selected.each do |s|
 		id = s.sentence_id
 		sentence = Sentence.find_by("id=#{id}")
 		p "#{sentence.full_sentence}"
@@ -107,16 +83,25 @@ def show_current_snippets
 	end
 end
 
+def create_snippets_text_file 
+
+	p "******"
+	p "create_snippets_text_file"
+	p "******"
+
+		file = open("#{@editsdir}/#{@playlist_name}_snippets_file.txt",'w')
+		Snippet.selected.each do |item|
+			s = "file '#{item.location}'"
+			file.puts(s)
+		end
+		file.close
+end
+
 def create_intermediate_files_from_snippets
 
-	p "******"
-	p "create_intermediate_files_from_snippets"
-	p "******"
+	p "****** create_intermediate_files_from_snippets ******"
 
-	directory = "#{@editsdir}/#{@playlist_name}"
-	myfile = "#{directory}/snippets_file.txt"
-
-	make_dir_if_none directory,"tmp"
+	myfile = "#{@editsdir}/#{@playlist_name}_snippets_file.txt"
 		
 	File.readlines(myfile).each do |url|
 
@@ -131,7 +116,7 @@ def create_intermediate_files_from_snippets
 		artist = video.artist.gsub(" ","_")
 		title = video.title.gsub(" ","_")
 
-		inter_name = "#{@editsdir}/#{@playlist_name}/tmp/#{artist}-#{title}-#{words}-#{duration.to_i}.ts"
+		inter_name = "#{@editsdir}/tmp/#{artist}-#{title}-#{words}-#{duration.to_i}.ts"
 
 	# Make sure that all files have same aspect ratio
 	# http://video.stackexchange.com/questions/9947/how-do-i-change-frame-size-preserving-width-using-ffmpeg
@@ -139,8 +124,8 @@ def create_intermediate_files_from_snippets
 		file_with_ar = "ffmpeg -i #{snippet_url} -vf scale=720x406,setdar=16:9 -c:v libx264 -preset slow -profile:v main -crf 20 -y '#{inter_name}' -loglevel quiet"
 		
 		# save temp file location to Snippet
-		@snip.temp_file_location = inter_name
-		@snip.save!
+		@snip.temp_file_location = inter_name	
+		p "Saved #{@snip.id} with #{@snip.temp_file_location}" if @snip.save!
 
 		# p @snip.temp_file_location
 		system(file_with_ar) unless File.exists?(inter_name)

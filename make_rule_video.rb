@@ -42,26 +42,26 @@ DOWNLOADING = ARGV[0] unless ARGV[0].nil?
 @fontdir = '/Library/Fonts'
 @testdir = Dir.pwd + '/_test'
 BLACK_PIC = "#{@imgdir}/black.png"
-DIRECTORIES = [@imgdir,@finaldir,@subsdir,@editsdir]
+DIRECTORIES = [@imgdir,@finaldir,@subsdir]
+RUDE = ["damn", "shit", "sex"]
 
 EXCLUDED = ["believer"]
-MIN_DUR = 5000
+MIN_DUR = 3500
 MAX_DUR = 10000
-
-@selectedsnippets = Snippet.all.selected
+LIMIT = 6
+CARD_LENGTH = 4
 
 # @playlist_name = ARGV[0][0...ARGV[0].rindex(".")] unless ARGV[0].nil?
-
-#######  PROGRAMME CODE ######
-
-# make_new_video downloading=DOWNLOADING
-# calculate_completed_videos
-# create_mashups_with_enough_videos
 
 ######## CONVERT CSV TO NODES #######
 # db_files_to_csv
 # get_files_from_db_csv
 # query_saved_videos_per_node true #ARGV - destroy all Sentence records each time
+
+#######  PROGRAMME CODE ######
+# make_new_video downloading=DOWNLOADING
+# calculate_completed_videos
+create_mashups_with_enough_videos
 
 ### IMAGES PREPEND WORKING AS TEST
 

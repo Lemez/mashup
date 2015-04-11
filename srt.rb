@@ -1,3 +1,83 @@
+def create_srt_from_snippets
+
+	p "******* create_srt_from_snippets ********"
+
+	make_dir_if_none "#{@subsdir}", "#{@playlist_name}"
+	
+	@srt_file = open("#{@subsdir}/#{@playlist_name}/srt_file.srt", "w")
+
+	# @start_ms = 0
+	# @counter = 1
+
+	emptyline =	'''1
+00:00:00,000 --> 00:00:00,001
+
+'''
+	@srt_file.puts(emptyline)
+	@start_ms = 1
+	@counter = 2
+
+	Snippet.selected.each do |snippet|
+		sentence = Sentence.find_by("id=#{snippet.sentence_id}")
+		
+		duration = snippet.sentence_duration
+
+		@start_srt = convert_ms_to_srt(@start_ms)
+		@end_srt = convert_ms_to_srt(@start_ms+duration )
+
+		# 1
+		@srt_file.puts(@counter.to_s)
+
+		# 00:00:14,000 –> 00:00:20,500
+		time_string = "#{@start_srt} --> #{@end_srt}"
+		@srt_file.puts(time_string)
+
+		# Process text and fonts
+		text_array = sentence.full_sentence.split(" ")
+
+		# text_array.each do |s|
+		# 	p s
+		# 	unless s.gsub!("'", '').class == NilClass
+		# 		s.gsub!("'", '') if s.length % s.rindex("'") == 1
+		# 	end
+		# end
+
+		keyword = sentence.keyword
+		text_array.index(keyword).nil? ? kw_index=0 : kw_index = text_array.index(keyword)
+		size = "24px"
+		highlight_size = "24px"
+		# p sentence.full_sentence
+		# p kw_index
+		# p text_array
+		# p keyword
+		first_half = "<font size=#{size}>" + text_array[0...kw_index].join(" ") + "</font>"
+		second_half = "<font size=#{size}>" + text_array[kw_index+1..-1].join(" ") + "</font>"
+
+		highlight_colour = "#ffff00"
+		
+		highlighted_word = "<font color=#{highlight_colour} size=#{highlight_size}><b> #{keyword} </b></font>"
+		text = first_half + highlighted_word + second_half # + " X1:117 X2:619 Y1:042 Y2:428"
+
+		# Lost Corners consists of charcoal paintings.
+		@srt_file.puts(text)
+
+		# new line
+		@srt_file.puts("")
+
+		@start_ms += duration
+		@start_srt = @end_srt
+		@counter += 1
+	end
+
+	@srt_file.close
+end
+
+
+
+
+
+
+
 def test_srt
 	p "********"
 	p "test_srt"
@@ -26,85 +106,6 @@ def add_srt_to_final_mp4
 end
 
 
-def create_srt_from_snippets
-
-	p "********"
-	p "create_srt_from_snippets"
-	p "********"
-
-	make_dir_if_none "#{@subsdir}", "#{@playlist_name}"
-	
-	@srt_file = open("#{@subsdir}/#{@playlist_name}/srt_file.srt", "w")
-
-	# @start_ms = 0
-	# @counter = 1
-
-	emptyline =	'''1
-00:00:00,000 --> 00:00:00,001
-
-'''
-	@srt_file.puts(emptyline)
-	@start_ms = 1
-	@counter = 2
-
-	@selectedsnippets.each do |snippet|
-		sentence = Sentence.find_by("id=#{snippet.sentence_id}")
-		
-		duration = snippet.sentence_duration
-
-		@start_srt = convert_ms_to_srt(@start_ms)
-		@end_srt = convert_ms_to_srt(@start_ms+duration )
-
-		# 1
-		@srt_file.puts(@counter.to_s)
-
-		# 00:00:14,000 –> 00:00:20,500
-		time_string = "#{@start_srt} --> #{@end_srt}"
-		@srt_file.puts(time_string)
-
-		# Process text and fonts
-		text_array = sentence.full_sentence.split(" ")
-
-		text_array.each do |s|
-			p "#{s}"
-			p s.gsub!("'", '').class==NilClass
-			if s.gsub!("'", '').class!=NilClass
-				if s.gsub!("'", '').length == s.length-1
-					s.gsub!("'", '') 
-				end	
-			end
-		end
-
-		keyword = sentence.keyword
-		kw_index = text_array.index(keyword)
-		size = "24px"
-		highlight_size = "24px"
-		p kw_index
-		p text_array
-		p keyword
-		first_half = "<font size=#{size}>" + text_array[0...kw_index].join(" ") + "</font>"
-		second_half = "<font size=#{size}>" + text_array[kw_index+1..-1].join(" ") + "</font>"
-
-		highlight_colour = "#ffff00"
-		
-		highlighted_word = "<font color=#{highlight_colour} size=#{highlight_size}><b> #{keyword} </b></font>"
-		text = first_half + highlighted_word + second_half # + " X1:117 X2:619 Y1:042 Y2:428"
-
-		# Lost Corners consists of charcoal paintings.
-		@srt_file.puts(text)
-
-		# new line
-		@srt_file.puts("")
-
-
-
-		@start_ms += duration
-		@start_srt = @end_srt
-		@counter += 1
-	end
-
-	@srt_file.close
-end
 
 
 

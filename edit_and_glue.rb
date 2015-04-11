@@ -1,4 +1,6 @@
-
+def check_snips
+	Snippet.first
+end
 
 
 def glue_intermediate_files_and_normal_audio
@@ -12,11 +14,12 @@ def glue_intermediate_files_and_normal_audio
 	make_dir_if_none "#{@editsdir}/#{@playlist_name}", "tmp"
 	dir = "#{@editsdir}/#{@playlist_name}/tmp"
 
-	@temp_video_files = '"' + "concat:" + @selectedsnippets.map(&:temp_file_location).join("|") + '"'
+	@temp_video_files = '"' + "concat:" + Snippet.selected.map(&:temp_file_location).join("|") + '"'
 	# @normal_audio_files_ts = '"' + "concat:" + @selectedsnippets.map(&:normal_audio_file_location).join("|") + '"'
-	@normal_audio_files_wav = "'" + @selectedsnippets.map(&:normal_audio_file_location).join("' '") + "'"
+	@normal_audio_files_wav = "'" + Snippet.selected.map(&:normal_audio_file_location).join("' '") + "'"
 
 	p @temp_video_files
+	
 
 
 	`ffmpeg -i #{@temp_video_files} -c copy -y '#{dir}/_video.mp4'` #glue video 
@@ -70,10 +73,10 @@ def glue_crossfaded_video_and_normal_audio
 
 	dir = "#{@editsdir}/#{@playlist_name}/tmp"
 
-	# @normal_audio_files_wav = "'" + @selectedsnippets.map(&:normal_audio_file_location).join("' '") + "'"
+	# @normal_audio_files_wav = "'" + Snippet.selected.map(&:normal_audio_file_location).join("' '") + "'"
 	# `sox #{@normal_audio_files_wav} '#{dir}/_audio.wav'` 
 	
-	@trimmed_audio_files_wav = "'" + @selectedsnippets.map(&:trimmed_audio).join("' '") + "'"
+	@trimmed_audio_files_wav = "'" + Snippet.selected.map(&:trimmed_audio).join("' '") + "'"
 	`sox --no-show-progress #{@trimmed_audio_files_wav} '#{dir}/_audio.wav'`
 
 	# glue them together ORDER IMPORTANT::: AUDIO then VIDEO

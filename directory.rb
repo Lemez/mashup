@@ -17,9 +17,7 @@ def make_dir_if_none (dir,name)
 end
 
 def get_all_titles_from_dir 
-	p "*********"
-	p "get_all_titles_from_dir"
-	p "*********"
+	p "********* get_all_titles_from_dir ********* #{@playlist_name}"
 
 	Dir.glob("#{@videodir}/*.mp4").each do |item|
 		size = File.size(item)

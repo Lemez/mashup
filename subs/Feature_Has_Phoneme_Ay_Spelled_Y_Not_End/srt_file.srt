@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:08,261
+<font size=24px>Thats not really her</font><font color=#ffff00 size=24px><b> style </b></font><font size=24px></font>
+
+3
+00:00:08,261 --> 00:00:12,991
+<font size=24px>Tell</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px>its time now gotta let go</font>
+
+4
+00:00:12,991 --> 00:00:17,261
+<font size=24px>Im gonna hurt</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px></font>
+
+5
+00:00:17,261 --> 00:00:21,941
+<font size=24px>Lately I found</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px>thinking</font>
+
+6
+00:00:21,941 --> 00:00:26,301
+<font size=24px>All this time I was finding</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px></font>
+

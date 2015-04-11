@@ -1,33 +1,42 @@
 def create_mashups_with_enough_videos
 	# rebuild current list of completed final videos
 	# read csv 
+
+	calculate_completed_videos
+
 	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
 	reading_file = "./csv/videos/hits_medleys_FINAL.csv"
 
+	@csv_count = 1
+
 	CSV.foreach(reading_file,options) do |row|
 
-		next if row[6] == "true" # if completed already
+		next if row[6] == true || row[6] == "true" # if completed already
 
 		# execute each one
 		if row[4].to_i > 4 
-			@playlist = "#{row[0]}.csv"
-			full_file = "#{@csvdir}/#{@playlist}"
-			p "EXECUTING #{@playlist}"
-			@playlist_name = @playlist[0..-5]
+
+			 # only process first video as a check
+			return if @csv_count > 1
+
+			@playlist_name = row[0]
+			@playlist_csv = "#{@playlist_name}.csv"
+			full_file = "#{@csvdir}/#{@playlist_name}"
+			p "EXECUTING #{@playlist_name} with row[6] = #{row[6]}"
+
 			make_new_video @playlist_name, downloading=false
+
+			@csv_count += 1
 		end
 	end
 end
 
 
 def make_new_video playlist, downloading=false
-
-	@playlist = "#{playlist}.csv"
-	@playlist_name = playlist
-
+	p "****** make_new_video #{playlist}"
 	DIRECTORIES.each{|d| make_dir_if_none d,@playlist_name}
 
-	get_files_from_db_specific_csv @playlist #returns Sentence objects with video_ids
+	get_files_from_db_specific_csv @playlist_csv #returns Sentence objects with video_ids
 
 	number_of_relevant_videos_in_db = create_and_match_saved_videos
 
@@ -37,23 +46,32 @@ def make_new_video playlist, downloading=false
 
 	@sentences_to_extract = choose_sentences_from_saved_videos
 
-	create_snippets_from_sentences	# create snippets from those sentences, save their locations & rule numbers
-	show_current_snippets	#print out snippets created, file, duration and lyric data
-	normalize_audio	# normalize audio with/without fades
-	create_srt_from_snippets	#create srt file from snippets
-	create_snippets_text_file 	#create a text file and intermediate files from snippets
-	create_intermediate_files_from_snippets	# create intermediate files together
+	add_titles_to_video
+	# create_snippets_from_sentences	# create snippets from those sentences, save their locations & rule numbers
+	# show_current_snippets	#print out snippets created, file, duration and lyric data
+	# # check_snips
+	# normalize_audio	# normalize audio with/without fades
+	# # check_snips
+	# create_srt_from_snippets	#create srt file from snippets
+	# # check_snips
+	# create_snippets_text_file 	#create a text file and intermediate files from snippets
+	# # check_snips
+	# create_intermediate_files_from_snippets	# create intermediate files together
+
+	# # check_snips
+
+	# @@xfade = false    ## NO XFADES
+	# glue_intermediate_files_and_normal_audio	# glue intermediate video files and normalized audio together
+	# add_subs	# add subtitles with highlighted keyword
 	
-	@@xfade = false    ## NO XFADES
-	glue_intermediate_files_and_normal_audio	# glue intermediate video files and normalized audio together
-	add_subs	# add subtitles with highlighted keyword
-	
-	# add image
-	make_image
-	add_logo
-	turn_img_to_video
-	add_img_video_and_pic_video
-	# ÷ Xfade options see below
+	# # add image
+	# make_image
+	# add_logo
+	# turn_img_to_video
+	# add_img_video_and_pic_video
+
+
+	# # ÷ Xfade options see below
 
 end
 
@@ -65,14 +83,6 @@ def do_downloading
 
 		# try to download those videos (currently some issues here on the plugins end)
 	download_undownloaded_vids @list_to_dl 
-end
-
-def create_and_match_saved_videos
-		# get the info from the saved videos folder and create SavedVideos
-	get_all_titles_from_dir
-
-		# match videos on csv with saved videos on hard drive
-	return match_videos_with_saved_videos
 end
 
 
