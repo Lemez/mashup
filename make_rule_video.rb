@@ -30,7 +30,6 @@ ViddlRb.io = $stdout
 
 # ###### variables #########################
 
-
 DOWNLOADING = ARGV[0] unless ARGV[0].nil?
 
 @csvdir = Dir.pwd + '/csv/nodes_final' 
@@ -56,12 +55,12 @@ CARD_LENGTH = 4
 ######## CONVERT CSV TO NODES #######
 # db_files_to_csv
 # get_files_from_db_csv
-# query_saved_videos_per_node true #ARGV - destroy all Sentence records each time
+query_saved_videos_per_node true #ARGV - destroy all Sentence records each time
 
 #######  PROGRAMME CODE ######
 # make_new_video downloading=DOWNLOADING
 # calculate_completed_videos
-create_mashups_with_enough_videos
+# create_mashups_with_enough_videos
 
 ### IMAGES PREPEND WORKING AS TEST
 

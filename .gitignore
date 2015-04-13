@@ -1,7 +1,9 @@
 keys.rb
 _test/*
+_other/*
 videos/*
 videos_final/*
 video_edits/*
 videos_other/*
 videos_other/**/*
+

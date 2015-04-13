@@ -2,7 +2,6 @@ def check_snips
 	Snippet.first
 end
 
-
 def glue_intermediate_files_and_normal_audio
 
 	p "******"
