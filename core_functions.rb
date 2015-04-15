@@ -2,8 +2,6 @@ def create_mashups_with_enough_videos
 	# rebuild current list of completed final videos
 	# read csv 
 
-	calculate_completed_videos
-
 	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
 	reading_file = "./csv/videos/hits_medleys_FINAL.csv"
 
@@ -11,13 +9,16 @@ def create_mashups_with_enough_videos
 
 	CSV.foreach(reading_file,options) do |row|
 
-		next if row[6] == true || row[6] == "true" # if completed already
+
+		# process 3 videos each time as a check
+		return if Rule.where(:completed => true).count > 3
+
+		calculate_completed_videos
+
+		next if row[6].to_bool == true  # if completed already
 
 		# execute each one
-		if row[4].to_i > 4 
-
-			 # only process first video as a check
-			return if @csv_count > 1
+		if row[5].to_i >= LIMIT && !@completed.include?(row[0])
 
 			@playlist_name = row[0]
 			@playlist_csv = "#{@playlist_name}.csv"
@@ -33,45 +34,58 @@ end
 
 
 def make_new_video playlist, downloading=false
-	p "****** make_new_video #{playlist}"
-	DIRECTORIES.each{|d| make_dir_if_none d,@playlist_name}
+	p "****** make_new_video #{playlist} ************"
+
+	clean_up_records
 
 	get_files_from_db_specific_csv @playlist_csv #returns Sentence objects with video_ids
 
 	number_of_relevant_videos_in_db = create_and_match_saved_videos
 
-	if downloading && number_of_relevant_videos_in_db <5
+	if DOWNLOADING #&& number_of_relevant_videos_in_db <5
 		do_downloading; reformat_videos_if_required; create_and_match_saved_videos #run it again to update the list of videos
 	end
 
-	@sentences_to_extract = choose_sentences_from_saved_videos
+	@all_sentences_to_extract = choose_sentences_from_saved_videos
+	@sentences_to_extract = select_filter_sentences
 
-	add_titles_to_video
-	# create_snippets_from_sentences	# create snippets from those sentences, save their locations & rule numbers
-	# show_current_snippets	#print out snippets created, file, duration and lyric data
-	# # check_snips
-	# normalize_audio	# normalize audio with/without fades
-	# # check_snips
-	# create_srt_from_snippets	#create srt file from snippets
-	# # check_snips
-	# create_snippets_text_file 	#create a text file and intermediate files from snippets
-	# # check_snips
-	# create_intermediate_files_from_snippets	# create intermediate files together
-
-	# # check_snips
-
-	# @@xfade = false    ## NO XFADES
-	# glue_intermediate_files_and_normal_audio	# glue intermediate video files and normalized audio together
-	# add_subs	# add subtitles with highlighted keyword
+	enough_to_go_on = continue_or_stop
+	return if enough_to_go_on
 	
-	# # add image
-	# make_image
-	# add_logo
-	# turn_img_to_video
-	# add_img_video_and_pic_video
+	# add_titles_to_video
+	create_snippets_from_sentences	# create snippets from those sentences, save their locations & rule numbers
+	show_current_snippets	#print out snippets created, file, duration and lyric data
+	# check_snips
+	normalize_audio	# normalize audio with/without fades
+	# check_snips
+	create_srt_from_snippets	#create srt file from snippets
+	# check_snips
+	create_snippets_text_file 	#create a text file and intermediate files from snippets
+	# check_snips
+	create_intermediate_files_from_snippets	# create intermediate files together
 
+	# check_snips
+
+	@@xfade = false    ## NO XFADES
+	glue_intermediate_files_and_normal_audio	# glue intermediate video files and normalized audio together
+	add_subs	# add subtitles with highlighted keyword
+	
+	# add image
+	make_image
+	add_logo
+	turn_img_to_video
+	add_img_video_and_pic_video
 
 	# # ÷ Xfade options see below
+
+end
+
+def clean_up_records
+	p "******* clean_up_records ******"
+	Sentence.destroy_all
+	Snippet.destroy_all
+	Video.destroy_all
+	SavedVideo.destroy_all
 
 end
 

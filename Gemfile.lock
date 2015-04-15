@@ -116,6 +116,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  activesupport
   awesome_print
   builder (~> 3.1.0)
   gemcutter (~> 0.7.1)

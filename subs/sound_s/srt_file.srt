@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:04,991
+<font size=24px></font><font color=#ffff00 size=24px><b> Since </b></font><font size=24px>you've chosen, to leave me frozen</font>
+
+3
+00:00:04,991 --> 00:00:10,631
+<font size=24px>And all the other boys try to</font><font color=#ffff00 size=24px><b> chase </b></font><font size=24px>me</font>
+
+4
+00:00:10,631 --> 00:00:14,481
+<font size=24px>And I was crying on the</font><font color=#ffff00 size=24px><b> staircase </b></font><font size=24px></font>
+
+5
+00:00:14,481 --> 00:00:18,741
+<font size=24px>I almost didn't</font><font color=#ffff00 size=24px><b> notice </b></font><font size=24px>all the roses</font>
+
+6
+00:00:18,741 --> 00:00:25,571
+<font size=24px>For</font><font color=#ffff00 size=24px><b> once </b></font><font size=24px>in my life</font>
+
+7
+00:00:25,571 --> 00:00:31,711
+<font size=24px>I see</font><font color=#ffff00 size=24px><b> ascending </b></font><font size=24px>light upon a hill</font>
+

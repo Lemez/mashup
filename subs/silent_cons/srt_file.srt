@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:05,351
+<font size=24px>I'd jump in front of a</font><font color=#ffff00 size=24px><b> train </b></font><font size=24px>for you</font>
+
+3
+00:00:05,351 --> 00:00:10,251
+<font size=24px>To fill my days and</font><font color=#ffff00 size=24px><b> nights </b></font><font size=24px>with something</font>
+
+4
+00:00:10,251 --> 00:00:15,811
+<font size=24px>He</font><font color=#ffff00 size=24px><b> knelt </b></font><font size=24px>to the ground and pulled out a ring and said</font>
+
+5
+00:00:15,811 --> 00:00:20,531
+<font size=24px>Caused by</font><font color=#ffff00 size=24px><b> absence </b></font><font size=24px>of you</font>
+
+6
+00:00:20,531 --> 00:00:25,171
+<font size=24px>While I walk alone in the</font><font color=#ffff00 size=24px><b> rain </b></font><font size=24px></font>
+
+7
+00:00:25,171 --> 00:00:34,031
+<font size=24px></font><font color=#ffff00 size=24px><b> Written </b></font><font size=24px>on these walls are the colors that I can't change</font>
+

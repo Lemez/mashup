@@ -4,6 +4,10 @@
 # # usage: ruby make_rule_video.rb 'double_cons_before_ing_ed_er.csv' true 'maria'
 # # usage: ruby make_rule_video.rb 'double_cons.csv' false 
 
+
+# usage: ruby make_rule_video.rb DOWNLOADING=false QUERY=true
+# this will query nodes first to update saved sentences and incompleted final videos
+
 # raise "Please specify a local csv file, eg >> $ ruby make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
 # raise "Please specify true or false for DOWNLOADING " if ARGV[1].nil?
 
@@ -22,6 +26,8 @@ require 'cgi'
 require 'watir-webdriver'
 require 'nokogiri'
 require 'fuzzystringmatch'
+require 'rake'
+require 'active_support/all'
 # require 'active_record'
 # require 'mysql2'
 require_relative './environment.rb'
@@ -29,8 +35,9 @@ require_relative './environment.rb'
 ViddlRb.io = $stdout
 
 # ###### variables #########################
-
-DOWNLOADING = ARGV[0] unless ARGV[0].nil?
+CREATE = ARGV[0].split("=")[-1].to_bool
+DOWNLOADING = ARGV[1].split("=")[-1].to_bool
+QUERY = ARGV[2].split("=")[-1].to_bool
 
 @csvdir = Dir.pwd + '/csv/nodes_final' 
 @videodir = Dir.pwd + '/videos'
@@ -44,7 +51,7 @@ BLACK_PIC = "#{@imgdir}/black.png"
 DIRECTORIES = [@imgdir,@finaldir,@subsdir]
 RUDE = ["damn", "shit", "sex"]
 
-EXCLUDED = ["believer"]
+EXCLUDED = ["believer", "billie jean", "man in the mirror"]
 MIN_DUR = 3500
 MAX_DUR = 10000
 LIMIT = 6
@@ -55,12 +62,14 @@ CARD_LENGTH = 4
 ######## CONVERT CSV TO NODES #######
 # db_files_to_csv
 # get_files_from_db_csv
-query_saved_videos_per_node true #ARGV - destroy all Sentence records each time
 
 #######  PROGRAMME CODE ######
 # make_new_video downloading=DOWNLOADING
 # calculate_completed_videos
-# create_mashups_with_enough_videos
+
+# update list of completed videos
+query_saved_videos_per_node true if QUERY #ARGV - destroy all Sentence records each time
+create_mashups_with_enough_videos if CREATE
 
 ### IMAGES PREPEND WORKING AS TEST
 

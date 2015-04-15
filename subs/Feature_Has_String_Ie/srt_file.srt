@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:06,661
+<font size=24px>Everything you touch, all it</font><font color=#ffff00 size=24px><b> dies </b></font><font size=24px></font>
+
+3
+00:00:06,661 --> 00:00:10,451
+<font size=24px>Stolen kisses, pretty</font><font color=#ffff00 size=24px><b> lies </b></font><font size=24px></font>
+
+4
+00:00:10,451 --> 00:00:15,171
+<font size=24px>Regrets and mistakes, they're</font><font color=#ffff00 size=24px><b> memories </b></font><font size=24px>made</font>
+
+5
+00:00:15,171 --> 00:00:21,181
+<font size=24px>The hunger</font><font color=#ffff00 size=24px><b> satisfies </b></font><font size=24px></font>
+
+6
+00:00:21,181 --> 00:00:29,121
+<font size=24px>But had me</font><font color=#ffff00 size=24px><b> believing </b></font><font size=24px>it was always something that I'd done</font>
+
+7
+00:00:29,121 --> 00:00:35,011
+<font size=24px>You and I won't part till we</font><font color=#ffff00 size=24px><b> die </b></font><font size=24px></font>
+

@@ -25,15 +25,44 @@ def choose_sentences_from_saved_videos
 		# return if sentences_to_extract.empty?
 
 		rule = Rule.find_by(:rule_name => @playlist_name)
-		p sentences_to_extract
-		rule.example = sentences_to_extract[0].keyword.downcase
-		rule.save!
+		unless sentences_to_extract.empty?
+			# p sentences_to_extract
+			rule.example = sentences_to_extract[0].keyword.downcase
+			rule.save!
+		end
 
 		return sentences_to_extract
 
 	rescue NoMethodError => e
 		p "Error!"
+		p sentences_to_extract
 		raise e
+		return
+	end
+end
+
+def select_filter_sentences
+	sentences = @all_sentences_to_extract.uniq(&:keyword)
+	
+	sentences.each do |s|
+		sentences.delete(s) if s.duration < MIN_DUR or
+	 								s.duration > MAX_DUR or
+	 								EXCLUDED.include?(Video.find_by("id=#{s.video_id}").title)
+	end
+
+	return sentences.shuffle
+
+end
+
+def continue_or_stop
+
+	if @sentences_to_extract.count<LIMIT
+		p "Not enough unique sentences, only #{@sentences_to_extract.count}"
+		remove_files_created
+		true
+	else
+		DIRECTORIES.each{|d| make_dir_if_none d,@playlist_name}
+		false
 	end
 end
 

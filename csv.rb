@@ -21,12 +21,17 @@ def query_saved_videos_per_node destroy=false
 			next if row[0] == @lastrow
 
 			p "*** Processing #{@playlist_name} *****"
-
+			# sleep 3
 			get_files_from_db_specific_csv "#{@playlist_name}.csv"
+			# sleep 3
 			create_and_match_saved_videos
+			# sleep 3
 			sentences = choose_sentences_from_saved_videos
+			# sleep 3
+			p sentences
+			# sleep 3
 
-			unless sentences.nil?
+			unless sentences.empty?
 				relevant_videos_length = sentences.flat_map(&:video_id).uniq.count
 				current_hits = sentences.count
 			else

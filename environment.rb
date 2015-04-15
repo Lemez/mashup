@@ -76,6 +76,7 @@ ActiveRecord::Schema.define do
         table.column :final_mp4, :string
         table.column :final_subs_logo, :text
         table.column :example, :string
+        table.column :completed, :boolean
         # table.column :normal_xfaded_ts, :string
         # table.column :xfade_audio, :string
         # table.column :xfade_ts, :string
@@ -118,6 +119,11 @@ class Rule < ActiveRecord::Base
     has_many :videos, through: :nodes  
     has_one :node
 
+    def init
+
+        self.completed ||= false
+    end
+
     def self.normal_xfaded_ts
         @normal_xfaded_ts
     end
@@ -125,6 +131,10 @@ class Rule < ActiveRecord::Base
     # def self.game_id
     #     @game_id
     # end
+
+    def self.completed
+        @completed
+    end
     
     def self.example
         @example

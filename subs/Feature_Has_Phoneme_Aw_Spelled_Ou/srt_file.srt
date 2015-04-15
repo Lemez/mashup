@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:05,321
+<font size=24px>Stoned in paradise, shouldn't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+
+3
+00:00:05,321 --> 00:00:11,531
+<font size=24px>She don't feel the same</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>us in her bones</font>
+
+4
+00:00:11,531 --> 00:00:15,841
+<font size=24px>Been dreaming</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>you a lot</font>
+

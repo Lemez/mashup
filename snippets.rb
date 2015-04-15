@@ -7,7 +7,7 @@ def create_snippets_from_sentences
 	@title = ''
 	@saved_videos = Video.all.is_saved
 
-	@sentences_to_extract[0..LIMIT-1].each do |sentence|
+	@sentences_to_extract.each do |sentence|
 		
 		next if sentence.adult==true
 		
@@ -26,7 +26,7 @@ def create_snippets_from_sentences
 
 		s = sentence.start_at + offset_in_ms.to_i
 		e = sentence.end_at
-		d = sentence.duration + 500 
+		d = sentence.duration + 1000 
 		# d += 500 if d < 4000
 
 		start_secs = convert_to_seconds_and_ms(s)
@@ -36,14 +36,14 @@ def create_snippets_from_sentences
 		location_string = "#{@editsdir}/snippets/#{artist}-#{title}-#{s.to_s}-#{d.to_i.to_s}.mp4"
 
 		# define skipping conditions
-		next if sentence.full_sentence.split(" ").length < 4
-		next if @full_sentence==full_sentence
+		# next if sentence.full_sentence.split(" ").length < 4
+		# next if @full_sentence==full_sentence
 
-		if EXCLUDED.include?(title) || d < MIN_DUR or d > MAX_DUR
+		# if EXCLUDED.include?(title) || d < MIN_DUR or d > MAX_DUR
 
-			p "Skipping #{artist} #{title} with duration #{d.to_s} "
-			next
-		end
+		# 	p "Skipping #{artist} #{title} with duration #{d.to_s} "
+		# 	next
+		# end
 
 
 		s = Snippet.create(:video_id => video_id, :sentence_duration => d, :clip_duration => duration_secs, :sentence_id => sentence_id, :full_video_location => full_video_location, :location => location_string, :rule_name => rule_name )	

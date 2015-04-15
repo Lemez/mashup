@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:04,661
+<font size=24px>The fire beneath my feet is burning</font><font color=#ffff00 size=24px><b> bright </b></font><font size=24px></font>
+
+3
+00:00:04,661 --> 00:00:13,271
+<font size=24px></font><font color=#ffff00 size=24px><b> Fight </b></font><font size=24px>fear for the selfish pain, it was worth it every time</font>
+
+4
+00:00:13,271 --> 00:00:18,291
+<font size=24px>The way that I've been holding on too</font><font color=#ffff00 size=24px><b> tight </b></font><font size=24px></font>
+
+5
+00:00:18,291 --> 00:00:22,941
+<font size=24px>Just don't say it will be</font><font color=#ffff00 size=24px><b> alright </b></font><font size=24px></font>
+
+6
+00:00:22,941 --> 00:00:31,321
+<font size=24px>Realizing all you ever wanted was</font><font color=#ffff00 size=24px><b> right </b></font><font size=24px>there in front of you</font>
+
+7
+00:00:31,321 --> 00:00:35,001
+<font size=24px>'Cause darling I'm a</font><font color=#ffff00 size=24px><b> nightmare </b></font><font size=24px>dressed like a daydream</font>
+

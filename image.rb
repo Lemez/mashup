@@ -3,16 +3,9 @@ def make_image
 	make_dir_if_none @imgdir, @playlist_name
 
 	@image = "#{@imgdir}/#{@playlist_name}/#{@playlist_name}"
-	feature_has_p = "Feature_Has_Phoneme_"
 
-	example = Rule.find_by(:rule_name => @playlist_name).example
-
-	if @playlist_name.include?(feature_has_p)
-		sound,spelling = @playlist_name[feature_has_p.length..-1].split("_Spelled_")
-		label = "label: Words that sound like #{sound.upcase}\n and are spelled #{spelling.upcase} \n eg: #{example}"
-	else
-		label="#{@playlist_name} \n eg: #{example}"
-	end
+	rule,example = NODE_DESCRIPTIONS[@playlist_name][0],NODE_DESCRIPTIONS[@playlist_name][1]
+	label = "#{rule}\n#{example}"
 
 	`convert \
 	-size 720x406 \
@@ -61,6 +54,7 @@ def add_img_video_and_pic_video
 	p @rule
 	p final
 	@rule.final_subs_logo = final
+	@rule.completed = true
 	@rule.save!
 	p @rule
 	p "Saved - final logo video for: #{@rule.rule_name}" if @rule.save!
