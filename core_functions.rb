@@ -11,7 +11,7 @@ def create_mashups_with_enough_videos
 
 
 		# process 3 videos each time as a check
-		return if Rule.where(:completed => true).count > 3
+		return if Rule.where(:completed => true).count > 1
 
 		calculate_completed_videos
 

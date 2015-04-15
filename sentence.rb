@@ -58,7 +58,7 @@ def continue_or_stop
 
 	if @sentences_to_extract.count<LIMIT
 		p "Not enough unique sentences, only #{@sentences_to_extract.count}"
-		remove_files_created
+		# remove_files_created
 		true
 	else
 		DIRECTORIES.each{|d| make_dir_if_none d,@playlist_name}

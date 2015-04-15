@@ -1,11 +1,11 @@
 def make_image
-
+	p "******** make_image *******"
 	make_dir_if_none @imgdir, @playlist_name
 
 	@image = "#{@imgdir}/#{@playlist_name}/#{@playlist_name}"
 
 	rule,example = NODE_DESCRIPTIONS[@playlist_name][0],NODE_DESCRIPTIONS[@playlist_name][1]
-	label = "#{rule}\n#{example}"
+	label = "label: #{rule}\n#{example}"
 
 	`convert \
 	-size 720x406 \
@@ -20,6 +20,7 @@ def make_image
 end
 
 def add_logo
+	p "******** add_logo *******"
 
 	@logo = "#{@imgdir}/logo.png"
 	@image_w_logo = "#{@image}_logo.png"
@@ -31,6 +32,7 @@ def add_logo
 end
 
 def turn_img_to_video
+	p "******** turn_img_to_video *******"
 
 	@image_video = "#{@image}_logo.mp4"
 
@@ -38,6 +40,7 @@ def turn_img_to_video
 end
 
 def add_img_video_and_pic_video
+	p "******** add_img_video_and_pic_video *******"
 
 	tmp1 = "#{@testdir}/_intermediate1.ts"
 	tmp2 = "#{@testdir}/_intermediate2.ts"

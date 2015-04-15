@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:05,111
+<font size=24px>Should have known you was</font><font color=#ffff00 size=24px><b> trouble </b></font><font size=24px>from the first kiss</font>
+
+3
+00:00:05,111 --> 00:00:08,141
+<font size=24px>I'm a</font><font color=#ffff00 size=24px><b> little </b></font><font size=24px>bit scared</font>
+
+4
+00:00:08,141 --> 00:00:13,881
+<font size=24px></font><font color=#ffff00 size=24px><b> Little </b></font><font size=24px>did I know</font>
+
+5
+00:00:13,881 --> 00:00:18,561
+<font size=24px>Meet in the</font><font color=#ffff00 size=24px><b> middle </b></font><font size=24px></font>
+
+6
+00:00:18,561 --> 00:00:22,691
+<font size=24px>But moving on from him is</font><font color=#ffff00 size=24px><b> impossible </b></font><font size=24px></font>
+
+7
+00:00:22,691 --> 00:00:31,281
+<font size=24px></font><font color=#ffff00 size=24px><b> People </b></font><font size=24px>making choices they can't fake</font>
+
