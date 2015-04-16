@@ -1,0 +1,25 @@
+{
+  "exercise" : {
+    "game_name" : "relative_clauses",
+	"game_id" : 23,
+	"exercise_name" : "relative_pronouns",
+	"exercise_instructions" : "Have another go in this text. Find all the relative pronouns!!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 2,
+	"title" : "Florida Georgia Line",
+	"text_type" : "wikipedia",
+	"text" : "Florida Georgia Line is a duo, composed of Tyler Hubbard and Brian Kelley, who both first gained interest in music through church worship services.\nKelley played in his high school baseball team, where he was star pitcher. He gained a scholarship at Florida State University but transferred to Belmont University after it became clear that he would not succeed in the sport.\nHubbard, who also attended the same university, was leader of the hip hop group ‘Ingenious Circuit’ throughout his teens.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Florida Georgia Line is a duo, composed of Tyler Hubbard and Brian Kelley, who both first gained interest in music through church worship services.\n"},
+	  {"sentence_id" : 2, "sentence" : "Kelley played in his high school baseball team, where he was star pitcher."},
+	  {"sentence_id" : 3, "sentence" : "He gained a scholarship at Florida State University but transferred to Belmont University after it became clear that he would not succeed in the sport.\n"},
+	  {"sentence_id" : 4, "sentence" : "Hubbard, who also attended the same university, was leader of the hip hop group ‘Ingenious Circuit’ throughout his teens."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<-Florida> <-Georgia> <-Line> <-is> <-a> <-duo>, <-composed> <-of> <-Tyler> <-Hubbard> <-and> <-Brian> <-Kelley>, <+who> <-both> <-first> <-gained> <-interest> <-in> <-music> <-through> <-church> <-worship> <-services>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "<-Kelley> <-played> <-in> <-his> <-high> <-school> <-baseball> <-team>, <+where> <-he> <-was> <-star> <-pitcher>."},
+	  {"sentence_id" : 3, "marked_sentence" : "<-He> <-gained> <-a> <-scholarship> <-at> <-Florida> <-State> <-University> <-but> <-transferred> <-to> <-Belmont> <-University> <-after> <-it> <-became> <-clear> <-that> <-he> <-would> <-not> <-succeed> <-in> <-the> <-sport>.\n"},
+	  {"sentence_id" : 4, "marked_sentence" : "<-Hubbard>, <+who> <-also> <-attended> <-the> <-same> <-university>, <-was> <-leader> <-of> <-the> <-hip> <-hop> <-group> ‘<-Ingenious> <-Circuit>’ <-throughout> <-his> <-teens>."}
+	]
+  }	
+}

@@ -1,0 +1,25 @@
+{
+  "exercise" : {
+    "game_name" : "sub_and_coordinate_clauses",
+	"game_id" : 22,
+	"exercise_name" : "commas_sub_and_coordinate_clauses",
+	"exercise_instructions" : "Select all subordinating and coordinating conjunctions in the text!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 5,
+	"title" : "Katy Perry",
+	"text_type" : "wikipedia",	
+	"text" : "Katy Perry is known for her infectious pop music, but she identifies herself as a ‘singer-songwriter masquerading as a pop star’. She maintains that honest songwriting is very important to her. In an interview, she says that her secret magic trick that separates her from a lot of her peers is the bravery to be vulnerable and truthful and honest.\n‘When you're vulnerable, you become more relatable.’ she says.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Katy Perry is known for her infectious pop music, but she identifies herself as a ‘singer-songwriter masquerading as a pop star’."},
+	  {"sentence_id" : 2, "sentence" : "She maintains that honest songwriting is very important to her."},
+	  {"sentence_id" : 3, "sentence" : "In an interview, she says that her secret magic trick that separates her from a lot of her peers is the bravery to be vulnerable and truthful and honest.\n"},
+	  {"sentence_id" : 4, "sentence" : "‘When you're vulnerable, you become more relatable.’ she says."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<-Katy> <-Perry> <-is> <-known> <-for> <-her <-infectious> <-pop> <-music>, <+but> <-she> <-identifies> <-herself> <-as> <-a> ‘<-singer-songwriter> <-masquerading> <-as> <-a> <-pop> <-star>’."},
+	  {"sentence_id" : 2, "marked_sentence" : "<-She> <-maintains> <+that> <-honest> <-songwriting> <-is> <-very> <-important> <-to> <-her>."},
+	  {"sentence_id" : 3, "marked_sentence" : "<-In> <-an> <-interview>, <-she> <-says> <+that> <-her> <-secret> <-magic> <-trick> <+that> <-separates> <-her> <-from> <-a> <-lot> <-of> <-her> <-peers> <-is> <-the> <-bravery> <-to> <-be> <-vulnerable> <+and> <-truthful> <+and> <-honest>.\n"},
+	  {"sentence_id" : 4, "marked_sentence" : "‘<+When> <-you're> <-vulnerable>, <-you> <-become> <-more> <-relatable>.’ <-she> <-says>."}
+	]
+  }
+}

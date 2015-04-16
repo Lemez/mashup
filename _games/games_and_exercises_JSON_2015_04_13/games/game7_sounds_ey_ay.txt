@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "sounds_ey_ay",
+	"id" : 7,
+	"title" : "Vowel Spellings 2",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"The focus of this game is on words that contain the vowel sounds /EY/ and /AY/!",
+	"focus" : "sounds_ey_ay",
+	"order_in_course" : 8
+  }
+}

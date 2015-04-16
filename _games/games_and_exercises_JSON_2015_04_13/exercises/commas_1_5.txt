@@ -1,0 +1,27 @@
+{
+  "exercise" : {
+    "game_name" : "commas",
+	"game_id" : 24,
+	"exercise_name" : "commas",
+	"exercise_instructions" : "Put commas in all the correct places in this text",
+	"exercise_type" : "punctuation",
+	"order_in_game" : 5,
+	"title" : "Ariana Grande",
+	"text_type" : "wikipedia",
+	"text" : "Ariana Grande's first studio album, which was named ‘Yours Truly’ and was recorded over a three-year period, became her first number one album in the United States. Her second studio album, ‘My Everything’, was released on August 25, 2014.\nDue to her wide vocal range, sound and musical material, critics say that she is the ‘mini Mariah Carey’.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Ariana Grande's first studio album, which was named ‘Yours Truly’ and was recorded over a three-year period, became her first number one album in the United States."},
+	  {"sentence_id" : 2, "sentence" : "Her second studio album, ‘My Everything’, was released on August 25, 2014.\n"},
+	  {"sentence_id" : 3, "sentence" : "Due to her wide vocal range, sound and musical material, critics say that she is the ‘mini Mariah Carey’."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : ",|,", "gapped_sentence" : "Ariana Grande's first studio album<__> which was named ‘Yours Truly’ and was recorded over a three-year period<__> became her first number one album in the United States."},
+	  {"sentence_id" : 2, "correct_answers" : ",|,|,", "gapped_sentence" : "Her second studio album<__> ‘My Everything’<__> was released on August 25<__> 2014.\n"},
+	  {"sentence_id" : 3, "correct_answers" : ",|,", "gapped_sentence" : "Due to her wide vocal range<__> sound and musical material<__> critics say that she is the ‘mini Mariah Carey’."}
+	]
+  }
+}
+
+
+
+

@@ -1,0 +1,40 @@
+{
+  "exercise" : {
+    "game_name" : "relative_clauses",
+	"game_id" : 23,
+	"exercise_name" : "relative_clauses",
+	"exercise_instructions" : "Look for all the relative clauses and highlight all the words in them!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 3,
+	"title" : "Michael Jackson",
+	"text_type" : "wikipedia",		
+	"text" : "Michael Jackson, whose live performances were brilliant, made a memorable appearance at the halftime show at 1993 Super Bowl XXVII.\nThe National Football League, who were interested in bringing the game to wide attention, decided to seek big-name talent that would keep viewers and ratings high. Jackson, who had popular and universal appeal, was asked to perform.\nHis act, which began with him catapulting onto the stage to fireworks, was a great success.\n",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Michael Jackson, whose live performances were brilliant, made a memorable appearance at the halftime show at 1993 Super Bowl XXVII.\n"},
+	  {"sentence_id" : 2, "sentence" : "The National Football League, who were interested in bringing the game to wide attention, decided to seek big-name talent that would keep viewers and ratings high."},
+	  {"sentence_id" : 3, "sentence" : "Jackson, who had popular and universal appeal, was asked to perform.\n"},
+	  {"sentence_id" : 4, "sentence" : "His act, which began with him catapulting onto the stage to fireworks, was a great success.\n"}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<-Michael> <-Jackson>, <+whose> <+live> <+performances> <+were> <+brilliant>, <-made> <-a> <-memorable> <-appearance> <-at> <-the> <-halftime> <-show> <-at> <-1993> <-Super> <-Bowl> <-XXVII>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "<-The> <-National> <-Football> <-League>, <+who> <+were> <+interested> <+in> <+bringing> <+the> <+game> <+to> <+wide> <+attention>, <-decided> <-to> <-seek> <-big-name> <-talent> <-that> <-would> <-keep> <-viewers> <-and> <-ratings> <-high>."},
+	  {"sentence_id" : 3, "marked_sentence" : "<-Jackson>, <+who> <+had> <+popular> <+and> <+universal> <+appeal>, <-was> <-asked> <-to> <-perform>.\n"},
+	  {"sentence_id" : 4, "marked_sentence" : "<-His> <-act>, <+which> <+began> <+with> <+him> <+catapulting> <+onto> <+the> <+stage> <+to> <+fireworks>, <-was> <-a> <-great> <-success>.\n"}
+	]
+  }
+}
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+ 
+ 
+

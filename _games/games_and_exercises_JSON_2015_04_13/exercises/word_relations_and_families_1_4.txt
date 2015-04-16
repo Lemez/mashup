@@ -1,0 +1,23 @@
+{
+  "exercise" : {
+    "game_name" : "word_relations_and_families",
+	"game_id" : 6,
+	"exercise_name" : "suffixes",
+	"exercise_instructions" : "Mark the words that end with a suffix!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 4,
+	"title" : "Aloe Blacc",
+	"text_type" : "wikipedia",
+	"text" : "Egbert Nathaniel Dawkins III, better known as Aloe Blacc, is an American rapper, songwriter, singer, businessman and musician.\nHe is best known for his singles ‘I Need a Dollar’ and the UK number 1 single ‘The Man’.\nHe is also known for writing and performing vocals on Avicii's ‘Wake Me Up’, which was number 1 in the charts in 22 countries.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Egbert Nathaniel Dawkins III, better known as Aloe Blacc, is an American rapper, songwriter, singer, businessman and musician.\n"},
+	  {"sentence_id" : 2, "sentence" : "He is best known for his singles ‘I Need a Dollar’ and the UK number 1 single ‘The Man’.\n"},
+	  {"sentence_id" : 3, "sentence" : "He is also known for writing and performing vocals on Avicii's ‘Wake Me Up’, which was number 1 in the charts in 22 countries."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<-Egbert> <-Nathaniel> <-Dawkins> <-III>, <-better> <-known> <-as> <-Aloe> <-Blacc>, <-is> <-an> <-American> <+rapper>, <+songwriter>, <+singer>, <-businessman> <-and> <+musician>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "<-He> <-is> <-best> <-known> <-for> <-his> <+singles> ‘<-I> <-Need> <-a> <-Dollar>’ <-and> <-the> <-UK> <-number> <-1> <-single> ‘<-The> <-Man>’.\n"},
+	  {"sentence_id" : 3, "marked_sentence" : "<-He> <-is> <-also> <-known> <-for> <+writing> <-and> <+performing> <+vocals> <-on> <-Avicii's> ‘<-Wake> <-Me> <-Up>’, <-which> <-was> <-number> <-1> <-in> <-the> <+charts> <-in> <-22> <+countries>."}
+	]
+  }	
+}

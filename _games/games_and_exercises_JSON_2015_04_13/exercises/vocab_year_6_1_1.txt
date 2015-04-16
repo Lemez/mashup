@@ -1,0 +1,28 @@
+{
+  "exercise" : {
+    "game_name" : "vocab_year_6",
+	"game_id" : 3,
+	"exercise_name" : "vocab_year_6",
+	"exercise_instructions" : "Choose the correct words from the list to make this text make sense!",
+	"exercise_type" : "vocabulary",
+	"order_in_game" : 1,
+	"title" : "Taylor Swift",
+	"text_type" : "wikipedia",
+	"text" : "Taylor Alison Swift is an American singer-songwriter, who started her career in country music.\nAt the age of 11, Swift won a local talent competition and was given the opportunity to appear as the opening act for Charlie Daniels.\nSwift attended a private school with homeschooling services to accommodate her touring schedule. She maintained a 4.0 grade average and earned her high school diploma in 2008.\nSwift is known to develop her use of social media, like Twitter, to communicate with fans. The singer is very conscious of her influence on young fans.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Taylor Alison Swift is an American singer-songwriter, who started her career in country music.\n"},
+	  {"sentence_id" : 2, "sentence" : "At the age of 11, Swift won a local talent competition and was given the opportunity to appear as the opening act for Charlie Daniels.\n"},
+	  {"sentence_id" : 3, "sentence" : "Swift attended a private school with homeschooling services to accommodate her touring schedule."},
+	  {"sentence_id" : 4, "sentence" : "She maintained a 4.0 grade average and earned her high school diploma in 2008.\n"},
+	  {"sentence_id" : 5, "sentence" : "Swift is known to develop her use of social media, like Twitter, to communicate with fans."},
+	  {"sentence_id" : 6, "sentence" : "The singer is very conscious of her influence on young fans."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 2, "correct_answers" : "competition|opportunity", "gapped_sentence" : "At the age of 11, Swift won a local talent <__> and was given the <__> to appear as the opening act for Charlie Daniels.\n"},
+	  {"sentence_id" : 3, "correct_answers" : "accommodate", "gapped_sentence" : "Swift attended a private school with homeschooling services to <__> her touring schedule."},
+	  {"sentence_id" : 4, "correct_answers" : "average", "gapped_sentence" : "She maintained a 4.0 grade <__> and earned her high school diploma in 2008.\n"},
+	  {"sentence_id" : 5, "correct_answers" : "develop|communicate", "gapped_sentence" : "Swift is known to <__> her use of social media, like Twitter, to <__> with fans."},
+	  {"sentence_id" : 6, "correct_answers" : "conscious", "gapped_sentence" : "The singer is very <__> of her influence on young fans."}
+	]
+  }	
+}

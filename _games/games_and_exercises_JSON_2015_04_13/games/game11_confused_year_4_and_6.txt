@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "confused_year_4_and_6",
+	"id" : 11,
+	"title" : "Commonly Confused Words 2",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"The focus of this game is on words that are often confused, for example the verb ‘to accept’ and the preposition ‘except’.\nAs they sound alike, these words are often spelled incorrectly. Let's see if you can do it right...",
+	"focus" : "confused_year_4_and_6",
+	"order_in_course" : 19
+  }
+}

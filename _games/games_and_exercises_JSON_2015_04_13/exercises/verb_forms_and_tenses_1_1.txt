@@ -1,0 +1,24 @@
+{
+  "exercise" : {
+    "game_name" : "verb_forms_and_tenses",
+	"game_id" : 5,
+	"exercise_name" : "present",
+	"exercise_instructions" : "Select the sentence or sentences that contain the present tense!",
+	"exercise_type" : "multiple_choice",
+	"order_in_game" : 1,
+	"title" : "One Direction",
+	"text_type" : "wikipedia",	
+	"text" : "One Direction cite The Beatles and U2 as strong influences on their music.\nOne Direction's third album ‘Midnight Memories’ is heavily influenced by 80's rock and folk music.\nOne Direction finished third on the seventh series of The X-Factor.\nOne Direction's debut song ‘What Makes You Beautiful’ has sold over 4 million copies in the U.S.",
+	"language_tests" : [
+	  {"sentence_id" : 1, "is_correct" : 1, "sentence_text" : "One Direction cite The Beatles and U2 as strong influences on their music."},
+	  {"sentence_id" : 2, "is_correct" : 1, "sentence_text" : "One Direction's third album ‘Midnight Memories’ is heavily influenced by 80's rock and folk music."},
+	  {"sentence_id" : 3, "is_correct" : 0, "sentence_text" : "One Direction finished third on the seventh series of The X-Factor."},
+	  {"sentence_id" : 4, "is_correct" : 0, "sentence_text" : "One Direction's debut song ‘What Makes You Beautiful’ has sold over 4 million copies in the U.S."}
+	]
+  }
+}
+
+
+
+
+

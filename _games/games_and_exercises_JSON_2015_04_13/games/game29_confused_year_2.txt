@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "confused_year_2",
+	"id" : 29,
+	"title" : "Commonly Confused Words",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"The focus of this game is on words that are often confused, for example the words 'whole' and 'hole'.\nAs they sound alike, these words are often spelled incorrectly. Let's see if you can do it right...",
+	"focus" : "confused_year_2",
+	"order_in_course" : 7
+  }
+}

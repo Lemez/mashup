@@ -1,0 +1,13 @@
+{
+  "game" : {
+    "name" : "silent_cons_and_foreign",
+	"id" : 20,
+	"title" : "Silent Letters And Words With A Foreign Origin",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"In English we have many ways of spelling the same sound and some have letters that we do not pronounce at all, as in:\n‘k’ in know\n‘b’ in climb\n‘u’ in guitar\n\nSome word have foreign origins and we still use some of the spelling. The spelling often depends on where the word originates.\nFor example, these words words come from Greek:\nscheme, chemist, synchronise\n\nThese words come from Latin:\nscience, crescent, scene",
+	"focus" : "silent_cons_and_foreign",
+	"order_in_course" : 22
+  }
+}
+

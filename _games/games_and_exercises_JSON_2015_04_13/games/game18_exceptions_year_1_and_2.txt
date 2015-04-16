@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "exceptions_year_1_and_2",
+	"id" : 18,
+	"title" : "Spelling Exceptions",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"In this game you will see some words that are an exception to the spelling rules you learned.",
+	"focus" : "exceptions_year_1_and_2",
+	"order_in_course" : 3
+  }
+}

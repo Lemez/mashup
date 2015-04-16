@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "sounds_ow_aw_uw",
+	"id" : 9,
+	"title" : "Vowel Spellings 1",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"The focus of this game is on words that contain the vowel sounds /OW/, /AW/ and /UW/!",
+	"focus" : "sounds_ow_aw_uw",
+	"order_in_course" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "sounds_ih_iy",
+	"id" : 14,
+	"title" : "Vowel Spellings 3",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"The focus of this game is on words that contain the vowel sounds /IH/ and /IY/!",
+	"focus" : "sounds_ih_iy",
+	"order_in_course" : 9
+  }
+}

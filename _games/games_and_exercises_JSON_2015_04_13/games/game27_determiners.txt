@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "determiners",
+	"id" : 27,
+	"title" : "Articles",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"This game is about articles!",
+	"focus" : "determiners",
+	"order_in_course" : 4
+  }
+}

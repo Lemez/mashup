@@ -1,0 +1,35 @@
+{
+  "exercise" : {
+    "game_name" : "word_relations_and_families",
+	"game_id" : 6,
+	"exercise_name" : "synonyms",
+	"exercise_instructions" : "Mark the 3 synonyms in the text!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 1,
+	"title" : "Britney Spears",
+	"text_type" : "wikipedia",		
+	"text" : "Britney Jean Spears is an American singer and actress, who releases her own beauty care products and perfumes.\nShe launched her first fragrance called 'Curious' with Elizabeth Arden in 2004. By 2009, she had released seven more fragrances, including the popular perfume 'Fantasy', which earned her the recognition of the best-selling celebrity fragrance line on the market. The singer's Elizabeth Arden scents make up over a third of celebrity fragrance sales.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Britney Jean Spears is an American singer and actress, who releases her own beauty care products and perfumes.\n"},
+	  {"sentence_id" : 2, "sentence" : "She launched her first fragrance called 'Curious' with Elizabeth Arden in 2004."},
+	  {"sentence_id" : 3, "sentence" : "By 2009, she had released seven more fragrances, including the popular perfume 'Fantasy', which earned her the recognition of the best-selling celebrity fragrance line on the market."},
+	  {"sentence_id" : 4, "sentence" : "The singer's Elizabeth Arden scents make up over a third of celebrity fragrance sales."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "Britney Jean Spears is an American <-singer> and <-actress>, who <-releases> her <-own> <-beauty> <-care> <-products> and <+perfumes>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "She <-launched> her <-first> <+fragrance> <-called> 'Curious' with Elizabeth Arden in 2004."},
+	  {"sentence_id" : 3, "marked_sentence" : "By 2009, she had <-released> <-seven> more <+fragrances>, <-including> the <-popular> <+perfume> 'Fantasy', which <-earned> her the <-recognition> of the <-best-selling> <-celebrity> <+fragrance> <-line> on the <-market>."},
+	  {"sentence_id" : 4, "marked_sentence" : "The <-singer's> Elizabeth Arden <+scents> <-make> up over a <-third> of <-celebrity> <+fragrance> <-sales>."}
+	]
+  }
+}
+
+
+ 
+ 
+
+
+
+ 
+ 
+

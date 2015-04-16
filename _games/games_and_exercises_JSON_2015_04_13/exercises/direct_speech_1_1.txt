@@ -1,0 +1,37 @@
+{
+  "exercise" : {
+    "game_name" : "direct_speech",
+	"game_id" : 4,
+	"exercise_name" : "direct_speech_inverted_commas",
+	"exercise_instructions" : "Drag and drop the inverted commas into the right place to show where someone is speaking!",
+	"exercise_type" : "punctuation",
+	"order_in_game" : 1,
+	"title" : "Rihanna",
+	"text_type" : "wikipedia",	
+	"text" : "Rihanna is a singer from Barbados, who started her career by sending out a demo tape to various record labels.\nThe first one to respond was Jay-Z, the president and CEO of Def Jam Recordings.\nLooking back on the audition and meeting Jay-Z, Rihanna explained in an interview how she felt before walking into the room.\n‘That's when I really got nervous!’ she said. ‘I remember being extremely quiet. I was cold the entire time. I had butterflies. I'm sitting across from Jay-Z. Like, Jay-Zee! I was star-struck.’",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Rihanna is a singer from Barbados, who started her career by sending out a demo tape to various record labels.\n"},
+	  {"sentence_id" : 2, "sentence" : "The first one to respond was Jay-Z, the president and CEO of Def Jam Recordings.\n"},
+	  {"sentence_id" : 3, "sentence" : "Looking back on the audition and meeting Jay-Z, Rihanna explained in an interview how she felt before walking into the room.\n"},
+	  {"sentence_id" : 4, "sentence" : "‘That's when I really got nervous!’"},
+	  {"sentence_id" : 5, "sentence" : "she said."},
+	  {"sentence_id" : 6, "sentence" : "‘I remember being extremely quiet."},
+	  {"sentence_id" : 7, "sentence" : "I was cold the entire time."},
+	  {"sentence_id" : 8, "sentence" : "I had butterflies."},
+	  {"sentence_id" : 9, "sentence" : "I'm sitting across from Jay-Z."},
+	  {"sentence_id" : 10, "sentence" : "Like, Jay-Zee!"},
+	  {"sentence_id" : 11, "sentence" : "I was star-struck.’"}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 4, "correct_answers" : "‘|’", "gapped_sentence" : "<__>That's when I really got nervous!<__>"},
+	  {"sentence_id" : 6, "correct_answers" : "‘", "gapped_sentence" : "<__>I remember being extremely quiet."},
+	  {"sentence_id" : 11, "correct_answers" : "’", "gapped_sentence" : "I was star-struck.<__>"}
+	]
+  }
+}
+
+
+
+
+
+

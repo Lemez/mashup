@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "compounds",
+	"id" : 33,
+	"title" : "Compounds",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"This game is about compounds!",
+	"focus" : "compounds",
+	"order_in_course" : 13
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "exercise" : {
+    "game_name" : "sub_and_coordinate_clauses",
+	"game_id" : 22,
+	"exercise_name" : "coordinating_conjunctions",
+	"exercise_instructions" : "Mark all the coordinating conjunctions in this text!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 4,
+	"title" : "Katy Perry",
+	"text_type" : "wikipedia",	
+	"text" : "Katy Perry began training at age 9 and was incorporated into her parents' ministry, singing in church from ages 9 to 17.\nGrowing up, Katy Perry was not allowed to eat Lucky Charms because the term ‘luck’ reminded their mother of Lucifer.\nThere were speculations that her strictly religious parents may oppose her music and career, but Perry told MTV that they had no problems with her success.\nPerry is known for a fun-based sense of personal fashion that incorporates bright colours and food-based themes.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Katy Perry began training at age 9 and was incorporated into her parents' ministry, singing in church from ages 9 to 17.\n"},
+	  {"sentence_id" : 2, "sentence" : "Growing up, Katy Perry was not allowed to eat Lucky Charms because the term ‘luck’ reminded their mother of Lucifer.\n"},
+	  {"sentence_id" : 3, "sentence" : "There were speculations that her strictly religious parents may oppose her music and career, but Perry told MTV that they had no problems with her success.\n"},
+	  {"sentence_id" : 4, "sentence" : "Perry is known for a fun-based sense of personal fashion that incorporates bright colours and food-based themes.\n"}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<-Katy> <-Perry> <-began> <-training> <-at> <-age> <-9> <+and> <-was> <-incorporated> <-into> <-her> <-parents>' <-ministry>, <-singing> <-in> <-church> <-from> <-ages> <-9> <-to> <-17>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "<-Growing> <-up>, <-Katy> <-Perry> <-was> <-not> <-allowed> <-to> <-eat> <-Lucky> <-Charms> <-because> <-the> <-term> ‘<-luck>’ <-reminded> <-their> <-mother> <-of> <-Lucifer>.\n"},
+	  {"sentence_id" : 3, "marked_sentence" : "<-There> <-were> <-speculations> <-that> <-her> <-strictly> <-religious> <-parents> <-may> <-oppose> <-her> <-music> <+and> <-career>, <+but> <-Perry> <-told> <-MTV> <-that> <-they> <-had> <-no> <-problems> <-with> <-her> <-success>.\n"},
+	  {"sentence_id" : 4, "marked_sentence" : "<-Perry> <-is> <-known> <-for> <-a> <-fun-based> <-sense> <-of> <-personal> <-fashion> <-that> <-incorporates> <-bright> <-colours> <+and> <-food-based> <-themes>.\n"}
+	]
+  }
+}
+

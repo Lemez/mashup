@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "pronouns",
+	"id" : 28,
+	"title" : "Pronouns",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"This game is about pronouns!",
+	"focus" : "pronouns",
+	"order_in_course" : 5
+  }
+}

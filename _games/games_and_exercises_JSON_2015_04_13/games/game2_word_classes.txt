@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "word_classes",
+	"id" : 2,
+	"title" : "Word Classes",
+	"game_type" : "target",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"In this game you have to choose the right word class of the marked words in the lyrics.\nExamples of word classes are determiners like 'the' or pronouns like 'he'.",
+	"focus" : "word_classes",
+	"order_in_course" : 18
+  }
+}

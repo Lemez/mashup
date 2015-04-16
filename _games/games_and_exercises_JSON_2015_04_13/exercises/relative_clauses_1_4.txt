@@ -1,0 +1,31 @@
+{
+  "exercise" : {
+    "game_name" : "relative_clauses",
+	"game_id" : 23,
+	"exercise_name" : "relative_clauses",
+	"exercise_instructions" : "Have another go with this text!  Highlight all the words in the relative clauses!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 4,
+	"title" : "Robin Thicke",
+	"text_type" : "wikipedia",		
+	"text" : "Robin Thicke's father, who wanted him to focus on school studies, would not pay for Thicke's demo tape. Al Jarreau, who was the uncle of one of the group members, paid for the demo. It led to R&B artist Brian McKnight, who was impressed by Thicke, inviting Thicke to work with him in his studio.\n‘Anyway’, which was a song co-written with Thicke, was featured on McKnight's second album ‘I Remember You’.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Robin Thicke's father, who wanted him to focus on school studies, would not pay for Thicke's demo tape."},
+	  {"sentence_id" : 2, "sentence" : "Al Jarreau, who was the uncle of one of the group members, paid for the demo."},
+	  {"sentence_id" : 3, "sentence" : "It led to R&B artist Brian McKnight, who was impressed by Thicke, inviting Thicke to work with him in his studio.\n"},
+	  {"sentence_id" : 4, "sentence" : "‘Anyway’, which was a song co-written with Thicke, was featured on McKnight's second album ‘I Remember You’."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<-Robin> <-Thicke's> <-father,> <+who> <+wanted> <+him> <+to> <+focus> <+on> <+school> <+studies>, <-would> <-not> <-pay> <-for> <-Thicke's> <-demo> <-tape>."},
+	  {"sentence_id" : 2, "marked_sentence" : "<-Al> <-Jarreau>, <+who> <+was> <+the> <+uncle> <+of> <+one> <+of> <+the> <+group> <+members>, <-paid> <-for> <-the> <-demo>."},
+	  {"sentence_id" : 3, "marked_sentence" : "<-It> <-led> <-to> <-R&B> <-artist> <-Brian> <-McKnight>, <+who> <+was> <+impressed> <+by> <+Thicke>, <-inviting> <-Thicke> <-to> <-work> <-with> <-him> <-in> <-his> <-studio>.\n"},
+	  {"sentence_id" : 4, "marked_sentence" : "‘<-Anyway>’, <+which> <+was> <+a> <+song> <+co-written> <+with> <+Thicke>, <-was> <-featured> <-on> <-McKnight's> <-second> <-album> ‘<-I> <-Remember> <-You>’."}
+	]
+  }
+}
+
+
+
+ 
+ 
+

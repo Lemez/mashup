@@ -1,0 +1,29 @@
+{
+  "exercise" : {
+    "game_name" : "word_relations_and_families",
+	"game_id" : 6,
+	"exercise_name" : "antonyms",
+	"exercise_instructions" : "Mark the two antonyms in the text.\nAntonyms are words with opposite meaning, for example the verbs ‘start’ and ‘stop’.",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 2,
+	"title" : "Justin Timberlake",
+	"text_type" : "wikipedia",			
+	"text" : "Justin Randall Timberlake is an American singer, songwriter, and actor.\nIn the late 1990s, Timberlake became famous as a vocalist and youngest member of the boy band NSYNC, which eventually became one of the best-selling boy bands of all time.\nBeginning in 2002, Timberlake released two solo albums, first spawning the hit 'Cry Me a River', followed by 'Rock Your Body'.\nThe rise of his own stardom and the decline in the popularity of boy bands led to the dissolution of NSYNC.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Justin Randall Timberlake is an American singer, songwriter, and actor.\n"},
+	  {"sentence_id" : 2, "sentence" : "In the late 1990s, Timberlake became famous as a vocalist and youngest member of the boy band NSYNC, which eventually became one of the best-selling boy bands of all time.\n"},
+	  {"sentence_id" : 3, "sentence" : "Beginning in 2002, Timberlake released two solo albums, first spawning the hit ‘Cry Me a River’, followed by ‘Rock Your Body’.\n"},
+	  {"sentence_id" : 4, "sentence" : "The rise of his own stardom and the decline in the popularity of boy bands led to the dissolution of NSYNC."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "Justin Randall Timberlake is an American <-singer>, <-songwriter>, and <-actor>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "In the <-late> 1990s, Timberlake <-became> <-famous> as a <-vocalist> and <-youngest> <-member> of the <-boy> <-band> NSYNC, which <-eventually> <-became> one of the <-best-selling> <-boy> <-bands> of <-all> <-time>.\n"},
+	  {"sentence_id" : 3, "marked_sentence" : "<-Beginning> in 2002, Timberlake <-released> two <-solo> <-albums>, <-first> <-spawning> the <-hit> ‘Cry Me a River’, <-followed> by ‘Rock Your Body’.\n"},
+	  {"sentence_id" : 4, "marked_sentence" : "The <+rise> of his <-own> <-stardom> and the <+decline> in the <-popularity> of <-boy> <-bands> <-led> to the <-dissolution> of NSYNC."}
+	]  	
+  }
+}
+
+
+
+

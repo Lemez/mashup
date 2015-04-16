@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "double_cons",
+	"id" : 19,
+	"title" : "Double and Single Consonants",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"This game is on double and single consonants.",
+	"focus" : "double_cons",
+	"order_in_course" : 11
+  }
+}

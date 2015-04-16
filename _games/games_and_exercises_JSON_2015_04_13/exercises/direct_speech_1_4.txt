@@ -1,0 +1,32 @@
+{
+  "exercise" : {
+    "game_name" : "direct_speech",
+	"game_id" : 4,
+	"exercise_name" : "direct_speech_all",
+	"exercise_instructions" : "Drag and drop the correct punctuation into the following text!",
+	"exercise_type" : "punctuation",
+	"order_in_game" : 4,
+	"title" : "Taylor Swift",
+	"text_type" : "wikipedia",	
+	"text" : "Taylor Alison Swift is an American singer-songwriter, who started her career in country music.\nShe became the first country music artist to win an MTV Video Music Award when ‘You Belong with Me’ was named Best Female Video in 2009.\nHer acceptance speech was interrupted by rapper Kanye West.\n‘I’m really happy for you and I am going to let you finish,’ he said, ‘but Beyoncé had one of the best videos of all time.’\nIn an interview, Swift says about the incident, ‘I’m not gonna say that I wasn’t rattled by it. I had to perform live five minutes later.’",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Taylor Alison Swift is an American singer-songwriter, who started her career in country music.\n"},
+	  {"sentence_id" : 2, "sentence" : "She became the first country music artist to win an MTV Video Music Award when ‘You Belong with Me’ was named Best Female Video in 2009.\n"},
+	  {"sentence_id" : 3, "sentence" : "Her acceptance speech was interrupted by rapper Kanye West.\n"},
+	  {"sentence_id" : 4, "sentence" : "‘I’m really happy for you and I am going to let you finish,’ he said, ‘but Beyoncé had one of the best videos of all time.’\n"},
+	  {"sentence_id" : 5, "sentence" : "In an interview, Swift says about the incident, ‘I’m not gonna say that I wasn’t rattled by it."},
+	  {"sentence_id" : 6, "sentence" : "I had to perform live five minutes later.’"}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 4, "correct_answers" : "‘|,|’|,|‘|.|’", "gapped_sentence" : "<__>I’m really happy for you and I am going to let you finish<__><__> he said<__> <__>but Beyoncé had one of the best videos of all time<__><__>\n"},
+	  {"sentence_id" : 5, "correct_answers" : ",|‘", "gapped_sentence" : "In an interview, Swift says about the incident<__> <__>I’m not gonna say that I wasn’t rattled by it."},
+	  {"sentence_id" : 6, "correct_answers" : "’", "gapped_sentence" : "I had to perform live five minutes later.<__>"}
+	]
+  }
+}
+
+
+
+
+
+  

@@ -1,0 +1,28 @@
+{
+  "exercise" : {
+    "game_name" : "vocab_year_6",
+	"game_id" : 3,
+	"exercise_name" : "vocab_year_6",
+	"exercise_instructions" : "Choose the correct words from the list to make this text make sense!",
+	"exercise_type" : "vocabulary",
+	"order_in_game" : 3,
+	"title" : "Bruno Mars",
+	"text_type" : "wikipedia",
+	"text" : "Bruno Mars became recognised as a solo artist after producing songs for other artists. He was born in Honolulu, Hawaii to a family of excellent musicians.\nHe was determined to pursue his musical career and moved to L.A. after graduating from high school.\nIn October 2010, he released his album ‘Doo-Wops & Hooligans’ and has since achieved fame as an award-winning artist.\nHe is privileged to be accompanied by his band, The Hooligans, who are excellent performers on a variety of instruments.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Bruno Mars became recognised as a solo artist after producing songs for other artists."},
+	  {"sentence_id" : 2, "sentence" : "He was born in Honolulu, Hawaii to a family of excellent musicians.\n"},
+	  {"sentence_id" : 3, "sentence" : "He was determined to pursue his musical career and moved to L.A. after graduating from high school.\n"},
+	  {"sentence_id" : 4, "sentence" : "In October 2010, he released his album ‘Doo-Wops & Hooligans’ and has since achieved fame as an award-winning artist.\n"},
+	  {"sentence_id" : 5, "sentence" : "He is privileged to be accompanied by his band, The Hooligans, who are excellent performers on a variety of instruments."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : "recognised", "gapped_sentence" : "Bruno Mars became <__> as a solo artist after producing songs for other artists."},
+	  {"sentence_id" : 2, "correct_answers" : "excellent", "gapped_sentence" : "He was born in Honolulu, Hawaii to a family of <__> musicians.\n"},
+	  {"sentence_id" : 3, "correct_answers" : "determined", "gapped_sentence" : "He was <__> to pursue his musical career and moved to L.A. after graduating from high school.\n"},
+	  {"sentence_id" : 4, "correct_answers" : "achieved", "gapped_sentence" : "In October 2010, he released his album ‘Doo-Wops & Hooligans’ and has since <__> fame as an award-winning artist.\n"},
+	  {"sentence_id" : 5, "correct_answers" : "accompanied|excellent|variety", "gapped_sentence" : "He is privileged to be <__> by his band, The Hooligans, who are <__> performers on a <__> of instruments."}
+	]
+  }	
+}
+

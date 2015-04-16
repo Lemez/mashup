@@ -2,26 +2,26 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,351
-<font size=24px>I'd jump in front of a</font><font color=#ffff00 size=24px><b> train </b></font><font size=24px>for you</font>
+00:00:00,001 --> 00:00:06,141
+<font size=24px>I see</font><font color=#ffff00 size=24px><b> ascending </b></font><font size=24px>light upon a hill</font>
 
 3
-00:00:05,351 --> 00:00:10,251
-<font size=24px>To fill my days and</font><font color=#ffff00 size=24px><b> nights </b></font><font size=24px>with something</font>
-
-4
-00:00:10,251 --> 00:00:15,811
-<font size=24px>He</font><font color=#ffff00 size=24px><b> knelt </b></font><font size=24px>to the ground and pulled out a ring and said</font>
-
-5
-00:00:15,811 --> 00:00:20,531
+00:00:06,141 --> 00:00:10,861
 <font size=24px>Caused by</font><font color=#ffff00 size=24px><b> absence </b></font><font size=24px>of you</font>
 
+4
+00:00:10,861 --> 00:00:15,561
+<font size=24px>Take a bullet straight through my</font><font color=#ffff00 size=24px><b> brain </b></font><font size=24px></font>
+
+5
+00:00:15,561 --> 00:00:21,121
+<font size=24px>He</font><font color=#ffff00 size=24px><b> knelt </b></font><font size=24px>to the ground and pulled out a ring and said</font>
+
 6
-00:00:20,531 --> 00:00:25,171
-<font size=24px>While I walk alone in the</font><font color=#ffff00 size=24px><b> rain </b></font><font size=24px></font>
+00:00:21,121 --> 00:00:27,781
+<font size=24px>These words will be</font><font color=#ffff00 size=24px><b> written </b></font><font size=24px>on my stone</font>
 
 7
-00:00:25,171 --> 00:00:34,031
-<font size=24px></font><font color=#ffff00 size=24px><b> Written </b></font><font size=24px>on these walls are the colors that I can't change</font>
+00:00:27,781 --> 00:00:33,131
+<font size=24px>I'd jump in front of a</font><font color=#ffff00 size=24px><b> train </b></font><font size=24px>for you</font>
 

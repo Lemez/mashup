@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "affixes",
+	"id" : 32,
+	"title" : "Suffixes and Prefixes",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"This game is about suffixes and prefixes!",
+	"focus" : "affixes",
+	"order_in_course" : 12
+  }
+}

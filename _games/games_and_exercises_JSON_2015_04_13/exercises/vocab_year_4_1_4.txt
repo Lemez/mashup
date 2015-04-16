@@ -1,0 +1,25 @@
+{
+  "exercise" : {
+    "game_name" : "vocab_year_4",
+	"game_id" : 25,
+	"exercise_name" : "vocab_year_4",
+	"exercise_instructions" : "Choose the correct words from the list to make this text make sense!",
+	"exercise_type" : "vocabulary",
+	"order_in_game" : 4,
+	"title" : "Britney Spears",
+	"text_type" : "wikipedia",
+	"text" : "In 2009, Britney Spears was ranked as the eighth top selling artist in America. She also became the best-selling female artist of the first ten years of the 21st century.\nWhen she was 10 years old, she was cast in the favourite TV show ‘The Mickey Mouse Club’. Spears said ‘I found out what I'm supposed to do at an early age’.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "In 2009, Britney Spears was ranked as the eighth top selling artist in America."},
+	  {"sentence_id" : 2, "sentence" : "She also became the best-selling female artist of the first ten years of the 21st century.\n"},
+	  {"sentence_id" : 3, "sentence" : "When she was 10 years old, she was cast in the favourite TV show ‘The Mickey Mouse Club’."},
+	  {"sentence_id" : 4, "sentence" : "Spears said ‘I found out what I'm supposed to do at an early age’."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : "eighth", "gapped_sentence" : "In 2009, Britney Spears was ranked as the <__> top selling artist in America."},
+	  {"sentence_id" : 2, "correct_answers" : "century", "gapped_sentence" : "She also became the best-selling female artist of the first ten years of the 21st <__>.\n"},
+	  {"sentence_id" : 3, "correct_answers" : "favourite", "gapped_sentence" : "When she was 10 years old, she was cast in the <__> TV show ‘The Mickey Mouse Club’."},
+	  {"sentence_id" : 4, "correct_answers" : "supposed|early", "gapped_sentence" : "Spears said ‘I found out what I'm <__> to do at an <__> age’."}
+	]
+  }	
+}

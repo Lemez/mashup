@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "commas",
+	"id" : 24,
+	"title" : "Commas",
+	"game_type" : "punctuation",
+	"game_instructions" : "Drag and drop the commas into the right place!",		
+	"explanation" :	"Commas are used to make sentences easier to understand. They are used in different ways depending on the way a sentences are put together.\n\nWhen there is list of things in a sentence, commas are used like this:\nI listen to music on my phone, computer, car radio and games console.\nCommas help to show where  the direct speech is in a sentence:\nMy friend Majid  said, ‘I like this game too.’\n\nFronted adverbials have a comma after them, like this:\nBefore you start playing this game, make sure you know the rules.\n\nSubordinate clause have commas around them, like this:\nAnnie, who was very tired, fell asleep while reading her book.\n",
+	"focus" : "commas",
+	"order_in_course" : 15
+  }
+}

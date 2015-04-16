@@ -1,0 +1,28 @@
+{
+  "exercise" : {
+    "game_name" : "vocab_year_6",
+	"game_id" : 3,
+	"exercise_name" : "vocab_year_6",
+	"exercise_instructions" : "Choose the correct words from the list to make this text make sense!",
+	"exercise_type" : "vocabulary",
+	"order_in_game" : 5,
+	"title" : "Beyoncé",
+	"text_type" : "wikipedia",
+	"text" : "Beyoncé says that she is a ‘modern-day feminist’. Girls often find her songs are relevant to them. The themes of love, relationships and girl-power often occur in them.\nOn stage, her dynamic and highly individual performances have been especially praised, although they sometimes cause controversy. They are appreciated by critics and fans. It is not surprising that her fans queue for hours for tickets to her shows.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Beyoncé says that she is a ‘modern-day feminist’."},
+	  {"sentence_id" : 2, "sentence" : "Girls often find her songs are relevant to them."},
+	  {"sentence_id" : 3, "sentence" : "The themes of love, relationships and girl-power often occur in them.\n"},
+	  {"sentence_id" : 4, "sentence" : "On stage, her dynamic and highly individual performances have been especially praised, although they sometimes cause controversy."},
+	  {"sentence_id" : 5, "sentence" : "They are appreciated by critics and fans."},
+	  {"sentence_id" : 6, "sentence" : "It is not surprising that her fans queue for hours for tickets to her shows."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 2, "correct_answers" : "relevant", "gapped_sentence" : "Girls often find her songs are <__> to them."},
+	  {"sentence_id" : 3, "correct_answers" : "occur", "gapped_sentence" : "The themes of love, relationships and girl-power often <__> in them.\n"},
+	  {"sentence_id" : 4, "correct_answers" : "individual|especially|sometimes|controversy", "gapped_sentence" : "On stage, her dynamic and highly <__> performances have been <__> praised, although they <__> cause <__>."},
+	  {"sentence_id" : 5, "correct_answers" : "appreciated", "gapped_sentence" : "They are <__> by critics and fans."},
+	  {"sentence_id" : 6, "correct_answers" : "queue", "gapped_sentence" : "It is not surprising that her fans <__> for hours for tickets to her shows."}
+	]
+  }	
+}

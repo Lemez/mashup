@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "vocab_year_4",
+	"id" : 25,
+	"title" : "Words, Words, Words",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"In this game, you will learn some new words.",
+	"focus" : "vocab_year_4",
+	"order_in_course" : 16
+  }
+}

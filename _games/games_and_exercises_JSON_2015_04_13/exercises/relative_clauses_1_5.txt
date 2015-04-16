@@ -1,0 +1,25 @@
+{
+  "exercise" : {
+    "game_name" : "relative_clauses",
+	"game_id" : 23,
+	"exercise_name" : "comma_relative_clauses",
+	"exercise_instructions" : "Let’s try it one last time! Mark all words that are part of a relative clause!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 5,
+	"title" : "Christina Aguilera",
+	"text_type" : "wikipedia",	
+	"text" : "Christina Aguilera is an American singer, songwriter and actress.\nThe single that paved her way into the international pop charts, ‘Genie In A Bottle’, climbed on top of the Billboard 200 in 1999.\nIn 2000, Christina Aguilera released her first Spanish-language album ‘Mi Reflejo’, which sold over three million copies worldwide.\nAguilera, who is also involved in charitable activities supporting human rights, is also a UN ambassador for the World Food Programme.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Christina Aguilera is an American singer, songwriter and actress.\n"},
+	  {"sentence_id" : 2, "sentence" : "The single that paved her way into the international pop charts, ‘Genie In A Bottle’, climbed on top of the Billboard 200 in 1999.\n"},
+	  {"sentence_id" : 3, "sentence" : "In 2000, Christina Aguilera released her first Spanish-language album ‘Mi Reflejo’, which sold over three million copies worldwide.\n"},
+	  {"sentence_id" : 4, "sentence" : "Aguilera, who is also involved in charitable activities supporting human rights, is also a UN ambassador for the World Food Programme."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<-Christina> <-Aguilera> <-is> <-an> <-American> <-singer>, <-songwriter> <-and> <-actress>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "<-The> <-single> <+that> <+paved> <+her> <+way> <+into> <+the> <+international> <+pop> <+charts>. ‘<-Genie> <-In> <-A> <-Bottle>’, <-climbed> <-on> <-top> <-of> <-the> <-Billboard> <-200> <-in> <-1999>.\n"},
+	  {"sentence_id" : 3, "marked_sentence" : "<-In> <-2000>, <-Christina> <-Aguilera> <-released> <-her> <-first> <-Spanish-language> <-album> ‘<-Mi> <-Reflejo>’, <+which> <+sold> <+over> <+three> <+million> <+copies> <+worldwide>.\n"},
+	  {"sentence_id" : 4, "marked_sentence" : "<-Aguilera>, <+who> <+is> <+also> <+involved> <+in> <+charitable> <+activities> <+supporting> <+human> <+rights>, <-is> <-also> <-a> <-UN> <-ambassador> <-for> <-the> <-World> <-Food> <-Programme>."}
+	]
+  }
+}

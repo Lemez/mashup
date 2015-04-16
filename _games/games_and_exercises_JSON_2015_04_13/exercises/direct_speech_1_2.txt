@@ -1,0 +1,32 @@
+{
+  "exercise" : {
+    "game_name" : "direct_speech",
+	"game_id" : 4,
+	"exercise_name" : "direct_speech_commas",
+	"exercise_instructions" : "Drag and drop the commas to show where direct speech is in the text  below!",
+	"exercise_type" : "punctuation",
+	"order_in_game" : 2,
+	"title" : "Rihanna",
+	"text_type" : "wikipedia",	
+	"text" : "Looking back on the audition and meeting Jay-Z, Rihanna explained in an interview how she felt before walking into the room.\nShe admitted, ‘That's when I really got nervous. I remember being extremely quiet.’\nShe was cold the entire time.\n‘I had butterflies.’ she said, ‘I'm sitting across from Jay-Z. Like, Jay-Zee! I was star-struck.’",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Looking back on the audition and meeting Jay-Z, Rihanna explained in an interview how she felt before walking into the room.\n"},
+	  {"sentence_id" : 2, "sentence" : "She admitted, ‘That's when I really got nervous."},
+	  {"sentence_id" : 3, "sentence" : "I remember being extremely quiet.’\n"},
+	  {"sentence_id" : 4, "sentence" : "She was cold the entire time.\n"},
+	  {"sentence_id" : 5, "sentence" : "‘I had butterflies.’ she said,"},
+	  {"sentence_id" : 6, "sentence" : "‘I'm sitting across from Jay-Z."},
+	  {"sentence_id" : 7, "sentence" : "Like, Jay-Zee!"},
+	  {"sentence_id" : 8, "sentence" : "I was star-struck.’"}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 2, "correct_answers" : ",", "gapped_sentence" : "She admitted<__> ‘That's when I really got nervous."},
+	  {"sentence_id" : 5, "correct_answers" : ",", "gapped_sentence" : "‘I had butterflies.’ she said<__>"}
+	]
+  }
+}
+
+
+
+
+

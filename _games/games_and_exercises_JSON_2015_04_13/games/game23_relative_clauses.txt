@@ -1,0 +1,17 @@
+{
+  "game" : {
+    "name" : "relative_clauses",
+	"id" : 23,
+	"title" : "Relative Clauses",
+	"game_type" : "select_in_text",
+	"game_instructions" : "Select the correct words!",		
+	"explanation" :	"A relative pronoun is a pronoun that introduces a relative clause. It is called a ‘relative’ pronoun because it ‘relates’ to the word that its relative clause modifies.\nTo modify a word or clause means it makes it more specific.\nIn a sentence it works like this:\nTed, who was wearing a red T-shirt, looked smarter than his friends.\n\nIn this sentence ‘who was wearing a red T-shirt’ gives more information about Ted.\nIf the relative clause gives additional information about the noun it describes, it has to be surrounded by commas as above.\n\nHowever, sometimes the information in the relative clause is essential to understand who or what exactly is meant. In this case you don’t have to put any commas around the relative clause:\nThe girl that I saw yesterday was sitting next to me on the tube today.\n",
+	"focus" : "relative_clauses",
+	"order_in_course" : 20
+  }
+}
+
+
+
+
+

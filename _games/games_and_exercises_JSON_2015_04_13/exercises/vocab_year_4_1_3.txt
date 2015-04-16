@@ -1,0 +1,26 @@
+{
+  "exercise" : {
+    "game_name" : "vocab_year_4",
+	"game_id" : 25,
+	"exercise_name" : "vocab_year_4",
+	"exercise_instructions" : "Choose the correct words from the list to make this text make sense!",
+	"exercise_type" : "vocabulary",
+	"order_in_game" : 3,
+	"title" : "Daft Punk",
+	"text_type" : "wikipedia",
+	"text" : "Daft Punk come from France and their songs are considered essential in the French house music scene.\nThe group was managed from by Pedro Winter.\nEarly in their career, the band members were particularly influenced by groups like The Beach Boys and The Rolling Stones.\nThe duo rarely grant interviews or appear on television.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Daft Punk come from France and their songs are considered essential in the French house music scene.\n"},
+	  {"sentence_id" : 2, "sentence" : "The group was managed from by Pedro Winter.\n"},
+	  {"sentence_id" : 3, "sentence" : "Early in their career, the band members were particularly influenced by groups like The Beach Boys and The Rolling Stones.\n"},
+	  {"sentence_id" : 4, "sentence" : "The duo rarely grant interviews or appear on television."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : "considered", "gapped_sentence" : "Daft Punk come from France and their songs are <__> essential in the French house music scene.\n"},
+	  {"sentence_id" : 2, "correct_answers" : "group", "gapped_sentence" : "The <__> was managed from by Pedro Winter.\n"},
+	  {"sentence_id" : 3, "correct_answers" : "particularly|groups", "gapped_sentence" : "Early in their career, the band members were <__> influenced by <__> like The Beach Boys and The Rolling Stones.\n"},
+	  {"sentence_id" : 4, "correct_answers" : "appear", "gapped_sentence" : "The duo rarely grant interviews or <__> on television."}
+	]
+  }	
+}
+

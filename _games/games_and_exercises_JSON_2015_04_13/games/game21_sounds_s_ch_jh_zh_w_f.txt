@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "sounds_s_ch_jh_zh_w_f",
+	"id" : 21,
+	"title" : "Consonant Sounds S, Ch, Jh, Zh, W and F",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"This game is on consonant spellings of the sounds S, Ch, Jh, Zh, W and F.",
+	"focus" : "sounds_s_ch_jh_zh_w_f",
+	"order_in_course" : 2
+  }
+}

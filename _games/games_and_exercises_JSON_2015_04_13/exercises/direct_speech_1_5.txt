@@ -1,0 +1,27 @@
+{
+  "exercise" : {
+    "game_name" : "direct_speech",
+	"game_id" : 4,
+	"exercise_name" : "direct_speech_all",
+	"exercise_instructions" : "Drag and drop the correct punctuation into the following text!",
+	"exercise_type" : "punctuation",
+	"order_in_game" : 5,
+	"title" : "Taylor Swift",
+	"text_type" : "wikipedia",
+	"text" : "A few days later, Taylor Swift told an interviewer that West offered her a personal apology, which she accepted.\n‘He was very sincere.’ she said.\nShe refused to discuss the incident in subsequent interviews so as not to make a ‘bigger deal’ of it. ‘It happened on TV so everybody saw what happened.’ she said. ‘It's not something I feel like we need to keep talking about.’\nIt has been said that the incident and subsequent media attention turned Swift into a mainstream celebrity.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "A few days later, Taylor Swift told an interviewer that West offered her a personal apology, which she accepted.\n"},
+	  {"sentence_id" : 2, "sentence" : "‘He was very sincere.’"},
+	  {"sentence_id" : 3, "sentence" : "she said.\n"},
+	  {"sentence_id" : 4, "sentence" : "She refused to discuss the incident in subsequent interviews so as not to make a ‘bigger deal’ of it."},
+	  {"sentence_id" : 5, "sentence" : "‘It happened on TV so everybody saw what happened.’ she said."},
+	  {"sentence_id" : 6, "sentence" : "‘It's not something I feel like we need to keep talking about.’\n"},
+	  {"sentence_id" : 7, "sentence" : "It has been said that the incident and subsequent media attention turned Swift into a mainstream celebrity."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 2, "correct_answers" : "‘|.|’", "gapped_sentence" : "<__>He was very sincere<__><__>"},
+	  {"sentence_id" : 5, "correct_answers" : "‘|.|’|.", "gapped_sentence" : "<__>It happened on TV so everybody saw what happened<__><__> she said<__>"},
+	  {"sentence_id" : 6, "correct_answers" : "‘|.|’", "gapped_sentence" : "<__>It's not something I feel like we need to keep talking about<__><__>\n"}
+	]
+  }
+}

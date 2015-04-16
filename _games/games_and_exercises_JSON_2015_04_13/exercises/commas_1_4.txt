@@ -1,0 +1,23 @@
+{
+  "exercise" : {
+    "game_name" : "commas",
+	"game_id" : 24,
+	"exercise_name" : "commas",
+	"exercise_instructions" : "Move the commas to punctuate these sentences correctly.",
+	"exercise_type" : "punctuation",
+	"order_in_game" : 4,
+	"title" : "Ariana Grande",
+	"text_type" : "wikipedia",
+	"text" : "Ariana Grande-Butera, known professionally as Ariana Grande, is an American actress and singer-songwriter.\nFrom 2010 to 2013, she played Cat Valentine on the Nickelodeon sitcom ‘Victorious’ and played that role again on the spin-off ‘Sam & Cat’.\nBefore appearing on Nickelodeon, Grande played Charlotte in the musical ‘13’ on Broadway and later won an award for the performance.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Ariana Grande-Butera, known professionally as Ariana Grande, is an American actress and singer-songwriter.\n"},
+	  {"sentence_id" : 2, "sentence" : "From 2010 to 2013, she played Cat Valentine on the Nickelodeon sitcom ‘Victorious’ and played that role again on the spin-off ‘Sam & Cat’.\n"},
+	  {"sentence_id" : 3, "sentence" : "Before appearing on Nickelodeon, Grande played Charlotte in the musical ‘13’ on Broadway and later won an award for the performance."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : ",|,", "gapped_sentence" : "Ariana Grande-Butera<__> known professionally as Ariana Grande<__> is an American actress and singer-songwriter.\n"},
+	  {"sentence_id" : 2, "correct_answers" : ",", "gapped_sentence" : "From 2010 to 2013<__> she played Cat Valentine on the Nickelodeon sitcom ‘Victorious’ and played that role again on the spin-off ‘Sam & Cat’.\n"},
+	  {"sentence_id" : 3, "correct_answers" : ",", "gapped_sentence" : "Before appearing on Nickelodeon<__> Grande played Charlotte in the musical ‘13’ on Broadway and later won an award for the performance."}
+	]
+  }
+}

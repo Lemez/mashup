@@ -1,0 +1,14 @@
+{
+  "game" : {
+    "name" : "sub_and_coordinate_clauses",
+	"id" : 22,
+	"title" : "Subordination and Coordination",
+	"game_type" : "select_in_text",
+	"game_instructions" : "Select the correct words!",		
+	"explanation" :	"A subordinate clause cannot stand on its own in a sentence but it adds meaning to the sentence’s main clause. Consider the following sentence:\nShe watched her friend as she walked down the road.\nIn this sentence, ‘as she walked down the road’ is a subordinate clause. A subordinate clause starts with a subordinating conjunction in this case being 'as'.\n\nWhen two clauses that can both appear on their own (independent clauses) are conjoined into one sentence, they are connected with a coordinating conjunction:\nI like apples but Jane likes pears.\nHere, ‘but’ is the coordinating conjunction and the two clauses that it connect could both be a sentence of their own.",
+	"focus" : "sub_and_coordinate_clauses",
+	"order_in_course" : 6
+  }
+}
+
+

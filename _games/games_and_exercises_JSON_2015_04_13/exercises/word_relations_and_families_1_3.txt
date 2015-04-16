@@ -1,0 +1,32 @@
+{
+  "exercise" : {
+    "game_name" : "word_relations_and_families",
+	"game_id" : 6,
+	"exercise_name" : "word_family",
+	"exercise_instructions" : "Mark the words that are in the same word family as the verb ‘to act’",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 3,
+	"title" : "Anna Kendrick",
+	"text_type" : "wikipedia",			
+	"text" : "Anna Kendrick is an American actress and singer.\nShe rose to international fame for her acting performance in ‘Up in the Air’, for which she received an Academy Award.\nKendrick was born in Portland, Maine, but she is actually of English, Irish and Scottish descent.\nShe has an older brother who is also an actor.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Anna Kendrick is an American actress and singer.\n"},
+	  {"sentence_id" : 2, "sentence" : "She rose to international fame for her acting performance in ‘Up in the Air’, for which she received an Academy Award.\n"},
+	  {"sentence_id" : 3, "sentence" : "Kendrick was born in Portland, Maine, but she is actually of English, Irish and Scottish descent.\n"},
+	  {"sentence_id" : 4, "sentence" : "She has an older brother who is also an actor.\n"}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "Anna Kendrick is an <-American> <+actress> and <-singer>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "She <-rose> to <-international> <-fame> for her <+acting> <-performance> in ‘Up in the <-Air>’, for which she <-received> an <-Academy> <-Award>.\n"},
+	  {"sentence_id" : 3, "marked_sentence" : "Kendrick was born in Portland, Maine, but she is <+actually> of <-English>, <-Irish> and <-Scottish> <-descent>.\n"},
+	  {"sentence_id" : 4, "marked_sentence" : "She has an <-older> <-brother> who is also an <+actor>."}
+	]  	
+  }
+}
+
+
+
+
+
+
+

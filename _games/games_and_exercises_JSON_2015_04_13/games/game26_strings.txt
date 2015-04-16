@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "strings",
+	"id" : 26,
+	"title" : "Common Letter Strings",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",	
+	"explanation" :	"In this game, you will see some familiar letter stings. Sometimes, a sound can be written in different ways, which can be quite complicated!",
+	"focus" : "strings",
+	"order_in_course" : 14
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "exercise" : {
+    "game_name" : "vocab_year_4",
+	"game_id" : 25,
+	"exercise_name" : "vocab_year_4",
+	"exercise_instructions" : "Choose the correct words from the list to make this text make sense!",
+	"exercise_type" : "vocabulary",
+	"order_in_game" : 1,
+	"title" : "Lady Gaga",
+	"text_type" : "wikipedia",
+	"text" : "Lady Gaga came to notice with the success of her first album. She is now considered to be one of the world’s top artists.\nShe likes to experiment with fashion. She is remembered for using strange materials such as beef steaks to make her stage dresses.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Lady Gaga came to notice with the success of her first album."},
+	  {"sentence_id" : 2, "sentence" : "She is now considered to be one of the world’s top artists.\n"},
+	  {"sentence_id" : 3, "sentence" : "She likes to experiment with fashion."},
+	  {"sentence_id" : 4, "sentence" : "She is remembered for using strange materials such as beef steaks to make her stage dresses."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : "notice", "gapped_sentence" : "Lady Gaga came to <__> with the success of her first album."},
+	  {"sentence_id" : 2, "correct_answers" : "considered", "gapped_sentence" : "She is now <__> to be one of the world’s top artists.\n"},
+	  {"sentence_id" : 3, "correct_answers" : "experiment", "gapped_sentence" : "She likes to <__> with fashion."},
+	  {"sentence_id" : 4, "correct_answers" : "remembered|strange|materials", "gapped_sentence" : "She is <__> for using <__> <__> such as beef steaks to make her stage dresses."}
+	]
+  }	
+}

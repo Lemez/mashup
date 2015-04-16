@@ -1,0 +1,24 @@
+{
+  "exercise" : {
+    "game_name" : "sub_and_coordinate_clauses",
+	"game_id" : 22,
+	"exercise_name" : "subordinate_clauses",
+	"exercise_instructions" : "Find the subordinate clauses and highlight all the words in them!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 3,
+	"title" : "Katy Perry",
+	"text_type" : "wikipedia",	
+	"text" : "After her relationship with singer Travie McCoy ended, Katy Perry met her future husband Russell Brand in the summer of 2009.\nShe married Russell Brand in 2010, in a traditional Hindu ceremony in Rajasthan.\nRussell Brand announced on December 30, 2011, that he and Katy Perry were divorcing after 14 months of marriage.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "After her relationship with singer Travie McCoy ended, Katy Perry met her future husband Russell Brand in the summer of 2009.\n"},
+	  {"sentence_id" : 2, "sentence" : "She married Russell Brand in 2010, in a traditional Hindu ceremony in Rajasthan.\n"},
+	  {"sentence_id" : 3, "sentence" : "Russell Brand announced on December 30, 2011, that he and Katy Perry were divorcing after 14 months of marriage."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<+After> <+her> <+relationship> <+with> <+singer> <+Travie> <+McCoy> <+ended>, <-Katy> <-Perry> <-met> <-her> <-future> <-husband> <-Russell> <-Brand> <-in> <-the> <-summer> <-of> <-2009>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "<-She> <-married> <-Russell> <-Brand> <-in> <-2010>, <-in> <-a> <-traditional> <-Hindu> <-ceremony> <-in> <-Rajasthan>.\n"},
+	  {"sentence_id" : 3, "marked_sentence" : "<-Russell> <-Brand> <-announced> <-on> <-December> <-30>, <-2011>, <+that> <+he> <+and> <+Katy> <+Perry> <+were> <+divorcing> <+after> <+14> <+months> <+of> <+marriage>."}
+	]
+  }
+}
+

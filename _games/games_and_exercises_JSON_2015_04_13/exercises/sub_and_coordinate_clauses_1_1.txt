@@ -1,0 +1,40 @@
+{
+  "exercise" : {
+    "game_name" : "sub_and_coordinate_clauses",
+	"game_id" : 22,
+	"exercise_name" : "subordinate_clauses",
+	"exercise_instructions" : "Find the subordinate clauses and highlight all the words in them!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 1,
+	"title" : "Katy Perry",
+	"text_type" : "wikipedia",		
+	"text" : "Katheryn Elizabeth Hudson, better know as Katy Perry, was born in Santa Barbara, California, to Pentecostal pastors Maurice Keith Hudson and Mary Christine Perry.\nHer family struggled financially, sometimes using food stamps and eating from the food bank.\nPerry primarily listened to gospel music as other music was generally discouraged in the family's home. She discovered popular music through CDs that she sneaked from her friends.\nAlthough she is not strictly identifying as religious, Perry has stated that she prays all the time.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Katheryn Elizabeth Hudson, better know as Katy Perry, was born in Santa Barbara, California, to Pentecostal pastors Maurice Keith Hudson and Mary Christine Perry.\n"},
+	  {"sentence_id" : 2, "sentence" : "Her family struggled financially, sometimes using food stamps and eating from the food bank.\n"},
+	  {"sentence_id" : 3, "sentence" : "Perry primarily listened to gospel music as other music was generally discouraged in the family's home."},
+	  {"sentence_id" : 4, "sentence" : "She discovered popular music through CDs that she sneaked from her friends.\n"},
+	  {"sentence_id" : 5, "sentence" : "Although she is not strictly identifying as religious, Perry has stated that she prays all the time."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<-Katheryn> <-Elizabeth> <-Hudson>, <-better> <-know> <-as> <-Katy> <-Perry>, <-was> <-born> <-in> <-Santa> <-Barbara>, <-California>, <-to> <-Pentecostal> <-pastors> <-Maurice> <-Keith> <-Hudson> <-and> <-Mary> <-Christine> <-Perry>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "<-Her> <-family> <-struggled> <-financially>, <-sometimes> <-using> <-food> <-stamps> <-and> <-eating> <-from> <-the> <-food> <-bank>.\n"},
+	  {"sentence_id" : 3, "marked_sentence" : "<-Perry> <-primarily> <-listened> <-to> <-gospel> <-music> <+as> <+other> <+music> <+was> <+generally> <+discouraged> <+in> <+the> <+family's> <+home>."},
+	  {"sentence_id" : 4, "marked_sentence" : "<-She> <-discovered> <-popular> <-music> <-through> <-CDs> <+that> <+she> <+sneaked> <+from> <+her> <+friends>.\n"},
+	  {"sentence_id" : 5, "marked_sentence" : "<+Although> <+she> <+is> <+not> <+strictly> <+identifying> <+as> <+religious>, <-Perry> <-has> <-stated> <+that> <+she> <+prays> <+all> <+the> <+time>."}
+	]
+  }
+}
+
+
+
+
+
+ 
+ 
+
+
+
+ 
+ 
+

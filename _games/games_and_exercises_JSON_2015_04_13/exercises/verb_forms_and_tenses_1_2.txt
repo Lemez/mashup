@@ -1,0 +1,24 @@
+{
+  "exercise" : {
+    "game_name" : "verb_forms_and_tenses",
+	"game_id" : 5,
+	"exercise_name" : "past",
+	"exercise_instructions" : "Select the sentence or sentences that contain the past tense!",
+	"exercise_type" : "multiple_choice",
+	"order_in_game" : 2,
+	"title" : "One Direction",
+	"text_type" : "wikipedia",		
+	"text" : "One Direction cite The Beatles and U2 as strong influences on their music.\nOne Direction each auditioned for The X-Factor separately, but were put together by Simon Cowell, their mentor, because he thought they were too good to lose.\nOne Direction finished third on the seventh series of The X-Factor.\nAfter being signed to Syco Music, One Direction recorded their first album Up All Night.",
+	"language_tests" : [
+	  {"sentence_id" : 1, "is_correct" : 0, "sentence_text" : "One Direction cite The Beatles and U2 as strong influences on their music."},
+	  {"sentence_id" : 2, "is_correct" : 1, "sentence_text" : "One Direction each auditioned for The X-Factor separately, but were put together by Simon Cowell, their mentor, because he thought they were too good to lose."},
+	  {"sentence_id" : 3, "is_correct" : 1, "sentence_text" : "One Direction finished third on the seventh series of The X-Factor."},
+	  {"sentence_id" : 4, "is_correct" : 1, "sentence_text" : "After being signed to Syco Music, One Direction recorded their first album Up All Night."}
+	]
+  }
+}
+
+
+
+
+

@@ -1,0 +1,25 @@
+{
+  "exercise" : {
+    "game_name" : "direct_speech",
+	"game_id" : 4,
+	"exercise_name" : "direct_speech_all",
+	"exercise_instructions" : "Drag and drop comma and inverted commas into the following text containing direct speech!",
+	"exercise_type" : "punctuation",
+	"order_in_game" : 3,
+	"title" : "Rihanna",
+	"text_type" : "wikipedia",	
+	"text" : "The audition resulted in Rihanna signing a six-album record deal with Def Jam Recordings on the same day.\n‘There's only two ways out:’ Jay-Z said, ‘out the door after you sign this deal or through this window!’\nThis meant that he was not going to let her leave without signing a record deal.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "The audition resulted in Rihanna signing a six-album record deal with Def Jam Recordings on the same day.\n"},
+	  {"sentence_id" : 2, "sentence" : "‘There's only two ways out:’"},
+	  {"sentence_id" : 3, "sentence" : "Jay-Z said,"},
+	  {"sentence_id" : 4, "sentence" : "‘out the door after you sign this deal or through this window!’\n"},
+	  {"sentence_id" : 5, "sentence" : "This meant that he was not going to let her leave without signing a record deal."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 2, "correct_answers" : "‘|’", "gapped_sentence" : "<__>There's only two ways out:<__>"},
+	  {"sentence_id" : 3, "correct_answers" : ",", "gapped_sentence" : "Jay-Z said<__>"},
+	  {"sentence_id" : 4, "correct_answers" : "‘|’", "gapped_sentence" : "<__>out the door after you sign this deal or through this window!<__>\n"}  
+	]
+  }
+}

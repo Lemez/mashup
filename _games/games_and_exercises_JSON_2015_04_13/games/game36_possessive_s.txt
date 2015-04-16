@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "possessive_s",
+	"id" : 36,
+	"title" : "The Plural 's' and the Possessive 's'",
+	"game_type" : "gap",
+	"game_instructions" : "Select the correct option!",
+	"explanation" :	"This game is about the distinction between the plural s and the possessive 's",
+	"focus" : "possessive_s",
+	"order_in_course" : 10
+  }
+}

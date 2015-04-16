@@ -1,0 +1,29 @@
+{
+  "exercise" : {
+    "game_name" : "vocab_year_6",
+	"game_id" : 3,
+	"exercise_name" : "vocab_year_6",
+	"exercise_instructions" : "Choose the correct words from the list to make this text make sense!",
+	"exercise_type" : "vocabulary",
+	"order_in_game" : 2,
+	"title" : "Eminem",
+	"text_type" : "wikipedia",
+	"text" : "Eminem frequently appears in the charts, having sold over forty-five million albums.\nEminem was born in Missouri, USA. His parents were in the music profession. They split when he was young and he and his mother lived at a variety of locations, spending some time in Detroit. There, he lived in a predominantly Afro-Caribbean area, where he had only two white neighbours.\nEminem developed his love of language at school, in English lessons. He heard his first rap song at the age of nine and developed a love of rhythm and rhyme.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Eminem frequently appears in the charts, having sold over forty-five million albums.\n"},
+	  {"sentence_id" : 2, "sentence" : "His parents were in the music profession."},
+	  {"sentence_id" : 3, "sentence" : "They split when he was young and he and his mother lived at a variety of locations, spending some time in Detroit."},
+	  {"sentence_id" : 4, "sentence" : "There, he lived in a predominantly Afro-Caribbean area, where he had only two white neighbours.\n"},
+	  {"sentence_id" : 5, "sentence" : "Eminem developed his love of language at school, in English lessons."},
+	  {"sentence_id" : 6, "sentence" : "He heard his first rap song at the age of nine and developed a love of rhythm and rhyme."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : "frequently|forty", "gapped_sentence" : "Eminem <__> appears in the charts, having sold over <__>-five million albums.\n"},
+	  {"sentence_id" : 2, "correct_answers" : "profession", "gapped_sentence" : "His parents were in the music <__>."},
+	  {"sentence_id" : 3, "correct_answers" : "variety", "gapped_sentence" : "They split when he was young and he and his mother lived at a <__> of locations, spending some time in Detroit."},
+	  {"sentence_id" : 4, "correct_answers" : "neighbours", "gapped_sentence" : "There, he lived in a predominantly Afro-Caribbean area, where he had only two white <__>.\n"},
+	  {"sentence_id" : 5, "correct_answers" : "language", "gapped_sentence" : "Eminem developed his love of <__> at school, in  English lessons."},
+	  {"sentence_id" : 6, "correct_answers" : "developed|rhythm|rhyme", "gapped_sentence" : "He heard his first rap song at the age of nine and <__> a love of <__> and <__>."}
+	]
+  }	
+}

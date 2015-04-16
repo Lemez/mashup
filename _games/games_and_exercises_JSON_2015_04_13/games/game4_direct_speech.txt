@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "direct_speech",
+	"id" : 4,
+	"title" : "Direct Speech",
+	"game_type" : "punctuation",
+	"game_instructions" : "Drag and drop the correct punctuation into the right place!",		
+	"explanation" :	"Inverted commas (or speech marks) are used in sentences to show where we are writing the exact words that someone said. This is called direct speech.\n\nInverted commas show what is being said:\n‘We will soon warm up if we put our jumpers on.’ said Chris.\n\nAs you see, often sentences with direct speech have a piece that explains who is speaking. If this piece is placed before the spoken words, you have to use a comma:\nMary said, ‘It is very cold in here.’\n\nSometimes, this piece can be in the middle of a sentence. In this case, the first piece of direct speech has to end with a comma or it can be a full sentence. Also you need to put a comma or full stop before the second piece:\n‘Oh bother,’ muttered Mary. ‘I left my jumper at school.’\n‘Do you want to borrow my jacket?’ Chris offered, ‘You can give it back to me later.’",
+	"focus" : "direct_speech",
+	"order_in_course" : 17
+  }
+}

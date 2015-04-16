@@ -1,0 +1,24 @@
+{
+  "exercise" : {
+    "game_name" : "vocab_year_4",
+	"game_id" : 25,
+	"exercise_name" : "vocab_year_4",
+	"exercise_instructions" : "Choose the correct words from the list to make this text make sense!",
+	"exercise_type" : "vocabulary",
+	"order_in_game" : 2,
+	"title" : "Katy Perry",
+	"text_type" : "wikipedia",
+	"text" : "Katy Perry discovered popular music through CDs she borrowed from her friends.\nHer brother described her as a tomboy while she was growing up.\nShe took lessons and learned different styles of dance.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Katy Perry discovered popular music through CDs she borrowed from her friends.\n"},
+	  {"sentence_id" : 2, "sentence" : "Her brother described her as a tomboy while she was growing up.\n"},
+	  {"sentence_id" : 3, "sentence" : "She took lessons and learned different styles of dance."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : "popular|through", "gapped_sentence" : "Katy Perry discovered <__> music <__> CDs she borrowed from her friends.\n"},
+	  {"sentence_id" : 2, "correct_answers" : "described", "gapped_sentence" : "Her brother <__> her as a tomboy while she was growing up.\n"},
+	  {"sentence_id" : 3, "correct_answers" : "learned|different", "gapped_sentence" : "She took lessons and <__> <__> styles of dance."}
+	]
+  }	
+}
+

@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "verb_forms_and_tenses",
+	"id" : 5,
+	"title" : "Verb Forms and Verb Tenses",
+	"game_type" : "multiple_choice",
+	"game_instructions" : "Select the correct answers!",		
+	"explanation" :	"Present tense verbs are used when something is happening now:\nI pick up a pen.\n\nPast tense verbs are used when something has already happened:\nI picked up a pen.\n\nPresent Progressive verbs are used where an action is continuing to happening:\nI am picking up the pen.\n\n1Passive sentences are used where someone or something has something done to them:\nA pen has been picked up.\n\nPresent Perfect tense is related to time:\nHe has picked up the pen.",
+	"focus" : "verb_forms_and_tenses",
+	"order_in_course" : 24
+  }
+}

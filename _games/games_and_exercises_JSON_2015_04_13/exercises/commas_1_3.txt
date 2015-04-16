@@ -1,0 +1,22 @@
+{
+  "exercise" : {
+    "game_name" : "commas",
+	"game_id" : 24,
+	"exercise_name" : "commas",
+	"exercise_instructions" : "Drag a comma to show where direct speech begins.",
+	"exercise_type" : "punctuation",
+	"order_in_game" : 3,
+	"title" : "Beyoncé",
+	"text_type" : "wikipedia",
+	"text" : "Beyoncé and husband Jay-Z are friends with President Barack Obama and First Lady Michelle Obama. Beyoncé has stated that she is personally inspired by the US First Lady, saying, ‘She proves you can do it all.’ She performed ‘America the Beautiful’ at the 2009 presidential inauguration, as well as ‘At Last’ during the first inaugural dance at the Neighbourhood Ball two days later.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Beyoncé and husband Jay-Z are friends with President Barack Obama and First Lady Michelle Obama."},
+	  {"sentence_id" : 2, "sentence" : "Beyoncé has stated that she is personally inspired by the US First Lady, saying, ‘She proves you can do it all.’"},
+	  {"sentence_id" : 3, "sentence" : "She performed ‘America the Beautiful’ at the 2009 presidential inauguration, as well as ‘At Last’ during the first inaugural dance at the Neighbourhood Ball two days later."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 2, "correct_answers" : ",", "gapped_sentence" : "Beyoncé has stated that she is personally inspired by the US First Lady, saying<__> ‘She proves you can do it all.’"}
+	]
+  }
+}
+

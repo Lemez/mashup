@@ -1,0 +1,27 @@
+{
+  "exercise" : {
+    "game_name" : "vocab_year_6",
+	"game_id" : 3,
+	"exercise_name" : "vocab_year_6",
+	"exercise_instructions" : "Choose the correct words from the list to make this text make sense!",
+	"exercise_type" : "vocabulary",
+	"order_in_game" : 4,
+	"title" : "Lil Wayne",
+	"text_type" : "wikipedia",
+	"text" : "Dwayne Michael Carter Jr., identified by his more familiar stage name Lil Wayne, is an American rapper from New Orleans, Louisiana.\nHe joined the Cash Money Records collective as an accomplished teenager. His marvellous hit solo album came out in 1999.\nLil Wayne says that his elementary school teacher occupies a special place in his musical development and that he owes his existence as an artist to her. She inspired all his songs because, he says, she is so cool and it is a privilege to have known her.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Dwayne Michael Carter Jr., identified by his more familiar stage name Lil Wayne, is an American rapper from New Orleans, Louisiana.\n"},
+	  {"sentence_id" : 2, "sentence" : "He joined the Cash Money Records collective as an accomplished teenager."},
+	  {"sentence_id" : 3, "sentence" : "His marvellous hit solo album came out in 1999.\n"},
+	  {"sentence_id" : 4, "sentence" : "Lil Wayne says that his elementary school teacher occupies a special place in his musical development and that he owes his existence as an artist to her."},
+	  {"sentence_id" : 5, "sentence" : "She inspired all his songs because, he says, she is so cool and it is a privilege to have known her."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : "identified|familiar", "gapped_sentence" : "Dwayne Michael Carter Jr., <__> by his more <__> stage name Lil Wayne, is an American rapper from New Orleans, Louisiana.\n"},
+	  {"sentence_id" : 2, "correct_answers" : "accomplished", "gapped_sentence" : "He joined the Cash Money Records collective as an <__> teenager."},
+	  {"sentence_id" : 3, "correct_answers" : "marvellous", "gapped_sentence" : "His <__> hit solo album came out in 1999.\n"},
+	  {"sentence_id" : 4, "correct_answers" : "occupies|development|existence", "gapped_sentence" : "Lil Wayne says that his elementary school teacher <__> a special place in his musical <__> and that he owes his <__> as an artist to her."},
+	  {"sentence_id" : 5, "correct_answers" : "privilege", "gapped_sentence" : "She inspired all his songs because, he says, she is so cool and it is a <__> to have known her."}
+	]
+  }	
+}

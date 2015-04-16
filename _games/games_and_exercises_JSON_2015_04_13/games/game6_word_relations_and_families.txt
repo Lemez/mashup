@@ -1,0 +1,15 @@
+{
+  "game" : {
+    "name" : "word_relations_and_families",
+	"id" : 6,
+	"title" : "Word Relations and Word Families",
+	"game_type" : "select_in_text",
+	"game_instructions" : "Select the correct words!",		
+	"explanation" :	"Did you know that words can be related just like people?\n\nWords are in the same word family if they have a common root word. For example, the verb ‘to resolve’ and the noun ‘solution’ both have the verb ‘to solve’ as their root and therefore are in the same word family.\n\nIf an ending is added to a root word the ending is called a suffix:\nteach, teacher\nmusic, musician\ngreet, greeting\n\nPrefixes are added to the beginning of a word:\nappear, disappear\ntake, overtake\nWords can also be related if they have no common root, but related meaning! For example, words with opposite meaning are called antonyms:\ndark, light\nwin, loss\n\nSynonyms are words that have the same meaning:\ntalk, speak\nhigh, low\nLet’s see if you can get this right...",
+	"focus" : "word_relations_and_families",
+	"order_in_course" : 23
+  }
+}
+
+
+

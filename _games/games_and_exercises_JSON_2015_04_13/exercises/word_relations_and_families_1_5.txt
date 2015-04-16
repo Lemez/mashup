@@ -1,0 +1,27 @@
+{
+  "exercise" : {
+    "game_name" : "word_relations_and_families",
+	"game_id" : 6,
+	"exercise_name" : "prefixes",
+	"exercise_instructions" : "Mark the words that begin with a prefix! Don't forget that names can have prefixes, too!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 5,
+	"title" : "Sam Smith",
+	"text_type" : "wikipedia",	
+	"text" : "Samuel Frederick ‘Sam’ Smith is an English singer and songwriter.\nHe rose to fame in October 2012 when he was featured on Disclosure's breakthrough single ‘Latch’, which peaked at number eleven on the UK Singles Chart. His feature on the single ‘La La La’ earned him his first number one single in May 2013.\nWith the release of its second single, ‘Money on My Mind’, Sam Smith re-entered top of the UK singles charts for the second time. His third single, ‘Stay with Me’, was an international success, reaching number one in the UK and number two on the U.S. Billboard Hot 100.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Samuel Frederick ‘Sam’ Smith is an English singer and songwriter.\n"},
+	  {"sentence_id" : 2, "sentence" : "He rose to fame in October 2012 when he was featured on Disclosure's breakthrough single ‘Latch’, which peaked at number eleven on the UK Singles Chart."},
+	  {"sentence_id" : 3, "sentence" : "His feature on the single ‘La La La’ earned him his first number one single in May 2013.\n"},
+	  {"sentence_id" : 4, "sentence" : "With the release of its second single, ‘Money on My Mind’, Sam Smith re-entered top of the UK singles charts for the second time."},
+	  {"sentence_id" : 5, "sentence" : "His third single, ‘Stay with Me’, was an international success, reaching number one in the UK and number two on the U.S. Billboard Hot 100."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "Samuel Frederick ‘Sam’ Smith is an <-English> <-singer> and <-songwriter>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "He <-rose> to <-fame> in <-October> 2012 when he was <-featured> on <+Disclosure's> <-breakthrough> <-single> ‘Latch’, which <-peaked> at <-number> <-eleven> on the UK <-Singles> <-Chart>."},
+	  {"sentence_id" : 3, "marked_sentence" : "His <-feature> on the <-single> ‘La La La’ <-earned> him his <-first> <-number> one <-single> in May 2013.\n"},
+	  {"sentence_id" : 4, "marked_sentence" : "With the <-release> of its <-second> <-single>, ‘Money on My Mind’, Sam Smith <+re-entered> <-top> of the UK <-singles> <-charts> for the <-second> <-time>."},
+	  {"sentence_id" : 5, "marked_sentence" : "His third <-single>, ‘<-Stay> with Me’, was an <+international> <-success>, <-reaching> <-number> one in the UK and <-number> two on the U.S. <-Billboard> <-Hot> 100."}
+	]  	
+  }
+}

@@ -9,6 +9,8 @@ def download_undownloaded_vids array
 		@song_title = record.title
 		@vid = record.yt_id
 
+		p "Not trying YT due to broken YT dl"
+
 		video_string = "http://www.youtube.com/watch?v=#{@vid}"
 		download_video = "viddl-rb #{video_string} -d 'aria2c' -s #{@videodir}"
 
@@ -24,9 +26,24 @@ def download_undownloaded_vids array
 			# p "FAILED: #{shell_command}"
 			# sleep 3 #wait 3 secs
 
-			p "Not trying YT due to broken YT dl"
+			
 
-			get_vimeo_manually @song_artist,@song_title,'vimeo'
+			 p "Continue with #{@song_artist} - #{@song_title}? Press y or any other key to skip"
+		    `echo "Do you wish to continue?"`
+
+		    output = STDIN.gets.chomp!
+
+			if output == "y"
+
+				"Getting from Vimeo"
+
+				get_vimeo_manually @song_artist,@song_title,'vimeo'
+			 else
+			 	next
+
+			 end
+
+			
 
 	# 	else
 	# 		p "SUCCESS: #{shell_command}"
@@ -54,8 +71,8 @@ end
 
 def get_vimeo_manually artist,title,source
 	@title_to_check = " #{artist} #{title}"
-	p "Trying to download #{title} from Vimeo manually"
-	
+	p "Trying to download #{artist} #{title} from Vimeo manually"
+
 	escaped_title = @title_to_check #CGI::escape(title)
 	url = "https://vimeo.com/search?q=#{escaped_title}"
 	jarow = FuzzyStringMatch::JaroWinkler.create( :native )
@@ -93,18 +110,45 @@ def get_vimeo_manually artist,title,source
 	    			@vimeo_id = li.id.gsub(/[^\d]/, '')
 	    			@best_title = @vimeo_title
 
-	    			p "#{@best_title} is the best match so far"
+	    			p "#{@best_title} with id #{@vimeo_id} is the best match so far"
 	    		end
 			end 
 	    end
 
     p "Searching for #{@title_to_check}, #{@best_title} has Vimeo ID #{@vimeo_id} with distance #{@highest_match}"
 
-	download_a_video @vimeo_id,source
+    p "Continue? Press y or any other key to skip"
+    `echo "Do you wish to continue?"`
+
+    output = STDIN.gets.chomp!
+
+	if output == "y"
+		p "yes" 
+		download_a_video @vimeo_id,'vimeo'
+	 else
+	 	p "Enter correct 8-10 digit Vimeo ID or enter to skip"
+	 	`echo "Do you wish to continue?"`
+	 	@manual_id = STDIN.gets.chomp!
+
+	 	if !@manual_id.empty?
+	 		download_a_video @manual_id,'vimeo'
+	 	else
+	 		"Trying next video"
+	 		return
+	 	end
+	 end
+	
+
 
     rescue Timeout::Error => e
     	puts "Vimeo search for #{@title_to_check} page did not load: #{e}" 
     	puts $!, $@
+
+    rescue Watir::Wait::TimeoutError 
+    	puts "Vimeo search for #{@title_to_check} page did not load" 
+    	puts $!, $@
+    	return
+
     end
 
     at_exit { browser.close  } # close browser on exit

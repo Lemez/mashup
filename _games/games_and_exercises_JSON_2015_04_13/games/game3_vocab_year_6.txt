@@ -1,0 +1,12 @@
+{
+  "game" : {
+    "name" : "vocab_year_6",
+	"id" : 3,
+	"title" : "Words Words Words",
+	"game_type" : "vocabulary",
+	"game_instructions" : "Choose the correct words from the list to make this text make sense!",	
+	"explanation" :	"In this game you will learn some new words!",
+	"focus" : "vocab_year_6",
+	"order_in_course" : 21
+  }
+}

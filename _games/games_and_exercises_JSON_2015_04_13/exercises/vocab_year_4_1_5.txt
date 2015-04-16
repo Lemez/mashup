@@ -1,0 +1,24 @@
+{
+  "exercise" : {
+    "game_name" : "vocab_year_4",
+	"game_id" : 25,
+	"exercise_name" : "vocab_year_4",
+	"exercise_instructions" : "Choose the correct words from the list to make this text make sense!",
+	"exercise_type" : "vocabulary",
+	"order_in_game" : 5,
+	"title" : "Kesha",
+	"text_type" : "wikipedia",
+	"text" : "Kesha Rose Sebert, simply known as Kesha, is an American singer, rapper and songwriter.\nAlthough an active musician since 2005, Kesha's first hit came in early 2009, after she appeared on rapper Flo Rida's number-one single ‘Right Round’.\nHer song ‘Tik Tok’ is among the best-selling digital singles in history.\nEven after her breakthrough, she continued to write songs for other artists, among others Britney Spears.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Kesha Rose Sebert, simply known as Kesha, is an American singer, rapper and songwriter.\n"},
+	  {"sentence_id" : 2, "sentence" : "Although an active musician since 2005, Kesha's first hit came in early 2009, after she appeared on rapper Flo Rida's number-one single ‘Right Round’.\n"},
+	  {"sentence_id" : 3, "sentence" : "Her song ‘Tik Tok’ is among the best-selling digital singles in history.\n"},
+	  {"sentence_id" : 4, "sentence" : "Even after her breakthrough, she continued to write songs for other artists, among others Britney Spears."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 2, "correct_answers" : "Although|early|appeared", "gapped_sentence" : "<__> an active musician since 2005, Kesha's first hit came in <__> 2009, after she <__> on rapper Flo Rida's number-one single ‘Right Round’.\n"},
+	  {"sentence_id" : 3, "correct_answers" : "history", "gapped_sentence" : "Her song ‘Tik Tok’ is among the best-selling digital singles in <__>.\n"},
+	  {"sentence_id" : 4, "correct_answers" : "continued", "gapped_sentence" : "Even after her breakthrough, she <__> to write songs for other artists, among others Britney Spears."}
+	]
+  }	
+}

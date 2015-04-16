@@ -1,0 +1,25 @@
+{
+  "exercise" : {
+    "game_name" : "commas",
+	"game_id" : 24,
+	"exercise_name" : "commas_lists",
+	"exercise_instructions" : "Drag the commas to show the lists in the text below!",
+	"exercise_type" : "punctuation",
+	"order_in_game" : 2,
+	"title" : "Eminem",
+	"text_type" : "wikipedia",
+	"text" : "Marshall Bruce Mathers III, better known by his stage name Eminem, is an American rapper, record producer, songwriter and actor. Eminem has made cameo appearances in the films ‘The Wash’, ‘Funny People’, ‘The Interview’ and in the television series ‘Entourage’. His distinctive sound and style has influenced numerous hip hop, R&B, pop and rock artists.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Marshall Bruce Mathers III, better known by his stage name Eminem, is an American rapper, record producer, songwriter and actor."},
+	  {"sentence_id" : 2, "sentence" : "Eminem has made cameo appearances in the films ‘The Wash’, ‘Funny People’, ‘The Interview’ and in the television series ‘Entourage’."},
+	  {"sentence_id" : 3, "sentence" : "His distinctive sound and style has influenced numerous hip hop, R&B, pop and rock artists."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : ",|,", "gapped_sentence" : "Marshall Bruce Mathers III, better known by his stage name Eminem, is an American rapper<__> record producer<__> songwriter and actor."},
+	  {"sentence_id" : 1, "correct_answers" : ",|,", "gapped_sentence" : "Eminem has made cameo appearances in the films ‘The Wash’<__> ‘Funny People’<__> ‘The Interview’ and in the television series ‘Entourage’."},
+	  {"sentence_id" : 1, "correct_answers" : ",|,", "gapped_sentence" : "His distinctive sound and style has influenced numerous hip hop<__> R&B<__> pop and rock artists."}
+	]
+  }
+}
+
+

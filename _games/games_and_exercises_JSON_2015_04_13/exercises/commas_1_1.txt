@@ -1,0 +1,27 @@
+{
+  "exercise" : {
+    "game_name" : "commas",
+	"game_id" : 24,
+	"exercise_name" : "commas_fonted_adverbials",
+	"exercise_instructions" : "Drag the commas into the right place to punctuate fronted adverbials!",
+	"exercise_type" : "punctuation",
+	"order_in_game" : 1,
+	"title" : "Michael Jackson",
+	"text_type" : "wikipedia",	
+	"text" : "Throughout his career, Michael Jackson's musical range stretched from Motown's dance music to funk rhythms and hard rock guitars. In his album ‘Thriller’, he combines dance and rock tracks with pop tunes and soulful ballads.\nAt the height of his fame, Jackson was also famous for his brilliant dancing.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Throughout his career, Michael Jackson's musical range stretched from Motown's dance music to funk rhythms and hard rock guitars."},
+	  {"sentence_id" : 2, "sentence" : "In his album ‘Thriller’, he combines dance and rock tracks with pop tunes and soulful ballads.\n"},
+	  {"sentence_id" : 3, "sentence" : "At the height of his fame, Jackson was also famous for his brilliant dancing."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "correct_answers" : ",", "gapped_sentence" : "Throughout his career<__> Michael Jackson's musical range stretched from Motown's dance music to funk rhythms and hard rock guitars."},
+	  {"sentence_id" : 2, "correct_answers" : ",", "gapped_sentence" : "In his album ‘Thriller’<__> he combines dance and rock tracks with pop tunes and soulful ballads.\n"},
+	  {"sentence_id" : 3, "correct_answers" : ",", "gapped_sentence" : "At the height of his fame<__> Jackson was also famous for his brilliant dancing."}
+	]
+  }
+}
+
+
+
+

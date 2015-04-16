@@ -1,0 +1,25 @@
+{
+  "exercise" : {
+    "game_name" : "sub_and_coordinate_clauses",
+	"game_id" : 22,
+	"exercise_name" : "coordinating_conjunctions",
+	"exercise_instructions" : "Mark the coordinating conjunctions in this text!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 2,
+	"title" : "Katy Perry",
+	"text_type" : "wikipedia",		
+	"text" : "At 13, Katy Perry was given her first guitar for her birthday so she could play her songs in public.\nDuring her freshman year of high school, Perry completed her General Educational Development (GED) requirements at age 15. She left high school and moved to Los Angeles at age 17 to pursue a musical career. Soon she had signed a record deal with The Island Def Jam Music Group, but she was later dropped by the label and a solo album she had been working on was shelved.",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "At 13, Katy Perry was given her first guitar for her birthday so she could play her songs in public.\n"},
+	  {"sentence_id" : 2, "sentence" : "During her freshman year of high school, Perry completed her General Educational Development (GED) requirements at age 15."},
+	  {"sentence_id" : 3, "sentence" : "She left high school and moved to Los Angeles at age 17 to pursue a musical career."},
+	  {"sentence_id" : 4, "sentence" : "Soon she had signed a record deal with The Island Def Jam Music Group, but she was later dropped by the label and a solo album she had been working on was shelved."}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<-At> <-13>, <-Katy> <-Perry> <-was> <-given> <-her> <-first> <-guitar> <-for> <-her> <-birthday> <+so> <-she> <-could> <-play> <-her> <-songs> <-in> <-public>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "<-During> <-her> <-freshman> <-year> <-of> <-high> <-school>, <-Perry> <-completed> <-her> <-General> <-Educational> <-Development> <-(GED)> <-requirements> <-at> <-age> <-15>."},
+	  {"sentence_id" : 3, "marked_sentence" : "<-She> <-left> <-high> <-school> <+and> <-moved> <-to> <-Los> <-Angeles> <-at> <-age> <-17> <-to> <-pursue> <-a> <-musical> <-career>."},
+	  {"sentence_id" : 4, "marked_sentence" : "<-Soon> <-she> <-had> <-signed> <-a> <-record> <-deal> <-with> <-The> <-Island> <-Def> <-Jam> <-Music> <-Group>, <+but> <-she> <-was> <-later> <-dropped> <-by> <-the> <-label> <+and> <-a> <-solo> <-album> <-she> <-had> <-been> <-working> <-on> <-was> <-shelved>."}
+	]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "exercise" : {
+    "game_name" : "relative_clauses",
+	"game_id" : 23,
+	"exercise_name" : "relative_pronouns",
+	"exercise_instructions" : "Highlight all the relative pronouns!",
+	"exercise_type" : "select_in_text",
+	"order_in_game" : 1,
+	"title" : "Taylor Swift",
+	"text_type" : "wikipedia",
+	"text" : "Taylor Swift, whose achievements include among others seven Grammy Awards and twelve Billboard Music Awards, is known for narrative songs that are about her personal experiences.\nHer fifth album, which was released in 2014, sold more copies in its opening week than any album in the previous 12 years.\n",
+	"sentences" : [
+	  {"sentence_id" : 1, "sentence" : "Taylor Swift, whose achievements include among others seven Grammy Awards and twelve Billboard Music Awards, is known for narrative songs that are about her personal experiences.\n"},
+	  {"sentence_id" : 2, "sentence" : "Her fifth album, which was released in 2014, sold more copies in its opening week than any album in the previous 12 years.\n"}
+	],
+	"marked_sentences" : [
+	  {"sentence_id" : 1, "marked_sentence" : "<-Taylor> <-Swift>, <+whose> <-achievements> <-include> <-among> <-others> <-seven> <-Grammy> <-Awards> <-and> <-twelve> <-Billboard> <-Music> <-Awards>, <-is> <-known> <-for> <-narrative> <-songs> <+that> <-are> <-about> <-her> <-personal> <-experiences>.\n"},
+	  {"sentence_id" : 2, "marked_sentence" : "<-Her> <-fifth> <-album>, <+which> <-was> <-released> <-in> <-2014>, <-sold> <-more> <-copies> <-in> <-its> <-opening> <-week> <-than> <-any> <-album> <-in> <-the> <-previous> <-12> <-years>.\n"}
+	]
+  }	
+}
