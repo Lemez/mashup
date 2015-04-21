@@ -1,4 +1,5 @@
 def create_mashups_with_enough_videos
+	p "* create_mashups_with_enough_videos *"
 	# rebuild current list of completed final videos
 	# read csv 
 
@@ -6,19 +7,24 @@ def create_mashups_with_enough_videos
 	reading_file = "./csv/videos/hits_medleys_FINAL.csv"
 
 	@csv_count = 1
+	@number_of_clips = LIMIT-1
 
 	CSV.foreach(reading_file,options) do |row|
 
-
 		# process 3 videos each time as a check
-		return if Rule.where(:completed => true).count > 1
+		# return if @done > 0
 
 		calculate_completed_videos
 
-		next if row[6].to_bool == true  # if completed already
+		if row[6].to_bool == true  # if completed already
+			# p "Done: #{row[0]}"
+			next 
+		else
+			p  "#{row[0]}: #{row[5].to_i} hits"
+		end
 
 		# execute each one
-		if row[5].to_i >= LIMIT && !@completed.include?(row[0])
+		if row[5].to_i >= @number_of_clips && !@completed.include?(row[0])
 
 			@playlist_name = row[0]
 			@playlist_csv = "#{@playlist_name}.csv"
@@ -28,6 +34,7 @@ def create_mashups_with_enough_videos
 			make_new_video @playlist_name, downloading=false
 
 			@csv_count += 1
+			sleep 5
 		end
 	end
 end
@@ -38,9 +45,13 @@ def make_new_video playlist, downloading=false
 
 	clean_up_records
 
+	@number_of_clips = LIMIT-1
+
 	get_files_from_db_specific_csv @playlist_csv #returns Sentence objects with video_ids
 
 	number_of_relevant_videos_in_db = create_and_match_saved_videos
+
+	add_video_offset
 
 	if DOWNLOADING #&& number_of_relevant_videos_in_db <5
 		do_downloading; reformat_videos_if_required; create_and_match_saved_videos #run it again to update the list of videos
@@ -49,8 +60,26 @@ def make_new_video playlist, downloading=false
 	@all_sentences_to_extract = choose_sentences_from_saved_videos
 	@sentences_to_extract = select_filter_sentences
 
-	enough_to_go_on = continue_or_stop
-	return if enough_to_go_on
+	@not_enough_sentences = continue_or_stop
+
+	while @not_enough_sentences
+		iterate_over_sentence_filters
+		@not_enough_sentences = continue_or_stop
+
+		if @no_further_attempts
+			p "Only #{@sentences_to_extract.count.to_s} found for #{playlist} with #{@number_of_clips.to_s} required. "
+			p "Returning"
+			return
+		else 
+			p "Try #{@sentence_pass.to_s}: #{@sentences_to_extract.count.to_s} found, #{@number_of_clips.to_s} required for #{playlist}"
+
+		end
+
+	end
+	
+	return if @not_enough_sentences
+
+	refine_sentences_further if @sentences_to_extract.count > @number_of_clips
 	
 	# add_titles_to_video
 	create_snippets_from_sentences	# create snippets from those sentences, save their locations & rule numbers
@@ -76,6 +105,10 @@ def make_new_video playlist, downloading=false
 	turn_img_to_video
 	add_img_video_and_pic_video
 
+	play_sound true  # add a sound to tell me it is completed
+
+	@done =+1
+
 	# # ÷ Xfade options see below
 
 end
@@ -97,6 +130,16 @@ def do_downloading
 
 		# try to download those videos (currently some issues here on the plugins end)
 	download_undownloaded_vids @list_to_dl 
+end
+
+def add_video_offset
+	p "******* add_offset ********"
+	OFFSET.each_pair  do |k,v|
+		video = Video.where("location='#{k}'").first_or_create
+		video.offset = v
+		# p "Offset #{v.to_s} added to #{k}" if video.save!
+		video.save!
+	end
 end
 
 

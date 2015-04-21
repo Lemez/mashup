@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:05,761
+<font size=24px>Remembering him comes in flashbacks and</font><font color=#ffff00 size=24px><b> echoes </b></font><font size=24px></font>
+
+3
+00:00:05,761 --> 00:00:14,061
+<font size=24px>Cause love comes slow and it</font><font color=#ffff00 size=24px><b> goes </b></font><font size=24px>so fast</font>
+

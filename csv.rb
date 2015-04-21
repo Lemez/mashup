@@ -1,3 +1,48 @@
+def csv_to_game
+
+	@linecounter = 0
+
+	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
+	list = "./csv/master/for_medleys_FINAL.csv"
+	@csv = CSV.open("./csv/games_final/games.csv", "w", {:col_sep => ";"})
+	@game = ''
+	@node = ''
+	nodes_in_game = []
+
+	CSV.foreach(list,options) do |line|
+
+		line = line.gsub("\"","") if line.include?("\"")#remove illegal quoting Malformed CSV Error if 
+		
+		node = line[10]
+		game = line[12]
+
+		
+			
+		if @linecounter == 0
+			nodes_in_game << node
+			p "#{game}:#{node}"
+
+		elsif @game != game 
+			@csv << [@game,nodes_in_game]
+			nodes_in_game = []
+			nodes_in_game << node
+			p "New #{game}:#{node}"
+		else
+			nodes_in_game << node if @node != node 
+			@csv << [@game,nodes_in_game] if @linecounter - File.open(list).readlines.size == 1
+			p "#{game}:#{node}"
+		end
+
+		@linecounter += 1
+		@game = game
+		@node = node
+
+	end
+
+	@csv.close
+end
+
+
 def query_saved_videos_per_node destroy=false
 
 	p "************** query_saved_videos_per_node **************"
@@ -28,9 +73,7 @@ def query_saved_videos_per_node destroy=false
 			# sleep 3
 			sentences = choose_sentences_from_saved_videos
 			# sleep 3
-			p sentences
-			# sleep 3
-
+		
 			unless sentences.empty?
 				relevant_videos_length = sentences.flat_map(&:video_id).uniq.count
 				current_hits = sentences.count
@@ -63,6 +106,12 @@ def query_saved_videos_per_node destroy=false
 			@lastrow = row[0]
 
 		end
+	end
+end
+
+def write_to_not_dl_file artist,title
+	CSV.open("./csv/undownloaded.csv","a", {:col_sep => ";"}) do |csv|
+		csv << [artist,title]
 	end
 end
 

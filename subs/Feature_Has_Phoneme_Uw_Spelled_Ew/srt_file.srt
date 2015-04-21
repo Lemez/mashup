@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:04,001
+<font size=24px></font><font color=#ffff00 size=24px><b> New </b></font><font size=24px>money, suit and tie</font>
+
+3
+00:00:04,001 --> 00:00:08,041
+<font size=24px>We keep quiet because we're dead if they</font><font color=#ffff00 size=24px><b> knew </b></font><font size=24px></font>
+
+4
+00:00:08,041 --> 00:00:12,851
+<font size=24px>Leaving my healing heart with a</font><font color=#ffff00 size=24px><b> new </b></font><font size=24px>scar</font>
+
+5
+00:00:12,851 --> 00:00:17,981
+<font size=24px>I</font><font color=#ffff00 size=24px><b> threw </b></font><font size=24px>a wish in the well</font>
+
+6
+00:00:17,981 --> 00:00:27,701
+<font size=24px>Loving him is like driving a</font><font color=#ffff00 size=24px><b> new </b></font><font size=24px>Maserati down a dead end street</font>
+

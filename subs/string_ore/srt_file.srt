@@ -2,26 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:06,101
-<font size=24px>I was walking up the front</font><font color=#ffff00 size=24px><b> porch </b></font><font size=24px>steps after everything that day</font>
+00:00:00,001 --> 00:00:04,681
+<font size=24px>I don't know how much</font><font color=#ffff00 size=24px><b> more </b></font><font size=24px>I can take</font>
 
 3
-00:00:06,101 --> 00:00:14,221
-<font size=24px>Like the colors in autumn, so bright just</font><font color=#ffff00 size=24px><b> before </b></font><font size=24px>they lose it all</font>
+00:00:04,681 --> 00:00:09,671
+<font size=24px>No sun is shining</font><font color=#ffff00 size=24px><b> anymore </b></font><font size=24px></font>
 
 4
-00:00:14,221 --> 00:00:17,641
-<font size=24px>Grab your</font><font color=#ffff00 size=24px><b> passport </b></font><font size=24px>and my hand</font>
-
-5
-00:00:17,641 --> 00:00:23,481
-<font size=24px>Boys only want love if it's</font><font color=#ffff00 size=24px><b> torture </b></font><font size=24px></font>
-
-6
-00:00:23,481 --> 00:00:29,041
+00:00:09,671 --> 00:00:14,751
 <font size=24px>Have your friends collect your</font><font color=#ffff00 size=24px><b> records </b></font><font size=24px>and then change your number</font>
 
-7
-00:00:29,041 --> 00:00:34,761
+5
+00:00:14,751 --> 00:00:20,471
 <font size=24px>Of our</font><font color=#ffff00 size=24px><b> glory </b></font><font size=24px>days</font>
+
+6
+00:00:20,471 --> 00:00:28,531
+<font size=24px>Hold still right</font><font color=#ffff00 size=24px><b> before </b></font><font size=24px>we crash because we both know how this ends</font>
 

@@ -1,3 +1,7 @@
+def play_sound value
+	`afplay #{Dir.pwd}/audio/true.aiff`if value==true
+end
+
 def normalize_audio
 
 	p "******";p "normalize_audio";p "******"
@@ -13,7 +17,7 @@ def normalize_audio
 		# sync_offset = 0.3 # correct sync error
 		# sync_offset = 0 if @count==0
 
-		@count==0 ? sync_offset = 0: sync_offset = 0.5
+		@count==0 ? sync_offset = 0: sync_offset = 0
 		 p "first" if @count==0 
 
 		duration = snippet.clip_duration

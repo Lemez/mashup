@@ -2,26 +2,18 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,271
-<font size=24px>Missing him was dark</font><font color=#ffff00 size=24px><b> grey </b></font><font size=24px>all alone</font>
+00:00:00,001 --> 00:00:07,011
+<font size=24px>When your legs don't work like</font><font color=#ffff00 size=24px><b> they </b></font><font size=24px>used to before</font>
 
 3
-00:00:04,271 --> 00:00:08,841
-<font size=24px></font><font color=#ffff00 size=24px><b> Hey </b></font><font size=24px>I just met you and this is crazy</font>
+00:00:07,011 --> 00:00:14,091
+<font size=24px>But dreams come slow and</font><font color=#ffff00 size=24px><b> they </b></font><font size=24px>go so fast</font>
 
 4
-00:00:08,841 --> 00:00:17,491
-<font size=24px></font><font color=#ffff00 size=24px><b> They </b></font><font size=24px>have stolen from us</font>
+00:00:14,091 --> 00:00:22,681
+<font size=24px>People making choices</font><font color=#ffff00 size=24px><b> they </b></font><font size=24px>can't fake</font>
 
 5
-00:00:17,491 --> 00:00:26,161
+00:00:22,681 --> 00:00:31,851
 <font size=24px>And</font><font color=#ffff00 size=24px><b> they </b></font><font size=24px>all got the same heartbeat</font>
-
-6
-00:00:26,161 --> 00:00:30,111
-<font size=24px>'Cause all the cool kids,</font><font color=#ffff00 size=24px><b> they </b></font><font size=24px>seem to fit in</font>
-
-7
-00:00:30,111 --> 00:00:38,051
-<font size=24px>But</font><font color=#ffff00 size=24px><b> they </b></font><font size=24px>haven't got a clue</font>
 

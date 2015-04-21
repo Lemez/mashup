@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:05,081
+<font size=24px>You never want to know how much you</font><font color=#ffff00 size=24px><b> weigh </b></font><font size=24px></font>
+
+3
+00:00:05,081 --> 00:00:10,311
+<font size=24px>I tried carrying the</font><font color=#ffff00 size=24px><b> weight </b></font><font size=24px>of the world</font>
+

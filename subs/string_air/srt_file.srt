@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:03,701
+<font size=24px>I was riding shotgun with my</font><font color=#ffff00 size=24px><b> hair </b></font><font size=24px>undone</font>
+
+3
+00:00:03,701 --> 00:00:07,551
+<font size=24px>And I was crying on the</font><font color=#ffff00 size=24px><b> staircase </b></font><font size=24px></font>
+
+4
+00:00:07,551 --> 00:00:16,821
+<font size=24px>I'm standing there on a balcony in summer</font><font color=#ffff00 size=24px><b> air </b></font><font size=24px></font>
+

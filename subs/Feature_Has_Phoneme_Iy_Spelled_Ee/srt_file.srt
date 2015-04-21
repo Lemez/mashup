@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:05,381
+<font size=24px>And I'm joining up the dots with the freckles on your</font><font color=#ffff00 size=24px><b> cheeks </b></font><font size=24px></font>
+
+3
+00:00:05,381 --> 00:00:12,831
+<font size=24px>Come up to</font><font color=#ffff00 size=24px><b> meet </b></font><font size=24px>you, tell you I'm sorry</font>
+
+4
+00:00:12,831 --> 00:00:21,011
+<font size=24px>You make me</font><font color=#ffff00 size=24px><b> feel </b></font><font size=24px>like I'm a boy and not a man, sometimes</font>
+
+5
+00:00:21,011 --> 00:00:30,731
+<font size=24px>Loving him is like driving a new Maserati down a dead end</font><font color=#ffff00 size=24px><b> street </b></font><font size=24px></font>
+

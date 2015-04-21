@@ -2,26 +2,18 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:06,141
-<font size=24px>I see</font><font color=#ffff00 size=24px><b> ascending </b></font><font size=24px>light upon a hill</font>
-
-3
-00:00:06,141 --> 00:00:10,861
+00:00:00,001 --> 00:00:04,721
 <font size=24px>Caused by</font><font color=#ffff00 size=24px><b> absence </b></font><font size=24px>of you</font>
 
-4
-00:00:10,861 --> 00:00:15,561
-<font size=24px>Take a bullet straight through my</font><font color=#ffff00 size=24px><b> brain </b></font><font size=24px></font>
+3
+00:00:04,721 --> 00:00:09,481
+<font size=24px>You've wondered down a path I can't</font><font color=#ffff00 size=24px><b> explain </b></font><font size=24px></font>
 
-5
-00:00:15,561 --> 00:00:21,121
+4
+00:00:09,481 --> 00:00:15,041
 <font size=24px>He</font><font color=#ffff00 size=24px><b> knelt </b></font><font size=24px>to the ground and pulled out a ring and said</font>
 
-6
-00:00:21,121 --> 00:00:27,781
-<font size=24px>These words will be</font><font color=#ffff00 size=24px><b> written </b></font><font size=24px>on my stone</font>
-
-7
-00:00:27,781 --> 00:00:33,131
-<font size=24px>I'd jump in front of a</font><font color=#ffff00 size=24px><b> train </b></font><font size=24px>for you</font>
+5
+00:00:15,041 --> 00:00:20,921
+<font size=24px>I</font><font color=#ffff00 size=24px><b> know </b></font><font size=24px>you've never loved the sound of your voice on tape</font>
 

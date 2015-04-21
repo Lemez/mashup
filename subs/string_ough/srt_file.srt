@@ -2,26 +2,18 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:03,321
-<font size=24px>Our song is the way you</font><font color=#ffff00 size=24px><b> laugh </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:05,341
+<font size=24px>But now they've</font><font color=#ffff00 size=24px><b> brought </b></font><font size=24px>you away from here</font>
 
 3
-00:00:03,321 --> 00:00:12,460
-<font size=24px></font><font color=#ffff00 size=24px><b> Although </b></font><font size=24px>I am broken, my heart is untamed, still</font>
+00:00:05,341 --> 00:00:10,751
+<font size=24px></font><font color=#ffff00 size=24px><b> Though </b></font><font size=24px>it makes no sense to me</font>
 
 4
-00:00:12,460 --> 00:00:16,360
-<font size=24px>I guess that I don't need that</font><font color=#ffff00 size=24px><b> though </b></font><font size=24px></font>
+00:00:10,751 --> 00:00:19,051
+<font size=24px>And</font><font color=#ffff00 size=24px><b> thought </b></font><font size=24px>I'd never get to see you anymore.</font>
 
 5
-00:00:16,360 --> 00:00:21,270
-<font size=24px>I</font><font color=#ffff00 size=24px><b> thought </b></font><font size=24px>things were going alright</font>
-
-6
-00:00:21,270 --> 00:00:26,050
-<font size=24px>They say I'm</font><font color=#ffff00 size=24px><b> caught </b></font><font size=24px>up in a dream</font>
-
-7
-00:00:26,050 --> 00:00:31,130
-<font size=24px>But you treat me like a stranger and that feels so</font><font color=#ffff00 size=24px><b> rough </b></font><font size=24px></font>
+00:00:19,051 --> 00:00:27,601
+<font size=24px>Can't see what he is going</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px></font>
 

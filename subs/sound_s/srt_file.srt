@@ -2,26 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:06,141
-<font size=24px>I see</font><font color=#ffff00 size=24px><b> ascending </b></font><font size=24px>light upon a hill</font>
+00:00:00,001 --> 00:00:04,081
+<font size=24px>Dressed up like you're something</font><font color=#ffff00 size=24px><b> else </b></font><font size=24px></font>
 
 3
-00:00:06,141 --> 00:00:14,731
-<font size=24px>People making</font><font color=#ffff00 size=24px><b> choices </b></font><font size=24px>they can't fake</font>
+00:00:04,081 --> 00:00:08,231
+<font size=24px>And restoring life to the</font><font color=#ffff00 size=24px><b> lighthouse </b></font><font size=24px></font>
 
 4
-00:00:14,731 --> 00:00:19,891
-<font size=24px>You'll be the</font><font color=#ffff00 size=24px><b> prince </b></font><font size=24px>and I'll be the princess</font>
+00:00:08,231 --> 00:00:12,781
+<font size=24px>You'll be the prince and I'll be the</font><font color=#ffff00 size=24px><b> princess </b></font><font size=24px></font>
 
 5
-00:00:19,891 --> 00:00:28,621
-<font size=24px></font><font color=#ffff00 size=24px><b> Sacrifice </b></font><font size=24px>it all and maybe say</font>
+00:00:12,781 --> 00:00:17,501
+<font size=24px>Caused by</font><font color=#ffff00 size=24px><b> absence </b></font><font size=24px>of you</font>
 
 6
-00:00:28,621 --> 00:00:33,641
-<font size=24px>The</font><font color=#ffff00 size=24px><b> pieces </b></font><font size=24px>of my heart are missing you</font>
-
-7
-00:00:33,641 --> 00:00:39,501
-<font size=24px>And all the other boys try to</font><font color=#ffff00 size=24px><b> chase </b></font><font size=24px>me</font>
+00:00:17,501 --> 00:00:22,331
+<font size=24px>Told</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px>that you were right for me</font>
 

@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:06,151
+<font size=24px>Until our hearts</font><font color=#ffff00 size=24px><b> catch </b></font><font size=24px>fire</font>
+
+3
+00:00:06,151 --> 00:00:12,311
+<font size=24px>But darling I'll still</font><font color=#ffff00 size=24px><b> catch </b></font><font size=24px>a grenade for you</font>
+
+4
+00:00:12,311 --> 00:00:18,031
+<font size=24px>And I wouldn't</font><font color=#ffff00 size=24px><b> catch </b></font><font size=24px>you hung up on somebody that you used to know</font>
+
+5
+00:00:18,031 --> 00:00:22,171
+<font size=24px>You're</font><font color=#ffff00 size=24px><b> watching </b></font><font size=24px>your back like you can't relax</font>
+
+6
+00:00:22,171 --> 00:00:27,361
+<font size=24px>We need to</font><font color=#ffff00 size=24px><b> fetch </b></font><font size=24px>back the time</font>
+

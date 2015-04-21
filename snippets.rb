@@ -29,6 +29,9 @@ def create_snippets_from_sentences
 		d = sentence.duration + 1000 
 		# d += 500 if d < 4000
 
+		next if d > MAX_DUR
+		# next if d < MIN_DUR
+
 		start_secs = convert_to_seconds_and_ms(s)
 		end_secs = convert_to_seconds_and_ms(e)
 		duration_secs = convert_to_seconds_and_ms(d)
@@ -53,13 +56,13 @@ def create_snippets_from_sentences
 		# save cut of each video to rule edits folder
 		command = "ffmpeg -i #{full_video_location}  -ss #{start_secs} -t #{duration_secs} -async 1 -threads 0 '#{location_string}' -y -loglevel quiet"
 		
-		unless File.exists?(location_string)
+		# unless File.exists?(location_string)
 			
 			p "Processing #{artist} #{title} with duration #{d.to_s} and clip=#{start_secs}:#{duration_secs} "
 			system (command) 
-		else
-			p "Existing: #{artist} #{title} with duration #{d.to_s} "
-		end
+		# else
+			# p "Existing: #{artist} #{title} with duration #{d.to_s} "
+		# end
 
 		@full_sentence=full_sentence
 		@title=title

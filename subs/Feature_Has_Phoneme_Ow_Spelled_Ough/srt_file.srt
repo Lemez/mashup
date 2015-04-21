@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:03,901
+<font size=24px>I guess that I don't need that</font><font color=#ffff00 size=24px><b> though </b></font><font size=24px></font>
+
+3
+00:00:03,901 --> 00:00:09,311
+<font size=24px></font><font color=#ffff00 size=24px><b> Though </b></font><font size=24px>it makes no sense to me</font>
+

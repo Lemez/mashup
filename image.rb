@@ -5,7 +5,7 @@ def make_image
 	@image = "#{@imgdir}/#{@playlist_name}/#{@playlist_name}"
 
 	rule,example = NODE_DESCRIPTIONS[@playlist_name][0],NODE_DESCRIPTIONS[@playlist_name][1]
-	label = "label: #{rule}\n#{example}"
+	label = "label: #{rule}\nexample: #{example}"
 
 	`convert \
 	-size 720x406 \

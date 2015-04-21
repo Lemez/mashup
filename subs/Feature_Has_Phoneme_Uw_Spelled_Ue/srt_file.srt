@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:04,761
+<font size=24px>I hate to turn up out of the</font><font color=#ffff00 size=24px><b> blue </b></font><font size=24px>uninvited but I</font>
+
+3
+00:00:04,761 --> 00:00:09,631
+<font size=24px>Losing him was</font><font color=#ffff00 size=24px><b> blue </b></font><font size=24px>like I'd never known</font>
+
+4
+00:00:09,631 --> 00:00:18,071
+<font size=24px>But they haven't got a</font><font color=#ffff00 size=24px><b> clue </b></font><font size=24px></font>
+

@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:03,681
+<font size=24px>'Cause darling I'm a</font><font color=#ffff00 size=24px><b> nightmare </b></font><font size=24px>dressed like a daydream</font>
+
+3
+00:00:03,681 --> 00:00:08,191
+<font size=24px>Nothing compares no worries or</font><font color=#ffff00 size=24px><b> cares </b></font><font size=24px></font>
+
+4
+00:00:08,191 --> 00:00:13,301
+<font size=24px>And mother always told me be</font><font color=#ffff00 size=24px><b> careful </b></font><font size=24px>of who you love</font>
+

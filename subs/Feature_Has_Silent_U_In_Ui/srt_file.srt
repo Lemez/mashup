@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:04,081
+<font size=24px>You</font><font color=#ffff00 size=24px><b> build </b></font><font size=24px>me up and then I fall apart</font>
+
+3
+00:00:04,081 --> 00:00:08,841
+<font size=24px></font><font color=#ffff00 size=24px><b> Guided </b></font><font size=24px>by a beating heart</font>
+

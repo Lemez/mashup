@@ -2,6 +2,30 @@ def check_snips
 	Snippet.first
 end
 
+def which_vids_are_done
+	gamefile = "./csv/games_final/games.csv"
+	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
+	@found = []
+	@notyet = []
+
+	CSV.foreach(gamefile,options) do |line|
+		game, nodes = line[0], line[1][1...-2].split(",")
+		nodes.each do |n|
+			n = n.gsub!(/[^0-9a-z_]/i, '')
+			File.exists?("#{@finaldir}/#{n}/#{n}_subs_logo.mp4") ? @found << n : @notyet << n
+		end
+	end
+
+	p "Found: #{@found.length} - #{@found}"
+	p ""
+	p "Not yet: #{@notyet.length} - #{@notyet}"
+end
+
+def compile_to_game
+	
+
+end
+
 def glue_intermediate_files_and_normal_audio
 
 	p "******"

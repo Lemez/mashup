@@ -2,26 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:08,441
-<font size=24px>Chasing relentlessly, still</font><font color=#ffff00 size=24px><b> fight </b></font><font size=24px>and I don't know why</font>
+00:00:00,001 --> 00:00:08,121
+<font size=24px>Like the colors in autumn, so</font><font color=#ffff00 size=24px><b> bright </b></font><font size=24px>just before they lose it all</font>
 
 3
-00:00:08,441 --> 00:00:16,631
-<font size=24px>Your mind's so far away, but your body's</font><font color=#ffff00 size=24px><b> right </b></font><font size=24px>here, sometimes</font>
-
-4
-00:00:16,631 --> 00:00:20,551
-<font size=24px>For forty days and forty</font><font color=#ffff00 size=24px><b> nights </b></font><font size=24px></font>
-
-5
-00:00:20,551 --> 00:00:29,161
+00:00:08,121 --> 00:00:16,731
 <font size=24px></font><font color=#ffff00 size=24px><b> Fight </b></font><font size=24px>fear for the selfish pain, it was worth it every time</font>
 
-6
-00:00:29,161 --> 00:00:36,171
-<font size=24px>I drive all</font><font color=#ffff00 size=24px><b> night </b></font><font size=24px>to keep her warm and time</font>
+4
+00:00:16,731 --> 00:00:20,952
+<font size=24px>Giving me the feeling of a</font><font color=#ffff00 size=24px><b> lightning </b></font><font size=24px>strike</font>
 
-7
-00:00:36,171 --> 00:00:41,721
-<font size=24px>Did they ever hold each other</font><font color=#ffff00 size=24px><b> tight </b></font><font size=24px></font>
+5
+00:00:20,952 --> 00:00:29,522
+<font size=24px>We</font><font color=#ffff00 size=24px><b> might </b></font><font size=24px>as well be lovers on the sun</font>
+
+6
+00:00:29,522 --> 00:00:35,552
+<font size=24px></font><font color=#ffff00 size=24px><b> Nights </b></font><font size=24px>like this lead to</font>
 

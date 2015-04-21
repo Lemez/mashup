@@ -2,14 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,321
-<font size=24px>Stoned in paradise, shouldn't talk</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>it</font>
+00:00:00,001 --> 00:00:07,371
+<font size=24px>Baby, we</font><font color=#ffff00 size=24px><b> found </b></font><font size=24px>love right where we are</font>
 
 3
-00:00:05,321 --> 00:00:11,531
-<font size=24px>She don't feel the same</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>us in her bones</font>
+00:00:07,371 --> 00:00:14,881
+<font size=24px>Do not speak as</font><font color=#ffff00 size=24px><b> loud </b></font><font size=24px>as my heart</font>
 
 4
-00:00:11,531 --> 00:00:15,841
-<font size=24px>Been dreaming</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>you a lot</font>
+00:00:14,881 --> 00:00:22,721
+<font size=24px>In a summer haze</font><font color=#ffff00 size=24px><b> bound </b></font><font size=24px>by the surprise</font>
+
+5
+00:00:22,721 --> 00:00:31,091
+<font size=24px>It cuts deep through our</font><font color=#ffff00 size=24px><b> ground </b></font><font size=24px>and makes us forget all common sense</font>
+
+6
+00:00:31,091 --> 00:00:40,511
+<font size=24px>Your</font><font color=#ffff00 size=24px><b> mouth </b></font><font size=24px>is a revolver firing bullets in the sky</font>
 

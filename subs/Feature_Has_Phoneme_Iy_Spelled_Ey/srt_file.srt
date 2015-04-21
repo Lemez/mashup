@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:05,231
+<font size=24px>I can't tell where the</font><font color=#ffff00 size=24px><b> journey </b></font><font size=24px>will end</font>
+
+3
+00:00:05,231 --> 00:00:11,301
+<font size=24px>So</font><font color=#ffff00 size=24px><b> honey </b></font><font size=24px>now</font>
+

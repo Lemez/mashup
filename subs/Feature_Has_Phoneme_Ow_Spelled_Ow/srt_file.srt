@@ -2,26 +2,18 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:06,361
-<font size=24px>But it stays right here in its</font><font color=#ffff00 size=24px><b> cage </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:04,721
+<font size=24px>This wind is</font><font color=#ffff00 size=24px><b> blowing </b></font><font size=24px>my mind</font>
 
 3
-00:00:06,361 --> 00:00:11,021
-<font size=24px>When we're on the phone, and you talk real</font><font color=#ffff00 size=24px><b> slow </b></font><font size=24px></font>
+00:00:04,721 --> 00:00:10,371
+<font size=24px>All my</font><font color=#ffff00 size=24px><b> windows </b></font><font size=24px>still are broken</font>
 
 4
-00:00:11,021 --> 00:00:15,841
-<font size=24px>But you treat me like a</font><font color=#ffff00 size=24px><b> stranger </b></font><font size=24px>and that feels so rough</font>
+00:00:10,371 --> 00:00:16,191
+<font size=24px>There are times when I don't</font><font color=#ffff00 size=24px><b> know </b></font><font size=24px>where I stand, sometimes</font>
 
 5
-00:00:15,841 --> 00:00:21,581
-<font size=24px>Little did I</font><font color=#ffff00 size=24px><b> know </b></font><font size=24px></font>
-
-6
-00:00:21,581 --> 00:00:27,861
-<font size=24px>Then</font><font color=#ffff00 size=24px><b> showed </b></font><font size=24px>a photo my baby cried his eyes were like mine</font>
-
-7
-00:00:27,861 --> 00:00:33,031
-<font size=24px></font><font color=#ffff00 size=24px><b> Throw </b></font><font size=24px>my hand on a blade for you</font>
+00:00:16,191 --> 00:00:22,171
+<font size=24px>I hear it calling outside my</font><font color=#ffff00 size=24px><b> window </b></font><font size=24px></font>
 

@@ -2,26 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,671
-<font size=24px>It's time that I</font><font color=#ffff00 size=24px><b> realize </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:05,051
+<font size=24px>You still have to squeeze into your</font><font color=#ffff00 size=24px><b> jeans </b></font><font size=24px></font>
 
 3
-00:00:04,671 --> 00:00:07,531
-<font size=24px></font><font color=#ffff00 size=24px><b> Leave </b></font><font size=24px>my heart open</font>
+00:00:05,051 --> 00:00:10,571
+<font size=24px>Place your head on my</font><font color=#ffff00 size=24px><b> beating </b></font><font size=24px>heart</font>
 
 4
-00:00:07,531 --> 00:00:12,291
-<font size=24px>Guided by a</font><font color=#ffff00 size=24px><b> beating </b></font><font size=24px>heart</font>
+00:00:10,571 --> 00:00:17,171
+<font size=24px>Then every head turned with eyes that</font><font color=#ffff00 size=24px><b> dreamed </b></font><font size=24px>of being the one</font>
 
 5
-00:00:12,291 --> 00:00:20,671
-<font size=24px></font><font color=#ffff00 size=24px><b> Realizing </b></font><font size=24px>all you ever wanted was right there in front of you</font>
+00:00:17,171 --> 00:00:24,191
+<font size=24px>Nobody said it was</font><font color=#ffff00 size=24px><b> easy </b></font><font size=24px></font>
 
 6
-00:00:20,671 --> 00:00:29,451
-<font size=24px>Trying to solve a crossword and</font><font color=#ffff00 size=24px><b> realizing </b></font><font size=24px>there's no right answer</font>
-
-7
-00:00:29,451 --> 00:00:34,331
-<font size=24px>The ground</font><font color=#ffff00 size=24px><b> beneath </b></font><font size=24px>my feet is open wide</font>
+00:00:24,191 --> 00:00:32,451
+<font size=24px>That's not</font><font color=#ffff00 size=24px><b> really </b></font><font size=24px>her style</font>
 

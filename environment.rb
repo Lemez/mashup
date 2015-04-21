@@ -347,7 +347,7 @@ class Snippet < ActiveRecord::Base
 	end
 
     def self.selected
-        Snippet.all.limit(LIMIT)
+        Snippet.all.limit(@number_of_clips)
     end
 
 	def self.location

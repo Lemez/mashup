@@ -5,11 +5,15 @@
 # # usage: ruby make_rule_video.rb 'double_cons.csv' false 
 
 
-# usage: ruby make_rule_video.rb DOWNLOADING=false QUERY=true
+# usage: ruby make_rule_video.rb CREATE=true DOWNLOADING=false QUERY=false
 # this will query nodes first to update saved sentences and incompleted final videos
 
 # raise "Please specify a local csv file, eg >> $ ruby make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
 # raise "Please specify true or false for DOWNLOADING " if ARGV[1].nil?
+
+#requires THREE arguments:
+# usage: ruby make_rule_video.rb CREATE=true DOWNLOADING=false QUERY=false
+
 
 require 'streamio-ffmpeg'
 require 'viddl-rb'
@@ -51,11 +55,30 @@ BLACK_PIC = "#{@imgdir}/black.png"
 DIRECTORIES = [@imgdir,@finaldir,@subsdir]
 RUDE = ["damn", "shit", "sex"]
 
-EXCLUDED = ["believer", "billie jean", "man in the mirror"]
+EXCLUDED = []
 MIN_DUR = 3500
 MAX_DUR = 10000
-LIMIT = 6
 CARD_LENGTH = 4
+LIMIT = 5
+@done = 0
+
+OFFSET = {
+	"2pac ~ california love.mp4" => 78000,
+	"5 cent ~ in da club.mp4" => 32500,
+	"5 seconds of summer ~ dont stop.mp4" => 28500,
+	"american authors ~ believer.mp4" => 7700,
+	"arcade fire ~ reflektor.mp4" => 5000,
+	"avril lavigne ~ rock n roll.mp4" => 35000,
+	"bruno mars ~ young girls.mp4" => 5000,
+	"christina perri ~ human.mp4" => 1000, 
+	"destinys child ~ survivor.mp4" => 4000,
+	"ellie goulding ~ anything could happen.mp4" => 17000,
+	"eminem ~ the monster.mp4" => 62000,
+	"marina and the diamonds ~ primadonna.mp4" => 5000,
+	"michael jackson ~ billie jean.mp4" => 4000,
+	"michael jackson ~ man in the mirror.mp4" => 8000,
+	"ne yo ~ one in a million.mp4" => 26000 
+}
 
 # @playlist_name = ARGV[0][0...ARGV[0].rindex(".")] unless ARGV[0].nil?
 
@@ -68,14 +91,15 @@ CARD_LENGTH = 4
 # calculate_completed_videos
 
 # update list of completed videos
-query_saved_videos_per_node true if QUERY #ARGV - destroy all Sentence records each time
-create_mashups_with_enough_videos if CREATE
+# query_saved_videos_per_node true if QUERY #ARGV - destroy all Sentence records each time
+# create_mashups_with_enough_videos if CREATE
 
 ### IMAGES PREPEND WORKING AS TEST
 
-
-
-	
+# MAKE GAME VIDEOS FROM NODE VIDEOS
+# csv_to_game
+which_vids_are_done
+# compile_to_game
 
 	
 

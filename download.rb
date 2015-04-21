@@ -39,6 +39,8 @@ def download_undownloaded_vids array
 
 				get_vimeo_manually @song_artist,@song_title,'vimeo'
 			 else
+			 	write_to_not_dl_file @song_artist, @song_title
+
 			 	next
 
 			 end
@@ -132,20 +134,17 @@ def get_vimeo_manually artist,title,source
 
 	 	if !@manual_id.empty?
 	 		download_a_video @manual_id,'vimeo'
+	 		play_sound true
 	 	else
+	 		write_to_not_dl_file artist,title
 	 		"Trying next video"
 	 		return
 	 	end
 	 end
 	
 
-
-    rescue Timeout::Error => e
+    rescue Timeout::Error, Watir::Wait::TimeoutError => e
     	puts "Vimeo search for #{@title_to_check} page did not load: #{e}" 
-    	puts $!, $@
-
-    rescue Watir::Wait::TimeoutError 
-    	puts "Vimeo search for #{@title_to_check} page did not load" 
     	puts $!, $@
     	return
 
