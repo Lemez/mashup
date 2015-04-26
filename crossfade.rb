@@ -1,8 +1,6 @@
 def crossfade_snippets_with_normal_audio_together
 
-	p "******"
-	p "crossfade_snippets_with_normal_audio_together"
-	p "******"
+	p "* crossfade_snippets_with_normal_audio_together *"
 
 	@items = @selectedsnippets.map(&:normal_snippet_file_location)
 	@durations = @selectedsnippets.map(&:clip_duration)
@@ -84,7 +82,7 @@ def crossfade_snippets_with_normal_audio_together
 
 		# p "----------------------"
 		# p "out= #{@dur}"
-		# p "*********************"
+		# p "*"
 
 
 # ffmpeg -i input.mp3 -af "afade=enable='between(t,0,3)':t=in:ss=0:d=3,afade=enable='between(t,7,10)':t=out:st=7:d=3,afade=enable='between(t,10,13)':t=in:st=10:d=3,afade=enable='between(t,13,16)':t=out:st=13:d=3" -t 16 output.mp3
@@ -221,7 +219,7 @@ def crossfade_snippets_to_xfaded_ts
 
 		p "----------------------"
 		p "out= #{@dur}"
-		p "*********************"
+		p "*"
 
 
 
@@ -252,9 +250,7 @@ end
 
 def crossfade_snippets_to_ts_and_audio_to_wav
 
-	p "******"
-	p "crossfade_snippets_to_ts_and_audio_to_wav"
-	p "******"
+	p "* crossfade_snippets_to_ts_and_audio_to_wav *"
 
 	@items = @selectedsnippets.map(&:temp_file_location)
 	@durations = @selectedsnippets.map(&:clip_duration)
@@ -349,7 +345,7 @@ def crossfade_snippets_to_ts_and_audio_to_wav
 
 		# p "----------------------"
 		# p "out= #{@dur}"
-		# p "*********************"
+		# p "*"
 
 
 

@@ -2,26 +2,18 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:06,121
-<font size=24px>I've heard every album,</font><font color=#ffff00 size=24px><b> listened </b></font><font size=24px>to the radio</font>
-
-3
-00:00:06,121 --> 00:00:11,281
-<font size=24px>Honesty, you</font><font color=#ffff00 size=24px><b> promised </b></font><font size=24px>me, I'm never gonna find you fake it</font>
-
-4
-00:00:11,281 --> 00:00:15,911
-<font size=24px>A game that I'm</font><font color=#ffff00 size=24px><b> destined </b></font><font size=24px>to lose</font>
-
-5
-00:00:15,911 --> 00:00:20,671
+00:00:00,001 --> 00:00:04,761
 <font size=24px>You've</font><font color=#ffff00 size=24px><b> wondered </b></font><font size=24px>down a path I can't explain</font>
 
-6
-00:00:20,671 --> 00:00:25,591
-<font size=24px>Reality</font><font color=#ffff00 size=24px><b> ruined </b></font><font size=24px>my life</font>
-
-7
-00:00:25,591 --> 00:00:30,721
+3
+00:00:04,761 --> 00:00:09,891
 <font size=24px>Make out like it never</font><font color=#ffff00 size=24px><b> happened </b></font><font size=24px>and that we were nothing</font>
+
+4
+00:00:09,891 --> 00:00:15,051
+<font size=24px>Honesty, you</font><font color=#ffff00 size=24px><b> promised </b></font><font size=24px>me, I'm never gonna find you fake it</font>
+
+5
+00:00:15,051 --> 00:00:21,171
+<font size=24px>I've heard every album,</font><font color=#ffff00 size=24px><b> listened </b></font><font size=24px>to the radio</font>
 

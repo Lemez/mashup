@@ -12,7 +12,8 @@
 # raise "Please specify true or false for DOWNLOADING " if ARGV[1].nil?
 
 #requires THREE arguments:
-# usage: ruby make_rule_video.rb CREATE=true DOWNLOADING=false QUERY=false
+# usage: 
+#ruby make_rule_video.rb CREATE=false DOWNLOADING=false QUERY=false
 
 
 require 'streamio-ffmpeg'
@@ -48,6 +49,7 @@ QUERY = ARGV[2].split("=")[-1].to_bool
 @editsdir = Dir.pwd + '/video_edits'
 @subsdir = Dir.pwd + '/subs'
 @finaldir = Dir.pwd + '/videos_final'
+@gamesdir = Dir.pwd + '/videos_final_games'
 @imgdir = Dir.pwd + '/images'
 @fontdir = '/Library/Fonts'
 @testdir = Dir.pwd + '/_test'
@@ -57,7 +59,7 @@ RUDE = ["damn", "shit", "sex"]
 
 EXCLUDED = []
 MIN_DUR = 3500
-MAX_DUR = 10000
+MAX_DUR = 15000
 CARD_LENGTH = 4
 LIMIT = 5
 @done = 0
@@ -65,19 +67,35 @@ LIMIT = 5
 OFFSET = {
 	"2pac ~ california love.mp4" => 78000,
 	"5 cent ~ in da club.mp4" => 32500,
-	"5 seconds of summer ~ dont stop.mp4" => 28500,
+	"5 seconds of summer ~ dont stop.mp4" => 0,
 	"american authors ~ believer.mp4" => 7700,
 	"arcade fire ~ reflektor.mp4" => 5000,
+	"ariana grande ~ problem.mp4" => 750,
 	"avril lavigne ~ rock n roll.mp4" => 35000,
+	"avril lavigne ~ when youre gone.mp4" => 0,
+	"birdy ~ not about angels.mp4" => 0,
 	"bruno mars ~ young girls.mp4" => 5000,
-	"christina perri ~ human.mp4" => 1000, 
+	"bruno mars ~ just the way you are.mp4" => 0,
+	"charli xcx ~ boom clap.mp4" => -500,
+	"christina perri ~ human.mp4" => -500, 
 	"destinys child ~ survivor.mp4" => 4000,
+	"ed sheeran ~ dont.mp4" => 28000,
 	"ellie goulding ~ anything could happen.mp4" => 17000,
 	"eminem ~ the monster.mp4" => 62000,
+	"jonas brothers ~ play my music.mp4" => 17500,
 	"marina and the diamonds ~ primadonna.mp4" => 5000,
-	"michael jackson ~ billie jean.mp4" => 4000,
+	"michael jackson ~ billie jean.mp4" => 3500,
 	"michael jackson ~ man in the mirror.mp4" => 8000,
-	"ne yo ~ one in a million.mp4" => 26000 
+	"ne yo ~ one in a million.mp4" => 26000,
+	"nico & vinz ~ am i wrong.mp4" => 13000,
+	"one direction ~ story of my life.mp4" => 0,
+	"taylor swift ~ white horse.mp4" => 12000,
+	"the vamps ~ wild heart.mp4" => 1500
+}
+
+INTERRUPTIONS = {
+	"ed sheeran ~ dont.mp4" => [112000,33000]
+
 }
 
 # @playlist_name = ARGV[0][0...ARGV[0].rindex(".")] unless ARGV[0].nil?
@@ -85,21 +103,39 @@ OFFSET = {
 ######## CONVERT CSV TO NODES #######
 # db_files_to_csv
 # get_files_from_db_csv
+# get_hits_per_video
 
 #######  PROGRAMME CODE ######
 # make_new_video downloading=DOWNLOADING
 # calculate_completed_videos
 
 # update list of completed videos
-# query_saved_videos_per_node true if QUERY #ARGV - destroy all Sentence records each time
-# create_mashups_with_enough_videos if CREATE
+query_saved_videos_per_node true if QUERY #ARGV - destroy all Sentence records each time
+create_mashups_with_enough_videos if CREATE
 
 ### IMAGES PREPEND WORKING AS TEST
 
+# download_critical_vids
+
+### TESTING #####
+# rename_currently_working
+
+
+
+
+
 # MAKE GAME VIDEOS FROM NODE VIDEOS
 # csv_to_game
-which_vids_are_done
-# compile_to_game
+
+# create_hash_of_features
+# compile_features_to_game
+
+
+# MAKE GAME
+# which_vids_are_done
+# features_to_game true
+# # check_games
+# compile_games
 
 	
 

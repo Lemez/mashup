@@ -2,26 +2,18 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,191
-<font size=24px></font><font color=#ffff00 size=24px><b> Wherever </b></font><font size=24px>you fall</font>
+00:00:00,001 --> 00:00:05,241
+<font size=24px>To watch me</font><font color=#ffff00 size=24px><b> while </b></font><font size=24px>I bleed?</font>
 
 3
-00:00:05,191 --> 00:00:13,631
-<font size=24px>Chasing relentlessly, still fight and I don't know</font><font color=#ffff00 size=24px><b> why </b></font><font size=24px></font>
+00:00:05,241 --> 00:00:11,541
+<font size=24px>And I said Romeo take me</font><font color=#ffff00 size=24px><b> somewhere </b></font><font size=24px>we can be alone</font>
 
 4
-00:00:13,631 --> 00:00:18,271
-<font size=24px></font><font color=#ffff00 size=24px><b> While </b></font><font size=24px>I walk alone in the rain</font>
+00:00:11,541 --> 00:00:17,981
+<font size=24px></font><font color=#ffff00 size=24px><b> Who </b></font><font size=24px>would have known how bittersweet</font>
 
 5
-00:00:18,271 --> 00:00:22,621
-<font size=24px>But I know</font><font color=#ffff00 size=24px><b> where </b></font><font size=24px>to start</font>
-
-6
-00:00:22,621 --> 00:00:29,841
-<font size=24px>Guides me to</font><font color=#ffff00 size=24px><b> wherever </b></font><font size=24px>you fall</font>
-
-7
-00:00:29,841 --> 00:00:35,051
-<font size=24px>I talked to your dad, go pick out a</font><font color=#ffff00 size=24px><b> white </b></font><font size=24px>dress</font>
+00:00:17,981 --> 00:00:25,091
+<font size=24px></font><font color=#ffff00 size=24px><b> Why </b></font><font size=24px>I should never make a change</font>
 

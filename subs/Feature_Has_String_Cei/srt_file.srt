@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:03,751
+<font size=24px>Staring at the</font><font color=#ffff00 size=24px><b> ceiling </b></font><font size=24px>in the dark</font>
+

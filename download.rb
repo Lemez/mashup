@@ -1,8 +1,36 @@
+def download_critical_vids
+	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
+	list = "./csv/videos/video_hits.csv"
+	undownloaded = "./csv/undownloaded.csv"
+
+	
+	not_on_vimeo = []
+	CSV.foreach(undownloaded,options) {|row|not_on_vimeo << row[1]}
+
+	get_all_titles_from_dir
+	saved_titles = SavedVideo.all.map(&:title)
+	
+	CSV.foreach(list,options) do |line|
+		title,hits = line[0],line[1]
+		song_artist,song_title = title.downcase.split("~")
+
+		next if saved_titles.include?(song_title)
+		next if not_on_vimeo.include?(song_title)
+		p "____________"
+		p "not_on_vimeo"
+		p "____________"
+		p "#{hits.to_s}: #{title}"
+		p "____________"
+	
+		get_vimeo_manually song_artist,song_title,'vimeo'
+
+	end
+end
+
+
 def download_undownloaded_vids array
 
-	p "*****"
-	p "download_undownloaded_vids"
-	p "*****"
+	p "* download_undownloaded_vids *"
 
 	array.each do |record|
 		@song_artist = record.artist
@@ -28,7 +56,7 @@ def download_undownloaded_vids array
 
 			
 
-			 p "Continue with #{@song_artist} - #{@song_title}? Press y or any other key to skip"
+			 p "Continue with #{@song_artist} - #{@song_title}? Press y to continue,  B to break or any other key to skip"
 		    `echo "Do you wish to continue?"`
 
 		    output = STDIN.gets.chomp!
@@ -38,7 +66,11 @@ def download_undownloaded_vids array
 				"Getting from Vimeo"
 
 				get_vimeo_manually @song_artist,@song_title,'vimeo'
-			 else
+
+			elsif output == "B"
+				return
+
+			else
 			 	write_to_not_dl_file @song_artist, @song_title
 
 			 	next

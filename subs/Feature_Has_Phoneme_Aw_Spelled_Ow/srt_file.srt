@@ -2,14 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,671
-<font size=24px>Go on and try to tear me</font><font color=#ffff00 size=24px><b> down </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:03,971
+<font size=24px>But</font><font color=#ffff00 size=24px><b> now </b></font><font size=24px>you're in my way</font>
 
 3
-00:00:05,671 --> 00:00:13,271
+00:00:03,971 --> 00:00:11,571
 <font size=24px>I heard, that you're settled</font><font color=#ffff00 size=24px><b> down </b></font><font size=24px></font>
 
 4
-00:00:13,271 --> 00:00:21,091
+00:00:11,571 --> 00:00:19,391
 <font size=24px>You don't know</font><font color=#ffff00 size=24px><b> how </b></font><font size=24px>lovely you are</font>
 

@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:02,501
+<font size=24px>Looking for</font><font color=#ffff00 size=24px><b> treasure </b></font><font size=24px></font>
+
+3
+00:00:02,501 --> 00:00:05,761
+<font size=24px>My hidden</font><font color=#ffff00 size=24px><b> treasure </b></font><font size=24px>chest</font>
+

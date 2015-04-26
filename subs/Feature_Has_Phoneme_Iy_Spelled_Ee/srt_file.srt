@@ -6,14 +6,18 @@
 <font size=24px>And I'm joining up the dots with the freckles on your</font><font color=#ffff00 size=24px><b> cheeks </b></font><font size=24px></font>
 
 3
-00:00:05,381 --> 00:00:12,831
-<font size=24px>Come up to</font><font color=#ffff00 size=24px><b> meet </b></font><font size=24px>you, tell you I'm sorry</font>
+00:00:05,381 --> 00:00:11,401
+<font size=24px>What you</font><font color=#ffff00 size=24px><b> feel </b></font><font size=24px>when you ride it home</font>
 
 4
-00:00:12,831 --> 00:00:21,011
-<font size=24px>You make me</font><font color=#ffff00 size=24px><b> feel </b></font><font size=24px>like I'm a boy and not a man, sometimes</font>
+00:00:11,401 --> 00:00:18,851
+<font size=24px>Come up to</font><font color=#ffff00 size=24px><b> meet </b></font><font size=24px>you, tell you I'm sorry</font>
 
 5
-00:00:21,011 --> 00:00:30,731
+00:00:18,851 --> 00:00:28,571
 <font size=24px>Loving him is like driving a new Maserati down a dead end</font><font color=#ffff00 size=24px><b> street </b></font><font size=24px></font>
+
+6
+00:00:28,571 --> 00:00:41,871
+<font size=24px>'Cause honey your soul could never grow old, it's</font><font color=#ffff00 size=24px><b> evergreen </b></font><font size=24px></font>
 

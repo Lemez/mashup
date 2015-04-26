@@ -2,6 +2,19 @@ def calculate_completed_videos
 	@completed = Dir.glob("./videos_final/*").map{|f| File.basename(f)}
 end
 
+def rename_currently_working
+	folder_path = "#{@finaldir}/"
+	completed = Dir.glob(folder_path + "*.ts")
+	completed.each do |vid|
+		filename = File.basename(vid, File.extname(vid))
+		# next unless filename[-5..-1] == "_logo"
+		 `rm #{vid}`
+
+	end
+end
+
+
+
 def make_dir_if_none (dir,name)
 
 	d = "#{dir}/#{name}"
@@ -17,7 +30,7 @@ def make_dir_if_none (dir,name)
 end
 
 def get_all_titles_from_dir 
-	p "********* get_all_titles_from_dir ********* #{@playlist_name}"
+	p "* get_all_titles_from_dir * #{@playlist_name}"
 
 	Dir.glob("#{@videodir}/*.mp4").each do |item|
 		size = File.size(item)

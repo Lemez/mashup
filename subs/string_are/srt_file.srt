@@ -13,3 +13,11 @@
 00:00:08,191 --> 00:00:13,301
 <font size=24px>And mother always told me be</font><font color=#ffff00 size=24px><b> careful </b></font><font size=24px>of who you love</font>
 
+5
+00:00:13,301 --> 00:00:18,601
+<font size=24px>The whole world stops and</font><font color=#ffff00 size=24px><b> stares </b></font><font size=24px>for a while</font>
+
+6
+00:00:18,601 --> 00:00:28,881
+<font size=24px>Would you</font><font color=#ffff00 size=24px><b> dare </b></font><font size=24px>to let it go?</font>
+

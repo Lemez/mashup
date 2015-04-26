@@ -2,22 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:08,121
-<font size=24px>Like the colors in autumn, so</font><font color=#ffff00 size=24px><b> bright </b></font><font size=24px>just before they lose it all</font>
+00:00:00,001 --> 00:00:05,921
+<font size=24px>You had to</font><font color=#ffff00 size=24px><b> fight </b></font><font size=24px>to have the upper hand</font>
 
 3
-00:00:08,121 --> 00:00:16,731
-<font size=24px></font><font color=#ffff00 size=24px><b> Fight </b></font><font size=24px>fear for the selfish pain, it was worth it every time</font>
+00:00:05,921 --> 00:00:12,441
+<font size=24px>You are the</font><font color=#ffff00 size=24px><b> light </b></font><font size=24px>and I will follow</font>
 
 4
-00:00:16,731 --> 00:00:20,952
-<font size=24px>Giving me the feeling of a</font><font color=#ffff00 size=24px><b> lightning </b></font><font size=24px>strike</font>
+00:00:12,441 --> 00:00:19,101
+<font size=24px>We're about to make some memories</font><font color=#ffff00 size=24px><b> tonight </b></font><font size=24px></font>
 
 5
-00:00:20,952 --> 00:00:29,522
-<font size=24px>We</font><font color=#ffff00 size=24px><b> might </b></font><font size=24px>as well be lovers on the sun</font>
+00:00:19,101 --> 00:00:27,711
+<font size=24px></font><font color=#ffff00 size=24px><b> Fight </b></font><font size=24px>fear for the selfish pain, it was worth it every time</font>
 
 6
-00:00:29,522 --> 00:00:35,552
-<font size=24px></font><font color=#ffff00 size=24px><b> Nights </b></font><font size=24px>like this lead to</font>
+00:00:27,711 --> 00:00:37,131
+<font size=24px>You'll never treat yourself</font><font color=#ffff00 size=24px><b> right </b></font><font size=24px>darling but I want you too</font>
 

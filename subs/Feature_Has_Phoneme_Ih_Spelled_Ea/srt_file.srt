@@ -2,22 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,051
-<font size=24px>You still have to squeeze into your</font><font color=#ffff00 size=24px><b> jeans </b></font><font size=24px></font>
-
-3
-00:00:05,051 --> 00:00:10,571
+00:00:00,001 --> 00:00:05,521
 <font size=24px>Place your head on my</font><font color=#ffff00 size=24px><b> beating </b></font><font size=24px>heart</font>
 
+3
+00:00:05,521 --> 00:00:11,551
+<font size=24px>Nights like this</font><font color=#ffff00 size=24px><b> lead </b></font><font size=24px>to</font>
+
 4
-00:00:10,571 --> 00:00:17,171
+00:00:11,551 --> 00:00:18,151
 <font size=24px>Then every head turned with eyes that</font><font color=#ffff00 size=24px><b> dreamed </b></font><font size=24px>of being the one</font>
 
 5
-00:00:17,171 --> 00:00:24,191
+00:00:18,151 --> 00:00:26,171
 <font size=24px>Nobody said it was</font><font color=#ffff00 size=24px><b> easy </b></font><font size=24px></font>
 
 6
-00:00:24,191 --> 00:00:32,451
+00:00:26,171 --> 00:00:34,431
 <font size=24px>That's not</font><font color=#ffff00 size=24px><b> really </b></font><font size=24px>her style</font>
 

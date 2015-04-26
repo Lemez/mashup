@@ -2,14 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,761
-<font size=24px>I hate to turn up out of the</font><font color=#ffff00 size=24px><b> blue </b></font><font size=24px>uninvited but I</font>
+00:00:00,001 --> 00:00:03,441
+<font size=24px>Black, black, black and</font><font color=#ffff00 size=24px><b> blue </b></font><font size=24px></font>
 
 3
-00:00:04,761 --> 00:00:09,631
-<font size=24px>Losing him was</font><font color=#ffff00 size=24px><b> blue </b></font><font size=24px>like I'd never known</font>
+00:00:03,441 --> 00:00:06,901
+<font size=24px>You're picture perfect</font><font color=#ffff00 size=24px><b> blue </b></font><font size=24px></font>
 
 4
-00:00:09,631 --> 00:00:18,071
+00:00:06,901 --> 00:00:11,631
+<font size=24px>Losing him was</font><font color=#ffff00 size=24px><b> blue </b></font><font size=24px>like I'd never known</font>
+
+5
+00:00:11,631 --> 00:00:17,161
+<font size=24px>I hate to turn up out of the</font><font color=#ffff00 size=24px><b> blue </b></font><font size=24px>uninvited but I</font>
+
+6
+00:00:17,161 --> 00:00:25,601
 <font size=24px>But they haven't got a</font><font color=#ffff00 size=24px><b> clue </b></font><font size=24px></font>
 

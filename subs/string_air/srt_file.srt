@@ -2,14 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:03,701
-<font size=24px>I was riding shotgun with my</font><font color=#ffff00 size=24px><b> hair </b></font><font size=24px>undone</font>
-
-3
-00:00:03,701 --> 00:00:07,551
+00:00:00,001 --> 00:00:03,851
 <font size=24px>And I was crying on the</font><font color=#ffff00 size=24px><b> staircase </b></font><font size=24px></font>
 
+3
+00:00:03,851 --> 00:00:09,811
+<font size=24px>Her hair, her</font><font color=#ffff00 size=24px><b> hair </b></font><font size=24px>falls perfectly without her trying</font>
+
 4
-00:00:07,551 --> 00:00:16,821
+00:00:09,811 --> 00:00:16,081
+<font size=24px>I'm not a princess, this ain't a</font><font color=#ffff00 size=24px><b> fairy </b></font><font size=24px>tale</font>
+
+5
+00:00:16,081 --> 00:00:22,441
+<font size=24px>I was riding shotgun with my</font><font color=#ffff00 size=24px><b> hair </b></font><font size=24px>undone in the front seat of his car</font>
+
+6
+00:00:22,441 --> 00:00:31,711
 <font size=24px>I'm standing there on a balcony in summer</font><font color=#ffff00 size=24px><b> air </b></font><font size=24px></font>
 

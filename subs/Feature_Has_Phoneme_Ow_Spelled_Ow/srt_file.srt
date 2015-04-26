@@ -2,18 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,721
-<font size=24px>This wind is</font><font color=#ffff00 size=24px><b> blowing </b></font><font size=24px>my mind</font>
-
-3
-00:00:04,721 --> 00:00:10,371
+00:00:00,001 --> 00:00:05,651
 <font size=24px>All my</font><font color=#ffff00 size=24px><b> windows </b></font><font size=24px>still are broken</font>
 
+3
+00:00:05,651 --> 00:00:11,631
+<font size=24px>I hear it calling outside my</font><font color=#ffff00 size=24px><b> window </b></font><font size=24px></font>
+
 4
-00:00:10,371 --> 00:00:16,191
-<font size=24px>There are times when I don't</font><font color=#ffff00 size=24px><b> know </b></font><font size=24px>where I stand, sometimes</font>
+00:00:11,631 --> 00:00:18,151
+<font size=24px>You are the light and I will</font><font color=#ffff00 size=24px><b> follow </b></font><font size=24px></font>
 
 5
-00:00:16,191 --> 00:00:22,171
-<font size=24px>I hear it calling outside my</font><font color=#ffff00 size=24px><b> window </b></font><font size=24px></font>
+00:00:18,151 --> 00:00:25,181
+<font size=24px>And what's driving me is</font><font color=#ffff00 size=24px><b> following </b></font><font size=24px>my dreams</font>
+
+6
+00:00:25,181 --> 00:00:38,481
+<font size=24px>'Cause honey your soul could never</font><font color=#ffff00 size=24px><b> grow </b></font><font size=24px>old, it's evergreen</font>
 

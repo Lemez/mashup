@@ -1,6 +1,6 @@
 def create_srt_from_snippets
 
-	p "******* create_srt_from_snippets ********"
+	p "* create_srt_from_snippets *"
 
 	make_dir_if_none "#{@subsdir}", "#{@playlist_name}"
 	
@@ -79,9 +79,7 @@ end
 
 
 def test_srt
-	p "********"
-	p "test_srt"
-	p "********"
+	p "* test_srt *"
 
 	srt_file = "#{@subsdir}/srt_ex.srt"
 
@@ -92,9 +90,7 @@ def test_srt
 end
 
 def add_srt_to_final_mp4
-	p "********"
-	p "add_srt_to_final_mp4"
-	p "********"
+	p "* add_srt_to_final_mp4 *"
 
 	srt_file = "'#{@subsdir}/#{@playlist_name}/srt_file.srt'"
 
@@ -111,9 +107,7 @@ end
 
 def srt_to_ass
 
-	p "********"
-	p "srt_to_ass"
-	p "********"
+	p "* srt_to_ass *"
 
 	srt_file = "#{@subsdir}/#{@playlist_name}/srt_file.srt"
 	ass_file = "#{@subsdir}/#{@playlist_name}/srt_file.ass"
@@ -124,9 +118,7 @@ end
 
 def add_subs_ass_to_final_mp4
 
-	p "********"
-	p "add_subs_ass_to_final_mp4"
-	p "********"
+	p "* add_subs_ass_to_final_mp4 *"
 
 	ass_file = "'#{@subsdir}/#{@playlist_name}/srt_file.ass'"
 

@@ -86,13 +86,13 @@ ActiveRecord::Schema.define do
 
     create_table :nodes do |table|
         table.column :rule_id, :integer
+        table.column :game_id, :integer
         table.column :name, :string
+        table.column :file_location, :string
         table.column :total_instances, :integer
         table.column :total_profane, :integer
         table.column :keyword, :string
-        table.column :xfade_audio, :string
-        table.column :xfade_ts, :string
-        table.column :xfade_mp4, :string
+        table.column :ts_file, :string
         table.column :normal_audio, :string
         table.column :final_mp4, :string
         table.column :normal_xfaded_ts, :string
@@ -104,20 +104,33 @@ ActiveRecord::Schema.define do
     end
 
     create_table :games do |table|
-        table.column :group_id, :integer
-        table.column :game_name, :string
+        table.column :gname, :string
     end
-
-
-
-   
-
     
 end
 
+
+class Node < ActiveRecord::Base
+    belongs_to :game
+    # has_one :rule
+
+    def self.location
+        @location
+    end
+
+     def self.game_id
+        @game_id
+    end
+
+    def self.ts_file
+        @ts_file
+    end
+end 
+
+
 class Rule < ActiveRecord::Base
-    has_many :videos, through: :nodes  
-    has_one :node
+    has_many :videos#, through: :nodes  
+    # has_one :node
 
     def init
 
@@ -171,6 +184,10 @@ end
 
 class Node < ActiveRecord::Base
     has_many :videos 
+
+    def self.file_location
+        @file_location
+    end
 
     def self.total_instances
         @total_instances
@@ -398,6 +415,15 @@ class Snippet < ActiveRecord::Base
     #     @xfaded_audio_file_location
     # end
 end
+
+class Game < ActiveRecord::Base
+    has_many :nodes
+
+    def self.gname
+        @gname
+    end
+  
+end 
 
  
 

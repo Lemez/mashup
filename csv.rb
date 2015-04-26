@@ -1,3 +1,72 @@
+def get_hits_per_video
+	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
+	list = "./csv/master/for_medleys_FINAL.csv"
+	@csv = CSV.open("./csv/videos/video_hits.csv", "w", {:col_sep => ";"})
+	@game = ''
+	@node = ''
+	hit_hash = Hash.new(0)
+	hit_array = []
+
+
+	CSV.foreach(list,options) do |line|
+
+		line = line.gsub("\"","") if line.include?("\"")#remove illegal quoting Malformed CSV Error if 
+		
+		hit_hash["#{line[4]}~#{line[6]}"]+=1 
+	end
+
+	hit_hash.each_pair do |k,v|
+		hit_array << [k,v]
+	end
+
+	hit_array.sort!{|a,b| a[1].to_i <=> b[1].to_i}.reverse!
+
+	hit_array.each{|k| @csv << k}
+
+	@csv.close
+end
+
+
+def features_to_game option
+	options = {:headers => false, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
+	list = "./csv/games_final/games-csv-2015-04-25-maria.csv"
+
+	@existing_final_videos = Dir.glob("./videos_final/*/*").select{|f| f.include?("logo")}
+	
+	CSV.foreach(list,options) do |row|
+		
+		game,nodes = row[0],row[1][1..-2].split(",")
+		g = Game.where(:gname => game).first_or_create
+
+		game_text_file  = File.open("#{@gamesdir}/#{game}.txt", 'w')
+
+		nodes.each do |n|
+			@node_location = ''
+			node = n[1..-2]
+			node = node[1..-1] if node[0]== '"'
+
+			@existing_final_videos.each do |f|
+				file = File.basename(f)[0..-15] 
+				full_location = Dir.pwd + f[1..-1] 
+				@node_location = full_location if node==file
+			end
+
+		 	mynode = Node.where(:game_id => g.id, :name => node, :file_location => @node_location).first_or_create
+			mynode.save!
+
+			s = "file '#{@node_location}'" 
+			game_text_file.puts(s) unless @node_location.empty?
+
+			node_video_to_ts mynode if option==true
+
+		end
+
+		game_text_file.close
+
+	end
+end
+
+
 def csv_to_game
 
 	@linecounter = 0
@@ -16,8 +85,6 @@ def csv_to_game
 		node = line[10]
 		game = line[12]
 
-		
-			
 		if @linecounter == 0
 			nodes_in_game << node
 			p "#{game}:#{node}"
@@ -45,7 +112,7 @@ end
 
 def query_saved_videos_per_node destroy=false
 
-	p "************** query_saved_videos_per_node **************"
+	p "* query_saved_videos_per_node *"
 
 	calculate_completed_videos
 
@@ -117,7 +184,7 @@ end
 
 
 def get_files_from_db_specific_csv rule
-	p "************** get_files_from_db_specific_csv **************"
+	p "**** get_files_from_db_specific_csv ****"
 
 	@videos_saved = {}
 	listarray = []
@@ -194,7 +261,7 @@ end
 
 
 def db_files_to_csv
-	p "************** db_files_to_csv **************"
+	p "* db_files_to_csv *"
 
 	@linecounter = 0
 
@@ -230,7 +297,7 @@ end
 
 def get_files_from_db_csv
 
-	p "************** get_files_from_db_csv **************"
+	p "* get_files_from_db_csv *"
 
 	files = Dir.glob("./csv/nodes_final/*.csv")
 	
@@ -355,10 +422,9 @@ end
 
 
 def get_files_from_specific_rule rule
-	p "*****";p "get_files_from_specific_rule";p "*****"
+	p "* get_files_from_specific_rule *: #{rule}"
 
 	@videos_saved = {}
-	p "Getting data from #{rule}"
 	
 	Rule.create(:rule_name => @playlist_name)
 
@@ -416,7 +482,7 @@ def get_files_from_specific_rule rule
 end
 
 def map_details_to_hashes details
-	p "******\nmapping details to hashes\n*******"
+	p "* mapping details to hashes *"
 
 	@hash = Hash.new
 	@hash["rule"] = @playlist_name

@@ -1,5 +1,5 @@
 # def get_sentences_with_saved_videos
-# 	p "*******";p "get_sentences_with_saved_videos";p "*******"
+# 	p "**";p "get_sentences_with_saved_videos";p "**"
 	
 # 	@sentences_to_extract = []
 # 	Sentence.all.obeys_rule.each do |sentence|
@@ -10,7 +10,7 @@
 # end
 
 def initiate_keyword_and_video
-	p "****** initiate_keyword_and_video ******"
+	p "* initiate_keyword_and_video *"
 	@sentence_pass = 0
 	@unique_keyword = true
 	@unique_video = true
@@ -18,7 +18,7 @@ def initiate_keyword_and_video
 end
 
 def choose_sentences_from_saved_videos
-	p "****** choose_sentences_from_saved_videos ******"
+	p "* choose_sentences_from_saved_videos *"
 
 	initiate_keyword_and_video
 
@@ -52,7 +52,7 @@ def choose_sentences_from_saved_videos
 end
 
 def select_filter_sentences
-	p "******** select_filter_sentences ******"
+	p "* select_filter_sentences *"
 
 	if @unique_keyword==true && @unique_video==true
 		sentences = @all_sentences_to_extract.uniq(&:video_id).uniq(&:keyword) 
@@ -76,7 +76,7 @@ def select_filter_sentences
 end
 
 def continue_or_stop
-	p "**** continue_or_stop ******"
+	p "* continue_or_stop *"
 
 	if @sentences_to_extract.count < @number_of_clips
 		p "Not enough unique sentences, only #{@sentences_to_extract.count} found with #{@number_of_clips.to_s} required"
@@ -93,16 +93,17 @@ def continue_or_stop
 end
 
 def iterate_over_sentence_filters
-	p "***** iterate_over_sentence_filters *****"
+	p "* iterate_over_sentence_filters *"
 
 	case @sentence_pass
 	when 1
 		p "unique_video"
 		@unique_video = false
-	when 2 
-		@number_of_clips -=1
-	when 3
+	when 2
 		@unique_video = true
+		@unique_keyword = false
+	when 3
+		@unique_video = false
 		@unique_keyword = false
 	when 4..5
 		@number_of_clips -=1

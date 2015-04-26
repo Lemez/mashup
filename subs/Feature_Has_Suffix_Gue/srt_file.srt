@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:07,431
+<font size=24px>I can bite my</font><font color=#ffff00 size=24px><b> tongue </b></font><font size=24px></font>
+

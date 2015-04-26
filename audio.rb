@@ -4,7 +4,7 @@ end
 
 def normalize_audio
 
-	p "******";p "normalize_audio";p "******"
+	p "* normalize_audio *"
 
 	@count = 0
 
@@ -32,12 +32,12 @@ def normalize_audio
 
 			# use count to determine first file or later ones
 		# `sox --no-show-progress #{audio_file} '#{normal_file}' rate 44100 norm fade 0.5 #{duration} 0.5` 
-		unless File.exists?("mp2_file")
-			`ffmpeg -i '#{temp_file}' -itsoffset #{sync_offset} -i '#{temp_file}' -map 0:0 -map 1:1 -c:v copy -c:a copy '#{outfile}' -loglevel quiet` unless File.exists?("#{outfile}")
-			`ffmpeg -i '#{outfile}' -ac 2 -y '#{audio_file}' -loglevel quiet`  unless File.exists?("#{audio_file}")
-			`sox --no-show-progress '#{audio_file}' '#{normal_file}' rate 44100 norm` unless File.exists?("#{normal_file}")
-			`ffmpeg -i '#{normal_file}' -ac 2 -y '#{mp2_file}' -loglevel quiet` unless File.exists?("#{mp2_file}")
-		end
+		# unless File.exists?("mp2_file")
+			`ffmpeg -i '#{temp_file}' -itsoffset #{sync_offset} -i '#{temp_file}' -map 0:0 -map 1:1 -c:v copy -c:a copy '#{outfile}' -loglevel quiet -y` #unless File.exists?("#{outfile}")
+			`ffmpeg -i '#{outfile}' -ac 2 -y '#{audio_file}' -loglevel quiet` # unless File.exists?("#{audio_file}")
+			`sox --no-show-progress '#{audio_file}' '#{normal_file}' rate 44100 norm` #unless File.exists?("#{normal_file}")
+			`ffmpeg -i '#{normal_file}' -ac 2 -y '#{mp2_file}' -loglevel quiet` #unless File.exists?("#{mp2_file}")
+		# end
 
 		# `ffmpeg -i '#{normal_file}' -ac 2 -y '#{normal_ts}'` unless File.exists?(normal_ts)
 		# p "#{temp_file}: #{duration}, with clip: #{snippet.clip_duration} and sentence: #{snippet.sentence_duration}"
@@ -61,10 +61,9 @@ end
 
 def create_silence
 
-	make_dir_if_none "#{@editsdir}/#{@playlist_name}","silence"
-	shhh = "'#{@editsdir}/#{@playlist_name}/silence/silence.wav'"
+	shhh = "'#{Dir.pwd}/audio/silence.wav'"
 
-	`sox -n -r 44100 -c 2 shhh trim 0.0 0.001`
+	`sox -n -r 44100 -c 2 #{shhh} trim 0.0 #{CARD_LENGTH.to_s}.0`
 
 end
 
@@ -92,7 +91,7 @@ end
 
 def create_normalized_snippets
 
-	p "***********";p "create_normalized_snippets";p "***********"
+	p "* create_normalized_snippets *"
 
 
 	# To merge specific streams (audio or video) from several files use -i option for each input and -map input_index[:stream_index]. For example, the following command merges the first stream of the first input with the second input and keeps the codecs:

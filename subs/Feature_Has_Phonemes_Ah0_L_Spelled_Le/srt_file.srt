@@ -6,18 +6,18 @@
 <font size=24px>Should have known you was</font><font color=#ffff00 size=24px><b> trouble </b></font><font size=24px>from the first kiss</font>
 
 3
-00:00:05,111 --> 00:00:10,851
-<font size=24px></font><font color=#ffff00 size=24px><b> Little </b></font><font size=24px>did I know</font>
+00:00:05,111 --> 00:00:10,361
+<font size=24px></font><font color=#ffff00 size=24px><b> People </b></font><font size=24px>like us we don't</font>
 
 4
-00:00:10,851 --> 00:00:16,671
-<font size=24px>A summer's disregard, a broken</font><font color=#ffff00 size=24px><b> bottle </b></font><font size=24px>top</font>
+00:00:10,361 --> 00:00:16,101
+<font size=24px></font><font color=#ffff00 size=24px><b> Little </b></font><font size=24px>did I know</font>
 
 5
-00:00:16,671 --> 00:00:25,261
-<font size=24px></font><font color=#ffff00 size=24px><b> People </b></font><font size=24px>making choices they can't fake</font>
+00:00:16,101 --> 00:00:24,271
+<font size=24px>Now I've just let these</font><font color=#ffff00 size=24px><b> little </b></font><font size=24px>things slips out of my mouth</font>
 
 6
-00:00:25,261 --> 00:00:34,651
+00:00:24,271 --> 00:00:33,661
 <font size=24px>I'm thinking 'bout how</font><font color=#ffff00 size=24px><b> people </b></font><font size=24px>fall in love in mysterious ways</font>
 

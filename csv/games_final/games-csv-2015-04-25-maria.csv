@@ -1,0 +1,7 @@
+sounds_ey_ay;"[""Feature_Has_Phoneme_Ey_Spelled_Ey"", ""Feature_Has_Phoneme_Ey_Spelled_Ei"", ""Feature_Has_Phoneme_Ey_Spelled_Eigh"", ""Feature_Has_Phoneme_Ay_Spelled_Ie"", ""Feature_Has_Phoneme_Ay_Spelled_Y_Not_End""]"
+sounds_ih_iy;"[""Feature_Has_Phoneme_Iy_Spelled_Ee"", ""Feature_Has_Phoneme_Ih_Spelled_Y_Not_End"", ""Feature_Has_Phoneme_Iy_Spelled_Ey"", ""Feature_Has_Phoneme_Iy_Spelled_Ea"", ""Feature_Has_Silent_U_In_Ui"", ""Feature_Has_Phoneme_Iy_Spelled_Ie"",  ""Feature_Has_String_Cei""]"
+sounds_aw_ow_uw;"[""Feature_Has_Phoneme_Ow_Spelled_Ow"", ""Feature_Has_Phoneme_Ow_Spelled_Oe"", ""Feature_Has_Phoneme_Ow_Spelled_Ough"", ""Feature_Has_Phoneme_Aw_Spelled_Ow"", ""Feature_Has_Phoneme_Aw_Spelled_Ou"", ""Feature_Has_Phoneme_Uw_Spelled_Ue"", ""Feature_Has_Phoneme_Uw_Spelled_Ew"", ""Feature_Has_Phoneme_Uw_Spelled_Ough""]"
+silent_cons_and_foreign;"[""silent_cons"", ""Feature_Has_Phoneme_S_Spelled_Sc"", ""Feature_Has_Suffix_Gue"", ""Feature_Has_Phoneme_K_Spelled_Ch"", ""Feature_Has_Phoneme_Sh_Spelled_Ch""]"
+double_cons;"[""double_cons_before_ing_ed_er"", ""single_cons_before_ing_ed_er""]"
+sounds_s_ch_jh_zh_w_f;"[""sound_s"", ""Feature_Has_Suffix_Tch"", ""Feature_Has_Suffix_Ch"", ""Feature_Has_Phoneme_Jh_Spelled_G"", ""Feature_Has_Phoneme_Zh_Spelled_S"", ""Feature_Has_Phoneme_W_Spelled_Wh"", ""Feature_Has_Phoneme_F_Spelled_Ph""]"
+strings;"[""string_ough"", ""string_are"", ""string_ear"", ""string_air"", ""string_ore"", ""Feature_Has_String_Ight""]"

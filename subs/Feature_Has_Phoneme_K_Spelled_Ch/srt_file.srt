@@ -2,18 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,541
-<font size=24px>You've never loved your</font><font color=#ffff00 size=24px><b> stomach </b></font><font size=24px>or your thighs</font>
+00:00:00,001 --> 00:00:03,791
+<font size=24px>Her</font><font color=#ffff00 size=24px><b> schemes </b></font><font size=24px>and plans</font>
 
 3
-00:00:04,541 --> 00:00:09,301
-<font size=24px>He drives to</font><font color=#ffff00 size=24px><b> school </b></font><font size=24px>every morning</font>
+00:00:03,791 --> 00:00:08,331
+<font size=24px>You've never loved your</font><font color=#ffff00 size=24px><b> stomach </b></font><font size=24px>or your thighs</font>
 
 4
-00:00:09,301 --> 00:00:15,061
-<font size=24px>Remembering him comes in flashbacks and</font><font color=#ffff00 size=24px><b> echoes </b></font><font size=24px></font>
+00:00:08,331 --> 00:00:13,091
+<font size=24px>He drives to</font><font color=#ffff00 size=24px><b> school </b></font><font size=24px>every morning</font>
 
 5
-00:00:15,061 --> 00:00:23,031
+00:00:13,091 --> 00:00:18,851
+<font size=24px>Remembering him comes in flashbacks and</font><font color=#ffff00 size=24px><b> echoes </b></font><font size=24px></font>
+
+6
+00:00:18,851 --> 00:00:26,821
 <font size=24px>But that was love and it's an</font><font color=#ffff00 size=24px><b> ache </b></font><font size=24px>I still remember</font>
 

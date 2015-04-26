@@ -2,10 +2,18 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,231
-<font size=24px>I can't tell where the</font><font color=#ffff00 size=24px><b> journey </b></font><font size=24px>will end</font>
+00:00:00,001 --> 00:00:03,221
+<font size=24px>But me and her we make</font><font color=#ffff00 size=24px><b> money </b></font><font size=24px>the same way</font>
 
 3
-00:00:05,231 --> 00:00:11,301
+00:00:03,221 --> 00:00:08,451
+<font size=24px>I can't tell where the</font><font color=#ffff00 size=24px><b> journey </b></font><font size=24px>will end</font>
+
+4
+00:00:08,451 --> 00:00:14,521
 <font size=24px>So</font><font color=#ffff00 size=24px><b> honey </b></font><font size=24px>now</font>
+
+5
+00:00:14,521 --> 00:00:27,821
+<font size=24px>'Cause</font><font color=#ffff00 size=24px><b> honey </b></font><font size=24px>your soul could never grow old, it's evergreen</font>
 

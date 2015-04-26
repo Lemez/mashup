@@ -2,22 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,081
-<font size=24px>Dressed up like you're something</font><font color=#ffff00 size=24px><b> else </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:07,761
+<font size=24px>Questions of science,</font><font color=#ffff00 size=24px><b> science </b></font><font size=24px>and progress</font>
 
 3
-00:00:04,081 --> 00:00:08,231
-<font size=24px>And restoring life to the</font><font color=#ffff00 size=24px><b> lighthouse </b></font><font size=24px></font>
+00:00:07,761 --> 00:00:16,011
+<font size=24px></font><font color=#ffff00 size=24px><b> Chasing </b></font><font size=24px>relentlessly, still fight and I don't know why</font>
 
 4
-00:00:08,231 --> 00:00:12,781
-<font size=24px>You'll be the prince and I'll be the</font><font color=#ffff00 size=24px><b> princess </b></font><font size=24px></font>
+00:00:16,011 --> 00:00:24,601
+<font size=24px>People making</font><font color=#ffff00 size=24px><b> choices </b></font><font size=24px>they can't fake</font>
 
 5
-00:00:12,781 --> 00:00:17,501
-<font size=24px>Caused by</font><font color=#ffff00 size=24px><b> absence </b></font><font size=24px>of you</font>
+00:00:24,601 --> 00:00:35,661
+<font size=24px>She said I am the one, who will</font><font color=#ffff00 size=24px><b> dance </b></font><font size=24px>on the floor in the round</font>
 
 6
-00:00:17,501 --> 00:00:22,331
-<font size=24px>Told</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px>that you were right for me</font>
+00:00:35,661 --> 00:00:49,111
+<font size=24px>They will come, they will go, make us</font><font color=#ffff00 size=24px><b> special </b></font><font size=24px></font>
 

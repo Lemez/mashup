@@ -2,18 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,361
-<font size=24px>All this time I was finding</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:03,271
+<font size=24px>I'm gonna hurt</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px></font>
 
 3
-00:00:04,361 --> 00:00:09,041
-<font size=24px>Lately I found</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px>thinking</font>
+00:00:03,271 --> 00:00:07,631
+<font size=24px>All this time I was finding</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px></font>
 
 4
-00:00:09,041 --> 00:00:13,771
-<font size=24px>Tell</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px>its time now, gotta let go</font>
+00:00:07,631 --> 00:00:12,311
+<font size=24px>Lately I found</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px>thinking</font>
 
 5
-00:00:13,771 --> 00:00:22,031
+00:00:12,311 --> 00:00:17,041
+<font size=24px>Tell</font><font color=#ffff00 size=24px><b> myself </b></font><font size=24px>its time now, gotta let go</font>
+
+6
+00:00:17,041 --> 00:00:25,301
 <font size=24px>That's not really her</font><font color=#ffff00 size=24px><b> style </b></font><font size=24px></font>
 

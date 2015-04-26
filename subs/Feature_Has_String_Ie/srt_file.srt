@@ -2,22 +2,22 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:06,081
-<font size=24px>You and I won't part till we</font><font color=#ffff00 size=24px><b> die </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:06,921
+<font size=24px>Cause I honestly</font><font color=#ffff00 size=24px><b> believed </b></font><font size=24px>in you</font>
 
 3
-00:00:06,081 --> 00:00:12,741
-<font size=24px>Everything you touch, all it</font><font color=#ffff00 size=24px><b> dies </b></font><font size=24px></font>
-
-4
-00:00:12,741 --> 00:00:19,971
+00:00:06,921 --> 00:00:14,151
 <font size=24px>You know how the time</font><font color=#ffff00 size=24px><b> flies </b></font><font size=24px></font>
 
-5
-00:00:19,971 --> 00:00:27,911
+4
+00:00:14,151 --> 00:00:22,091
 <font size=24px>But had me</font><font color=#ffff00 size=24px><b> believing </b></font><font size=24px>it was always something that I'd done</font>
 
+5
+00:00:22,091 --> 00:00:30,621
+<font size=24px>Your love is like a soldier, loyal till you</font><font color=#ffff00 size=24px><b> die </b></font><font size=24px></font>
+
 6
-00:00:27,911 --> 00:00:36,561
+00:00:30,621 --> 00:00:39,271
 <font size=24px>Cause you are the</font><font color=#ffff00 size=24px><b> piece </b></font><font size=24px>of me I wish I didn't need</font>
 

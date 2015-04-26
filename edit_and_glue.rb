@@ -2,6 +2,32 @@ def check_snips
 	Snippet.first
 end
 
+def node_video_to_ts node
+	p "+ node_video_to_ts #{node} +"
+	@mynode = node 
+	location = @mynode.file_location
+	tmp_video = "#{Dir.pwd}/_test/tmp_vid.mp4"
+	tmp_audio = "#{Dir.pwd}/_test/tmp_audio.mp4"
+	
+	!location.empty? ? ts_location = "#{location[0..-5]}.ts" : ts_location="" 
+	sync_offset = 0.15
+
+	unless ts_location.empty?
+		#1. Extract video stream
+		`ffmpeg -i #{location} -vcodec copy -an #{tmp_video} -y`
+
+		#2. Extract audio stream
+		`ffmpeg -i #{location} -vn -acodec copy #{tmp_audio} -y`
+
+		#3. Combine with offset
+		`ffmpeg -itsoffset #{sync_offset} -i #{tmp_audio} -i #{tmp_video}  -acodec copy -vcodec copy -bsf:v h264_mp4toannexb  -y -shortest '#{ts_location}'` 
+	end
+
+	@mynode.ts_file = ts_location
+	@mynode.save!
+
+end
+
 def which_vids_are_done
 	gamefile = "./csv/games_final/games.csv"
 	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
@@ -21,19 +47,42 @@ def which_vids_are_done
 	p "Not yet: #{@notyet.length} - #{@notyet}"
 end
 
-def compile_to_game
-	
-
+def check_games
+	Game.all.each{|g| p g.gname}
 end
+
+
+def compile_games
+	p "+ compile_games +"
+	
+	make_dir_if_none @gamesdir, @playlist_name
+	dir = "#{@gamesdir}/#{@playlist_name}"
+	nodes = Node.all
+	games = Game.all
+
+	# nodes.map(&:game_id).sort{|a,b| a<=>b }.each{|a| p a}
+	# nodes.select{|s| p s if s.game_id==2}
+
+	games.each do |game|
+
+		p "Starting Game with id: #{game.id}"
+		node_locations = nodes.where("game_id=#{game.id}").map(&:ts_file).select{|s| !s.empty?}.sort! { |a,b| a.name <=> b.name }
+
+		game_video_files = '"' + "concat:" + node_locations.join("|") + '"'
+		
+		`ffmpeg -i #{game_video_files} -c copy -bsf:a aac_adtstoasc -y -shortest '#{dir}/#{game.gname}.mp4'` #glue video 
+		
+	end
+end
+
 
 def glue_intermediate_files_and_normal_audio
 
-	p "******"
-	p "glue_intermediate_files_and_normal_audio"
-	p "******"
+	p "* glue_intermediate_files_and_normal_audio *"
 
 	# #2D concatenate the files creatd using the below format 
 		# ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
+	
 	make_dir_if_none "#{@editsdir}/#{@playlist_name}", "tmp"
 	dir = "#{@editsdir}/#{@playlist_name}/tmp"
 
@@ -60,6 +109,12 @@ def glue_intermediate_files_and_normal_audio
 	command = command_xfaded if @@xfade
 	system(command)
 
+	Snippet.selected.map(&:temp_file_location).each do |f| 
+		p "removing temp file #{f}"
+		 `rm '#{f}'`
+	end
+
+
 	# clean up
 	# `rm '#{dir}/_video.mp4'`
 	# `rm '#{dir}/_audio.wav'`
@@ -69,9 +124,7 @@ end
 
 def process_xfaded_ts_to_mp4
 
-	p "******"
-	p "process_xfaded_ts_to_mp4"
-	p "******"
+	p "* process_xfaded_ts_to_mp4 *"
 
 	infile = "#{Dir.pwd}/video_edits/#{@playlist_name}/xfaded_video.ts"
 	final_xfaded_mp4 = "#{Dir.pwd}/video_edits/#{@playlist_name}/xfaded_video.mp4"
@@ -87,9 +140,7 @@ end
 
 def glue_crossfaded_video_and_normal_audio
 
-	p "******"
-	p "glue_crossfaded_video_and_normal_audio"
-	p "******"
+	p "* glue_crossfaded_video_and_normal_audio *"
 
 	mp4_file = "#{Dir.pwd}/video_edits/#{@playlist_name}/xfaded_video.mp4"
 	final_video_and_audio_file = "#{Dir.pwd}/videos_final/#{@playlist_name}/final_xfaded_video_and_audio.mp4"
@@ -120,9 +171,7 @@ end
 
 def test_gluing
 
-	p "******"
-	p "test_gluing"
-	p "******"
+	p "* test_gluing *"
 
 	audio = "/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/xfaded_audio.wav"
 	video = "/Users/JW/Dropbox/T10/SBRI/_code/video_edits/3rd person present tense (303)/xfaded_video.mp4"

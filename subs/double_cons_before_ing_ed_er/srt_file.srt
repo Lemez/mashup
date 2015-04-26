@@ -2,14 +2,18 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,341
-<font size=24px>Suspense is</font><font color=#ffff00 size=24px><b> controlling </b></font><font size=24px>my mind</font>
+00:00:00,001 --> 00:00:03,911
+<font size=24px></font><font color=#ffff00 size=24px><b> Ripped </b></font><font size=24px>jeans, skin was showin'</font>
 
 3
-00:00:05,341 --> 00:00:13,761
-<font size=24px></font><font color=#ffff00 size=24px><b> Forgetting </b></font><font size=24px>him was like trying to know somebody you've never met</font>
+00:00:03,911 --> 00:00:07,931
+<font size=24px>I</font><font color=#ffff00 size=24px><b> grabbed </b></font><font size=24px>a pen and an old napkin</font>
 
 4
-00:00:13,761 --> 00:00:23,241
-<font size=24px></font><font color=#ffff00 size=24px><b> Regretting </b></font><font size=24px>him was like</font>
+00:00:07,931 --> 00:00:13,271
+<font size=24px>Suspense is</font><font color=#ffff00 size=24px><b> controlling </b></font><font size=24px>my mind</font>
+
+5
+00:00:13,271 --> 00:00:21,691
+<font size=24px></font><font color=#ffff00 size=24px><b> Forgetting </b></font><font size=24px>him was like trying to know somebody you've never met</font>
 

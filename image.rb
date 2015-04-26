@@ -1,11 +1,11 @@
 def make_image
-	p "******** make_image *******"
+	p "* make_image *"
 	make_dir_if_none @imgdir, @playlist_name
 
 	@image = "#{@imgdir}/#{@playlist_name}/#{@playlist_name}"
 
 	rule,example = NODE_DESCRIPTIONS[@playlist_name][0],NODE_DESCRIPTIONS[@playlist_name][1]
-	label = "label: #{rule}\nexample: #{example}"
+	label = "label: #{rule}\n\n \'#{example}\'"
 
 	`convert \
 	-size 720x406 \
@@ -20,7 +20,7 @@ def make_image
 end
 
 def add_logo
-	p "******** add_logo *******"
+	p "* add_logo *"
 
 	@logo = "#{@imgdir}/logo.png"
 	@image_w_logo = "#{@image}_logo.png"
@@ -32,35 +32,44 @@ def add_logo
 end
 
 def turn_img_to_video
-	p "******** turn_img_to_video *******"
+	p "* turn_img_to_video *"
 
 	@image_video = "#{@image}_logo.mp4"
 
 	`ffmpeg -loop 1 -i #{@image_w_logo} -c:v libx264 -t #{CARD_LENGTH} -pix_fmt yuv420p #{@image_video} -y`
 end
 
-def add_img_video_and_pic_video
-	p "******** add_img_video_and_pic_video *******"
+def add_silence_to_image_video
+	p "* add_silence_to_image_video *"
+	@silence = "#{Dir.pwd}/audio/silence.wav"
+	@image_video_silence  = "#{@image}_logo_silence.mp4"
+	`ffmpeg -i #{@image_video} -i #{@silence}  #{@image_video_silence} -shortest -y`
+end
 
-	tmp1 = "#{@testdir}/_intermediate1.ts"
-	tmp2 = "#{@testdir}/_intermediate2.ts"
+def add_img_video_and_pic_video
+	p "* add_img_video_and_pic_video *"
+
+	tmp1 = "#{@testdir}/#{@playlist_name}_intermediate1.ts"
+	tmp2 = "#{@testdir}/#{@playlist_name}_intermediate2.ts"
 
 	subs_vid = "#{@finaldir}/#{@playlist_name}/#{@playlist_name}_subs.mp4"
 	final = "#{@finaldir}/#{@playlist_name}/#{@playlist_name}_subs_logo.mp4"
 
-	`ffmpeg -i '#{@image_video}' -c copy -bsf:v h264_mp4toannexb -f mpegts '#{tmp1}' -loglevel quiet -y`
-	`ffmpeg -i '#{subs_vid}' -c copy -bsf:v h264_mp4toannexb -f mpegts '#{tmp2}'  -loglevel quiet  -y`
-	`ffmpeg -i "concat:#{tmp1}|#{tmp2}" -c copy -bsf:a aac_adtstoasc #{final}  -loglevel quiet  -y`
+	`ffmpeg -i #{@image_video_silence} -c copy -bsf:v h264_mp4toannexb -f mpegts '#{tmp1}' -shortest -loglevel quiet -y`
+	`ffmpeg -i '#{subs_vid}' -c copy -bsf:v h264_mp4toannexb -f mpegts '#{tmp2}' -shortest -loglevel quiet  -y`
+	`ffmpeg -i "concat:#{tmp1}|#{tmp2}" -c copy -bsf:a aac_adtstoasc #{final} -shortest -loglevel quiet  -y`
 
-	p @playlist_name
 	@rule = Rule.find_by(:rule_name => "#{@playlist_name}")
-	p @rule
-	p final
+
 	@rule.final_subs_logo = final
 	@rule.completed = true
 	@rule.save!
-	p @rule
+
 	p "Saved - final logo video for: #{@rule.rule_name}" if @rule.save!
+
+	sleep 5
+	`rm #{tmp1}`
+	`rm #{tmp2}`
 
 end
 

@@ -2,22 +2,18 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:08,261
-<font size=24px>We danced with monsters</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px>the night</font>
+00:00:00,001 --> 00:00:08,181
+<font size=24px>To always get me</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px>the day</font>
 
 3
-00:00:08,261 --> 00:00:15,281
-<font size=24px>I would go</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px>all this pain</font>
+00:00:08,181 --> 00:00:16,441
+<font size=24px>We danced with monsters</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px>the night</font>
 
 4
-00:00:15,281 --> 00:00:19,901
-<font size=24px>See you make your way</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px>the crowd</font>
+00:00:16,441 --> 00:00:24,811
+<font size=24px>It cuts deep</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px>our ground and makes us forget all common sense</font>
 
 5
-00:00:19,901 --> 00:00:23,931
-<font size=24px>I'll get</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px>it</font>
-
-6
-00:00:23,931 --> 00:00:28,701
-<font size=24px>Feeling my way</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px>the darkness</font>
+00:00:24,811 --> 00:00:33,361
+<font size=24px>Can't see what he is going</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px></font>
 

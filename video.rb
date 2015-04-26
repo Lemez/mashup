@@ -7,12 +7,10 @@ def create_and_match_saved_videos
 end
 
 def format_downloaded_video_filenames
-	p "*******"
-	p "format_downloaded_video_filenames"
-	p "*******"
+	p "* format_downloaded_video_filenames *"
 	
 
-	Dir.glob("#{@videodir}/*").each do |vid|
+	Dir.glob("#{@videodir}/*.mp4").each do |vid|
 
 		extension = File.extname(vid)
 		name_with_ext = File.basename(vid)
@@ -38,9 +36,7 @@ end
 
 def match_videos_with_saved_videos
 
-	p"********"
-	p "match_videos_with_saved_videos"
-	p"********"
+	p "* match_videos_with_saved_videos *"
 
 	number_of_relevant_videos_in_db=0
 
@@ -73,7 +69,7 @@ end
 # Change any webm to mp4
 def check_for_webm_videos (directory)
 
-		p "check_for_webm_videos"
+		p "* check_for_webm_videos *"
 
 	Dir.glob("#{@videodir}/*.webm").each do |item|
 

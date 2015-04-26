@@ -2,10 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,101
-<font size=24px>But</font><font color=#ffff00 size=24px><b> bear </b></font><font size=24px>this mind it was meant to be</font>
+00:00:00,001 --> 00:00:04,701
+<font size=24px>You're coming close now,</font><font color=#ffff00 size=24px><b> swear </b></font><font size=24px>I can taste it</font>
 
 3
-00:00:05,101 --> 00:00:10,791
+00:00:04,701 --> 00:00:09,801
+<font size=24px>But</font><font color=#ffff00 size=24px><b> bear </b></font><font size=24px>this in mind it was meant to be</font>
+
+4
+00:00:09,801 --> 00:00:15,471
 <font size=24px>Go on and try to</font><font color=#ffff00 size=24px><b> tear </b></font><font size=24px>me down</font>
 
