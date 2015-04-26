@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:02,451
+00:00:00,001 --> 00:00:03,451
 <font size=24px></font><font color=#ffff00 size=24px><b> Weights </b></font><font size=24px>off my shoulders,</font>
 
 3
-00:00:02,451 --> 00:00:06,151
+00:00:03,451 --> 00:00:07,151
 <font size=24px>Got no</font><font color=#ffff00 size=24px><b> weight </b></font><font size=24px>on my shoulders</font>
 
 4
-00:00:06,151 --> 00:00:10,661
-<font size=24px>I can hold the</font><font color=#ffff00 size=24px><b> weight </b></font><font size=24px>of worlds</font>
-
-5
-00:00:10,661 --> 00:00:15,741
+00:00:07,151 --> 00:00:12,231
 <font size=24px>You never want to know how much you</font><font color=#ffff00 size=24px><b> weigh </b></font><font size=24px></font>
-
-6
-00:00:15,741 --> 00:00:20,971
-<font size=24px>I tried carrying the</font><font color=#ffff00 size=24px><b> weight </b></font><font size=24px>of the world</font>
 

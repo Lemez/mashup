@@ -8,12 +8,13 @@ def create_mashups_with_enough_videos
 	reading_file = "./csv/videos/hits_medleys_FINAL.csv"
 
 	@csv_count = 1
-	@number_of_clips = LIMIT
+	
 
 	CSV.foreach(reading_file,options) do |row|
 
 		calculate_completed_videos
-
+		@number_of_clips = LIMIT
+		
 		# return if @done>0
 
 		p  "#{row[0]}: #{row[5].to_i} hits"# if row[6].to_bool == false 
