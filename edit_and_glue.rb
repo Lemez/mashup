@@ -2,79 +2,15 @@ def check_snips
 	Snippet.first
 end
 
-def node_video_to_ts node
-	p "+ node_video_to_ts #{node} +"
-	@mynode = node 
-	location = @mynode.file_location
-	tmp_video = "#{Dir.pwd}/_test/tmp_vid.mp4"
-	tmp_audio = "#{Dir.pwd}/_test/tmp_audio.mp4"
-	
-	!location.empty? ? ts_location = "#{location[0..-5]}.ts" : ts_location="" 
-	sync_offset = 0.15
+def glue_intermediate_files
 
-	unless ts_location.empty?
-		#1. Extract video stream
-		`ffmpeg -i #{location} -vcodec copy -an #{tmp_video} -y`
+	make_dir_if_none @finaldir, @playlist_name #make dir
 
-		#2. Extract audio stream
-		`ffmpeg -i #{location} -vn -acodec copy #{tmp_audio} -y`
-
-		#3. Combine with offset
-		`ffmpeg -itsoffset #{sync_offset} -i #{tmp_audio} -i #{tmp_video}  -acodec copy -vcodec copy -bsf:v h264_mp4toannexb  -y -shortest '#{ts_location}'` 
-	end
-
-	@mynode.ts_file = ts_location
-	@mynode.save!
+	@temp_video_files = '"' + "concat:" + Snippet.selected.map(&:temp_file_location).join("|") + '"'
+	command = "ffmpeg -i '#{@temp_video_files} -c copy -y '#{@finaldir}/#{@playlist_name}/#{@playlist_name}.mp4' -loglevel quiet"
+	system(command)
 
 end
-
-def which_vids_are_done
-	gamefile = "./csv/games_final/games.csv"
-	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
-	@found = []
-	@notyet = []
-
-	CSV.foreach(gamefile,options) do |line|
-		game, nodes = line[0], line[1][1...-2].split(",")
-		nodes.each do |n|
-			n = n.gsub!(/[^0-9a-z_]/i, '')
-			File.exists?("#{@finaldir}/#{n}/#{n}_subs_logo.mp4") ? @found << n : @notyet << n
-		end
-	end
-
-	p "Found: #{@found.length} - #{@found}"
-	p ""
-	p "Not yet: #{@notyet.length} - #{@notyet}"
-end
-
-def check_games
-	Game.all.each{|g| p g.gname}
-end
-
-
-def compile_games
-	p "+ compile_games +"
-	
-	make_dir_if_none @gamesdir, @playlist_name
-	dir = "#{@gamesdir}/#{@playlist_name}"
-	nodes = Node.all
-	games = Game.all
-
-	# nodes.map(&:game_id).sort{|a,b| a<=>b }.each{|a| p a}
-	# nodes.select{|s| p s if s.game_id==2}
-
-	games.each do |game|
-
-		p "Starting Game with id: #{game.id}"
-		node_locations = nodes.where("game_id=#{game.id}").map(&:ts_file).select{|s| !s.empty?}.sort! { |a,b| a.name <=> b.name }
-
-		game_video_files = '"' + "concat:" + node_locations.join("|") + '"'
-		
-		`ffmpeg -i #{game_video_files} -c copy -bsf:a aac_adtstoasc -y -shortest '#{dir}/#{game.gname}.mp4'` #glue video 
-		
-	end
-end
-
 
 def glue_intermediate_files_and_normal_audio
 

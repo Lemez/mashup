@@ -2,10 +2,10 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:03,251
-<font size=24px>Need that</font><font color=#ffff00 size=24px><b> much </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:03,741
+<font size=24px>Cause like we hadn't seen</font><font color=#ffff00 size=24px><b> each </b></font><font size=24px>other in a month</font>
 
 3
-00:00:03,251 --> 00:00:11,181
-<font size=24px>Need that</font><font color=#ffff00 size=24px><b> much </b></font><font size=24px>just someone that starts</font>
+00:00:03,741 --> 00:00:10,351
+<font size=24px>With some indie record that's</font><font color=#ffff00 size=24px><b> much </b></font><font size=24px>cooler than mine</font>
 

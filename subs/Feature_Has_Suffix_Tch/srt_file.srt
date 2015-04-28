@@ -2,18 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:03,151
-<font size=24px>I</font><font color=#ffff00 size=24px><b> stretched </b></font><font size=24px>my hands out to the sky</font>
-
-3
-00:00:03,151 --> 00:00:07,161
-<font size=24px>You're</font><font color=#ffff00 size=24px><b> watching </b></font><font size=24px>your back like you can't relax</font>
-
-4
-00:00:07,161 --> 00:00:12,351
+00:00:00,001 --> 00:00:05,191
 <font size=24px>We need to</font><font color=#ffff00 size=24px><b> fetch </b></font><font size=24px>back the time</font>
 
-5
-00:00:12,351 --> 00:00:18,131
+3
+00:00:05,191 --> 00:00:10,911
+<font size=24px>And I wouldn't</font><font color=#ffff00 size=24px><b> catch </b></font><font size=24px>you hung up on somebody that you used to know</font>
+
+4
+00:00:10,911 --> 00:00:16,691
 <font size=24px></font><font color=#ffff00 size=24px><b> Catching </b></font><font size=24px>teardrops in my hands</font>
 

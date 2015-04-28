@@ -6,6 +6,6 @@
 <font size=24px>You</font><font color=#ffff00 size=24px><b> build </b></font><font size=24px>me up and then I fall apart</font>
 
 3
-00:00:04,191 --> 00:00:08,951
-<font size=24px></font><font color=#ffff00 size=24px><b> Guided </b></font><font size=24px>by a beating heart</font>
+00:00:04,191 --> 00:00:11,191
+<font size=24px></font><font color=#ffff00 size=24px><b> Guides </b></font><font size=24px>me to wherever you fall</font>
 

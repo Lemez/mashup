@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,211
-<font size=24px>I'm gonna make a</font><font color=#ffff00 size=24px><b> change </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:05,011
+<font size=24px>Teenage dreams in a</font><font color=#ffff00 size=24px><b> teenage </b></font><font size=24px>circus</font>
 
 3
-00:00:04,211 --> 00:00:08,471
-<font size=24px>You take me over you're the</font><font color=#ffff00 size=24px><b> magic </b></font><font size=24px>in my veins</font>
+00:00:05,011 --> 00:00:10,771
+<font size=24px>You know, you know, you know I'd never ask you to</font><font color=#ffff00 size=24px><b> change </b></font><font size=24px></font>
 
 4
-00:00:08,471 --> 00:00:13,101
-<font size=24px>Can't</font><font color=#ffff00 size=24px><b> imagine </b></font><font size=24px>what it'd be like</font>
-
-5
-00:00:13,101 --> 00:00:18,111
-<font size=24px></font><font color=#ffff00 size=24px><b> Teenage </b></font><font size=24px>dreams in a teenage circus</font>
-
-6
-00:00:18,111 --> 00:00:24,471
+00:00:10,771 --> 00:00:17,131
 <font size=24px>But it stays right here in its</font><font color=#ffff00 size=24px><b> cage </b></font><font size=24px></font>
 

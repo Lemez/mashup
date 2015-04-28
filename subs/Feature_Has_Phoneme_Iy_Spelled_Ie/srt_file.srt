@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:03,671
+<font size=24px>I have</font><font color=#ffff00 size=24px><b> achieved </b></font><font size=24px></font>
+
+3
+00:00:03,671 --> 00:00:08,501
+<font size=24px>I'm just a</font><font color=#ffff00 size=24px><b> believer </b></font><font size=24px>that things will get better</font>
+
+4
+00:00:08,501 --> 00:00:15,521
+<font size=24px>The</font><font color=#ffff00 size=24px><b> pieces </b></font><font size=24px>of my heart are missing you</font>
+
+5
+00:00:15,521 --> 00:00:22,441
+<font size=24px>Cause I honestly</font><font color=#ffff00 size=24px><b> believed </b></font><font size=24px>in you</font>
+
+6
+00:00:22,441 --> 00:00:31,091
+<font size=24px>Cause you are the</font><font color=#ffff00 size=24px><b> piece </b></font><font size=24px>of me I wish I didn't need</font>
+

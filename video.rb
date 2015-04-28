@@ -24,9 +24,9 @@ def format_downloaded_video_filenames
 			p "video renamed: #{newname+extension}"
 
 			File.rename(vid, "#{@videodir}/#{newname}#{extension}")
-		else
-			p "video already named: #{name_with_ext}"
-			p "#{@videodir}/#{newname}#{extension}"
+		# else
+		# 	p "video already named: #{name_with_ext}"
+		# 	p "#{@videodir}/#{newname}#{extension}"
 
 		end
 		

@@ -2,29 +2,40 @@ def download_critical_vids
 	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
 	list = "./csv/videos/video_hits.csv"
 	undownloaded = "./csv/undownloaded.csv"
+	@threads = []
 
-	
 	not_on_vimeo = []
 	CSV.foreach(undownloaded,options) {|row|not_on_vimeo << row[1]}
-
-	get_all_titles_from_dir
-	saved_titles = SavedVideo.all.map(&:title)
 	
 	CSV.foreach(list,options) do |line|
+
+		get_all_titles_from_dir
+		@saved_titles = SavedVideo.all.map(&:title)
+
 		title,hits = line[0],line[1]
 		song_artist,song_title = title.downcase.split("~")
 
-		next if saved_titles.include?(song_title)
+		next if @saved_titles.include?(song_title)
 		next if not_on_vimeo.include?(song_title)
 		p "____________"
 		p "not_on_vimeo"
 		p "____________"
 		p "#{hits.to_s}: #{title}"
 		p "____________"
-	
-		get_vimeo_manually song_artist,song_title,'vimeo'
 
+		p "Continue? Press y or any other key to skip"
+    	`echo "Do you wish to continue?"`
+
+   		output = STDIN.gets.chomp!
+
+		if output == "y"
+			p "yes" 
+			get_vimeo_manually song_artist,song_title,'vimeo'
+	 	else
+	 		next
+	 	end
 	end
+	@threads.each { |t| t.join }
 end
 
 
@@ -165,7 +176,7 @@ def get_vimeo_manually artist,title,source
 	 	@manual_id = STDIN.gets.chomp!
 
 	 	if !@manual_id.empty?
-	 		download_a_video @manual_id,'vimeo'
+	 		@threads << Thread.new{download_a_video @manual_id,'vimeo'}
 	 		play_sound true
 	 	else
 	 		write_to_not_dl_file artist,title
@@ -191,6 +202,8 @@ def download_a_video (video_id,source)
 
 	download_video = "viddl-rb #{baseurl}#{video_id} -d 'aria2c' -s '#{@videodir}'"
 	system (download_video)
+
+	format_downloaded_video_filenames
 
 	# if successful save vimeo id and saved=true and location
 end

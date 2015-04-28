@@ -28,11 +28,12 @@ def create_snippets_from_sentences
 		d = sentence.duration + 1000 
 		d += 1000 if d < 3000
 
-		d += 1000 if title=="bille jean"
+		d += 1500 if title=="billie jean"
+		d += 1000 if title=="royals"
 		d += 2000 if title == "when youre gone"
 
 		next if @playlist_name=="string_ear" and title=="wild heart"
-		next if d > MAX_DUR
+		# next if d > MAX_DUR
 		# next if d < MIN_DUR
 		# next if sentence.full_sentence.split(" ").length < 4
 		# next if @full_sentence==full_sentence
@@ -93,6 +94,7 @@ def create_snippets_text_file
 		Snippet.selected.each { |item| file.puts("file '#{item.location}'") }
 		file.close
 end
+
 
 def create_intermediate_files_from_snippets
 

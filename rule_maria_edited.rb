@@ -3,7 +3,7 @@ def change_rule_to_completed
 end
 
 NODE_DESCRIPTIONS = {
-	"double_cons_before_ing_ed_er" => ["Words that \n double the consonant before \n adding -ING or -ED", "referred"],
+	"double_cons_before_ing_ed_er" => ["Words that \n double the consonant before \n adding -ING or -ED", "stopping"],
 	"Feature_Has_Phoneme_Aw_Spelled_Ou" => ["Words where the OW sound \n is spelt OU", "pound"],
 	"Feature_Has_Phoneme_Aw_Spelled_Ow" => ["Words where the OW sound \n is spelt OW", "cow"],
 	"Feature_Has_Phoneme_Ay_Spelled_Ie" => ["Words where the AY sound \n is spelt IE", "lie"],
@@ -20,7 +20,7 @@ NODE_DESCRIPTIONS = {
 	"Feature_Has_Phoneme_K_Spelled_Ch" => ["Words where the K sound \n is spelt CH", "character"],
 	"Feature_Has_Phoneme_Ow_Spelled_Oe" => ["Words where the O sound \n is spelt OE", "toe"],
 	"Feature_Has_Phoneme_Ow_Spelled_Ough" => ["Words where the O sound \n is spelt OUGH", "dough"],
-	"Feature_Has_Phoneme_Ow_Spelled_Ow" => ["Words where the O sound \n is spelt OW", "row"],
+	"Feature_Has_Phoneme_Ow_Spelled_Ow" => ["Words where the O sound \n is spelt OW", "elbow"],
 	"Feature_Has_Phoneme_S_Spelled_Sc" => ["Words with the sound S \n spelt S or C", "chase"],
 	"Feature_Has_Phoneme_Sh_Spelled_Ch" => ["Words where the SH sound \n is spelt CH", "machine"],
 	"Feature_Has_Phoneme_Uw_Spelled_Ew" => ["Words where the OO sound \n is spelt EW", "grew"],
@@ -30,6 +30,7 @@ NODE_DESCRIPTIONS = {
 	"Feature_Has_Phoneme_Zh_Spelled_S" => ["Words where the soft J sound \n is spelt S", "pleasure"],
 	"Feature_Has_Phonemes_Ah0_L_Spelled_Al" => ["Words where the L sound \n is spelt AL", "special"],
 	"Feature_Has_Phonemes_Ah0_L_Spelled_El" => ["Words where the L sound \n is spelt EL", "angel"],
+	"Feature_Has_Phonemes_Ah0_L_Spelled_Il" => ["Words where the L sound \n is spelt IL", "pencil"],
 	"Feature_Has_Phonemes_Ah0_L_Spelled_Le" => ["Words where the L sound \n is spelt LE", "castle"],
 	"Feature_Has_Phonemes_S_Ah0_N_Spelled_Sten" => ["Words where the SN sound \n is spelt STEN", "listen"],
 	"Feature_Has_Silent_U_In_Ui" => ["Words spelt UI\n with a silent U" , "guilty"],
@@ -42,22 +43,19 @@ NODE_DESCRIPTIONS = {
 	"silent_cons" => ["Words that have a silent consonant \n", "knife"],
 	"single_cons_before_ing_ed_er" => ["Words with just one consonant \n before -ING or -ED", "limited"],
 	"sound_s" => ["Words with the sound S", "chase"],
-	"string_air" => ["Words where the AIR sound \n is spelt AIR", "dispair"],
+	"string_air" => ["Words where the AIR sound \n is spelt AIR", "stairs"],
 	"string_are" => ["Words where the AIR sound \n is spelt ARE", "rare"],
 	"string_ear" => ["Words where the AIR sound \n is spelt EAR", "wear"],
-	"string_ore" => ["Words with the OR sound \n spelt OR or ORE", "record"],
+	"string_ore" => ["Words where the OR sound \n is spelt OR or ORE", "record"],
 	"string_ough" => ["Words that contain the letters OUGH", "dough"]
-
 }
 
-
 GAME_DESCRIPTIONS = {
-	"sounds_ey_ay" => "Vowel Sounds 2",
-	"sounds_ih_iy" => "Vowel Sounds 3",
-	"sounds_ow_aw_uw" => "Vowel Sounds 1",
-	"sounds_s_ch_jh_zh_w_f" => "Consonants Sounds 1",
-	"silent_cons_and_foreign" => "Silent Letters and Words with a Foreign Origin",
-	"double_cons" => "Double and Single Consonants",
-	"strings" => "Common Letter Combinations"
-
+	"sounds_aw_ow_uw" => ["Vowel Sounds 1", "Different ways to spell sounds: \n'slow', 'mouth' and 'true'"],
+	"sounds_ey_ay" => ["Vowel Sounds 2", "Different ways to spell sounds: \n\'cry\' and \'say\'"],
+	"sounds_ih_iy" => ["Vowel Sounds 3", "Different ways to spell sounds: \n\'feel\' and \'fill\'"],
+	"sounds_s_ch_jh_zh_w_f" => ["Consonants Sounds 1", "Different ways to spell consonants: \n'sit', 'cat', 'jump', 'measure' and 'will'"],
+	"silent_cons_and_foreign" => ["Silent Letters and Foreign Words", "Can you recognize the letters\nthat don't want to be heard?"],
+	"double_cons" => ["Double and Single Consonants", "To double the last consonant \nor not to double?"],
+	"strings" => ["Common Letter Combinations", "Groups of letters \nthat have special sounds"]
 }

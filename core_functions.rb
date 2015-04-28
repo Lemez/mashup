@@ -4,26 +4,26 @@ def create_mashups_with_enough_videos
 	# rebuild current list of completed final videos
 	# read csv 
 
-	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
+	options = {:headers => false, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
 	reading_file = "./csv/videos/hits_medleys_FINAL.csv"
 
 	@csv_count = 1
-	
+	incomplete = []	
 
 	CSV.foreach(reading_file,options) do |row|
 
 		calculate_completed_videos
 		@number_of_clips = LIMIT
-		
-		# return if @done>0
 
-		p  "#{row[0]}: #{row[5].to_i} hits"# if row[6].to_bool == false 
+
+		# p  "#{row[0]}: #{row[5].to_i} hits"# if row[6].to_bool == false 
 
 		# execute each one
 		# p @completed
-		if row[5].to_i >= @number_of_clips && !@completed.include?(row[0]) && row[5].to_i>0
+		@playlist_name = row[0]
 
-			@playlist_name = row[0]
+		if row[5].to_i >= @number_of_clips && !@completed.include?(row[0]) && row[5].to_i>0
+	
 			@playlist_csv = "#{@playlist_name}.csv"
 			full_file = "#{@csvdir}/#{@playlist_name}"
 			p "EXECUTING #{@playlist_name} with row[6] = #{row[6]}"
@@ -31,8 +31,18 @@ def create_mashups_with_enough_videos
 			make_new_video @playlist_name, downloading=false
 
 			@csv_count += 1
+			return if SINGLE
+
+		elsif !@completed.include?(row[0])
+			p " #{@playlist_name} - #{@number_of_clips} clips reqd and #{row[5].to_i} hits"
+
+			incomplete << row
 		end
+
+		
 	end
+	# p "Incomplete:"
+	# incomplete.each{|i| p i}
 end
 
 
@@ -53,14 +63,20 @@ def make_new_video playlist, downloading=false
 
 	@all_sentences_to_extract = choose_sentences_from_saved_videos
 
-@number_of_clips.times do 
-	"Processing #{@playlist_name} with #{@number_of_clips} clips"
-	@sentences_to_extract = select_filter_sentences
-	@not_enough_sentences = continue_or_stop
-	break if @not_enough_sentences == false
-	return if @number_of_clips==1 
-	@number_of_clips -= 1
-end
+	@pass = 0
+	@number_of_clips.times do 
+		"Processing #{@playlist_name} with #{@number_of_clips} clips"
+		@sentences_to_extract = select_filter_sentences
+		@not_enough_sentences = continue_or_stop
+		break if @not_enough_sentences == false
+		
+		@unique_video = false if @pass==0
+		@unique_keyword = false if @pass==1
+
+		@pass+=1
+	end
+
+	return if @not_enough_sentences
 
 	
 	# p "?????????????? ??????????????"
@@ -96,21 +112,29 @@ end
 	create_snippets_from_sentences	# create snippets from those sentences, save their locations & rule numbers
 	show_current_snippets	#print out snippets created, file, duration and lyric data
 	normalize_audio	# normalize audio with/without fades
+	# mp2_to_aac  #// NEW
+	# add_normal_audio_back_to_snippet  #// NEW
+
 	create_srt_from_snippets	#create srt file from snippets
 	create_snippets_text_file 	#create a text file and intermediate files from snippets
+
 	create_intermediate_files_from_snippets	# create intermediate files together
+
+	# # glue_intermediate_files // NEW
 
 	@@xfade = false    ## NO XFADES
 	glue_intermediate_files_and_normal_audio	# glue intermediate video files and normalized audio together
+	
+	
 	add_subs	# add subtitles with highlighted keyword
 	
+	create_silence #need to do this as card length can change
+
 	make_image # add image
 	add_logo
 	turn_img_to_video
 	add_silence_to_image_video
 	add_img_video_and_pic_video
-
-	play_sound true  # add a sound to tell me it is completed
 
 	@done =+1
 

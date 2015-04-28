@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:03,351
-<font size=24px>Cherry lips,</font><font color=#ffff00 size=24px><b> crystal </b></font><font size=24px>skies</font>
+00:00:00,001 --> 00:00:05,531
+<font size=24px>You know I'd do</font><font color=#ffff00 size=24px><b> anything </b></font><font size=24px>for you</font>
 
 3
-00:00:03,351 --> 00:00:07,171
-<font size=24px>Don't need</font><font color=#ffff00 size=24px><b> anything </b></font><font size=24px>but that</font>
+00:00:05,531 --> 00:00:12,191
+<font size=24px></font><font color=#ffff00 size=24px><b> Everything </b></font><font size=24px>you touch, all it dies</font>
 
 4
-00:00:07,171 --> 00:00:12,281
-<font size=24px>You can break</font><font color=#ffff00 size=24px><b> everything </b></font><font size=24px>I am</font>
-
-5
-00:00:12,281 --> 00:00:19,241
-<font size=24px></font><font color=#ffff00 size=24px><b> Everything </b></font><font size=24px>is looking up, everybody up now</font>
-
-6
-00:00:19,241 --> 00:00:28,981
+00:00:12,191 --> 00:00:21,931
 <font size=24px>And I'm thinking 'bout how people fall in love in</font><font color=#ffff00 size=24px><b> mysterious </b></font><font size=24px>ways</font>
 

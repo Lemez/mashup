@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,651
-<font size=24px>All my</font><font color=#ffff00 size=24px><b> windows </b></font><font size=24px>still are broken</font>
-
-3
-00:00:05,651 --> 00:00:11,631
-<font size=24px>I hear it calling outside my</font><font color=#ffff00 size=24px><b> window </b></font><font size=24px></font>
-
-4
-00:00:11,631 --> 00:00:18,151
-<font size=24px>You are the light and I will</font><font color=#ffff00 size=24px><b> follow </b></font><font size=24px></font>
-
-5
-00:00:18,151 --> 00:00:25,181
+00:00:00,001 --> 00:00:07,031
 <font size=24px>And what's driving me is</font><font color=#ffff00 size=24px><b> following </b></font><font size=24px>my dreams</font>
 
-6
-00:00:25,181 --> 00:00:38,481
+3
+00:00:07,031 --> 00:00:16,311
+<font size=24px>And everyone who</font><font color=#ffff00 size=24px><b> knows </b></font><font size=24px>us knows that we're fine with this</font>
+
+4
+00:00:16,311 --> 00:00:29,611
 <font size=24px>'Cause honey your soul could never</font><font color=#ffff00 size=24px><b> grow </b></font><font size=24px>old, it's evergreen</font>
 

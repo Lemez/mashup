@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:02,911
-<font size=24px>In the things that you</font><font color=#ffff00 size=24px><b> threw </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:04,811
+<font size=24px>Leaving my healing heart with a</font><font color=#ffff00 size=24px><b> new </b></font><font size=24px>scar</font>
 
 3
-00:00:02,911 --> 00:00:06,911
-<font size=24px></font><font color=#ffff00 size=24px><b> New </b></font><font size=24px>money, suit and tie</font>
+00:00:04,811 --> 00:00:09,941
+<font size=24px>I</font><font color=#ffff00 size=24px><b> threw </b></font><font size=24px>a wish in the well</font>
 
 4
-00:00:06,911 --> 00:00:10,951
-<font size=24px>We keep quiet because we're dead if they</font><font color=#ffff00 size=24px><b> knew </b></font><font size=24px></font>
-
-5
-00:00:10,951 --> 00:00:16,411
-<font size=24px>As life breaks</font><font color=#ffff00 size=24px><b> new </b></font><font size=24px>ground</font>
-
-6
-00:00:16,411 --> 00:00:23,131
+00:00:09,941 --> 00:00:16,661
 <font size=24px>There in my rear</font><font color=#ffff00 size=24px><b> view </b></font><font size=24px>mirror disappearing now</font>
 

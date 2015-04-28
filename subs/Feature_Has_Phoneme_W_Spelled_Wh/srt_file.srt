@@ -2,18 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,241
-<font size=24px>To watch me</font><font color=#ffff00 size=24px><b> while </b></font><font size=24px>I bleed?</font>
+00:00:00,001 --> 00:00:06,441
+<font size=24px></font><font color=#ffff00 size=24px><b> Who </b></font><font size=24px>would have known how bittersweet</font>
 
 3
-00:00:05,241 --> 00:00:11,541
+00:00:06,441 --> 00:00:12,971
 <font size=24px>And I said Romeo take me</font><font color=#ffff00 size=24px><b> somewhere </b></font><font size=24px>we can be alone</font>
 
 4
-00:00:11,541 --> 00:00:17,981
-<font size=24px></font><font color=#ffff00 size=24px><b> Who </b></font><font size=24px>would have known how bittersweet</font>
-
-5
-00:00:17,981 --> 00:00:25,091
+00:00:12,971 --> 00:00:19,791
 <font size=24px></font><font color=#ffff00 size=24px><b> Why </b></font><font size=24px>I should never make a change</font>
 

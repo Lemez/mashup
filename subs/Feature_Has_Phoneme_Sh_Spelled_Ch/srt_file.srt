@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:00,001
+
+2
+00:00:00,001 --> 00:00:07,371
+<font size=24px>Be a good</font><font color=#ffff00 size=24px><b> machine </b></font><font size=24px></font>
+

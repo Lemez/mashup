@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,741
-<font size=24px>Place your head on my</font><font color=#ffff00 size=24px><b> beating </b></font><font size=24px>heart</font>
+00:00:00,001 --> 00:00:06,721
+<font size=24px>There in my</font><font color=#ffff00 size=24px><b> rear </b></font><font size=24px>view mirror disappearing now</font>
 
 3
-00:00:05,741 --> 00:00:12,341
-<font size=24px>Then every head turned with eyes that</font><font color=#ffff00 size=24px><b> dreamed </b></font><font size=24px>of being the one</font>
+00:00:06,721 --> 00:00:13,731
+<font size=24px>Nobody said it was</font><font color=#ffff00 size=24px><b> easy </b></font><font size=24px></font>
 
 4
-00:00:12,341 --> 00:00:20,601
+00:00:13,731 --> 00:00:21,991
 <font size=24px>That's not</font><font color=#ffff00 size=24px><b> really </b></font><font size=24px>her style</font>
-
-5
-00:00:20,601 --> 00:00:29,471
-<font size=24px>As</font><font color=#ffff00 size=24px><b> easy </b></font><font size=24px>as knowing all the words to your old favorite song</font>
-
-6
-00:00:29,471 --> 00:00:38,801
-<font size=24px>Found something</font><font color=#ffff00 size=24px><b> real </b></font><font size=24px>that's out of touch</font>
 

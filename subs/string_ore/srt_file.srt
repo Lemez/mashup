@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,991
-<font size=24px>No sun is shining</font><font color=#ffff00 size=24px><b> anymore </b></font><font size=24px></font>
-
-3
-00:00:04,991 --> 00:00:10,111
-<font size=24px>One</font><font color=#ffff00 size=24px><b> more </b></font><font size=24px>time to make it all better?</font>
-
-4
-00:00:10,111 --> 00:00:15,671
-<font size=24px>Have your friends collect your</font><font color=#ffff00 size=24px><b> records </b></font><font size=24px>and then change your number</font>
-
-5
-00:00:15,671 --> 00:00:21,391
+00:00:00,001 --> 00:00:05,721
 <font size=24px>Of our</font><font color=#ffff00 size=24px><b> glory </b></font><font size=24px>days</font>
 
-6
-00:00:21,391 --> 00:00:28,401
-<font size=24px>When your legs don't work like they used to</font><font color=#ffff00 size=24px><b> before </b></font><font size=24px></font>
+3
+00:00:05,721 --> 00:00:12,361
+<font size=24px>No</font><font color=#ffff00 size=24px><b> more </b></font><font size=24px>fears, no more crying</font>
+
+4
+00:00:12,361 --> 00:00:20,421
+<font size=24px>Hold still right</font><font color=#ffff00 size=24px><b> before </b></font><font size=24px>we crash because we both know how this ends</font>
 

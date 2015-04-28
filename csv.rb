@@ -27,86 +27,23 @@ def get_hits_per_video
 end
 
 
-def features_to_game option
+def which_vids_are_done
+	gamefile = "./csv/games_final/games-csv-2015-04-25-maria.csv"
 	options = {:headers => false, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
-	list = "./csv/games_final/games-csv-2015-04-25-maria.csv"
+	@found = []
+	@notyet = []
 
-	@existing_final_videos = Dir.glob("./videos_final/*/*").select{|f| f.include?("logo")}
-	
-	CSV.foreach(list,options) do |row|
-		
-		game,nodes = row[0],row[1][1..-2].split(",")
-		g = Game.where(:gname => game).first_or_create
-
-		game_text_file  = File.open("#{@gamesdir}/#{game}.txt", 'w')
-
+	CSV.foreach(gamefile,options) do |line|
+		game, nodes = line[0], line[1][1...-2].split(",")
 		nodes.each do |n|
-			@node_location = ''
-			node = n[1..-2]
-			node = node[1..-1] if node[0]== '"'
-
-			@existing_final_videos.each do |f|
-				file = File.basename(f)[0..-15] 
-				full_location = Dir.pwd + f[1..-1] 
-				@node_location = full_location if node==file
-			end
-
-		 	mynode = Node.where(:game_id => g.id, :name => node, :file_location => @node_location).first_or_create
-			mynode.save!
-
-			s = "file '#{@node_location}'" 
-			game_text_file.puts(s) unless @node_location.empty?
-
-			node_video_to_ts mynode if option==true
-
+			n = n.gsub!(/[^0-9a-z_]/i, '')
+			File.exists?("#{@finaldir}/#{n}/#{n}_subs_logo.mp4") ? @found << n : @notyet << n
 		end
-
-		game_text_file.close
-
-	end
-end
-
-
-def csv_to_game
-
-	@linecounter = 0
-
-	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
-	list = "./csv/master/for_medleys_FINAL.csv"
-	@csv = CSV.open("./csv/games_final/games.csv", "w", {:col_sep => ";"})
-	@game = ''
-	@node = ''
-	nodes_in_game = []
-
-	CSV.foreach(list,options) do |line|
-
-		line = line.gsub("\"","") if line.include?("\"")#remove illegal quoting Malformed CSV Error if 
-		
-		node = line[10]
-		game = line[12]
-
-		if @linecounter == 0
-			nodes_in_game << node
-			p "#{game}:#{node}"
-
-		elsif @game != game 
-			@csv << [@game,nodes_in_game]
-			nodes_in_game = []
-			nodes_in_game << node
-			p "New #{game}:#{node}"
-		else
-			nodes_in_game << node if @node != node 
-			@csv << [@game,nodes_in_game] if @linecounter - File.open(list).readlines.size == 1
-			p "#{game}:#{node}"
-		end
-
-		@linecounter += 1
-		@game = game
-		@node = node
-
 	end
 
-	@csv.close
+	pp "Found: #{@found.length} - #{@found}"
+	p ""
+	ap "Not yet: #{@notyet.length} - #{@notyet}"
 end
 
 
@@ -140,7 +77,7 @@ def query_saved_videos_per_node destroy=false
 			# sleep 3
 			sentences = choose_sentences_from_saved_videos
 			# sleep 3
-		
+
 			unless sentences.empty?
 				relevant_videos_length = sentences.flat_map(&:video_id).uniq.count
 				current_hits = sentences.count
@@ -150,8 +87,7 @@ def query_saved_videos_per_node destroy=false
 			end
 
 			@completed.include?(@playlist_name) ? completed = true : completed = false
-			p "#{@playlist_name} completed = #{completed}; empty? #{Dir["#{@finaldir}/#{@playlist_name}/{*,.*}"].empty?}"
-
+			# p "#{@playlist_name} completed = #{completed}; empty? #{Dir["#{@finaldir}/#{@playlist_name}/{*,.*}"].empty?}"
 
 			if completed == true
 				completed = false if Dir["#{@finaldir}/#{@playlist_name}/{*,.*}"].empty?	
@@ -192,7 +128,7 @@ def get_files_from_db_specific_csv rule
 	# p "Getting data from #{rule}"
 	# Rule.create(:rule_name => rule)
 
-	list = CSV.read("#{@csvdir}/#{rule}", {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"})
+	list = CSV.read("#{@csvdir}/#{rule}", {:headers => false, :encoding => 'windows-1251:utf-8', :col_sep => ";"})
 
 	list.each {|row| listarray << row}
 
@@ -301,11 +237,12 @@ def get_files_from_db_csv
 
 	files = Dir.glob("./csv/nodes_final/*.csv")
 	
-	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
+	options = {:headers => false, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
 
 	summaryfile = CSV.open("./csv/summary/summary_medleys_FINAL.csv","w", {:col_sep => ";"}) do |csv|
 		csv << ["Node", "Example","Total","Profane"]
 
+		
 		files.each do |file|
 
 			p "Reading: #{file}"
@@ -317,7 +254,7 @@ def get_files_from_db_csv
 
 				@linecounter+=1
 
-				@profane = !line[16].to_i.zero?
+				@profane = !line[16].to_i.ze§ro?
 				offset = line[17].to_i
 
 				@line_id,@original_artist,@original_title  = line[2],line[4],line[6] 
@@ -381,6 +318,7 @@ def get_files_from_db_csv
 			csv << [@node,@keyword,@linecounter,@profanecounter]
 			# p "Profane: #{@profanecounter} out of a total #{@linecounter}"
 		end
+		
 
 	end
 

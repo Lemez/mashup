@@ -6,10 +6,10 @@
 <font size=24px></font><font color=#ffff00 size=24px><b> Weights </b></font><font size=24px>off my shoulders,</font>
 
 3
-00:00:03,451 --> 00:00:07,151
+00:00:03,451 --> 00:00:07,271
 <font size=24px>Got no</font><font color=#ffff00 size=24px><b> weight </b></font><font size=24px>on my shoulders</font>
 
 4
-00:00:07,151 --> 00:00:12,231
+00:00:07,271 --> 00:00:12,351
 <font size=24px>You never want to know how much you</font><font color=#ffff00 size=24px><b> weigh </b></font><font size=24px></font>
 

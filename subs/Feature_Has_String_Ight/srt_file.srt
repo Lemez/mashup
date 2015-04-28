@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,921
-<font size=24px>You had to</font><font color=#ffff00 size=24px><b> fight </b></font><font size=24px>to have the upper hand</font>
-
-3
-00:00:05,921 --> 00:00:12,441
+00:00:00,001 --> 00:00:06,521
 <font size=24px>You are the</font><font color=#ffff00 size=24px><b> light </b></font><font size=24px>and I will follow</font>
 
+3
+00:00:06,521 --> 00:00:13,301
+<font size=24px>Gonna make it</font><font color=#ffff00 size=24px><b> right </b></font><font size=24px></font>
+
 4
-00:00:12,441 --> 00:00:19,101
-<font size=24px>We're about to make some memories</font><font color=#ffff00 size=24px><b> tonight </b></font><font size=24px></font>
-
-5
-00:00:19,101 --> 00:00:27,711
-<font size=24px></font><font color=#ffff00 size=24px><b> Fight </b></font><font size=24px>fear for the selfish pain, it was worth it every time</font>
-
-6
-00:00:27,711 --> 00:00:37,131
-<font size=24px>You'll never treat yourself</font><font color=#ffff00 size=24px><b> right </b></font><font size=24px>darling but I want you too</font>
+00:00:13,301 --> 00:00:21,751
+<font size=24px>I lie awake at</font><font color=#ffff00 size=24px><b> night </b></font><font size=24px>and worry for a while</font>
 

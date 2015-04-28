@@ -2,6 +2,7 @@
 require 'active_record'
 require 'yaml'
 
+
 Dir["./*.rb"].each {|file| next if file == "./make_rule_video.rb";
                             next if file == "./make_rule_from_db.rb";
                             require file }
@@ -67,6 +68,8 @@ ActiveRecord::Schema.define do
         table.column :temp_file_location, :string
         table.column :normal_audio_file_location, :string
         table.column :normal_audio_duration, :float
+        table.column :normal_snippet, :string
+        table.column :aac, :string
        
     end
 
@@ -105,6 +108,7 @@ ActiveRecord::Schema.define do
 
     create_table :games do |table|
         table.column :gname, :string
+        table.column :glocation, :string
     end
     
 end
@@ -278,6 +282,10 @@ class String
     def behaves_nicely(string)
         self.split(" ").include?(string)
     end
+
+    def without_s
+        self[0..-2]
+    end
 end
 
 class Sentence < ActiveRecord::Base
@@ -367,6 +375,15 @@ class Snippet < ActiveRecord::Base
         Snippet.all.limit(@number_of_clips)
     end
 
+    def self.normal_snippet
+        @normal_snippet
+    end
+
+    def self.aac
+        @aac
+    end
+
+
 	def self.location
 		@location
 	end
@@ -421,6 +438,10 @@ class Game < ActiveRecord::Base
 
     def self.gname
         @gname
+    end
+
+    def self.glocation
+        @glocation
     end
   
 end 

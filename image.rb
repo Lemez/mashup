@@ -19,6 +19,26 @@ def make_image
 
 end
 
+def make_game_image
+	p "* make_game_image *"
+	make_dir_if_none @gamesdir, @game_name
+
+	@image = "#{@gamesdir}/#{@game_name}/#{@game_name}"
+
+	rule,example = GAME_DESCRIPTIONS[@game_name][0],GAME_DESCRIPTIONS[@game_name][1]
+	label = "label: #{rule}\n\n#{example}"
+
+	`convert \
+	-size 720x406 \
+	-background '#F2F2F2' \
+	 -fill '#7F7F7F' \
+	 -gravity center \
+	 -pointsize 30 \
+	-font '#{@fontdir}/OpenDyslexic-Regular.otf' \
+	 '#{label}' \
+	'#{@image}.png' `
+end
+
 def add_logo
 	p "* add_logo *"
 
@@ -29,6 +49,8 @@ def add_logo
    '#{@logo}' -size 720x406 \
     -gravity North  -composite \
    '#{@image_w_logo}' `
+
+   `rm #{@image}.png`
 end
 
 def turn_img_to_video
@@ -37,13 +59,16 @@ def turn_img_to_video
 	@image_video = "#{@image}_logo.mp4"
 
 	`ffmpeg -loop 1 -i #{@image_w_logo} -c:v libx264 -t #{CARD_LENGTH} -pix_fmt yuv420p #{@image_video} -y`
+	`rm #{@image_w_logo}`
+
 end
 
 def add_silence_to_image_video
 	p "* add_silence_to_image_video *"
 	@silence = "#{Dir.pwd}/audio/silence.wav"
 	@image_video_silence  = "#{@image}_logo_silence.mp4"
-	`ffmpeg -i #{@image_video} -i #{@silence}  #{@image_video_silence} -shortest -y`
+	`ffmpeg -i '#{@image_video}' -i '#{@silence}'  '#{@image_video_silence}' -shortest -y`
+	`rm #{@image_video}`
 end
 
 def add_img_video_and_pic_video
@@ -67,9 +92,36 @@ def add_img_video_and_pic_video
 
 	p "Saved - final logo video for: #{@rule.rule_name}" if @rule.save!
 
-	sleep 5
+	play_sound true  # add a sound to tell me it is completed
+
 	`rm #{tmp1}`
 	`rm #{tmp2}`
+	`rm #{@image_video_silence}`
+
+	sleep 3
+	
+end
+
+def add_img_video_and_game_video
+	p "* add_img_video_and_pic_video *"
+
+	tmp1 = "#{@testdir}/#{@game_name}_intermediate1.ts"
+	tmp2 = "#{@testdir}/#{@game_name}_intermediate2.ts"
+
+	final = "#{@gamesdir}/#{@game_name}/#{@game_name}_with_intro_card.mp4"
+
+	`ffmpeg -i #{@image_video_silence} -c copy -bsf:v h264_mp4toannexb -f mpegts '#{tmp1}' -shortest -loglevel quiet -y`
+	`ffmpeg -i '#{@game_location}' -c copy -bsf:v h264_mp4toannexb -f mpegts '#{tmp2}' -shortest -loglevel quiet  -y`
+	`ffmpeg -i "concat:#{tmp1}|#{tmp2}" -c copy -bsf:a aac_adtstoasc #{final} -shortest -loglevel quiet  -y`
+
+	play_sound true  # add a sound to tell me it is completed
+
+	`rm #{tmp1}`
+	`rm #{tmp2}`
+	`rm #{@image_video_silence}`
+
+	sleep 3
+	
 
 end
 

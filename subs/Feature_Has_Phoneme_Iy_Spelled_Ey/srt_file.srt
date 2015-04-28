@@ -10,10 +10,6 @@
 <font size=24px>I can't tell where the</font><font color=#ffff00 size=24px><b> journey </b></font><font size=24px>will end</font>
 
 4
-00:00:08,451 --> 00:00:14,521
-<font size=24px>So</font><font color=#ffff00 size=24px><b> honey </b></font><font size=24px>now</font>
-
-5
-00:00:14,521 --> 00:00:27,821
+00:00:08,451 --> 00:00:21,751
 <font size=24px>'Cause</font><font color=#ffff00 size=24px><b> honey </b></font><font size=24px>your soul could never grow old, it's evergreen</font>
 

@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:06,281
-<font size=24px>Then showed a photo my baby</font><font color=#ffff00 size=24px><b> cried </b></font><font size=24px>his eyes were like mine</font>
-
-3
-00:00:06,281 --> 00:00:12,941
+00:00:00,001 --> 00:00:06,661
 <font size=24px>Everything you touch, all it</font><font color=#ffff00 size=24px><b> dies </b></font><font size=24px></font>
 
-4
-00:00:12,941 --> 00:00:20,171
+3
+00:00:06,661 --> 00:00:13,891
 <font size=24px>You know how the time</font><font color=#ffff00 size=24px><b> flies </b></font><font size=24px></font>
 
-5
-00:00:20,171 --> 00:00:27,931
-<font size=24px>Questions of science,</font><font color=#ffff00 size=24px><b> science </b></font><font size=24px>and progress</font>
-
-6
-00:00:27,931 --> 00:00:36,391
-<font size=24px>Like when you said you felt so happy you could</font><font color=#ffff00 size=24px><b> die </b></font><font size=24px></font>
+4
+00:00:13,891 --> 00:00:21,411
+<font size=24px>Heads on a</font><font color=#ffff00 size=24px><b> science </b></font><font size=24px>apart</font>
 

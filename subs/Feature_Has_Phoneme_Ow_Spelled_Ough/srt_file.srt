@@ -2,22 +2,10 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:02,811
-<font size=24px>Baby even</font><font color=#ffff00 size=24px><b> though </b></font><font size=24px>I hate ya</font>
-
-3
-00:00:02,811 --> 00:00:05,741
+00:00:00,001 --> 00:00:03,931
 <font size=24px>'Cause even</font><font color=#ffff00 size=24px><b> though </b></font><font size=24px>I shouldn't want it</font>
 
-4
-00:00:05,741 --> 00:00:09,641
-<font size=24px>I guess that I don't need that</font><font color=#ffff00 size=24px><b> though </b></font><font size=24px></font>
-
-5
-00:00:09,641 --> 00:00:15,051
-<font size=24px></font><font color=#ffff00 size=24px><b> Though </b></font><font size=24px>it makes no sense to me</font>
-
-6
-00:00:15,051 --> 00:00:24,190
+3
+00:00:03,931 --> 00:00:13,070
 <font size=24px></font><font color=#ffff00 size=24px><b> Although </b></font><font size=24px>I am broken, my heart is untamed, still</font>
 

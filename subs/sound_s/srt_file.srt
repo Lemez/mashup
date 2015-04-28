@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:07,761
-<font size=24px>Questions of science,</font><font color=#ffff00 size=24px><b> science </b></font><font size=24px>and progress</font>
-
-3
-00:00:07,761 --> 00:00:16,011
+00:00:00,001 --> 00:00:08,251
 <font size=24px></font><font color=#ffff00 size=24px><b> Chasing </b></font><font size=24px>relentlessly, still fight and I don't know why</font>
 
-4
-00:00:16,011 --> 00:00:24,601
+3
+00:00:08,251 --> 00:00:16,841
 <font size=24px>People making</font><font color=#ffff00 size=24px><b> choices </b></font><font size=24px>they can't fake</font>
 
-5
-00:00:24,601 --> 00:00:35,661
+4
+00:00:16,841 --> 00:00:29,401
 <font size=24px>She said I am the one, who will</font><font color=#ffff00 size=24px><b> dance </b></font><font size=24px>on the floor in the round</font>
-
-6
-00:00:35,661 --> 00:00:49,111
-<font size=24px>They will come, they will go, make us</font><font color=#ffff00 size=24px><b> special </b></font><font size=24px></font>
 

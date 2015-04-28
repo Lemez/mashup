@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:05,171
-<font size=24px>I can hear it every day and every</font><font color=#ffff00 size=24px><b> night </b></font><font size=24px></font>
+00:00:00,001 --> 00:00:06,661
+<font size=24px>These words will be</font><font color=#ffff00 size=24px><b> written </b></font><font size=24px>on my stone</font>
 
 3
-00:00:05,171 --> 00:00:10,731
-<font size=24px>He</font><font color=#ffff00 size=24px><b> knelt </b></font><font size=24px>to the ground and pulled out a ring and said</font>
+00:00:06,661 --> 00:00:14,181
+<font size=24px>Heads on a</font><font color=#ffff00 size=24px><b> science </b></font><font size=24px>apart</font>
 
 4
-00:00:10,731 --> 00:00:16,801
-<font size=24px>And there you are on your</font><font color=#ffff00 size=24px><b> knees </b></font><font size=24px></font>
-
-5
-00:00:16,801 --> 00:00:22,941
-<font size=24px>I see</font><font color=#ffff00 size=24px><b> ascending </b></font><font size=24px>light upon a hill</font>
-
-6
-00:00:22,941 --> 00:00:30,761
-<font size=24px>You don't</font><font color=#ffff00 size=24px><b> know </b></font><font size=24px>how lovely you are</font>
+00:00:14,181 --> 00:00:23,461
+<font size=24px>And everyone who</font><font color=#ffff00 size=24px><b> knows </b></font><font size=24px>us knows that we're fine with this</font>
 

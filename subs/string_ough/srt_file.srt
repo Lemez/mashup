@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:04,911
-<font size=24px>I</font><font color=#ffff00 size=24px><b> thought </b></font><font size=24px>things were going alright</font>
-
-3
-00:00:04,911 --> 00:00:10,251
-<font size=24px>But now they've</font><font color=#ffff00 size=24px><b> brought </b></font><font size=24px>you away from here</font>
-
-4
-00:00:10,251 --> 00:00:15,661
+00:00:00,001 --> 00:00:05,411
 <font size=24px></font><font color=#ffff00 size=24px><b> Though </b></font><font size=24px>it makes no sense to me</font>
 
-5
-00:00:15,661 --> 00:00:24,031
-<font size=24px>It cuts deep</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px>our ground and makes us forget all common sense</font>
+3
+00:00:05,411 --> 00:00:13,671
+<font size=24px>We danced with monsters</font><font color=#ffff00 size=24px><b> through </b></font><font size=24px>the night</font>
 
-6
-00:00:24,031 --> 00:00:33,170
+4
+00:00:13,671 --> 00:00:22,810
 <font size=24px></font><font color=#ffff00 size=24px><b> Although </b></font><font size=24px>I am broken, my heart is untamed, still</font>
 

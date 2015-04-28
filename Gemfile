@@ -18,3 +18,4 @@ gem 'quiet_assets'
 # gem 'rmagick', '2.13.2'
 gem 'mini_magick'
 gem 'activesupport'
+gem 'trollop' #command line parsing

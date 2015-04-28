@@ -1,20 +1,8 @@
-
-
-# # usage: ruby make_rule_video.rb '3rd person present tense (303).csv'
-# # usage: ruby make_rule_video.rb 'double_cons_before_ing_ed_er.csv' true 'maria'
-# # usage: ruby make_rule_video.rb 'double_cons.csv' false 
-
-
-# usage: ruby make_rule_video.rb CREATE=true DOWNLOADING=false QUERY=false
-# this will query nodes first to update saved sentences and incompleted final videos
-
-# raise "Please specify a local csv file, eg >> $ ruby make_rule_video.rb '3rd person present tense (303).csv' " if ARGV[0].nil?
-# raise "Please specify true or false for DOWNLOADING " if ARGV[1].nil?
-
-#requires THREE arguments:
 # usage: 
-#ruby make_rule_video.rb CREATE=false DOWNLOADING=false QUERY=false
+#ruby make_rule_video.rb DOWNLOADING=false QUERY=false CREATE=true GAME=false
 
+# new Trollop usage
+# ruby make_rule_video --features --clips 2
 
 require 'streamio-ffmpeg'
 require 'viddl-rb'
@@ -33,16 +21,41 @@ require 'nokogiri'
 require 'fuzzystringmatch'
 require 'rake'
 require 'active_support/all'
-# require 'active_record'
 # require 'mysql2'
 require_relative './environment.rb'
+
+require 'trollop'
+@command_arguments = Trollop::options do
+  opt :downloading, "Turn on downloading"           # flag --downloading, default false
+  opt :features, "Turn on feature creation" 		# flag --features, default false
+  opt :games, "Turn on game creation" 				# flag --games, default false
+  opt :query, "Turn on db video query before exec" 	# flag --query, default false
+  opt :single, "Just one video for testing" 		# flag --single, default false
+  opt :clips, "Number of Clips", :default => 3  	# integer --clips <i>, default to 3
+  opt :card, "Intro Card Length", :default => 3  	# integer --card <i>, default to 3
+  # opt :name, "Monkey name", :type => :string      # string --name <s>, default nil
+end
 
 ViddlRb.io = $stdout
 
 # ###### variables #########################
-CREATE = ARGV[0].split("=")[-1].to_bool
-DOWNLOADING = ARGV[1].split("=")[-1].to_bool
-QUERY = ARGV[2].split("=")[-1].to_bool
+
+DOWNLOADING = @command_arguments[:downloading]
+LIMIT = @command_arguments[:clips]
+CREATE = @command_arguments[:features]
+QUERY = @command_arguments[:query]
+GAME = @command_arguments[:games]
+CARD_LENGTH = @command_arguments[:card]
+SINGLE = @command_arguments[:single]
+
+
+
+# DOWNLOADING = ARGV[0].split("=")[-1].to_bool
+# QUERY = ARGV[1].split("=")[-1].to_bool
+# CREATE = ARGV[2].split("=")[-1].to_bool
+# GAME = ARGV[3].split("=")[-1].to_bool
+# LIMIT = 5
+# CARD_LENGTH = 4
 
 @csvdir = Dir.pwd + '/csv/nodes_final' 
 @videodir = Dir.pwd + '/videos'
@@ -60,8 +73,7 @@ RUDE = ["damn", "shit", "sex"]
 EXCLUDED = []
 MIN_DUR = 3500
 MAX_DUR = 15000
-CARD_LENGTH = 4
-LIMIT = 5
+
 @done = 0
 
 OFFSET = {
@@ -83,13 +95,15 @@ OFFSET = {
 	"ellie goulding ~ anything could happen.mp4" => 17000,
 	"eminem ~ the monster.mp4" => 62000,
 	"jonas brothers ~ play my music.mp4" => 17500,
+	"lorde ~ royals.mp4" => 8400,
 	"marina and the diamonds ~ primadonna.mp4" => 5000,
 	"michael jackson ~ billie jean.mp4" => 3500,
 	"michael jackson ~ man in the mirror.mp4" => 8000,
 	"ne yo ~ one in a million.mp4" => 26000,
-	"nico & vinz ~ am i wrong.mp4" => 13000,
+	"nico and vinz ~ am i wrong.mp4" => 0,
 	"one direction ~ story of my life.mp4" => 0,
 	"taylor swift ~ white horse.mp4" => 12000,
+	"taylor swift ~ we are never ever getting back together.mp4" => -4500,
 	"the vamps ~ wild heart.mp4" => 1500
 }
 
@@ -102,7 +116,7 @@ INTERRUPTIONS = {
 
 ######## CONVERT CSV TO NODES #######
 # db_files_to_csv
-# get_files_from_db_csv
+ # get_files_from_db_csv
 # get_hits_per_video
 
 #######  PROGRAMME CODE ######
@@ -112,6 +126,7 @@ INTERRUPTIONS = {
 # update list of completed videos
 query_saved_videos_per_node true if QUERY #ARGV - destroy all Sentence records each time
 create_mashups_with_enough_videos if CREATE
+make_games_from_features if GAME
 
 ### IMAGES PREPEND WORKING AS TEST
 
@@ -121,21 +136,6 @@ create_mashups_with_enough_videos if CREATE
 # rename_currently_working
 
 
-
-
-
-# MAKE GAME VIDEOS FROM NODE VIDEOS
-# csv_to_game
-
-# create_hash_of_features
-# compile_features_to_game
-
-
-# MAKE GAME
-# which_vids_are_done
-# features_to_game true
-# # check_games
-# compile_games
 
 	
 

@@ -2,26 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:07,291
-<font size=24px>But I am closer to the</font><font color=#ffff00 size=24px><b> clouds </b></font><font size=24px>up here</font>
-
-3
-00:00:07,291 --> 00:00:14,661
-<font size=24px>Baby, we</font><font color=#ffff00 size=24px><b> found </b></font><font size=24px>love right where we are</font>
-
-4
-00:00:14,661 --> 00:00:22,171
+00:00:00,001 --> 00:00:07,511
 <font size=24px>Do not speak as</font><font color=#ffff00 size=24px><b> loud </b></font><font size=24px>as my heart</font>
 
-5
-00:00:22,171 --> 00:00:30,011
+3
+00:00:07,511 --> 00:00:15,351
 <font size=24px>In a summer haze</font><font color=#ffff00 size=24px><b> bound </b></font><font size=24px>by the surprise</font>
 
-6
-00:00:30,011 --> 00:00:37,971
+4
+00:00:15,351 --> 00:00:23,471
 <font size=24px>I won't let these little things slip out of my</font><font color=#ffff00 size=24px><b> mouth </b></font><font size=24px></font>
-
-7
-00:00:37,971 --> 00:00:47,241
-<font size=24px>'Cause what about, what</font><font color=#ffff00 size=24px><b> about </b></font><font size=24px>angels?</font>
 

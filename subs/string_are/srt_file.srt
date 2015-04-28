@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:03,681
-<font size=24px>'Cause darling I'm a</font><font color=#ffff00 size=24px><b> nightmare </b></font><font size=24px>dressed like a daydream</font>
-
-3
-00:00:03,681 --> 00:00:08,191
-<font size=24px>Nothing compares no worries or</font><font color=#ffff00 size=24px><b> cares </b></font><font size=24px></font>
-
-4
-00:00:08,191 --> 00:00:13,301
-<font size=24px>And mother always told me be</font><font color=#ffff00 size=24px><b> careful </b></font><font size=24px>of who you love</font>
-
-5
-00:00:13,301 --> 00:00:18,601
+00:00:00,001 --> 00:00:05,251
 <font size=24px>The whole world stops and</font><font color=#ffff00 size=24px><b> stares </b></font><font size=24px>for a while</font>
 
-6
-00:00:18,601 --> 00:00:28,881
+3
+00:00:05,251 --> 00:00:12,391
+<font size=24px>And be</font><font color=#ffff00 size=24px><b> careful </b></font><font size=24px>of what you do 'cause the lie becomes the truth</font>
+
+4
+00:00:12,391 --> 00:00:22,671
 <font size=24px>Would you</font><font color=#ffff00 size=24px><b> dare </b></font><font size=24px>to let it go?</font>
 

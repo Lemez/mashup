@@ -2,22 +2,14 @@
 00:00:00,000 --> 00:00:00,001
 
 2
-00:00:00,001 --> 00:00:03,001
-<font size=24px>The list</font><font color=#ffff00 size=24px><b> goes </b></font><font size=24px>on</font>
+00:00:00,001 --> 00:00:03,971
+<font size=24px>I know how it</font><font color=#ffff00 size=24px><b> goes </b></font><font size=24px></font>
 
 3
-00:00:03,001 --> 00:00:06,811
-<font size=24px>The beat</font><font color=#ffff00 size=24px><b> goes </b></font><font size=24px>on and on and on and on and</font>
-
-4
-00:00:06,811 --> 00:00:12,571
+00:00:03,971 --> 00:00:09,731
 <font size=24px>Remembering him comes in flashbacks and</font><font color=#ffff00 size=24px><b> echoes </b></font><font size=24px></font>
 
-5
-00:00:12,571 --> 00:00:19,531
+4
+00:00:09,731 --> 00:00:16,691
 <font size=24px>Without the sound of all my</font><font color=#ffff00 size=24px><b> heroes </b></font><font size=24px>singing all my favourite songs</font>
-
-6
-00:00:19,531 --> 00:00:27,831
-<font size=24px>Cause love comes slow and it</font><font color=#ffff00 size=24px><b> goes </b></font><font size=24px>so fast</font>
 
