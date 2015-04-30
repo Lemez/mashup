@@ -1,8 +1,15 @@
 # usage: 
 #ruby make_rule_video.rb DOWNLOADING=false QUERY=false CREATE=true GAME=false
 
-# new Trollop usage
-# ruby make_rule_video --features --clips 2
+# Trollop usage
+						# Make just one feature with 2 clips
+# ruby make_rule_video --features --clips 2 --single
+
+						# Make new nodes w new audio offset without doing intro cards
+# ruby make_rule_video.rb --games --makenewnodes --gameaudiooffset 0.1
+
+						# Make new game cards and compile with existing game mp4
+# ruby make_rule_video.rb --games --gamecard
 
 require 'streamio-ffmpeg'
 require 'viddl-rb'
@@ -26,13 +33,20 @@ require_relative './environment.rb'
 
 require 'trollop'
 @command_arguments = Trollop::options do
-  opt :downloading, "Turn on downloading"           # flag --downloading, default false
-  opt :features, "Turn on feature creation" 		# flag --features, default false
-  opt :games, "Turn on game creation" 				# flag --games, default false
-  opt :query, "Turn on db video query before exec" 	# flag --query, default false
-  opt :single, "Just one video for testing" 		# flag --single, default false
-  opt :clips, "Number of Clips", :default => 3  	# integer --clips <i>, default to 3
-  opt :card, "Intro Card Length", :default => 3  	# integer --card <i>, default to 3
+  opt :single, 			"Just one video for testing" 				# flag 		--single, default false
+  opt :downloading, 	"Turn on downloading"          				# flag		--downloading, default false
+  opt :query, 			"Turn on db video query before exec" 		# flag 		--query, default false
+  
+  opt :features, 		"Turn on feature creation" 					# flag		--features, default false
+  opt :clips, 			"Number of Clips", 		:default => 3  	# integer 	--clips <i>, default to 3
+  opt :featurecardlength, 			"Intro Card Length", 	:default => 3  	# integer 	--featurecardlength <i>, default to 3
+  
+  opt :games, 			"Turn on game creation" 					# flag			--games, default false
+  opt :gamecard, 		"Turn on game image making" 					# flag		--gamecard, default false
+  opt :gamecardlength, 	"Intro Card Length", 	:default => 4  	# integer 	--gamecardlength <i>, default to 4
+  opt :makenewnodes, 	"Recompile nodes for games (eg testing new offset)" # flag 	--makenodes, default false  
+  opt :gameaudiooffset, "Au Offset - Game", 	:default => 0.05 # float			--gameaudiooffset <f>
+
   # opt :name, "Monkey name", :type => :string      # string --name <s>, default nil
 end
 
@@ -40,13 +54,20 @@ ViddlRb.io = $stdout
 
 # ###### variables #########################
 
-DOWNLOADING = @command_arguments[:downloading]
-LIMIT = @command_arguments[:clips]
-CREATE = @command_arguments[:features]
-QUERY = @command_arguments[:query]
-GAME = @command_arguments[:games]
-CARD_LENGTH = @command_arguments[:card]
 SINGLE = @command_arguments[:single]
+DOWNLOADING = @command_arguments[:downloading]
+QUERY = @command_arguments[:query]
+
+CREATE = @command_arguments[:features]
+FEATURE_CARD_LENGTH = @command_arguments[:featurecardlength]
+LIMIT = @command_arguments[:clips]
+
+GAME = @command_arguments[:games]
+MAKE_NODES = @command_arguments[:makenewnodes]
+GAME_CARD_ON = @command_arguments[:gamecard]
+GAME_CARD_LENGTH = @command_arguments[:gamecardlength]
+GAME_AU_OFFSET = @command_arguments[:gameaudiooffset] # --gameaudiooffset 0.05 is working default
+
 
 
 

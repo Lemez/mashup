@@ -128,11 +128,11 @@ def make_new_video playlist, downloading=false
 	
 	add_subs	# add subtitles with highlighted keyword
 	
-	create_silence #need to do this as card length can change
+	create_silence "feature" #need to do this as card length can change
 
 	make_image # add image
 	add_logo
-	turn_img_to_video
+	turn_img_to_video "feature"
 	add_silence_to_image_video
 	add_img_video_and_pic_video
 

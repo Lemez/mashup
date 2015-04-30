@@ -53,12 +53,14 @@ def add_logo
    `rm #{@image}.png`
 end
 
-def turn_img_to_video
+def turn_img_to_video type
 	p "* turn_img_to_video *"
+
+	type=="game" ? @card_length=GAME_CARD_LENGTH : @card_length=FEATURE_CARD_LENGTH
 
 	@image_video = "#{@image}_logo.mp4"
 
-	`ffmpeg -loop 1 -i #{@image_w_logo} -c:v libx264 -t #{CARD_LENGTH} -pix_fmt yuv420p #{@image_video} -y`
+	`ffmpeg -loop 1 -i #{@image_w_logo} -c:v libx264 -t #{@card_length} -pix_fmt yuv420p #{@image_video} -y`
 	`rm #{@image_w_logo}`
 
 end

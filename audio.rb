@@ -97,11 +97,13 @@ end
 ########## OLD
 
 
-def create_silence
+def create_silence type
+
+	type=="game" ? @card_length = GAME_CARD_LENGTH : @card_length = FEATURE_CARD_LENGTH
 
 	shhh = "'#{Dir.pwd}/audio/silence.wav'"
 
-	`sox -n -r 44100 -c 2 #{shhh} trim 0.0 #{CARD_LENGTH.to_s}.0`
+	`sox -n -r 44100 -c 2 #{shhh} trim 0.0 #{@card_length.to_s}.0`
 
 end
 
