@@ -109,10 +109,32 @@ ActiveRecord::Schema.define do
     create_table :games do |table|
         table.column :gname, :string
         table.column :glocation, :string
+        table.column :withcard, :string
+        table.column :youtube, :string
     end
     
 end
 
+class Game < ActiveRecord::Base
+    has_many :nodes
+
+    def self.gname
+        @gname
+    end
+
+    def self.glocation
+        @glocation
+    end
+
+    def self.withcard
+        @withcard
+    end
+
+    def self.youtube
+        @youtube
+    end
+  
+end 
 
 class Node < ActiveRecord::Base
     belongs_to :game
@@ -433,18 +455,7 @@ class Snippet < ActiveRecord::Base
     # end
 end
 
-class Game < ActiveRecord::Base
-    has_many :nodes
 
-    def self.gname
-        @gname
-    end
-
-    def self.glocation
-        @glocation
-    end
-  
-end 
 
  
 

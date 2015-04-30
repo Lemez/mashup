@@ -111,18 +111,22 @@ def add_img_video_and_game_video
 	tmp2 = "#{@testdir}/#{@game_name}_intermediate2.ts"
 
 	final = "#{@gamesdir}/#{@game_name}/#{@game_name}_with_intro_card.mp4"
+	
+	if GAME_CARD_ON
+		`ffmpeg -i #{@image_video_silence} -c copy -bsf:v h264_mp4toannexb -f mpegts '#{tmp1}' -shortest -loglevel quiet -y`
+		`ffmpeg -i '#{@game_location}' -c copy -bsf:v h264_mp4toannexb -f mpegts '#{tmp2}' -shortest -loglevel quiet  -y`
+		`ffmpeg -i "concat:#{tmp1}|#{tmp2}" -c copy -bsf:a aac_adtstoasc #{final} -shortest -loglevel quiet  -y`
 
-	`ffmpeg -i #{@image_video_silence} -c copy -bsf:v h264_mp4toannexb -f mpegts '#{tmp1}' -shortest -loglevel quiet -y`
-	`ffmpeg -i '#{@game_location}' -c copy -bsf:v h264_mp4toannexb -f mpegts '#{tmp2}' -shortest -loglevel quiet  -y`
-	`ffmpeg -i "concat:#{tmp1}|#{tmp2}" -c copy -bsf:a aac_adtstoasc #{final} -shortest -loglevel quiet  -y`
+		play_sound true  # add a sound to tell me it is completed
 
-	play_sound true  # add a sound to tell me it is completed
+		`rm #{tmp1}`
+		`rm #{tmp2}`
+		`rm #{@image_video_silence}`
 
-	`rm #{tmp1}`
-	`rm #{tmp2}`
-	`rm #{@image_video_silence}`
+		sleep 3
+	end
 
-	sleep 3
+	return final
 	
 
 end

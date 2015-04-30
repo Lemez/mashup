@@ -7,9 +7,27 @@ def make_games_from_features
 
 	features_to_game
 	compile_games
-	add_intro_to_games if GAME_CARD_ON
-	# @games.each {|game| p game.gname}
+	add_intro_to_games
+	encode_for_youtube
 end
+
+
+def encode_for_youtube
+
+	@games = Game.all
+
+	@games.each do |game|
+
+		current = game.withcard
+		gamename = game.gname
+		youtube = "#{Dir.pwd}/videos_final_youtube/#{gamename}_youtube.mp4"
+		`ffmpeg -i '#{current}' -c:v libx264 -preset slow -crf 18 -c:a copy -pix_fmt yuv420p '#{youtube}'`
+		game.youtube = youtube
+		game.save!
+
+	end
+end
+
 
 
 
@@ -133,7 +151,9 @@ def add_intro_to_games
 		turn_img_to_video "game"
 		create_silence "game"
 		add_silence_to_image_video
-		add_img_video_and_game_video
+
+		game.withcard = add_img_video_and_game_video
+		game.save!
 	end
 end
 
