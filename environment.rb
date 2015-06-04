@@ -5,6 +5,7 @@ require 'yaml'
 
 Dir["./*.rb"].each {|file| next if file == "./make_rule_video.rb";
                             next if file == "./make_rule_from_db.rb";
+                            next if file == "./make_vocab.rb";
                             require file }
 
 # Dir["./methods/*.rb"].each(&method(:require_relative)) put all files into methods (but then clean up the direcgtory issues)

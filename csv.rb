@@ -1,3 +1,71 @@
+def db_vocab_files_to_csv
+	p "* db_vocab_files_to_csv *"
+
+	#delete existing files 
+	years = ["3-4","5-6"]
+	years.each{|year| FileUtils.rm_rf("#{Dir.pwd}/csv/vocab/#{year}/.", secure: true)}
+
+	@linecounter = 0
+	@csv_lines = 0
+	@song_counter = 0
+	@dict_frequency_array = []
+ 
+	
+	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
+	list = "./csv/vocab/for_voc_book.csv"
+
+	CSV.foreach(list,options) do |line|
+
+		node = line[8]
+		song_id = line[2]
+		name = "#{Dir.pwd}/csv/vocab/#{line[11]}/#{node}.csv"
+
+		if @linecounter == 0
+			@csv = CSV.open(name, "w", {:col_sep => ";"})
+
+		elsif @node != node 
+
+			@csv.close
+
+			@dict_frequency_array << [@csv_lines, @node]
+			File.exist?(name) ? @csv_lines = CSV.read(name).size : @csv_lines = 0
+			
+			File.exist?(name) ? operator = "ab" : operator = "w" 
+			@csv = CSV.open(name, "#{operator}", {:col_sep => ";"})
+			
+		end
+
+		@linecounter += 1
+		@node = node
+		@csv_lines += 1
+		@csv << line
+	end
+	
+	@dict_frequency_array << [@csv_lines, @node]
+	@csv.close
+
+	newdict = @dict_frequency_array.sort!{|a,b| a[0] <=> b[0]}.reverse!.uniq{|a|a[1]}
+	newdict.each{|a| p a}
+	p "number of items = #{newdict.length}"
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def get_hits_per_video
 	options = {:headers => true, :encoding => 'windows-1251:utf-8', :col_sep => ";"}
 	list = "./csv/master/for_medleys_FINAL.csv"
@@ -230,6 +298,7 @@ def db_files_to_csv
 	end
 	@csv.close
 end
+
 
 def get_files_from_db_csv
 
