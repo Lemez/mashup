@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    akitaonrails-shift_subtitle (1.1.1)
     arel (6.0.0)
     awesome_print (1.6.1)
     builder (3.1.4)
@@ -118,6 +119,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
+  akitaonrails-shift_subtitle
   awesome_print
   builder (~> 3.1.0)
   gemcutter (~> 0.7.1)

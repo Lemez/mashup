@@ -1,3 +1,30 @@
+def trim_vid string
+
+	@extensions = ['.avi', '.mp4', '.mkv']
+	@trimstart = "00:02:00"
+
+	Dir.glob("/Users/JW/Downloads/Video/*/*").each do |file| 
+
+		extension = File.extname(file)
+
+		next unless @extensions.include?(extension)
+		next unless file.include?(string) if string
+
+		string ? format = "mp4" : format = "mkv"
+		string ? trim = '60secsfrom0200' : trim = '90secsfrom0200'
+		string ? @trim_duration = 60 : @trim_duration = 90
+
+		name_with_ext = File.basename(file)
+		rootpath = "/Users/JW/Downloads/Video/_edited"
+		trimname = "#{rootpath}/#{trim}_#{name_with_ext}.#{format}"
+
+		p "Processing #{file}"
+		`ffmpeg -i '#{file}' -ss #{@trimstart} -t #{@trim_duration} -c:v libx264 -preset slow -crf 18 -c:a copy -pix_fmt yuv420p '#{trimname}' -y`
+
+	end
+end
+
+
 def create_and_match_saved_videos
 		# get the info from the saved videos folder and create SavedVideos
 	get_all_titles_from_dir

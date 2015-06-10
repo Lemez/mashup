@@ -19,3 +19,4 @@ gem 'quiet_assets'
 gem 'mini_magick'
 gem 'activesupport'
 gem 'trollop' #command line parsing
+gem 'akitaonrails-shift_subtitle'

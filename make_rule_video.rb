@@ -46,7 +46,14 @@ require 'trollop'
   opt :gamecardlength, 	"Intro Card Length", 	:default => 4  	# integer 	--gamecardlength <i>, default to 4
   opt :makenewnodes, 	"Recompile nodes for games (eg testing new offset)" # flag 	--makenodes, default false  
   opt :gameaudiooffset, "Au Offset - Game", 	:default => 0.05 # float			--gameaudiooffset <f>
-
+	
+# other command line tools	  
+  opt :trimvideos, "Trim Videos" 									# flag			--trimvideos, default false
+  opt :trimfolder, "Folder containing {string} for processing", :type => :string 	# string	--trimfolder <s>
+  opt :trimsubs, "Trim Videos" 									# flag			--trimsubs, default false
+  opt :subshift, "Argument for trimsubs - shift subtitles by X seconds (positive integer)", :type => :integer		# integer	--subshift <i> eg 90 (take everything 90 secs back)
+  opt :shiftname, "Filename containing {string} for subtitle shifting", :type => :string 	# string	--trimfolder <s>
+  opt :direction, "Argument for trimsubs - 'add' or 'sub' ", :default => "add"		# integer	--direction <s> eg "sub" (take everything 90 secs back)
   # opt :name, "Monkey name", :type => :string      # string --name <s>, default nil
 end
 
@@ -67,8 +74,12 @@ MAKE_NODES = @command_arguments[:makenewnodes]
 GAME_CARD_ON = @command_arguments[:gamecard]
 GAME_CARD_LENGTH = @command_arguments[:gamecardlength]
 GAME_AU_OFFSET = @command_arguments[:gameaudiooffset] # --gameaudiooffset 0.05 is working default
-
-
+TRIMVID = @command_arguments[:trimvideos]
+TRIMFOLDER = @command_arguments[:trimfolder]
+TRIMSUBS = @command_arguments[:trimsubs]
+SUBSHIFT =  @command_arguments[:subshift]
+SHIFTNAME = @command_arguments[:shiftname]
+DIRECTION = @command_arguments[:direction]
 
 
 # DOWNLOADING = ARGV[0].split("=")[-1].to_bool
@@ -148,6 +159,10 @@ INTERRUPTIONS = {
 query_saved_videos_per_node true if QUERY #ARGV - destroy all Sentence records each time
 create_mashups_with_enough_videos if CREATE
 make_games_from_features if GAME
+
+# editing videos
+trim_vid TRIMFOLDER if TRIMVID
+trim_srt SUBSHIFT if TRIMSUBS
 
 ### IMAGES PREPEND WORKING AS TEST
 

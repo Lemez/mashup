@@ -1,3 +1,25 @@
+def trim_srt length
+
+	SHIFTNAME ? @shift = SHIFTNAME : @shift = ""
+
+	length > 0 ? @timeformat = length : @timeformat = -length
+	timeformat = "#{length},000"
+
+	Dir.glob("/Users/JW/Downloads/Video/_all_subs/*").each do |file| 
+
+		next unless file.include?("srt")
+		next unless file.include?(@shift) if @shift
+
+		p "Processing #{file}"
+
+		name_with_ext = File.basename(file)
+		rootpath = "/Users/JW/Downloads/Video/_edited"
+		trimname = "#{rootpath}/#{length}_#{name_with_ext}.srt"
+
+	# `shift_subtitle --operation #{DIRECTION} --time #{@timeformat} '#{file}' '#{trimname}'`
+	end
+end
+
 def create_srt_from_snippets
 
 	p "* create_srt_from_snippets *"
